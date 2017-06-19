@@ -230,6 +230,7 @@ public class TisDao extends SqlSessionDaoSupport{
 	public int updateItiDet(TisItiDetail vo){
 		return getSqlSession().update("TisMapper.updateItiDet", vo);
 	}
+	
 }
 
 

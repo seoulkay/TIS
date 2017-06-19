@@ -1,6 +1,7 @@
 package tis.pye.team.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -384,13 +385,30 @@ public class TisController {
 		}
 		
 		TisEmployee em = dao.selectEmployeeByAtosName(cr);
+		em.setEvent_id(te.getId());
+		
+		TisTrip tt = new TisTrip();
+		tt.setEmp_id(em.getId());
+		tt.setEvent_id(em.getEvent_id());
+		tt = dao.selectTripByParam(tt);
 		
 		try{
 		if(em.getPin().equals(pass)){
 			
 			List<TisAccom> ta = dao.selectAccomByAtosId(em);
+			//tf 안쓸꺼다.
 			List<TisFlight> tf = dao.selectFlightByAtosId(em);
 			List<TisVenue> tv = dao.selectVenueByAtosId(em);
+			List<TisFacilities> tfac = dao.selectFac();
+			List<TisPolicies> tpol = dao.selectPol();
+			
+			List<TisIti> tis = dao.selectItiByTrip(tt.getId());
+			
+			for(TisIti ele : tis){
+				List<TisItiDetail> detTemp = new ArrayList<TisItiDetail>();
+				detTemp = dao.selectItiDetById(ele.getId());
+				ele.setItiDetail(detTemp);
+			}
 			
 			
 			model.addAttribute("em", em);
@@ -398,6 +416,10 @@ public class TisController {
 			model.addAttribute("tf", tf);
 			model.addAttribute("tv", tv);
 			model.addAttribute("te", te);
+			model.addAttribute("te", te);
+			model.addAttribute("tfac", tfac);
+			model.addAttribute("tpol", tpol);
+			model.addAttribute("tis", tis);
 			
 			return "tis/info";
 		}else{
