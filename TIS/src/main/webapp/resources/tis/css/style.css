@@ -121,6 +121,42 @@ video {
 	height:auto;
 }
 
+.box-style{
+	width: 35%;
+	background-color: #ffffff !important;
+	font-weight: 500;
+}
+
+.label-style label{
+	padding-top: 15px;
+	font-weight: 500;
+}
+
+.modal-body-style{
+	padding-top: 0px;
+}
+
+.modal-header-style{
+	background-color: #008fd4;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.modal-content-style{
+	border-radius: 0px;
+}
+
+th{
+	background-color: #008fd4 !important;
+	color: #ffffff;
+	text-align: center;
+}
+
+td{
+	color: #000000;
+}
+
 label { font-weight:400; }
 
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], .ie input[type="range"], .ie9 input[type="range"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], select, textarea {
