@@ -92,14 +92,14 @@
 	<table class="table table-bordered">
 	    <thead>
 	      <tr class="info">
-	        <th>id</th>
-	        <th>first_name</th>
-	        <th>last_name</th>
-	        <th>picture</th>
-	        <th>job_title</th>
-	        <th>tel</th>
-	        <th>email</th>
-	        <th>pin</th>
+	        <th>Id</th>
+	        <th>First Name</th>
+	        <th>Last Name</th>
+	        <th>Picture</th>
+	        <th>Job title</th>
+	        <th>Telephone</th>
+	        <th>Email</th>
+	        <th>Password</th>
 	      </tr>
 	    </thead>
 	    <tbody>
@@ -120,25 +120,25 @@
 	</div>
 	<div class="modal" id="Profiles" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Profiles
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="ProForm" action="ProForm" method="POST">
-			<label>first_name</label>
+			<label>First Name</label>
 			<input type="text" name="first_name" placeholder="first_name" class="form-control">
-			<label>last_name</label>
+			<label>Last Name</label>
 			<input type="text" name="last_name" placeholder="last_name" class="form-control">
-			<label>picture</label>
+			<label>Picture</label>
 			<input type="text" name="picture" placeholder="picture" class="form-control">
-			<label>job_title</label>
+			<label>Job Title</label>
 			<input type="text" name="job_title" placeholder="job_title" class="form-control">
-			<label>tel</label>
+			<label>Telephone</label>
 			<input type="text" name="tel" placeholder="tel" class="form-control">
-			<label>email</label>
+			<label>Email</label>
 			<input type="text" name="email" placeholder="email" class="form-control">
-			<label>pin</label>
+			<label>Password</label>
 			<input type="text" name="pin" placeholder="pin" class="form-control">
 		</form>
 		</div>
@@ -156,19 +156,19 @@
 		</div>
 		<div class="modal-body">
 		<form id="ProUpdateForm" action="ProUpdateForm" method="POST">
-		<label>first_name</label>
+		<label>First Name</label>
 			<input type="text" id="ProUpdate_first_name" name="first_name" placeholder="first_name" class="form-control">
-			<label>last_name</label>
+			<label>Last Name</label>
 			<input type="text" id="ProUpdate_last_name" name="last_name" placeholder="last_name" class="form-control">
-			<label>picture</label>
+			<label>Picture</label>
 			<input type="text" id="ProUpdate_picture" name="picture" placeholder="picture" class="form-control">
-			<label>job_title</label>
+			<label>Job Title</label>
 			<input type="text" id="ProUpdate_job_title" name="job_title" placeholder="job_title" class="form-control">
-			<label>tel</label>
+			<label>Telephone</label>
 			<input type="text" id="ProUpdate_tel" name="tel" placeholder="tel" class="form-control">
-			<label>email</label>
+			<label>Email</label>
 			<input type="text" id="ProUpdate_email" name="email" placeholder="email" class="form-control">
-			<label>pin</label>
+			<label>Password</label>
 			<input type="text" id="ProUpdate_pin" name="pin" placeholder="pin" class="form-control">
 		  	<input type="hidden" name="id" id="ProUpdate_id">
 		</form>

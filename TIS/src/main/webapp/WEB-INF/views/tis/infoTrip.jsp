@@ -95,9 +95,9 @@
 	<table class="table table-bordered">
 	    <thead>
 	      <tr class="info">
-	        <th>id</th>
-	        <th>event_id</th>
-	        <th>emp_id</th>
+	        <th>Id</th>
+	        <th>Event Name</th>
+	        <th>Employee Name</th>
 	      </tr>
 	    </thead>
 	    <tbody>
@@ -116,18 +116,16 @@
 
 <div class="modal" id="AddTripForm" role="dialog">
 	<div class="modal-dialog">
-	<div class="modal-content">
-	<div class="modal-header">
-	TripCodes
+	<div class="modal-content-style modal-content">
+	<div class="modal-header-style modal-header">
+	Add a new trip
 	</div>
-	<div class="modal-body">
-	
-	<h3>Trips form</h3>
-	<h4>Profile</h4>
+	<div class="labe-style modal-body-style modal-body">	
+	<h4 style="padding-top: 10px;">Profile</h4>
 	<form id="AddTripFormForm" action="tripForm" method="POST">
 	<table class="table table-bordered" id="profile_tbl">
 		<tr>
-			<td class="info">
+			<td class="box-style info">
 			Name
 			</td>
 			<td>
@@ -139,17 +137,17 @@
 			</select>
 			</td>
 		</tr>
-		<tr><td class="info">Id</td><td></td></tr>
-		<tr><td class="info">Job title</td><td></td></tr>
-		<tr><td class="info">Telephone</td><td></td></tr>
-		<tr><td class="info">Email</td><td></td></tr>
+		<tr><td class="box-style info">Id</td><td></td></tr>
+		<tr><td class="box-style info">Job title</td><td></td></tr>
+		<tr><td class="box-style info">Telephone</td><td></td></tr>
+		<tr><td class="box-style info">Email</td><td></td></tr>
 	</table>
 
-	<h4>Event</h4>
+	<h4 style="padding-top: 10px;">Event</h4>
 
 	<table class="table table-bordered" id="event_tbl">
 		<tr>
-			<td class="info">
+			<td class="box-style info">
 			Event
 			</td>
 			<td>
@@ -161,7 +159,7 @@
 			</select>
 			</td>
 		</tr>
-		<tr><td class="info">Date</td><td></td></tr>
+		<tr><td class="box-style info">Date</td><td></td></tr>
 	</table>
 	</form>
 </div>

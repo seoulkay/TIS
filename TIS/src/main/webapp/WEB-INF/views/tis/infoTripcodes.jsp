@@ -90,10 +90,10 @@
 	<table class="table table-bordered">
 	    <thead>
 	      <tr class="info">
-	        <th>id</th>
-	        <th>event_name</th>
-	        <th>event_desc</th>
-	        <th>active</th>
+	        <th style="width:2%;">Id</th>
+	        <th style="width:45%;">Event Name</th>
+	        <th style="width:45%;">Event Description</th>
+	        <th style="width:8%;">Active</th>
 	      </tr>
 	    </thead>
 	    <tbody>
@@ -110,24 +110,22 @@
 	</div>
 	<div class="modal" id="TripCodes" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
-		TripCodes
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
+		Events
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="TripCodesForm" action="TripCodesForm" method="POST">
-			<label>event_name</label>
+			<label>Event Name</label>
 			<input type="text" name="event_name" placeholder="event_name" class="form-control">
-			<label>event_desc</label>
+			<label>Event Description</label>
 			<input type="text" name="event_desc" placeholder="event_desc" class="form-control">
 			<label>Active</label>
 			<div class="input-group">
-			<label class="radio-inline">
-			<input type="radio" name="active" value="Y" class="form-control">Yes
-			</label>
-			<label class="radio-inline">
-		  	<input type="radio" name="active" value="N" class="form-control" checked>No
-		  	</label>
+			<label class="radio-inline" style="font-weight: normal; color: #000000; padding-top:0px;">
+			<input type="radio" name="active" value="Y" class="form-control">Yes</label>
+			<label class="radio-inline" style="font-weight: normal; color: #000000; padding-top:0px;">
+		  	<input type="radio" name="active" value="N" class="form-control" checked>No</label>
 		  	</div>
 		</form>
 		</div>
@@ -139,15 +137,15 @@
 	</div>
 	<div class="modal" id="TripCodesUpdate" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		TripCodes
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="TripCodesUpdateForm" action="TripCodesUpdateForm" method="POST">
-			<label>event_name</label>
+			<label>Event Name</label>
 			<input type="text" id="TripCodesUpdate_event_name" name="event_name" placeholder="event_name" class="form-control">
-			<label>event_desc</label>
+			<label>Event Description</label>
 			<input type="text" id="TripCodesUpdate_event_desc" name="event_desc" placeholder="event_desc" class="form-control">
 			<label>Active</label>
 			<div class="input-group">
@@ -191,15 +189,15 @@ function openUpdateForm(para, id){
 	<table class="table table-bordered">
 	    <thead>
 	      <tr class="info">
-	        <th>id</th>
-	        <th>venue_pic</th>
-	        <th>venue_name</th>
-	        <th>venue_name_loc</th>
-	        <th>venue_address</th>
-	        <th>venue_address_loc</th>
-	        <th>lat</th>
-	        <th>lng</th>
-	        <th>venue_type</th>
+	        <th style="width: 2%;">Id</th>
+	        <th style="width: 3%;">Picture</th>
+	        <th style="width: 15%;">Name</th>
+	        <th style="width: 15%;">Name (Local)</th>
+	        <th style="width: 25%;">Address</th>
+	        <th style="width: 25%;">Address (Local)</th>
+	        <th style="width: 5%;">Latitude</th>
+	        <th style="width: 5%;">Longitude</th>
+	        <th style="width: 5%;">Type</th>
 	      </tr>
 	    </thead>
 	    <tbody>
@@ -221,27 +219,27 @@ function openUpdateForm(para, id){
 	</div>
 	<div class="modal" id="Locations" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Locations
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="LocationsForm" action="LocationsForm" method="POST">
-			<label>venue_pic</label>
+			<label>Venue Picture</label>
 			<input type="text" name="venue_pic" placeholder="venue_pic" class="form-control">
-			<label>venue_name</label>
+			<label>Venue Name</label>
 			<input type="text" name="venue_name" placeholder="venue_name" class="form-control">
-			<label>venue_name_loc</label>
+			<label>Venue Local Name</label>
 			<input type="text" name="venue_name_loc" placeholder="venue_name_loc" class="form-control">
-			<label>venue_address</label>
+			<label>Venue Address</label>
 			<input type="text" name="venue_address" placeholder="venue_address" class="form-control">
-			<label>venue_address_loc</label>
+			<label>Venue Local Address</label>
 			<input type="text" name="venue_address_loc" placeholder="venue_address_loc" class="form-control">
-			<label>lat</label>
+			<label>Latitude</label>
 			<input type="text" name="lat" placeholder="lat" class="form-control">
-			<label>lng</label>
+			<label>Longitude</label>
 			<input type="text" name="lng" placeholder="lng" class="form-control">
-			<label>venue_type</label>
+			<label>Venue Type</label>
 			<input type="text" name="venue_type" placeholder="venue_type" class="form-control">
 		</form>
 		</div>
@@ -253,27 +251,27 @@ function openUpdateForm(para, id){
 	</div>
 	<div class="modal" id="LocationsUpdate" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Locations
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="LocationsUpdateForm" action="LocationsUpdateForm" method="POST">
-			<label>venue_pic</label>
+			<label>Venue Picture</label>
 			<input type="text" id="LocationsUpdate_venue_pic" name="venue_pic" placeholder="venue_pic" class="form-control">
-			<label>venue_name</label>
+			<label>Venue Name</label>
 			<input type="text" id="LocationsUpdate_venue_name" name="venue_name" placeholder="venue_name" class="form-control">
-			<label>venue_name_loc</label>
+			<label>Venue Name (Local)</label>
 			<input type="text" id="LocationsUpdate_venue_name_loc" name="venue_name_loc" placeholder="venue_name_loc" class="form-control">
-			<label>venue_address</label>
+			<label>Venue Address</label>
 			<input type="text" id="LocationsUpdate_venue_address" name="venue_address" placeholder="venue_address" class="form-control">
-			<label>venue_address_loc</label>
+			<label>Venue Address (Local)</label>
 			<input type="text" id="LocationsUpdate_venue_address_loc" name="venue_address_loc" placeholder="venue_address_loc" class="form-control">
-			<label>lat</label>
+			<label>Latitude</label>
 			<input type="text" id="LocationsUpdate_lat" name="lat" placeholder="lat" class="form-control">
-			<label>lng</label>
+			<label>Longitude</label>
 			<input type="text" id="LocationsUpdate_lng" name="lng" placeholder="lng" class="form-control">
-			<label>venue_type</label>
+			<label>Venue Type</label>
 			<input type="text" id="LocationsUpdate_venue_type" name="venue_type" placeholder="venue_type" class="form-control">
 		  	<input type="hidden" name="id" id="LocationsUpdate_id">
 		</form>
@@ -307,10 +305,10 @@ function openUpdateLocationsForm(para, id){
 	<table class="table table-bordered">
 	    <thead>
 	      <tr class="info">
-	        <th>id</th>
-	        <th>fac_title</th>
-	        <th>fac_title_loc</th>
-	        <th>fac_icon</th>
+	        <th style="width:2%;">Id</th>
+	        <th style="width:45%;">Facility Title</th>
+	        <th style="width:45%;">Facility Title (Local)</th>
+	        <th style="width:8%;">Icon</th>
 	      </tr>
 	    </thead>
 	    <tbody>
@@ -327,17 +325,17 @@ function openUpdateLocationsForm(para, id){
 	</div>
 	<div class="modal" id="Facilities" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Facilities
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="FacForm" action="FacForm" method="POST">
-			<label>fac_title</label>
+			<label>Facility Title</label>
 			<input type="text" name="fac_title" placeholder="fac_title" class="form-control">
-			<label>fac_title_loc</label>
+			<label>Facility Title (Local)</label>
 			<input type="text" name="fac_title_loc" placeholder="fac_title_loc" class="form-control">
-			<label>fac_icon</label>
+			<label>Icon</label>
 			<input type="text" name="fac_icon" placeholder="fac_icon" class="form-control">
 		</form>
 		</div>
@@ -349,17 +347,17 @@ function openUpdateLocationsForm(para, id){
 	</div>
 	<div class="modal" id="FacUpdate" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Facilities
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="FacUpdateForm" action="FacUpdateForm" method="POST">
-			<label>fac_title</label>
+			<label>Facility Title</label>
 			<input type="text" id="FacUpdate_fac_title" name="fac_title" placeholder="venue_pic" class="form-control">
-			<label>fac_title_loc</label>
+			<label>Facility Title (Local)</label>
 			<input type="text" id="FacUpdate_fac_title_loc" name="fac_title_loc" placeholder="venue_name" class="form-control">
-			<label>venue_name_loc</label>
+			<label>Icon</label>
 			<input type="text" id="FacUpdate_fac_icon" name="fac_icon" placeholder="venue_name_loc" class="form-control">
 		  	<input type="hidden" name="id" id="FacUpdate_id">
 		</form>
@@ -387,10 +385,10 @@ function openUpdateFacForm(para, id){
 	<table class="table table-bordered">
 	    <thead>
 	      <tr class="info">
-	        <th>id</th>
-	        <th>pol_title</th>
-	        <th>pol_title_loc</th>
-	        <th>pol_icon</th>
+	        <th style="width: 2%;">Id</th>
+	        <th style="width: 45%;">Policy Title</th>
+	        <th style="width: 45%;">Policy Title (Local)</th>
+	        <th style="width: 8%;">Icon</th>
 	      </tr>
 	    </thead>
 	    <tbody>
@@ -407,17 +405,17 @@ function openUpdateFacForm(para, id){
 	</div>
 	<div class="modal" id="Policies" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Policies
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="PolForm" action="PolForm" method="POST">
-			<label>pol_title</label>
+			<label>Policy Title</label>
 			<input type="text" name="pol_title" placeholder="pol_title" class="form-control">
-			<label>pol_title_loc</label>
+			<label>Policy Title (Local)</label>
 			<input type="text" name="pol_title_loc" placeholder="pol_title_loc" class="form-control">
-			<label>pol_icon</label>
+			<label>Icon</label>
 			<input type="text" name="pol_icon" placeholder="pol_icon" class="form-control">
 		</form>
 		</div>
@@ -429,17 +427,17 @@ function openUpdateFacForm(para, id){
 	</div>
 	<div class="modal" id="PolUpdate" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Policies
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="PolUpdateForm" action="PolUpdateForm" method="POST">
-			<label>pol_title</label>
+			<label>Policy Title</label>
 			<input type="text" id="PolUpdate_pol_title" name="pol_title" placeholder="pol_title" class="form-control">
-			<label>pol_title_loc</label>
+			<label>Policy Title (Local)</label>
 			<input type="text" id="PolUpdate_pol_title_loc" name="pol_title_loc" placeholder="pol_title_loc" class="form-control">
-			<label>pol_icon</label>
+			<label>Icon</label>
 			<input type="text" id="PolUpdate_pol_icon" name="pol_icon" placeholder="pol_icon" class="form-control">
 		  	<input type="hidden" name="id" id="PolUpdate_id">
 		</form>
@@ -467,10 +465,10 @@ function openUpdatePolForm(para, id){
 	<table class="table table-bordered">
 	    <thead>
 	      <tr class="info">
-	        <th>id</th>
-	        <th>trs_title</th>
-	        <th>trs_title_loc</th>
-	        <th>trs_icon</th>
+	        <th style="width: 2%;">Id</th>
+	        <th style="width: 45%;">Transportation Title</th>
+	        <th style="width: 45%;">Transportation Title (Local)</th>
+	        <th style="width: 8%;">Icon</th>
 	      </tr>
 	    </thead>
 	    <tbody>
@@ -487,17 +485,17 @@ function openUpdatePolForm(para, id){
 	</div>
 	<div class="modal" id="Transportations" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Transportations
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="TrsForm" action="TrsForm" method="POST">
-			<label>trs_title</label>
+			<label>Transportation Title</label>
 			<input type="text" name="trs_title" placeholder="trs_title" class="form-control">
-			<label>trs_title_loc</label>
+			<label>Transportation Title (Local)</label>
 			<input type="text" name="trs_title_loc" placeholder="trs_title_loc" class="form-control">
-			<label>trs_icon</label>
+			<label>Transportation Icon</label>
 			<input type="text" name="trs_icon" placeholder="trs_icon" class="form-control">
 		</form>
 		</div>
@@ -509,17 +507,17 @@ function openUpdatePolForm(para, id){
 	</div>
 	<div class="modal" id="TrsUpdate" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Transportations
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="TrsUpdateForm" action="TrsUpdateForm" method="POST">
-			<label>trs_title</label>
+			<label>Transportation Title</label>
 			<input type="text" id="TrsUpdate_trs_title" name="trs_title" placeholder="trs_title" class="form-control">
-			<label>trs_title_loc</label>
+			<label>Transportation Title (Local)</label>
 			<input type="text" id="TrsUpdate_trs_title_loc" name="trs_title_loc" placeholder="trs_title_loc" class="form-control">
-			<label>trs_icon</label>
+			<label>Transportation Icon</label>
 			<input type="text" id="TrsUpdate_trs_icon" name="trs_icon" placeholder="trs_icon" class="form-control">
 		  	<input type="hidden" name="id" id="TrsUpdate_id">
 		</form>
