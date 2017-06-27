@@ -1,6 +1,9 @@
 package tis.pye.team.dao;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
@@ -17,6 +20,8 @@ import tis.pye.team.vo.TisOther;
 import tis.pye.team.vo.TisPolicies;
 import tis.pye.team.vo.TisShift;
 import tis.pye.team.vo.TisSupports;
+import tis.pye.team.vo.TisTeam;
+import tis.pye.team.vo.TisTeamWrap;
 import tis.pye.team.vo.TisTransportations;
 import tis.pye.team.vo.TisTrip;
 import tis.pye.team.vo.TisVenue;
@@ -229,6 +234,41 @@ public class TisDao extends SqlSessionDaoSupport{
 	//
 	public int updateItiDet(TisItiDetail vo){
 		return getSqlSession().update("TisMapper.updateItiDet", vo);
+	}
+	//
+	public List<TisTeamWrap> selectTisTeamByEvent(int vo){
+		List<TisTeam> list = getSqlSession().selectList("TisMapper.selectTisTeamByEvent", vo);
+		List<Integer> key = new ArrayList<Integer>();
+		List<TisTeamWrap> wrap = new ArrayList<TisTeamWrap>();
+		
+		
+		for(TisTeam ele : list){
+			int id = ele.getSupports_id();
+			if(!key.contains(id)){
+				key.add(id);
+			}
+		}
+		
+		for(Integer ele : key){
+			List<TisTeam> tmpList = new ArrayList<TisTeam>();
+			TisTeamWrap tmpWrp = new TisTeamWrap();
+			for(TisTeam el : list){
+				int tmpid = el.getSupports_id();
+				if(tmpid == ele){
+					tmpList.add(el);
+				}
+			}
+			tmpWrp.setTisTemaList(tmpList);
+			wrap.add(tmpWrp);
+		}
+		
+		//테스트 코드
+		for(TisTeamWrap ele : wrap){
+			System.out.println(ele.getTisTemaList().size());
+		}
+		
+		
+		return wrap;
 	}
 	
 }

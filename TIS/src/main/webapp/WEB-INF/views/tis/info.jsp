@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 
 <!DOCTYPE html>
 <!--[if lt IE 7]><html class="ie ie6" lang="en"><![endif]-->
@@ -99,14 +100,14 @@
 	<div class="row">	
 	<h3><span class="label label-success" id="accom">My accomodation</span></h3>
 	</div>
-	<div class="row">	
+	<div class="row">
 	<div id="map" style="height: 25em;"></div>
 	</div>
 			<c:forEach items="${ta }" var="ele">
 			<div class="row">	
-				<p><strong>Confirmation No : </strong>YYYYMMDD001AA</p>
+				<p><strong>Confirmation No : </strong>ACC${ele.id }</p>
 				<p><strong>Name :</strong> ${ele.venue_name } / ${ele.venue_name_loc}</p>
-				<p><strong>Address :</strong> ${ele.venue_address }<br> ${ele.venue_address_loc}</p>
+				<p><strong>Address :</strong> ${ele.venue_address } / ${ele.venue_address_loc}</p>
 				
 				<table class="table table-bordered">
 				    <thead>
@@ -120,9 +121,9 @@
 				    </thead>
 				    <tbody>
 				      <tr>
-				        <td>${ele.acc_begin }</td>
-				        <td>${ele.acc_end }</td>
-				        <td>john@example.com</td>
+				        <td><fmt:formatDate value='${ele.acc_begin }' pattern = 'yyyy-MM-dd' /></td>
+				        <td><fmt:formatDate value='${ele.acc_end }' pattern = 'yyyy-MM-dd' /></td>
+				        <td></td>
 				        <td>${ele.acc_room }</td>
 				        <td>${ele.acc_pin}</td>
 				      </tr>
@@ -133,56 +134,58 @@
 				  <h4 style="color: #008FD4">Facilities</h4>
 			</div>
 			<div class="row">	
-				  <div class="col-sm-4">.col-sm-4</div>
-				  <div class="col-sm-4">.col-sm-4</div>
-				  <div class="col-sm-4">.col-sm-4</div>
+			<c:forEach items="${tfac }" var="elee">
+			<c:set var="fac_var" value=" ${elee.id },"/>
+			<c:if test = "${fn:contains(ele.acc_fac, fac_var)}">
+			 <div class="col-sm-4"><img style="float:left; max-height: 2em; padding-right: 1em" src="https://www.ufo79.com/image/tisImage/${elee.fac_icon }" class="img-responsive"><div style="padding: 0.1em;"><h4 style="color: GREEN">${elee.fac_title }</h4></div>
+			 <div style="clear:both"></div>
+			 </div>
+			</c:if>
+			</c:forEach>
 			</div>
 			<div style="height: 1em"></div>
 			<div class="row">
 			<h4 style="color: RED">Policy</h4>
 			<ul>
-				<li>High-speed wireless internet access, TV with cable channels</li>
-				<li>Towels and Hair dryer are included</li>
-				<li>Breakfast is not included</li>
-				<li>NO SMOKING in the room</li>
-				<li>NO SHOES in the room</li>
-				<li>Check-out time is 12:00 PM </li>
+			<c:forEach items="${tpol }" var="elee">
+			<c:set var="pol_var" value=" ${elee.id },"/>
+			<c:if test = "${fn:contains(ele.acc_pol, pol_var)}">
+			<li>${elee.pol_title }</li>
+			</c:if>
+			</c:forEach>
 			</ul>
 			<p>${ele.acc_desc }</p>
-			
-			</div>
-			 
+			</div>			 
 			</c:forEach>
 			
 	<div class="row">	
 	<h3><span class="label label-success">My Travel</span></h3>
 	</div>
 	<div class="row">
-	<h4>2017-02-22 Airport to Hotel(#Trip 1 Title#)</h4>
-	</div>
-	<div class="row">
+	<c:forEach items="${tis}" var="ele">
+	<h4><fmt:formatDate value='${ele.stmp }' pattern = 'yyyy-MM-dd' /> ${ele.desc } / ${ele.desc_local }</h4>
 				<table class="table table-bordered">
 				    <thead>
 				      <tr class="info">
-				        <th>Check-in</th>
-				        <th>Check-out</th>
-				        <th>Night(s)</th>
-				        <th>Room No.</th>
+				        <th>Time</th>
+				        <th>Transportation</th>
+				        <th>Destination</th>
 				        <th>Note</th>
 				      </tr>
-				    </thead>
-				    <tbody>
-				    <c:forEach items="${tf }" var="ele">
-				      <tr>
-				        <td>${ele.flight_from }</td>
-				        <td>${ele.flight_from_desc }</td>
-				        <td>${ele.flight_to }</td>
-				        <td>${ele.flight_to_time }</td>
-				        <td>${ele.flight_to_desc }</td>
+				    </thead>	
+	 			    <tbody>
+		<c:forEach items="${ele.itiDetail }" var="elee">
+					  <tr>
+				        <td><fmt:formatDate value='${elee.stmp }' pattern = 'HH:mm' /></td>
+				        <td></td>
+				        <td>${elee.desc } / ${elee.desc_local }</td>
+				        <td>${elee.note } / ${elee.note_local }</td>
 				      </tr>
-				      </c:forEach>
+		</c:forEach>
 				    </tbody>
 				  </table>
+	</c:forEach>
+	
 	</div>
 	<div class="row">	
 	<h3><span class="label label-success">My Group</span></h3>

@@ -385,14 +385,17 @@ public class TisController {
 		}
 		
 		TisEmployee em = dao.selectEmployeeByAtosName(cr);
+		TisTrip tt = new TisTrip();
+		
 		em.setEvent_id(te.getId());
 		
-		TisTrip tt = new TisTrip();
 		tt.setEmp_id(em.getId());
 		tt.setEvent_id(em.getEvent_id());
 		tt = dao.selectTripByParam(tt);
 		
-		try{
+		
+		
+//		try{
 		if(em.getPin().equals(pass)){
 			
 			List<TisAccom> ta = dao.selectAccomByAtosId(em);
@@ -410,6 +413,7 @@ public class TisController {
 				ele.setItiDetail(detTemp);
 			}
 			
+			dao.selectTisTeamByEvent(te.getId());
 			
 			model.addAttribute("em", em);
 			model.addAttribute("ta", ta);
@@ -423,11 +427,13 @@ public class TisController {
 			
 			return "tis/info";
 		}else{
+			System.out.println("여기 2");
 			return "tis/home";
 		}
-		}catch(Exception e){
-			return "tis/home";
-		}
+//		}catch(Exception e){
+//			System.out.println("여기 1");
+//			return "tis/home";
+//		}
 	}
 	
 	@RequestMapping(value = "getEmp/{id}", method = RequestMethod.POST)
