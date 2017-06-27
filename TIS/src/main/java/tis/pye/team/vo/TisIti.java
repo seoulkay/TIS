@@ -1,6 +1,7 @@
 package tis.pye.team.vo;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -17,6 +18,9 @@ public class TisIti {
 	private String first_name;
 	private String last_name;
 	private String event_name;
+	
+	//디테일 벨류
+	List<TisItiDetail> itiDetail;
 	
 	
 	public int getTrip_id() {
@@ -66,6 +70,12 @@ public class TisIti {
 	}
 	public void setEvent_name(String event_name) {
 		this.event_name = event_name;
+	}
+	public List<TisItiDetail> getItiDetail() {
+		return itiDetail;
+	}
+	public void setItiDetail(List<TisItiDetail> itiDetail) {
+		this.itiDetail = itiDetail;
 	}
 	
 }

@@ -533,6 +533,7 @@
 	left join tis.`event` ev on ev.id = t.event_id
 	WHERE i.id = #{param}
   	</select>
+  	
   	<insert id="insertItiDet" parameterType="TisItiDetail">
   	INSERT INTO `tis`.`iti_detail`
 	(
@@ -553,6 +554,7 @@
 	#{note},
 	#{note_local})
   	</insert>
+  	
   	<update id="updateItiDet" parameterType="TisItiDetail">
   	UPDATE `tis`.`iti_detail`
 	SET
@@ -566,7 +568,26 @@
 	`note_local` = #{note_local}
 	WHERE `id` = #{id};
   	</update>
+  	
   	<select id="selectItiDetById" parameterType="Integer" resultType="TisItiDetail">
   	SELECT * FROM tis.iti_detail WHERE iti_id = #{param}
+  	</select>
+  	
+  	<select id="selectTisTeamByEvent" parameterType="Integer" resultType="TisTeam">
+  	SELECT 
+	e.event_name
+	,sp.support_title
+	,sp.support_tel
+	,s.group_name
+	,em.first_name
+	,em.last_name
+	,em.picture
+	,em.email
+	,s.supports_id
+	FROM tis.shift s 
+	left join tis.`event` e on s.event_id = e.id 
+	left join tis.employee em on s.emp_id = em.id 
+	left join tis.supports sp on s.supports_id = sp.id 
+	where s.event_id = #{param}
   	</select>
 </mapper>

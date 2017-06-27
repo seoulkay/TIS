@@ -1,6 +1,7 @@
 package tis.pye.team.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -384,28 +385,55 @@ public class TisController {
 		}
 		
 		TisEmployee em = dao.selectEmployeeByAtosName(cr);
+		TisTrip tt = new TisTrip();
 		
-		try{
+		em.setEvent_id(te.getId());
+		
+		tt.setEmp_id(em.getId());
+		tt.setEvent_id(em.getEvent_id());
+		tt = dao.selectTripByParam(tt);
+		
+		
+		
+//		try{
 		if(em.getPin().equals(pass)){
 			
 			List<TisAccom> ta = dao.selectAccomByAtosId(em);
+			//tf 안쓸꺼다.
 			List<TisFlight> tf = dao.selectFlightByAtosId(em);
 			List<TisVenue> tv = dao.selectVenueByAtosId(em);
+			List<TisFacilities> tfac = dao.selectFac();
+			List<TisPolicies> tpol = dao.selectPol();
 			
+			List<TisIti> tis = dao.selectItiByTrip(tt.getId());
+			
+			for(TisIti ele : tis){
+				List<TisItiDetail> detTemp = new ArrayList<TisItiDetail>();
+				detTemp = dao.selectItiDetById(ele.getId());
+				ele.setItiDetail(detTemp);
+			}
+			
+			dao.selectTisTeamByEvent(te.getId());
 			
 			model.addAttribute("em", em);
 			model.addAttribute("ta", ta);
 			model.addAttribute("tf", tf);
 			model.addAttribute("tv", tv);
 			model.addAttribute("te", te);
+			model.addAttribute("te", te);
+			model.addAttribute("tfac", tfac);
+			model.addAttribute("tpol", tpol);
+			model.addAttribute("tis", tis);
 			
 			return "tis/info";
 		}else{
+			System.out.println("여기 2");
 			return "tis/home";
 		}
-		}catch(Exception e){
-			return "tis/home";
-		}
+//		}catch(Exception e){
+//			System.out.println("여기 1");
+//			return "tis/home";
+//		}
 	}
 	
 	@RequestMapping(value = "getEmp/{id}", method = RequestMethod.POST)
