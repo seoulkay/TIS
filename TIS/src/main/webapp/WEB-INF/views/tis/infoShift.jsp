@@ -90,11 +90,11 @@
 	<table class="table table-bordered">
 	    <thead>
 	      <tr class="info">
-	        <th>id</th>
-	        <th>event_id</th>
-	        <th>support_title</th>
-	        <th>support_tel</th>
-	        <th>Assign</th>
+	        <th style="width:2%">Id</th>
+	        <th style="width:35%">Event Name</th>
+	        <th style="width:35%">Support Title</th>
+	        <th style="width:20%">Support Telephone</th>
+	        <th style="width:8%">Assign</th>
 	      </tr>
 	    </thead>
 	    <tbody>
@@ -104,7 +104,7 @@
 	        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.event_name}</td>
 	        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.support_title}</td>
 	        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.support_tel}</td>
-          	<td><span class="label label-success" onclick="openAssignSupForm(${ele.event_id}, ${ele.id}, 3)"> Assign</span></td>
+          	<td style="text-align: center; font-size:1.3em;"><span class="label label-success" onclick="openAssignSupForm(${ele.event_id}, ${ele.id}, 3)">+</span></td>
 	      	</tr>
 	    </c:forEach>
 	    </tbody>
@@ -112,21 +112,21 @@
 	</div>
 	<div class="modal" id="Supports" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Supports
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="SupForm" action="SupForm" method="POST">
-			<label>event_id</label>
+			<label>Event Name</label>
 			<select name="event_id" class="form-control">
 			<c:forEach items="${te }" var="ele">
 				<option value="${ele.id}">${ele.event_name }</option>
 			</c:forEach>
 			</select>
-			<label>support_title</label>
+			<label>Support Title</label>
 			<input type="text" name="support_title" placeholder="support_title" class="form-control">
-			<label>support_tel</label>
+			<label>Support Telephone</label>
 			<input type="text" name="support_tel" placeholder="support_tel" class="form-control">
 		</form>
 		</div>
@@ -138,21 +138,21 @@
 	</div>
 	<div class="modal" id="SupUpdate" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Supports
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="SupUpdateForm" action="SupUpdateForm" method="POST">
-			<label>event_id</label>
+			<label>Event Name</label>
 			<select id="SupUpdate_event_id" name="event_id" class="form-control">
 			<c:forEach items="${te }" var="ele">
 				<option value="${ele.id}">${ele.event_name }</option>
 			</c:forEach>
 			</select>
-			<label>support_title</label>
+			<label>Support Title</label>
 			<input type="text" id="SupUpdate_support_title" name="support_title" placeholder="support_title" class="form-control">
-			<label>support_tel</label>
+			<label>Support Telephone</label>
 			<input type="text" id="SupUpdate_support_tel" name="support_tel" placeholder="support_tel" class="form-control">
 		  	<input type="hidden" name="id" id="SupUpdate_id">
 		</form>
@@ -165,13 +165,13 @@
 	</div>
 	<div class="modal" id="SupportsAss" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Supports Assign
 		</div>
 		<form:form method="post" action="SupAssForm" modelAttribute="TisShifteList" id="SupAssForm">
-		<div class="modal-body">
-		
+		<div class="label-style modal-body-style modal-body">
+				
 			<c:forTokens items = "A,B,C" delims = "," var = "name" varStatus="status">
 			<label>${name }</label>
 			<select name="shifts[${status.index}].emp_id" id="${status.index}emp_id">
@@ -180,8 +180,8 @@
 				<option value="${ele.id}">${ele.first_name } ${ele.last_name }</option>
 			</c:forEach>
 			</select>
-			<input type="hidden" name="shifts[${status.index}].event_id" id="${status.index}event_id">
-			<input type="hidden" name="shifts[${status.index}].supports_id" id="${status.index}supports_id">
+			<input type="hidden" name="shifts[${status.index}].event_id" id="${status.index}event_id"><br/>
+			<input type="hidden" name="shifts[${status.index}].supports_id" id="${status.index}supports_id"><br/>
 			<input type="hidden" name="shifts[${status.index}].group_name" value="${name }">
 			</c:forTokens>
 		
