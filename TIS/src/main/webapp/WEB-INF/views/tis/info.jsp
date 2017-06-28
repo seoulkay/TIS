@@ -191,65 +191,26 @@
 	<h3><span class="label label-success">My Group</span></h3>
 	</div>
 	<div class="row">
-	<h4>2017 Test Event 01</h4>
+	<h4>${ttw[0].tisTeamList[0].event_name }</h4>
 	</div>
 	<div class="row">
+	
+	
+	<c:forEach items="${ttw }" var="ele" varStatus="stat">
 	<table class="table table-bordered">
 	      <tr class="info">
-	        <th rowspan="3">A</th>
-	        <th>Support Title</th>
-	        <th>Telephone</th>
-	        <th>Support Staff</th>
+	        <th colspan="4">${ele.tisTeamList[0].support_title }</th>
 	      </tr>
+	      <c:forEach items="${ele.tisTeamList }" var="elee">
 	      <tr>
-			<td>IT DM</td>
-			<td>+82-33-350-1234</td>
+			<td>${elee.first_name } ${elee.last_name }</td>
+			<td>${elee.group_name }</td>
+			<td>${elee.support_tel }</td>
 			<td>YT LEE</td>
 	      </tr>
-	       <tr>
-			<td>IT DM</td>
-			<td>+82-33-350-1234</td>
-			<td>YT LEE</td>
-	      </tr>
+	      </c:forEach>
 	  </table>
-	  
-	  <table class="table table-bordered">
-	      <tr class="info">
-	        <th rowspan="3">B</th>
-	        <th>Support Title</th>
-	        <th>Telephone</th>
-	        <th>Support Staff</th>
-	      </tr>
-	      <tr>
-			<td>IT DM</td>
-			<td>+82-33-350-1234</td>
-			<td>YT LEE</td>
-	      </tr>
-	       <tr>
-			<td>IT DM</td>
-			<td>+82-33-350-1234</td>
-			<td>YT LEE</td>
-	      </tr>
-	  </table>
-	  
-	  <table class="table table-bordered">
-	      <tr class="info">
-	        <th rowspan="3">C</th>
-	        <th>Support Title</th>
-	        <th>Telephone</th>
-	        <th>Support Staff</th>
-	      </tr>
-	      <tr>
-			<td>IT DM</td>
-			<td>+82-33-350-1234</td>
-			<td>YT LEE</td>
-	      </tr>
-	       <tr>
-			<td>IT DM</td>
-			<td>+82-33-350-1234</td>
-			<td>YT LEE</td>
-	      </tr>
-	  </table>
+	  </c:forEach>
 	</div>
 </div>
 

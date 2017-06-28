@@ -258,13 +258,13 @@ public class TisDao extends SqlSessionDaoSupport{
 					tmpList.add(el);
 				}
 			}
-			tmpWrp.setTisTemaList(tmpList);
+			tmpWrp.setTisTeamList(tmpList);
 			wrap.add(tmpWrp);
 		}
 		
 		//테스트 코드
 		for(TisTeamWrap ele : wrap){
-			System.out.println(ele.getTisTemaList().size());
+			System.out.println(ele.getTisTeamList().size());
 		}
 		
 		

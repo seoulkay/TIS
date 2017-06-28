@@ -405,15 +405,20 @@ public class TisController {
 			List<TisFacilities> tfac = dao.selectFac();
 			List<TisPolicies> tpol = dao.selectPol();
 			
+			try{
 			List<TisIti> tis = dao.selectItiByTrip(tt.getId());
-			
 			for(TisIti ele : tis){
 				List<TisItiDetail> detTemp = new ArrayList<TisItiDetail>();
 				detTemp = dao.selectItiDetById(ele.getId());
 				ele.setItiDetail(detTemp);
 			}
+			model.addAttribute("tis", tis);
+			}catch(Exception e){
+			 System.out.println("No Itinery");	
+			}
 			
-			dao.selectTisTeamByEvent(te.getId());
+			
+			
 			
 			model.addAttribute("em", em);
 			model.addAttribute("ta", ta);
@@ -423,11 +428,13 @@ public class TisController {
 			model.addAttribute("te", te);
 			model.addAttribute("tfac", tfac);
 			model.addAttribute("tpol", tpol);
-			model.addAttribute("tis", tis);
+
+			model.addAttribute("ttw", dao.selectTisTeamByEvent(te.getId()));
+			
 			
 			return "tis/info";
 		}else{
-			System.out.println("여기 2");
+			System.out.println("Wrong Password");
 			return "tis/home";
 		}
 //		}catch(Exception e){

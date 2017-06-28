@@ -3,15 +3,17 @@ package tis.pye.team.vo;
 import java.util.List;
 
 public class TisTeamWrap {
-	List<TisTeam> tisTemaList;
+	List<TisTeam> tisTeamList;
 
-	public List<TisTeam> getTisTemaList() {
-		return tisTemaList;
+	public List<TisTeam> getTisTeamList() {
+		return tisTeamList;
 	}
 
-	public void setTisTemaList(List<TisTeam> tisTemaList) {
-		this.tisTemaList = tisTemaList;
+	public void setTisTeamList(List<TisTeam> tisTeamList) {
+		this.tisTeamList = tisTeamList;
 	}
+
+
 	
 	
 }
