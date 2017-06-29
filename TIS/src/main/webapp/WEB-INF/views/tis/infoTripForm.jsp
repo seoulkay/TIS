@@ -155,9 +155,9 @@
 			</td>
 		</tr>
 <!-- 		<tr><td class="info">Address</td><td></td></tr> -->
-		<tr><td class="info">Check-in</td><td><input type="date" class="form-control" value="<fmt:formatDate value='${tacc.acc_begin }' pattern = 'yyyy-MM-dd' />" name="acc_begin"></td></tr>
-		<tr><td class="info">Check-out</td><td><input type="date" class="form-control" value="<fmt:formatDate value='${tacc.acc_end }' pattern = 'yyyy-MM-dd' />" name="acc_end"></td></tr>
-		<tr><td class="info">Night(s)</td>
+		<tr><td class="form-style info">Check-in</td><td><input type="date" class="form-control" value="<fmt:formatDate value='${tacc.acc_begin }' pattern = 'yyyy-MM-dd' />" name="acc_begin"></td></tr>
+		<tr><td class="form-style info">Check-out</td><td><input type="date" class="form-control" value="<fmt:formatDate value='${tacc.acc_end }' pattern = 'yyyy-MM-dd' />" name="acc_end"></td></tr>
+		<tr><td class="form-style info">Night(s)</td>
 			<td>
 						<!-- 날짜 빼기 -->
 						<jsp:useBean id="daysFromNow" class="java.util.Date">
@@ -166,9 +166,9 @@
 						<fmt:formatDate value='${daysFromNow}' pattern = 'dd'/>
 			</td>
 		</tr>
-		<tr><td class="info">Room No.</td><td><input type="text" class="form-control" value="${tacc.acc_room }" name="acc_room"></td></tr>
-		<tr><td class="info">Acc. Note</td><td><input type="text" class="form-control" value="${tacc.acc_pin }" name="acc_pin"></td></tr>
-		<tr><td class="info">Facilities</td><td>
+		<tr><td class="form-style info">Room No.</td><td><input type="text" class="form-control" value="${tacc.acc_room }" name="acc_room"></td></tr>
+		<tr><td class="form-style info">Acc. Note</td><td><input type="text" class="form-control" value="${tacc.acc_pin }" name="acc_pin"></td></tr>
+		<tr><td class="form-style info">Facilities</td><td>
 		<c:forEach items="${tfac }" var="ele">
 		<input type="checkbox" aria-label="" value="${ele.id }" name="acc_fac_list"
 		<c:set var="fac_var" value=" ${ele.id },"/>
@@ -203,7 +203,7 @@
 		>
 		</td></tr>
 	</table>
-		<input type="submit" class="btn-style" value="Submit">
+		<input type="submit" class="modal-btn-style" value="Submit">
 	</form:form>
 	<br>
 	</div>
@@ -230,7 +230,7 @@
 			<td style ="width:8%" class="form-style info">Detail</td>
 		</tr>
 		<c:forEach items="${ti }" var="ele">
-		<tr>			
+		<tr class="tr-style">			
 			<td class="updateIti iti_id">${ele.id }</td>
 			<td class="updateIti">${ele.desc }</td>
 			<td class="updateIti">${ele.desc_local }</td>
@@ -260,7 +260,7 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('itiInsertForm')">Submit</button>
+	    <button class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('itiInsertForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -287,7 +287,7 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('ItiUpdateForm')">Submit</button>
+	    <button class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('ItiUpdateForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>

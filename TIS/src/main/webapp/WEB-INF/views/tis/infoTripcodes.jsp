@@ -98,7 +98,7 @@
 	    </thead>
 	    <tbody>
 	    <c:forEach items="${te }" var="ele">
-	    	<tr onclick="openUpdateForm('TripCodesUpdate', '${ele.id }')" id="TripCodesUpdate_${ele.id }">
+	    	<tr class="tr-style" onclick="openUpdateForm('TripCodesUpdate', '${ele.id }')" id="TripCodesUpdate_${ele.id }">
 	        <td>${ele.id }</td>
 	        <td>${ele.event_name }</td>
 	        <td>${ele.event_desc }</td>
@@ -130,7 +130,7 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TripCodesForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TripCodesForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -160,7 +160,7 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TripCodesUpdateForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TripCodesUpdateForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -202,7 +202,7 @@ function openUpdateForm(para, id){
 	    </thead>
 	    <tbody>
 	    <c:forEach items="${tv }" var="ele">
-	    	<tr onclick="openUpdateLocationsForm('LocationsUpdate', '${ele.id }')" id="LocationsUpdate_${ele.id }">
+	    	<tr class="tr-style" onclick="openUpdateLocationsForm('LocationsUpdate', '${ele.id }')" id="LocationsUpdate_${ele.id }">
 	        <td>${ele.id}</td>
 	        <td>${ele.venue_pic}</td>
 	        <td>${ele.venue_name}</td>
@@ -244,7 +244,7 @@ function openUpdateForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('LocationsForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('LocationsForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -277,7 +277,7 @@ function openUpdateForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('LocationsUpdateForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('LocationsUpdateForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -313,7 +313,7 @@ function openUpdateLocationsForm(para, id){
 	    </thead>
 	    <tbody>
 	    <c:forEach items="${tfac }" var="ele">
-	    	<tr onclick="openUpdateFacForm('FacUpdate', '${ele.id }')" id="FacUpdate_${ele.id }">
+	    	<tr class="tr-style" onclick="openUpdateFacForm('FacUpdate', '${ele.id }')" id="FacUpdate_${ele.id }">
 	        <td>${ele.id}</td>
 	        <td>${ele.fac_title}</td>
 	        <td>${ele.fac_title_loc}</td>
@@ -340,7 +340,7 @@ function openUpdateLocationsForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('FacForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('FacForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -363,7 +363,7 @@ function openUpdateLocationsForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('FacUpdateForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('FacUpdateForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -393,7 +393,7 @@ function openUpdateFacForm(para, id){
 	    </thead>
 	    <tbody>
 	    <c:forEach items="${tpol }" var="ele">
-	    	<tr onclick="openUpdatePolForm('PolUpdate', '${ele.id }')" id="PolUpdate_${ele.id }">
+	    	<tr class="tr-style" onclick="openUpdatePolForm('PolUpdate', '${ele.id }')" id="PolUpdate_${ele.id }">
 	        <td>${ele.id}</td>
 	        <td>${ele.pol_title}</td>
 	        <td>${ele.pol_title_loc}</td>
@@ -420,7 +420,7 @@ function openUpdateFacForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('PolForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('PolForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -443,7 +443,7 @@ function openUpdateFacForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('PolUpdateForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('PolUpdateForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -473,7 +473,7 @@ function openUpdatePolForm(para, id){
 	    </thead>
 	    <tbody>
 	    <c:forEach items="${ttrs }" var="ele">
-	    	<tr onclick="openUpdateTrsForm('TrsUpdate', '${ele.id }')" id="TrsUpdate_${ele.id }">
+	    	<tr class="tr-style" onclick="openUpdateTrsForm('TrsUpdate', '${ele.id }')" id="TrsUpdate_${ele.id }">
 	        <td>${ele.id}</td>
 	        <td>${ele.trs_title}</td>
 	        <td>${ele.trs_title_loc}</td>
@@ -500,7 +500,7 @@ function openUpdatePolForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TrsForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TrsForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -523,7 +523,7 @@ function openUpdatePolForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TrsUpdateForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TrsUpdateForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>

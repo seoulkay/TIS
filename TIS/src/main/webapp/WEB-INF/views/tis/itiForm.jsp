@@ -115,13 +115,13 @@
 	<div class="row">
 	<table class="table table-bordered" id="profile_tbl">
 		<tr class="info">
-			<td>id</td>
-			<td>desc</td>
-			<td>desc_local</td>
-			<td>stmp</td>
-			<td>note</td>
-			<td>note_local</td>
-			<td>trs_id</td>
+			<td style="width:2%" class="form-style info">Id</td>
+			<td style="width:20%" class="form-style info">Description</td>
+			<td style="width:20%" class="form-style info">Description (Local)</td>
+			<td style="width:20%" class="form-style info">Date & Time</td>
+			<td style="width:15%" class="form-style info">Note</td>
+			<td style="width:15%" class="form-style info">Note (Local)</td>
+			<td style="width:8%" class="form-style info">Transportation</td>
 		</tr>
 		<c:forEach items="${tidl}" var="ele">
 		<tr class="updateIti">
@@ -164,13 +164,12 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('itiDetInsertForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('itiDetInsertForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
-	</div>
-	
-	<div class="modal" id="itiDetUpdateForm" role="dialog">
+	</div>	
+	<div class="modal" id="itiDetUpdateForm" role="dialog">	
 		<div class="modal-dialog">
 		<div class="modal-content-style modal-content">
 		<div class="modal-header-style modal-header">
@@ -200,14 +199,12 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('itiDetUpdate')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('itiDetUpdate')">Submit</button>
 	  	</div>
 		</div>
 		</div>
-	</div>
-	
-	</div>
-	
+	</div>	
+	</div>	
 </div>
 
 

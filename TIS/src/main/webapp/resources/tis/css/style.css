@@ -141,6 +141,46 @@ video {
 	display: inline-block;
     padding: 6px 12px;
     margin-bottom: 0;
+    font-size: 0.7em;
+    font-weight: 600;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: transparent;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: transparent;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    border-radius: 4px;	
+}
+
+.modal-btn-style{
+	background-color: #5cb85c;
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
     font-size: 1em;
     font-weight: 600;
     line-height: 1.42857143;
@@ -185,6 +225,13 @@ video {
 	padding-top: 0px;
 }
 
+.modal-body-style2{
+	padding-top: 25px;
+	padding-bottom: 0px; 
+	text-align: center; 
+	vertical-align: middle;	
+}
+
 .modal-header-style{
 	background-color: #008fd4;
 	color: #ffffff;
@@ -200,10 +247,22 @@ th{
 	background-color: #008fd4 !important;
 	color: #ffffff;
 	text-align: center;
+	vertical-align: middle;
+}
+
+.tr-style{
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.tr-style:hover{
+	background-color:#c5ff49;
+	text-decoration:none;
 }
 
 td{
 	color: #000000;
+	vertical-align: middle;
 }
 
 label { font-weight:400; }

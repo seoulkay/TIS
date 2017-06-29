@@ -99,7 +99,7 @@
 	    </thead>
 	    <tbody>
 	    <c:forEach items="${tsup }" var="ele">
-	    	<tr id="SupUpdate_${ele.id }">
+	    	<tr class="tr-style" id="SupUpdate_${ele.id }">
 		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.id}</td>
 		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')" tisvalue="${ele.event_id }">${ele.event_name}</td>
 		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.support_title}</td>
@@ -131,7 +131,7 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('SupForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('SupForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -158,7 +158,7 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('SupUpdateForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('SupUpdateForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -170,10 +170,9 @@
 		Supports Assign
 		</div>
 		<form:form method="post" action="SupAssForm" modelAttribute="TisShifteList" id="SupAssForm">
-		<div class="label-style modal-body-style modal-body">
-				
+		<div class="label-style modal-body-style2 modal-body">				
 			<c:forTokens items = "A,B,C" delims = "," var = "name" varStatus="status">
-			<label>${name }</label>
+			<label style="padding-right:10px;">${name }</label>
 			<select name="shifts[${status.index}].emp_id" id="${status.index}emp_id">
 			<option value="0">None</option>
 			<c:forEach items="${temp }" var="ele">
@@ -183,8 +182,7 @@
 			<input type="hidden" name="shifts[${status.index}].event_id" id="${status.index}event_id"><br/>
 			<input type="hidden" name="shifts[${status.index}].supports_id" id="${status.index}supports_id"><br/>
 			<input type="hidden" name="shifts[${status.index}].group_name" value="${name }">
-			</c:forTokens>
-		
+			</c:forTokens>		
 		</div>
 		<div class="modal-footer">
 <!-- 	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('SupForm')">Submit</button> -->

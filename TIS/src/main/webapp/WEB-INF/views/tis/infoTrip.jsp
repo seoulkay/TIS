@@ -103,7 +103,7 @@
 	    <tbody>
 	    <c:forEach items="${ttr }" var="ele">
 	    	
-	    	<tr onclick="goinfoTripForm(${ele.event_id},${ele.emp_id})">
+	    	<tr class="tr-style" onclick="goinfoTripForm(${ele.event_id},${ele.emp_id})">
 	        <td>${ele.id }</td>
 	        <td>${ele.event_name }</td>
 	        <td>${ele.first_name } ${ele.last_name }</td>
@@ -164,7 +164,7 @@
 	</form>
 </div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('AddTripFormForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('AddTripFormForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
