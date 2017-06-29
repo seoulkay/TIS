@@ -56,6 +56,7 @@
     
     <!-- Favicons -->
 	<link rel="shortcut icon" href="https://www.ufo79.com/image/favicon.ico">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <nav class="navbar navbar-default" style="height: 6em ; background-size: 2000px 7em; background-image: url('${pageContext.request.contextPath}/resources/tis/image/headerGeneric.png'); border-radius:0; border:0">
   <div class="container-fluid">
@@ -63,6 +64,18 @@
 <!--     <div class="navbar-header" >  -->
 <!--       <a class="navbar-brand" href="#" style="padding-top: 2em;color: WHITE"> -->
       	<h4 class="navbar-brand" style="color: WHITE; font-size: 1.5em; padding-top: 1.5em;">Trip Info System</h4>
+      	
+      	<button class="btn" style="margin-top:2em" onclick="signout()">sign out</button>
+      	<script>
+      	function signout(){
+	      	var c = confirm("Signing out?");
+	      	if(c == true){
+	      		location.href = 'signout';
+	      	}else{
+	      		//stays in the site
+	      	}
+      	}
+      	</script>
 <!--       </a> -->
      <img class="img-responsive" alt="" src="${pageContext.request.contextPath}/resources/tis/image/Atos.svg" style="max-height: 2em; max-width:15%;margin-top: 2em;margin-right: 1em; float:right;"  >
     </div>
@@ -87,7 +100,7 @@
 <div class="container">
 	<div class="row">	
 	<div class="col-sm-2">
-	 <img class="img-responsive" alt="" src="https://www.ufo79.com/image/tisImage/${em.picture }" >
+	 <img class="img-responsive" alt="" style="min-height: 10em; max-height: 10em" src="https://www.ufo79.com/image/tisImage/${em.picture }" >
 	</div>
 	<div class="col-sm-10">
 	<h4>${em.first_name } ${em.last_name }</h4>
@@ -121,9 +134,25 @@
 				    </thead>
 				    <tbody>
 				      <tr>
-				        <td><fmt:formatDate value='${ele.acc_begin }' pattern = 'yyyy-MM-dd' /></td>
-				        <td><fmt:formatDate value='${ele.acc_end }' pattern = 'yyyy-MM-dd' /></td>
-				        <td></td>
+				        <td>
+				        	<fmt:formatDate value='${ele.acc_begin }' pattern = 'yyyy-MM-dd'/>
+				        	<fmt:formatDate value='${ele.acc_begin }' pattern = 'MM' var="bm"/>
+				        	<fmt:formatDate value='${ele.acc_begin }' pattern = 'dd' var="bd"/>
+				        </td>
+				        <td>
+				        	<fmt:formatDate value='${ele.acc_end }' pattern = 'yyyy-MM-dd'/>
+				        	<fmt:formatDate value='${ele.acc_end }' pattern = 'MM' var="em"/>
+				        	<fmt:formatDate value='${ele.acc_end }' pattern = 'dd' var="ed"/>
+				        </td>
+				        <td>
+				        
+						<!-- 날짜 빼기 -->
+						<jsp:useBean id="daysFromNow" class="java.util.Date">
+						<c:set target="${daysFromNow}" property="time" value="${ele.acc_end.time - ele.acc_begin.time}" />
+						</jsp:useBean>	
+						<fmt:formatDate value='${daysFromNow}' pattern = 'dd'/>
+				        
+				        </td>
 				        <td>${ele.acc_room }</td>
 				        <td>${ele.acc_pin}</td>
 				      </tr>
@@ -137,9 +166,9 @@
 			<c:forEach items="${tfac }" var="elee">
 			<c:set var="fac_var" value=" ${elee.id },"/>
 			<c:if test = "${fn:contains(ele.acc_fac, fac_var)}">
-			 <div class="col-sm-4"><img style="float:left; max-height: 2em; padding-right: 1em" src="https://www.ufo79.com/image/tisImage/${elee.fac_icon }" class="img-responsive"><div style="padding: 0.1em;"><h4 style="color: GREEN">${elee.fac_title }</h4></div>
-			 <div style="clear:both"></div>
-			 </div>
+			<div class="col-sm-3">
+			<p style="color: #5CB85C"><i class="material-icons">${elee.fac_icon }&nbsp&nbsp&nbsp</i><span style="size: 0.3em; vertical-align: top">${elee.fac_title } / ${elee.fac_title_loc }</span></p>
+			</div>
 			</c:if>
 			</c:forEach>
 			</div>
@@ -150,7 +179,7 @@
 			<c:forEach items="${tpol }" var="elee">
 			<c:set var="pol_var" value=" ${elee.id },"/>
 			<c:if test = "${fn:contains(ele.acc_pol, pol_var)}">
-			<li>${elee.pol_title }</li>
+			<li>${elee.pol_title } / ${elee.pol_title_loc }</li>
 			</c:if>
 			</c:forEach>
 			</ul>
@@ -177,7 +206,7 @@
 		<c:forEach items="${ele.itiDetail }" var="elee">
 					  <tr>
 				        <td><fmt:formatDate value='${elee.stmp }' pattern = 'HH:mm' /></td>
-				        <td></td>
+				        <td><i class="material-icons">${elee.trs_icon }&nbsp&nbsp&nbsp</i><span style="size: 0.3em; vertical-align: top">${elee.trs_title } / ${elee.trs_title_loc }</span></td>
 				        <td>${elee.desc } / ${elee.desc_local }</td>
 				        <td>${elee.note } / ${elee.note_local }</td>
 				      </tr>
@@ -188,31 +217,51 @@
 	
 	</div>
 	<div class="row">	
+	<h3><span class="label label-success">Other</span></h3>
+	<p>${to.note }</p>
+	</div>
+	<div class="row">	
 	<h3><span class="label label-success">My Group</span></h3>
 	</div>
 	<div class="row">
+	<div class="col-sm-4">
 	<h4>${ttw[0].tisTeamList[0].event_name }</h4>
 	</div>
+	<div class="col-sm-4">
+	<h4 align="right">Group</h4>
+	</div>
+	<div class="col-sm-4">
+	<select class="form-control group-selector" id="group-selector">
+	<option value="0">SELECT GROUP</option>
+	<c:forEach items="${ttw[0].tisTeamList }" var="ele" varStatus="stat">
+			<option value="${ele.group_name }">${ele.group_name }</option>
+	</c:forEach>
+	</select>
+	</div>
+	</div>
 	<div class="row">
-	
-	
 	<c:forEach items="${ttw }" var="ele" varStatus="stat">
 	<table class="table table-bordered">
 	      <tr class="info">
 	        <th colspan="4">${ele.tisTeamList[0].support_title }</th>
 	      </tr>
 	      <c:forEach items="${ele.tisTeamList }" var="elee">
-	      <tr>
-			<td>${elee.first_name } ${elee.last_name }</td>
-			<td>${elee.group_name }</td>
-			<td>${elee.support_tel }</td>
-			<td>YT LEE</td>
+	      <tr style="display: none;" class="group_tr group_${elee.group_name }">
+	      	<td class="col-sm-3"><img class="img-responsive" alt="" style="max-height: 5em" src="https://www.ufo79.com/image/tisImage/${elee.picture }" ></td>
+	      	<td class="col-sm-3">${elee.first_name } ${elee.last_name }</td>
+	      	<td class="col-sm-3">${elee.support_tel }</td>
 	      </tr>
 	      </c:forEach>
 	  </table>
 	  </c:forEach>
 	</div>
 </div>
+<script>
+$( ".group-selector" ).change(function() {
+	  $(".group_tr").hide();
+	  $(".group_"+$("#group-selector").val()).show();
+	});
+</script>
 
     
     <!-- #footer -->
@@ -259,12 +308,25 @@
 var neighborhoods = [];
 var markers = [];
 var map;
+
+var iconBase = 'https://www.ufo79.com/image/';
+var icons = {
+  hotel:{
+	  icon: iconBase + 'NEW_icon_UFO_me.svg'
+  },
+  c_venue:{
+	  icon: iconBase + 'icon_pin_20px.svg'
+  },
+  n_venue:{
+	  icon: iconBase +'icon_pin_15px_off.svg'
+  }
+};
 /**
  * 
 */
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
-	    zoom: 18,
+	    zoom: 10,
 	    center: {lat: 37.752, lng: 128.891},
 	    zoomControl: true,
 	    mapTypeControl: false,
@@ -274,7 +336,72 @@ function initMap() {
 	    fullscreenControl: true
 	  });
 }
+/**
+ * 
+*/
+function addMarkerWithTimeout(position, timeout) {
+  window.setTimeout(function() {
+  	var infowindow = new google.maps.InfoWindow({
+	    content: position.content
+	  });
+  
+  	var pos = {
+          lat: position.lat,
+          lng: position.lng
+        };
+  
+ 	var marker = new google.maps.Marker({
+      position: pos,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      icon: icons[position.type].icon
+      
+ 	});
+ 	marker.addListener('click', function() {
+	    infowindow.open(map, marker);
+  	});
+    markers.push(marker);
+	}, timeout);
+}
+/**
+ * 
+*/	
+function drop() {
+  for (var i = 0; i < neighborhoods.length; i++) {
+    addMarkerWithTimeout(neighborhoods[i], i * 50);
+  }
+  //window.setTimeout(function() {refreshBtn();}, (neighborhoods.length+1)*50);
+}
 
+/**
+ * 마커 세팅
+ */	
+function markerSet(){
+	$.post( "/TIS/get/venue")
+       .done(function( data ) {
+         var go = JSON.parse(JSON.stringify(data));		         
+         for(var i = 0; i < go.length; i++){
+        	 var target = {};
+        	 target.lat = parseFloat((Number(go[i].lat)));
+        	 target.lng = parseFloat((Number(go[i].lng)));
+        	 if(go[i].venue_type  == 'hotel'){
+        		 target.content = '<h4>'+go[i].venue_name+'</h4><br><h4>'+go[i].venue_name_loc+'</h4>';
+        		 target.type = "hotel";
+        	 }else if(go[i].venue_type  == 'c_venue'){
+        		 target.content = '<h4>'+go[i].venue_name+'</h4><br><h4>'+go[i].venue_name_loc+'</h4>';
+        		 target.type = "c_venue";
+        	 }else if(go[i].venue_type  == 'n_venue'){
+        		 target.content = '<h4>'+go[i].venue_name+'</h4><br><h4>'+go[i].venue_name_loc+'</h4>';
+        		 target.type = "n_venue";
+        	 }
+        	 
+	         neighborhoods.push(target);
+         }
+         drop();
+    });
+}
+
+markerSet();
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN9VDOjhzw7kPKEbFw7LEVoVreCXiz87E&callback=initMap" async defer></script>
@@ -296,4 +423,17 @@ function initMap() {
   ga('send', 'pageview');
 
 </script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5953488e50fd5105d0c82fde/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
 </html>
