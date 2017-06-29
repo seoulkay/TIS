@@ -224,13 +224,10 @@
 	<h3><span class="label label-success">My Group</span></h3>
 	</div>
 	<div class="row">
-	<div class="col-sm-4">
+	<div class="col-sm-6">
 	<h4>${ttw[0].tisTeamList[0].event_name }</h4>
 	</div>
-	<div class="col-sm-4">
-	<h4 align="right">Group</h4>
-	</div>
-	<div class="col-sm-4">
+	<div class="col-sm-6">
 	<select class="form-control group-selector" id="group-selector">
 	<option value="0">SELECT GROUP</option>
 	<c:forEach items="${ttw[0].tisTeamList }" var="ele" varStatus="stat">
