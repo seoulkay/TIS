@@ -14,7 +14,6 @@
 <!--[if (gte IE 10)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 
 <head>
-    
     <!-- Your Basic Site Informations -->
 	<title>TIS</title>
     <meta charset="UTF-8">
@@ -94,7 +93,7 @@
 	<div class="row">
 	<table class="table table-bordered" id="profile_tbl">
 		<tr>
-			<td class="info">
+			<td class="form-style info">
 			Name
 			</td>
 			<td>
@@ -116,7 +115,7 @@
 	<div class="row">
 	<table class="table table-bordered" id="event_tbl">
 		<tr>
-			<td class="info">
+			<td class="form-style info">
 			Event
 			</td>
 			<td>
@@ -132,7 +131,7 @@
 	</table>
 	</div>
 	<div class="row">	
-	<h4>Accommodation <button class="btn" disabled="disabled">+</button></h4>
+	<h4>Accommodation <button class="btn-style" disabled="disabled">+</button></h4>
 	</div>
 	<div class="row">
 	<form:form method="post" action="TripAccForm" modelAttribute="TisAccom" id="TripAccForm">
@@ -141,7 +140,7 @@
 	<input type="hidden" name="emp_id" value="${tripinfo.emp_id }">
 	<table class="table table-bordered" id="acc_tbl">
 		<tr>
-			<td class="info">
+			<td class="form-style info">
 			Acc. Name
 			</td>
 			<td>
@@ -156,12 +155,12 @@
 			</td>
 		</tr>
 <!-- 		<tr><td class="info">Address</td><td></td></tr> -->
-		<tr><td class="info">Check-in</td><td><input type="date" class="form-control" value="<fmt:formatDate value='${tacc.acc_begin }' pattern = 'yyyy-MM-dd' />" name="acc_begin"></td></tr>
-		<tr><td class="info">Check-out</td><td><input type="date" class="form-control" value="<fmt:formatDate value='${tacc.acc_end }' pattern = 'yyyy-MM-dd' />" name="acc_end"></td></tr>
-		<tr><td class="info">Night(s)</td><td></td></tr>
-		<tr><td class="info">Room No.</td><td><input type="text" class="form-control" value="${tacc.acc_room }" name="acc_room"></td></tr>
-		<tr><td class="info">Acc. Note</td><td><input type="text" class="form-control" value="${tacc.acc_pin }" name="acc_pin"></td></tr>
-		<tr><td class="info">Facilities</td><td>
+		<tr><td class="form-style info">Check-in</td><td><input type="date" class="form-control" value="<fmt:formatDate value='${tacc.acc_begin }' pattern = 'yyyy-MM-dd' />" name="acc_begin"></td></tr>
+		<tr><td class="form-style info">Check-out</td><td><input type="date" class="form-control" value="<fmt:formatDate value='${tacc.acc_end }' pattern = 'yyyy-MM-dd' />" name="acc_end"></td></tr>
+		<tr><td class="form-style info">Night(s)</td><td></td></tr>
+		<tr><td class="form-style info">Room No.</td><td><input type="text" class="form-control" value="${tacc.acc_room }" name="acc_room"></td></tr>
+		<tr><td class="form-style info">Acc. Note</td><td><input type="text" class="form-control" value="${tacc.acc_pin }" name="acc_pin"></td></tr>
+		<tr><td class="form-style info">Facilities</td><td>
 		<c:forEach items="${tfac }" var="ele">
 		<input type="checkbox" aria-label="" value="${ele.id }" name="acc_fac_list"
 		<c:set var="fac_var" value=" ${ele.id },"/>
@@ -173,7 +172,7 @@
 		 ${ele.fac_title }
 		</c:forEach>
 		</td></tr>
-		<tr><td class="info">Policy</td><td>
+		<tr><td class="form-style info">Policy</td><td>
 		<c:forEach items="${tpol }" var="ele">
 		<input type="checkbox" aria-label="" value="${ele.id }" name="acc_pol_list"
 		<c:set var="pol_var" value=" ${ele.id },"/>
@@ -183,7 +182,7 @@
 		> ${ele.pol_title }
 		</c:forEach>
 		</td></tr>
-		<tr><td class="info">information</td><td>
+		<tr><td class="form-style info">information</td><td>
 		<input class="form-control" name="acc_desc" value = 
 		<c:choose>
 			<c:when test="${empty tacc.acc_desc}">
@@ -196,12 +195,12 @@
 		>
 		</td></tr>
 	</table>
-		<input type="submit" class="btn" value="Submit">
+		<input type="submit" class="btn-style" value="Submit">
 	</form:form>
 	<br>
 	</div>
 	<div class="row">	
-	<h4>Itinerary <button class="btn" onclick="openForm('itiForm')">+</button></h4>
+	<h4>Itinerary <button class="btn-style" onclick="openForm('itiForm')">+</button></h4>
 	</div>
 	<div class="row">
 	<table class="table table-bordered" id="event_tbl">
@@ -215,37 +214,37 @@
 <!-- 		</tr> -->
 <!-- 		<tr><td class="info">Date</td><td><input type="text" class="form-control"></td></tr> -->
 <!-- 		<tr><td class="info">Schedule <button class="btn btn-success">+</button></td><td><input type="text" class="form-control"></td></tr> -->
-		<tr class="info">
-			<td>Detail</td>
-			<td>ID</td>
-			<td>Desc</td>
-			<td>Desc Local</td>
-			<td>Time</td>
+		<tr class="form-style info">			
+			<td style ="width:2%" class="form-style info">Id</td>
+			<td style ="width:35%"class="form-style info">Description</td>
+			<td style ="width:35%"class="form-style info">Description (Local)</td>
+			<td style ="width:20%"class="form-style info">Date & Time</td>
+			<td style ="width:8%" class="form-style info">Detail</td>
 		</tr>
 		<c:forEach items="${ti }" var="ele">
-		<tr>
-			<td><button class="btn" onclick="location.href='itiForm?id=${ele.id}'">D</button></td>
+		<tr>			
 			<td class="updateIti iti_id">${ele.id }</td>
 			<td class="updateIti">${ele.desc }</td>
 			<td class="updateIti">${ele.desc_local }</td>
 			<td class="updateIti"><fmt:formatDate value='${ele.stmp }' pattern = 'yyyy-MM-dd HH:mm' /></td>
+			<td style="text-align: center; font-size:1.3em;"><button class="btn-style" onclick="location.href='itiForm?id=${ele.id}'">Edit</button></td>
 		</tr>
 		</c:forEach>
 	
 	</table>
 	<div class="modal" id="itiForm" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Itinerary
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="itiInsertForm" action="ItiForm" method="POST">
-			<label>desc</label>
+			<label>Description</label>
 			<input type="text" name="desc" placeholder="desc" class="form-control">
-			<label>desc_local</label>
+			<label>Description (Local)</label>
 			<input type="text" name="desc_local" placeholder="desc_local" class="form-control">
-			<label>stmp</label>
+			<label>Date & Time</label>
 			<input type="datetime-local" class="form-control" name="stmp" pattern = 'yyyy-MM-ddTHH:mm'>
 			<input type="hidden" name="trip_id" value="${tripinfo.id }">
 			<input type="hidden" name="event_id" value="${tripinfo.event_id }">
@@ -253,7 +252,7 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('itiInsertForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('itiInsertForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -261,17 +260,17 @@
 
 	<div class="modal" id="ItiUpdate" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		TripCodes
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="ItiUpdateForm" action="ItiUpdateForm" method="POST">
-			<label>desc</label>
+			<label>Description</label>
 			<input type="text" name="desc" id="iti_desc" placeholder="desc" class="form-control">
-			<label>desc_local</label>
+			<label>Description (Local)</label>
 			<input type="text" name="desc_local" id="iti_desc_local" placeholder="desc_local" class="form-control">
-			<label>stmp</label>
+			<label>Date & Time</label>
 			<input type="datetime-local" class="form-control" name="stmp" id ="iti_stmp" pattern = 'yyyy-MM-dd HH:mm'>
 			<input type="hidden" name="trip_id" id="iti_trip_id" value="${tripinfo.id }">
 			<input type="hidden" name="id" id="iti_id">
@@ -280,7 +279,7 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('ItiUpdateForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('ItiUpdateForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -293,13 +292,13 @@
 	<form method="POST" action="OtherForm">
 	<div class="row">
 	<table class="table table-bordered" id="event_tbl">
-		<tr><td class="info">Note</td></tr>
+		<tr><td class="form-style info">Note</td></tr>
 		<tr><td><textarea id="otherNote" name="note" >${to.note }</textarea></td></tr>
 	</table>
 	<input type="hidden" name="event_id" value="${tripinfo.event_id }">
 	<input type="hidden" name="emp_id" value="${tripinfo.emp_id }">
 	<input type="hidden" name="id" value="${tripinfo.emp_id }">	
-	<input type="submit" class="btn" value="Submit">
+	<input type="submit" class="btn-style" value="Submit">
 	</div>
 	</form>
 	<div class="row" style="height: 2em">	

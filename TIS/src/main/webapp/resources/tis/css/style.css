@@ -123,8 +123,57 @@ video {
 
 .box-style{
 	width: 35%;
-	background-color: #ffffff !important;
+	background-color: #008fd4 !important;
 	font-weight: 500;
+	color: #ffffff;
+}
+
+.form-style{
+	width: 20%;
+	background-color: #008fd4 !important;
+	font-weight: 500;
+	color: #ffffff;
+	vertical-align: middle !important;
+}
+
+.btn-style{
+	background-color: #5cb85c;
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: transparent;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: transparent;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    border-radius: 4px;	
 }
 
 .label-style label{
@@ -302,13 +351,13 @@ input[type="button"], input[type="submit"], input[type="reset"], button {
 .btn-custom.btn-rounded, input[type="button"].btn-rounded, input[type="submit"].btn-rounded, input[type="reset"].btn-rounded, button.btn-rounded { border-radius:25px; }
 .btn-custom:hover, input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover, button:hover, .btn-custom.btn-purple:hover, input[type="button"].btn-purple:hover, input[type="submit"].btn-purple:hover, input[type="reset"].btn-purple:hover, button.btn-purple:hover {
 	color:#FFF !important;
-	background-color:#594e90;
-	border-color:#594e90;
+	background-color:#c5ff49;
+	border-color:#c5ff49;
 }
 .btn-custom.btn-blue:hover, input[type="button"].btn-blue:hover, input[type="submit"].btn-blue:hover, input[type="reset"].btn-blue:hover, button.btn-blue:hover {
 	color:#FFF !important;
-	background-color:#296ae1;
-	border-color:#296ae1;
+	background-color:#9aca3c;
+	border-color:#9aca3c;
 }
 .btn-custom.btn-green:hover, input[type="button"].btn-green:hover, input[type="submit"].btn-green:hover, input[type="reset"].btn-green:hover, button.btn-green:hover {
 	color:#FFF !important;

@@ -94,11 +94,11 @@
 	<div class="row">
 	<table class="table table-bordered" id="profile_tbl">
 		<tr class="info">
-			<td>Iti Time</td>
-			<td>Desc</td>
-			<td>Local desc</td>
-			<td>Emp name</td>
-			<td>Event name</td>
+			<td style="width:20%" class="form-style info">Date & Time</td>
+			<td style="width:20%" class="form-style info">Description</td>
+			<td style="width:20%" class="form-style info">Description (Local)</td>
+			<td style="width:20%" class="form-style info">Employee name</td>
+			<td style="width:20%" class="form-style info">Event name</td>
 		</tr>
 		<tr>
 			<td>${ti.stmp }</td>
@@ -110,17 +110,17 @@
 	</table>
 	</div>
 	<div class="row">	
-	<h4>Detail <button class="btn" onclick="openForm('itiDetForm')">+</button></h4>
+	<h4>Detail <button class="btn-style" onclick="openForm('itiDetForm')">+</button></h4>
 	</div>
 	<div class="row">
 	<table class="table table-bordered" id="profile_tbl">
 		<tr class="info">
-			<td>id</td>
-			<td>desc</td>
-			<td>desc_local</td>
-			<td>stmp</td>
-			<td>note</td>
-			<td>note_local</td>
+			<td style="width:2%" class="form-style info">Id</td>
+			<td style="width:20%" class="form-style info">Description</td>
+			<td style="width:20%" class="form-style info">Description (Local)</td>
+			<td style="width:18%" class="form-style info">Date & Time</td>
+			<td style="width:20%" class="form-style info">Note</td>
+			<td style="width:20%" class="form-style info">Note (Local)</td>
 		</tr>
 		<c:forEach items="${tidl}" var="ele">
 		<tr class="updateIti">
@@ -133,30 +133,29 @@
 		</tr>
 		</c:forEach>
 	</table>
-	
 	<div class="modal" id="itiDetForm" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Itinerary Detail
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="itiDetInsertForm" action="itiDetForm" method="POST">
-			<label>desc</label>
+			<label>Description</label>
 			<input type="text" name="desc" placeholder="desc" class="form-control">
-			<label>desc_local</label>
+			<label>Description (Local)</label>
 			<input type="text" name="desc_local" placeholder="desc_local" class="form-control">
-			<label>stmp</label>
+			<label>Date & Time</label>
 			<input type="datetime-local" class="form-control" name="stmp" pattern = 'yyyy-MM-ddTHH:mm'>
 			<input type="hidden" name="iti_id" value="${ti.id }">
-			<label>note</label>
+			<label>Note</label>
 			<input type="text" name="note" placeholder="note" class="form-control">
-			<label>note_local</label>
+			<label>Note (Local)</label>
 			<input type="text" name="note_local" placeholder="note_local" class="form-control">
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('itiDetInsertForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('itiDetInsertForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -164,28 +163,28 @@
 	
 	<div class="modal" id="itiDetUpdateForm" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Itinerary Detail
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="itiDetUpdate" action="itiDetUpdateForm" method="POST">
-			<label>desc</label>
+			<label>Description</label>
 			<input type="text" id="iti_desc" name="desc" placeholder="desc" class="form-control">
-			<label>desc_local</label>
+			<label>Description (Local)</label>
 			<input type="text" id="iti_desc_local" name="desc_local" placeholder="desc_local" class="form-control">
-			<label>stmp</label>
+			<label>Date & Time</label>
 			<input type="datetime-local" class="form-control" id="iti_stmp" name="stmp" pattern = 'yyyy-MM-ddTHH:mm'>
-			<label>note</label>
+			<label>Note</label>
 			<input type="text" id="iti_note" name="note" placeholder="note" class="form-control">
-			<label>note_local</label>
+			<label>Note (Local)</label>
 			<input type="text" id="iti_note_local" name="note_local" placeholder="note_local" class="form-control">
 			<input type="hidden" name="iti_id" value="${ti.id }">
 			<input type="hidden" id="iti_det_id" name="id">
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('itiDetUpdate')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('itiDetUpdate')">Submit</button>
 	  	</div>
 		</div>
 		</div>

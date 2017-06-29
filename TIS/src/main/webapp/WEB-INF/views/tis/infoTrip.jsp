@@ -87,7 +87,7 @@
 	<div class="row">	
 	<h3>Trips</h3>
 	<h4>Trips 
-	<span class="label label-success" onclick="openForm('AddTripForm')">Add new</span>
+	<button class="btn-style" onclick="openForm('AddTripForm')">Add new</button>
 <!-- 	<a href="infoTripForm"><span class="label label-success">Add new</span></a> -->
 	</h4>
 	</div>
@@ -120,7 +120,7 @@
 	<div class="modal-header-style modal-header">
 	Add a new trip
 	</div>
-	<div class="labe-style modal-body-style modal-body">	
+	<div class="label-style modal-body-style modal-body">	
 	<h4 style="padding-top: 10px;">Profile</h4>
 	<form id="AddTripFormForm" action="tripForm" method="POST">
 	<table class="table table-bordered" id="profile_tbl">
@@ -164,7 +164,7 @@
 	</form>
 </div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('AddTripFormForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('AddTripFormForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>

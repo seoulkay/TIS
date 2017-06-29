@@ -86,7 +86,7 @@
 <div style="height: 2em"></div>
 <div class="row">	
 	<h3>Profiles</h3>
-	<h4>Profiles <span class="label label-success" onclick="openForm('Profiles')">Add new</span></h4>
+	<h4>Profiles <button class="btn-style" onclick="openForm('Profiles')">Add new</button></h4>
 	</div>
 	<div class="row">	
 	<table class="table table-bordered">
@@ -143,18 +143,18 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('ProForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('ProForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
 	</div>
 	<div class="modal" id="ProUpdate" role="dialog">
 		<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content-style modal-content">
+		<div class="modal-header-style modal-header">
 		Profiles
 		</div>
-		<div class="modal-body">
+		<div class="label-style modal-body-style modal-body">
 		<form id="ProUpdateForm" action="ProUpdateForm" method="POST">
 		<label>First Name</label>
 			<input type="text" id="ProUpdate_first_name" name="first_name" placeholder="first_name" class="form-control">
@@ -174,7 +174,7 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('ProUpdateForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('ProUpdateForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>

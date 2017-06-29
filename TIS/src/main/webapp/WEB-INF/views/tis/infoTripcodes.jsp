@@ -84,7 +84,7 @@
 <div style="height: 2em"></div>
 	<div class="row">	
 	<h3>Trip Codes</h3>
-	<h4>Events <span class="label label-success" onclick="openForm('TripCodes')">Add new</span></h4>
+	<h4>Events <button class="btn-style" onclick="openForm('TripCodes')">Add new</button></h4>
 	</div>
 	<div class="row">	
 	<table class="table table-bordered">
@@ -130,7 +130,7 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TripCodesForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TripCodesForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -160,7 +160,7 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TripCodesUpdateForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TripCodesUpdateForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -183,7 +183,7 @@ function openUpdateForm(para, id){
 </script>
 
 	<div class="row">	
-	<h4>Locations <span class="label label-success" onclick="openForm('Locations')">Add new</span></h4>
+	<h4>Locations <button class="btn-style" onclick="openForm('Locations')">Add new</button></h4>
 	</div>
 	<div class="row">	
 	<table class="table table-bordered">
@@ -244,7 +244,7 @@ function openUpdateForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('LocationsForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('LocationsForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -277,7 +277,7 @@ function openUpdateForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('LocationsUpdateForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('LocationsUpdateForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -299,7 +299,7 @@ function openUpdateLocationsForm(para, id){
 </script>
 
 <div class="row">	
-	<h4>Facilities <span class="label label-success" onclick="openForm('Facilities')">Add new</span></h4>
+	<h4>Facilities <button class="btn-style" onclick="openForm('Facilities')">Add new</button></h4>
 	</div>
 	<div class="row">	
 	<table class="table table-bordered">
@@ -340,7 +340,7 @@ function openUpdateLocationsForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('FacForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('FacForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -363,7 +363,7 @@ function openUpdateLocationsForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('FacUpdateForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('FacUpdateForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -379,7 +379,7 @@ function openUpdateFacForm(para, id){
 }
 </script>
 <div class="row">	
-	<h4>Policies <span class="label label-success" onclick="openForm('Policies')">Add new</span></h4>
+	<h4>Policies <button class="btn-style" onclick="openForm('Policies')">Add new</button></h4>
 	</div>
 	<div class="row">	
 	<table class="table table-bordered">
@@ -420,7 +420,7 @@ function openUpdateFacForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('PolForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('PolForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -443,7 +443,7 @@ function openUpdateFacForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('PolUpdateForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('PolUpdateForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -459,7 +459,7 @@ function openUpdatePolForm(para, id){
 }
 </script>
 <div class="row">	
-	<h4>Transportations <span class="label label-success" onclick="openForm('Transportations')">Add new</span></h4>
+	<h4>Transportations <button class="btn-style" onclick="openForm('Transportations')">Add new</button></h4>
 	</div>
 	<div class="row">	
 	<table class="table table-bordered">
@@ -500,7 +500,7 @@ function openUpdatePolForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TrsForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TrsForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -523,7 +523,7 @@ function openUpdatePolForm(para, id){
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TrsUpdateForm')">Submit</button>
+	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('TrsUpdateForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>

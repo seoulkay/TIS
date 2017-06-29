@@ -84,7 +84,7 @@
 <div style="height: 2em"></div>
 	<div class="row">	
 	<h3>Shifts</h3>	
-	<h4>Supports <span class="label label-success" onclick="openForm('Supports')">Add new</span></h4>
+	<h4>Supports <button class="btn-style" onclick="openForm('Supports')">Add new</button></h4>
 	</div>
 	<div class="row">	
 	<table class="table table-bordered">
@@ -104,7 +104,7 @@
 	        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.event_name}</td>
 	        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.support_title}</td>
 	        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.support_tel}</td>
-          	<td style="text-align: center; font-size:1.3em;"><span class="label label-success" onclick="openAssignSupForm(${ele.event_id}, ${ele.id}, 3)">+</span></td>
+          	<td style="text-align: center; font-size:1.3em;"><button class="btn-style" onclick="openAssignSupForm(${ele.event_id}, ${ele.id}, 3)">+</button></td>
 	      	</tr>
 	    </c:forEach>
 	    </tbody>
