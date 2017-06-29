@@ -367,6 +367,11 @@ public class TisController {
 		return "redirect:infoTripForm?event_id="+vo.getEvent_id()+"&emp_id="+vo.getEmp_id();
 	}
 	
+	@RequestMapping(value = "/signout", method = RequestMethod.GET)
+	public String signout(){
+		return "redirect:/";
+	}
+	
 	@RequestMapping(value = "/info", method = RequestMethod.POST)
 	public String tisInfo(@RequestParam("id")String id, @RequestParam("pass")String pass, Model model){
 		
@@ -417,8 +422,10 @@ public class TisController {
 			 System.out.println("No Itinery");	
 			}
 			
-			
-			
+			TisOther to = new TisOther();
+			to.setEmp_id(em.getId());
+			to.setEvent_id(em.getEvent_id());
+			to = dao.selectTisOtherByEventEmp(to);
 			
 			model.addAttribute("em", em);
 			model.addAttribute("ta", ta);
@@ -428,6 +435,7 @@ public class TisController {
 			model.addAttribute("te", te);
 			model.addAttribute("tfac", tfac);
 			model.addAttribute("tpol", tpol);
+			model.addAttribute("to", to);
 
 			model.addAttribute("ttw", dao.selectTisTeamByEvent(te.getId()));
 			
@@ -455,7 +463,7 @@ public class TisController {
 		vo.setId(id);
 		return dao.selectEventById(vo);
 	}
-	@RequestMapping(value = "getShift/{id}", method = RequestMethod.POST)
+	@RequestMapping(value = "getShift/{id}", method = {RequestMethod.POST, RequestMethod.GET})
 	public @ResponseBody List<TisShift> getShift(@PathVariable("id")int id){
 		return dao.selectShiftBySupportId(id);
 	}
@@ -528,9 +536,18 @@ public class TisController {
 		
 		TisIti ti = dao.selectTisItiById(id);
 		List<TisItiDetail> tidl = dao.selectItiDetById(id);
+		List<TisTransportations> temp = dao.selectTrs();
+		
 		
 		modal.addAttribute("ti", ti);
 		modal.addAttribute("tidl", tidl);
+		modal.addAttribute("temp", temp);
 		return "tis/itiForm";
+	}
+	
+	@RequestMapping(value = "get/venue", method = {RequestMethod.GET, RequestMethod.POST})
+	public @ResponseBody List<TisVenue> getVenue(){
+		List<TisVenue> ufoGo = dao.selectAllVenue(); 
+		return ufoGo;
 	}
 }

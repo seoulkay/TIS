@@ -115,12 +115,13 @@
 	<div class="row">
 	<table class="table table-bordered" id="profile_tbl">
 		<tr class="info">
-			<td style="width:2%" class="form-style info">Id</td>
-			<td style="width:20%" class="form-style info">Description</td>
-			<td style="width:20%" class="form-style info">Description (Local)</td>
-			<td style="width:18%" class="form-style info">Date & Time</td>
-			<td style="width:20%" class="form-style info">Note</td>
-			<td style="width:20%" class="form-style info">Note (Local)</td>
+			<td>id</td>
+			<td>desc</td>
+			<td>desc_local</td>
+			<td>stmp</td>
+			<td>note</td>
+			<td>note_local</td>
+			<td>trs_id</td>
 		</tr>
 		<c:forEach items="${tidl}" var="ele">
 		<tr class="updateIti">
@@ -130,6 +131,7 @@
 			<td><fmt:formatDate value='${ele.stmp}' pattern = 'yyyy-MM-dd HH:mm' /></td>
 			<td>${ele.note}</td>
 			<td>${ele.note_local}</td>
+			<td>${ele.trs_id}</td>
 		</tr>
 		</c:forEach>
 	</table>
@@ -152,6 +154,13 @@
 			<input type="text" name="note" placeholder="note" class="form-control">
 			<label>Note (Local)</label>
 			<input type="text" name="note_local" placeholder="note_local" class="form-control">
+			<label>Tranportation</label>
+			<select name="trs_id" class="form-control">
+			<option value="0">Select one</option>
+			<c:forEach items="${temp }" var="ele">
+				<option value="${ele.id}">${ele.trs_title }</option>
+			</c:forEach>
+			</select>
 		</form>
 		</div>
 		<div class="modal-footer">
@@ -179,6 +188,13 @@
 			<input type="text" id="iti_note" name="note" placeholder="note" class="form-control">
 			<label>Note (Local)</label>
 			<input type="text" id="iti_note_local" name="note_local" placeholder="note_local" class="form-control">
+			<label>Tranportation</label>
+			<select id="iti_trs_id" name="trs_id" class="form-control">
+			<option value="0">Select one</option>
+			<c:forEach items="${temp }" var="ele">
+				<option value="${ele.id}">${ele.trs_title }</option>
+			</c:forEach>
+			</select>
 			<input type="hidden" name="iti_id" value="${ti.id }">
 			<input type="hidden" id="iti_det_id" name="id">
 		</form>
@@ -203,6 +219,7 @@ $(".updateIti").click(function() {
     var stmp = desc_local.next();
     var note = stmp.next();
     var note_local = note.next();
+    var trs_id = note_local.next();
 
     $('#iti_desc').val(desc.text());
     $('#iti_desc_local').val(desc_local.text());
@@ -210,6 +227,7 @@ $(".updateIti").click(function() {
     $('#iti_det_id').val(id.text());
     $('#iti_note').val(note.text());
     $('#iti_note_local').val(note_local.text());
+    $('#iti_trs_id').val(trs_id.text());
     
     $('#itiDetUpdateForm').modal('show');
 });

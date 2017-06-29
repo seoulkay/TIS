@@ -35,23 +35,23 @@ $(document).ready(function() {
 	});
 	
 	/* ======= Fixed page nav when scrolled ======= */    
-    $(window).on('scroll', function() {
-        
-        $('#page-nav-wrapper').removeClass('fixed');
-         
-         var scrollTop = $(this).scrollTop();
-         var topDistance = $('#page-nav-wrapper').offset().top;
-         
-         if ( (topDistance) > scrollTop ) {
-            $('#page-nav-wrapper').removeClass('fixed');
-            $('body').removeClass('sticky-page-nav');
-         }
-         else {
-            $('#page-nav-wrapper').addClass('fixed');
-            $('body').addClass('sticky-page-nav');
-         }
-
-    });
+//    $(window).on('scroll', function() {
+//        
+//        $('#page-nav-wrapper').removeClass('fixed');
+//         
+//         var scrollTop = $(this).scrollTop();
+//         var topDistance = $('#page-nav-wrapper').offset().top;
+//         
+//         if ( (topDistance) > scrollTop ) {
+//            $('#page-nav-wrapper').removeClass('fixed');
+//            $('body').removeClass('sticky-page-nav');
+//         }
+//         else {
+//            $('#page-nav-wrapper').addClass('fixed');
+//            $('body').addClass('sticky-page-nav');
+//         }
+//
+//    });
 	
 	/* ======= Stop Video Playing When Close the Modal Window ====== */
     $("#modal-video .close").on("click", function() {

@@ -155,12 +155,20 @@
 			</td>
 		</tr>
 <!-- 		<tr><td class="info">Address</td><td></td></tr> -->
-		<tr><td class="form-style info">Check-in</td><td><input type="date" class="form-control" value="<fmt:formatDate value='${tacc.acc_begin }' pattern = 'yyyy-MM-dd' />" name="acc_begin"></td></tr>
-		<tr><td class="form-style info">Check-out</td><td><input type="date" class="form-control" value="<fmt:formatDate value='${tacc.acc_end }' pattern = 'yyyy-MM-dd' />" name="acc_end"></td></tr>
-		<tr><td class="form-style info">Night(s)</td><td></td></tr>
-		<tr><td class="form-style info">Room No.</td><td><input type="text" class="form-control" value="${tacc.acc_room }" name="acc_room"></td></tr>
-		<tr><td class="form-style info">Acc. Note</td><td><input type="text" class="form-control" value="${tacc.acc_pin }" name="acc_pin"></td></tr>
-		<tr><td class="form-style info">Facilities</td><td>
+		<tr><td class="info">Check-in</td><td><input type="date" class="form-control" value="<fmt:formatDate value='${tacc.acc_begin }' pattern = 'yyyy-MM-dd' />" name="acc_begin"></td></tr>
+		<tr><td class="info">Check-out</td><td><input type="date" class="form-control" value="<fmt:formatDate value='${tacc.acc_end }' pattern = 'yyyy-MM-dd' />" name="acc_end"></td></tr>
+		<tr><td class="info">Night(s)</td>
+			<td>
+						<!-- 날짜 빼기 -->
+						<jsp:useBean id="daysFromNow" class="java.util.Date">
+						<c:set target="${daysFromNow}" property="time" value="${tacc.acc_end.time - tacc.acc_begin.time}" />
+						</jsp:useBean>	
+						<fmt:formatDate value='${daysFromNow}' pattern = 'dd'/>
+			</td>
+		</tr>
+		<tr><td class="info">Room No.</td><td><input type="text" class="form-control" value="${tacc.acc_room }" name="acc_room"></td></tr>
+		<tr><td class="info">Acc. Note</td><td><input type="text" class="form-control" value="${tacc.acc_pin }" name="acc_pin"></td></tr>
+		<tr><td class="info">Facilities</td><td>
 		<c:forEach items="${tfac }" var="ele">
 		<input type="checkbox" aria-label="" value="${ele.id }" name="acc_fac_list"
 		<c:set var="fac_var" value=" ${ele.id },"/>

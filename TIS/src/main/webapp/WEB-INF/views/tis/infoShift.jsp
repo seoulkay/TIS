@@ -100,11 +100,11 @@
 	    <tbody>
 	    <c:forEach items="${tsup }" var="ele">
 	    	<tr id="SupUpdate_${ele.id }">
-	        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.id}</td>
-	        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.event_name}</td>
-	        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.support_title}</td>
-	        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.support_tel}</td>
-          	<td style="text-align: center; font-size:1.3em;"><button class="btn-style" onclick="openAssignSupForm(${ele.event_id}, ${ele.id}, 3)">+</button></td>
+		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.id}</td>
+		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')" tisvalue="${ele.event_id }">${ele.event_name}</td>
+		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.support_title}</td>
+		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.support_tel}</td>
+	          	<td style="text-align: center; font-size:1.3em;"><span class="label label-success" onclick="openAssignSupForm(${ele.event_id}, ${ele.id}, 3)">+</span></td>
 	      	</tr>
 	    </c:forEach>
 	    </tbody>
@@ -197,7 +197,7 @@
 	<script>
 	function openUpdateSupForm(para, id){
 		$("#"+para+"_id").val($("#"+para+"_"+id+" td:nth-child(1)").text());
-		$("#"+para+"_event_id").val($("#"+para+"_"+id+" td:nth-child(2)").text());
+		$("#"+para+"_event_id").val($("#"+para+"_"+id+" td:nth-child(2)").attr('tisvalue'));
 		$("#"+para+"_support_title").val($("#"+para+"_"+id+" td:nth-child(3)").text());
 		$("#"+para+"_support_tel").val($("#"+para+"_"+id+" td:nth-child(4)").text());
 		$('#'+para).modal('show');
@@ -210,8 +210,6 @@
 		
 		$("#"+i+"emp_id").val("0");
 		}
-		
-
 		  var url = '/TIS/getShift/'+par2;
 		  $.ajax({
 		      url: url,
@@ -229,7 +227,6 @@
 		    	  console.log("err. : "+er);
 		      }
 		  });
-		
 		
 		$('#SupportsAss').modal('show');
 	}

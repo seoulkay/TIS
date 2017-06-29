@@ -570,7 +570,21 @@
   	</update>
   	
   	<select id="selectItiDetById" parameterType="Integer" resultType="TisItiDetail">
-  	SELECT * FROM tis.iti_detail WHERE iti_id = #{param}
+  	SELECT
+	ide.id,
+	ide.stmp,
+	ide.trs_id,
+	ide.iti_id,
+	ide.`desc`,
+	ide.desc_local,
+	ide.note,
+	ide.note_local,
+	tt.trs_title,
+	tt.trs_title_loc,
+	tt.trs_icon
+	FROM tis.iti_detail ide
+	LEFT JOIN tis.Transportations tt on ide.trs_id = tt.id
+	WHERE iti_id = #{param}
   	</select>
   	
   	<select id="selectTisTeamByEvent" parameterType="Integer" resultType="TisTeam">
