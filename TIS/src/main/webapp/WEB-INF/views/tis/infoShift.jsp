@@ -173,7 +173,7 @@
 		<div class="label-style modal-body-style2 modal-body">				
 			<c:forTokens items = "A,B,C" delims = "," var = "name" varStatus="status">
 			<label style="padding-right:10px;">${name }</label>
-			<select name="shifts[${status.index}].emp_id" id="${status.index}emp_id">
+			<select name="shifts[${status.index}].emp_id" id="${name}emp_id">
 			<option value="0">None</option>
 			<c:forEach items="${temp }" var="ele">
 				<option value="${ele.id}">${ele.first_name } ${ele.last_name }</option>
@@ -205,9 +205,9 @@
 		for(i = 0 ; i < length ; i++){
 		$("#"+i+"event_id").val(par1);
 		$("#"+i+"supports_id").val(par2);
-		
 		$("#"+i+"emp_id").val("0");
 		}
+		
 		  var url = '/TIS/getShift/'+par2;
 		  $.ajax({
 		      url: url,
@@ -217,8 +217,9 @@
 		      contentType: false,
 		      success: function(result){
 		    	  for(var ele in result){
-		    		  console.log(result[ele].emp_id);
-		    		  $("#"+ele+"emp_id").val(result[ele].emp_id);
+		    		  if(result[ele].event_id == par1){
+		    			  $("#"+result[ele].group_name+"emp_id").val(result[ele].emp_id);
+		    		  }
 		    	  }
 		      },
 		      error: function(er){

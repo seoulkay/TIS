@@ -104,7 +104,7 @@
 	    </thead>
 	    <tbody>
 	    <c:forEach items="${temp }" var="ele">
-	    	<tr onclick="openUpdateProForm('ProUpdate', '${ele.id }')" id="ProUpdate_${ele.id }">
+	    	<tr class="tr-style" onclick="openUpdateProForm('ProUpdate', '${ele.id }')" id="ProUpdate_${ele.id }">
 	        <td>${ele.id}</td>
 	        <td>${ele.first_name}</td>
 	        <td>${ele.last_name}</td>
@@ -143,7 +143,7 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('ProForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('ProForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
@@ -174,7 +174,7 @@
 		</form>
 		</div>
 		<div class="modal-footer">
-	    <button type="button" class="btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('ProUpdateForm')">Submit</button>
+	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('ProUpdateForm')">Submit</button>
 	  	</div>
 		</div>
 		</div>
