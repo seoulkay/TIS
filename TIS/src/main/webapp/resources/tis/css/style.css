@@ -127,6 +127,16 @@ video {
 	padding-bottom: 1.5em !important;
 }
 
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
 .title-row-style{
 	margin-right: 0px;
 	margin-left: 0px;

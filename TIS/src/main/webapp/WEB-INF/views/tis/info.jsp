@@ -98,144 +98,155 @@
 <!-- 		</div> -->
 <!-- 	</div> -->
 <div style="width: 100%; padding-left: 1em; padding-right:1em;" class="container">
+	<!-- My profile section starts -->
 	<div class="row row-style">	
 		<div class="col-sm-2">
-		 <img class="img-responsive" alt="" style="min-height: 10em; max-height: 10em" src="https://www.ufo79.com/image/tisImage/${em.picture }" >
+		 	<img class="img-responsive" alt="" style="min-height: 10em; max-height: 10em" src="https://www.ufo79.com/image/tisImage/${em.picture }" >
 		</div>
 		<div class="col-sm-10">
-		<h4>${em.first_name } ${em.last_name }</h4>
+			<h4>${em.first_name } ${em.last_name }</h4>
 			<h5>${em.job_title }</h5>
 			<h5>${em.tel }</h5>
 			<h5>${em.email }</h5>
 		</div>
 	</div>
-	
+	<!-- My profile section ends -->
+	<hr>
+	<!-- My Accommodation section starts -->
 	<div class="row title-row-style">
-		<h3><span class="label label-success" id="accom">My accomodation</span></h3>
+		<h3><span class="label label-success" id="accom">My Accommodation</span></h3>
 	</div>
 	
 	<div class="row row-style">
 		<div id="map" style="height: 25em;"></div>
 	</div>
-			<c:forEach items="${ta }" var="ele">
-			<div class="row row-style">	
-				<p><strong>Confirmation No : </strong>ACC${ele.id }</p>
-				<p><strong>Name :</strong> ${ele.venue_name } / ${ele.venue_name_loc}</p>
-				<p><strong>Address :</strong> ${ele.venue_address } / ${ele.venue_address_loc}</p>
-				
-				<table class="table table-bordered">
-				    <thead>
-				      <tr class="info">
-				        <th>Check-in</th>
-				        <th>Check-out</th>
-				        <th>Night(s)</th>
-				        <th>Room No.</th>
-				        <th>Note</th>
-				      </tr>
-				    </thead>
-				    <tbody>
-				      <tr>
-				        <td>
-				        	<fmt:formatDate value='${ele.acc_begin }' pattern = 'yyyy-MM-dd'/>
-				        	<fmt:formatDate value='${ele.acc_begin }' pattern = 'MM' var="bm"/>
-				        	<fmt:formatDate value='${ele.acc_begin }' pattern = 'dd' var="bd"/>
-				        </td>
-				        <td>
-				        	<fmt:formatDate value='${ele.acc_end }' pattern = 'yyyy-MM-dd'/>
-				        	<fmt:formatDate value='${ele.acc_end }' pattern = 'MM' var="em"/>
-				        	<fmt:formatDate value='${ele.acc_end }' pattern = 'dd' var="ed"/>
-				        </td>
-				        <td>
-				        
-						<!-- 날짜 빼기 -->
-						<jsp:useBean id="daysFromNow" class="java.util.Date">
-						<c:set target="${daysFromNow}" property="time" value="${ele.acc_end.time - ele.acc_begin.time}" />
-						</jsp:useBean>	
-						<fmt:formatDate value='${daysFromNow}' pattern = 'dd'/>
-				        
-				        </td>
-				        <td>${ele.acc_room }</td>
-				        <td>${ele.acc_pin}</td>
-				      </tr>
-				    </tbody>
-				  </table>
-			</div>
-			<div class="row row-style">
-				  <h4 style="color: #008FD4"><strong>Facilities</strong></h4>
-			</div>
-			<div class="row row-style">	
-			<c:forEach items="${tfac }" var="elee">
-			<c:set var="fac_var" value=" ${elee.id },"/>
-			<c:if test = "${fn:contains(ele.acc_fac, fac_var)}">
-			<div class="col-sm-3">
-			<p style="color: #5CB85C"><i class="material-icons">${elee.fac_icon }&nbsp&nbsp&nbsp</i><span style="size: 0.3em; vertical-align: top">${elee.fac_title } / ${elee.fac_title_loc }</span></p>
-			</div>
-			</c:if>
-			</c:forEach>
-			</div>
-			<div style="height: 1em"></div>
-			<div class="row row-style">
-			<h4 style="color: RED"><strong>Policy</strong></h4>
-			<ul>
-			<c:forEach items="${tpol }" var="elee">
-			<c:set var="pol_var" value=" ${elee.id },"/>
-			<c:if test = "${fn:contains(ele.acc_pol, pol_var)}">
-			<li>${elee.pol_title } / ${elee.pol_title_loc }</li>
-			</c:if>
-			</c:forEach>
-			</ul>
-			<p><strong>${ele.acc_desc }</strong></p>
-			</div>			 
-			</c:forEach>
-			
-	<div class="row title-row-style">	
-	<h3><span class="label label-success">My Travel</span></h3>
+	<c:forEach items="${ta }" var="ele">
+	<div class="row row-style">	
+		<p><strong>Confirmation No : </strong>ACC${ele.id }</p>
+		<p><strong>Name :</strong> ${ele.venue_name } / ${ele.venue_name_loc}</p>
+		<p><strong>Address :</strong> ${ele.venue_address } / ${ele.venue_address_loc}</p>
+		
+		<table class="table table-bordered">
+		    <thead>
+		      <tr class="info">
+		        <th>Check-in</th>
+		        <th>Check-out</th>
+		        <th>Night(s)</th>
+		        <th>Room No.</th>
+		        <th>Note</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr>
+		        <td>
+		        	<fmt:formatDate value='${ele.acc_begin }' pattern = 'yyyy-MM-dd'/>
+		        	<fmt:formatDate value='${ele.acc_begin }' pattern = 'MM' var="bm"/>
+		        	<fmt:formatDate value='${ele.acc_begin }' pattern = 'dd' var="bd"/>
+		        </td>
+		        <td>
+		        	<fmt:formatDate value='${ele.acc_end }' pattern = 'yyyy-MM-dd'/>
+		        	<fmt:formatDate value='${ele.acc_end }' pattern = 'MM' var="em"/>
+		        	<fmt:formatDate value='${ele.acc_end }' pattern = 'dd' var="ed"/>
+		        </td>
+		        <td>
+		        
+				<!-- 날짜 빼기 -->
+				<jsp:useBean id="daysFromNow" class="java.util.Date">
+				<c:set target="${daysFromNow}" property="time" value="${ele.acc_end.time - ele.acc_begin.time}" />
+				</jsp:useBean>	
+				<fmt:formatDate value='${daysFromNow}' pattern = 'dd'/>
+		        
+		        </td>
+		        <td>${ele.acc_room }</td>
+		        <td>${ele.acc_pin}</td>
+		      </tr>
+		    </tbody>
+		  </table>
 	</div>
 	<div class="row row-style">
-	<c:forEach items="${tis}" var="ele">
-	<h4><fmt:formatDate value='${ele.stmp }' pattern = 'yyyy-MM-dd' /> ${ele.desc } / ${ele.desc_local }</h4>
-				<table class="table table-bordered">
-				    <thead>
-				      <tr class="info">
-				        <th>Time</th>
-				        <th>Transportation</th>
-				        <th>Destination</th>
-				        <th>Note</th>
-				      </tr>
-				    </thead>	
-	 			    <tbody>
-		<c:forEach items="${ele.itiDetail }" var="elee">
-					  <tr>
-				        <td><fmt:formatDate value='${elee.stmp }' pattern = 'HH:mm' /></td>
-				        <td><i class="material-icons">${elee.trs_icon }&nbsp&nbsp&nbsp</i><span style="size: 0.3em; vertical-align: top">${elee.trs_title } / ${elee.trs_title_loc }</span></td>
-				        <td>${elee.desc } / ${elee.desc_local }</td>
-				        <td>${elee.note } / ${elee.note_local }</td>
-				      </tr>
-		</c:forEach>
-				    </tbody>
-				  </table>
+		  <h4 style="color: #008FD4"><strong>Facilities</strong></h4>
+	</div>
+	<div class="row row-style">	
+	<c:forEach items="${tfac }" var="elee">
+	<c:set var="fac_var" value=" ${elee.id },"/>
+	<c:if test = "${fn:contains(ele.acc_fac, fac_var)}">
+	<div class="col-sm-3">
+	<p style="color: #5CB85C"><i class="material-icons">${elee.fac_icon }&nbsp&nbsp&nbsp</i><span style="size: 0.3em; vertical-align: top">${elee.fac_title } / ${elee.fac_title_loc }</span></p>
+	</div>
+	</c:if>
 	</c:forEach>
+	</div>
+	<div style="height: 1em"></div>
+	<div class="row row-style">
+	<h4 style="color: RED"><strong>Policy</strong></h4>
+	<ul>
+	<c:forEach items="${tpol }" var="elee">
+	<c:set var="pol_var" value=" ${elee.id },"/>
+	<c:if test = "${fn:contains(ele.acc_pol, pol_var)}">
+	<li>${elee.pol_title } / ${elee.pol_title_loc }</li>
+	</c:if>
+	</c:forEach>
+	</ul>
+	<p><strong>${ele.acc_desc }</strong></p>
+	</div>			 
+	</c:forEach>
+	<!-- My Accommodation section ends -->	
+	<hr>
+	<!-- My Travel section starts -->		
+	<div class="row title-row-style">	
+		<h3><span class="label label-success">My Travel</span></h3>
+	</div>	
+	<div class="row row-style">
+		<c:forEach items="${tis}" var="ele">
+			<h4><fmt:formatDate value='${ele.stmp }' pattern = 'yyyy-MM-dd' /> ${ele.desc } / ${ele.desc_local }</h4>
+					<table class="table table-bordered">
+					    <thead>
+					      <tr class="info">
+					        <th>Time</th>
+					        <th>Transportation</th>
+					        <th>Destination</th>
+					        <th>Note</th>
+					      </tr>
+					    </thead>	
+		 			    <tbody>
+			<c:forEach items="${ele.itiDetail }" var="elee">
+						  <tr>
+					        <td><fmt:formatDate value='${elee.stmp }' pattern = 'HH:mm' /></td>
+					        <td><i class="material-icons">${elee.trs_icon }&nbsp&nbsp&nbsp</i><span style="size: 0.3em; vertical-align: top">${elee.trs_title } / ${elee.trs_title_loc }</span></td>
+					        <td>${elee.desc } / ${elee.desc_local }</td>
+					        <td>${elee.note } / ${elee.note_local }</td>
+					      </tr>
+			</c:forEach>
+					    </tbody>
+					  </table>
+		</c:forEach>
 	
 	</div>
+	<!-- My Travel section ends -->	
+	<hr>
+	<!-- Other section starts -->	
 	<div class="row title-row-style">	
-	<h3><span class="label label-success">Other</span></h3>
-	<p>${to.note }</p>
+		<h3><span class="label label-success">Other</span></h3>
+		<p>${to.note }</p>
 	</div>
+	<!-- Other section ends -->	
+	<hr>
+	<!-- My Group section starts -->		
 	<div class="row title-row-style">	
-	<h3><span class="label label-success">My Group</span></h3>
+		<h3><span class="label label-success">My Group</span></h3>
 	</div>
 	<div class="row row-style">
-	<div style="padding-left:0px;" class="col-sm-6">
-	<h4>${ttw[0].tisTeamList[0].event_name }</h4>
-	</div>
-	<div style="padding-right:0px;" class="col-sm-6">
-	<select class="form-control group-selector" id="group-selector">
-	<option value="0">SELECT GROUP</option>
-	<c:forEach items="${ttw[0].tisTeamList }" var="ele" varStatus="stat">
-			<option value="${ele.group_name }">${ele.group_name }</option>
-	</c:forEach>
-	</select>
-	</div>
+		<div style="padding-left:0px;" class="col-sm-6">
+			<h4>${ttw[0].tisTeamList[0].event_name }</h4>
+		</div>
+		<div style="padding-left: 0px; padding-right:0px;" class="col-sm-6">
+			<select class="form-control group-selector" id="group-selector">
+			<option value="0">SELECT GROUP</option>
+			<c:forEach items="${ttw[0].tisTeamList }" var="ele" varStatus="stat">
+					<option value="${ele.group_name }">${ele.group_name }</option>
+			</c:forEach>
+			</select>
+		</div>
 	</div>
 	<div class="row row-style">
 	<c:forEach items="${ttw }" var="ele" varStatus="stat">
@@ -245,14 +256,15 @@
 	      </tr>
 	      <c:forEach items="${ele.tisTeamList }" var="elee">
 	      <tr style="display: none;" class="group_tr group_${elee.group_name }">
-	      	<td class="col-sm-3"><img class="img-responsive" alt="" style="max-height: 5em" src="https://www.ufo79.com/image/tisImage/${elee.picture }" ></td>
-	      	<td class="col-sm-3">${elee.first_name } ${elee.last_name }</td>
-	      	<td class="col-sm-3">${elee.support_tel }</td>
+	      	<td class="col-sm-2"><img class="img-responsive" alt="" style="max-height: 5em" src="https://www.ufo79.com/image/tisImage/${elee.picture }" ></td>
+	      	<td class="col-sm-5">${elee.first_name } ${elee.last_name }</td>
+	      	<td class="col-sm-5">${elee.support_tel }</td>
 	      </tr>
 	      </c:forEach>
 	  </table>
 	  </c:forEach>
 	</div>
+	<!-- My Group section ends -->	
 </div>
 <script>
 $( ".group-selector" ).change(function() {
