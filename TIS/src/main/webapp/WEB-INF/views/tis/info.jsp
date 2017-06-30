@@ -97,27 +97,28 @@
 <!-- 			</div> -->
 <!-- 		</div> -->
 <!-- 	</div> -->
-<div class="container">
-	<div class="row">	
-	<div class="col-sm-2">
-	 <img class="img-responsive" alt="" style="min-height: 10em; max-height: 10em" src="https://www.ufo79.com/image/tisImage/${em.picture }" >
-	</div>
-	<div class="col-sm-10">
-	<h4>${em.first_name } ${em.last_name }</h4>
-		<h5>${em.job_title }</h5>
-		<h5>${em.tel }</h5>
-		<h5>${em.email }</h5>
-	</div>
+<div style="width: 100%; padding-left: 1em; padding-right:1em;" class="container">
+	<div class="row row-style">	
+		<div class="col-sm-2">
+		 <img class="img-responsive" alt="" style="min-height: 10em; max-height: 10em" src="https://www.ufo79.com/image/tisImage/${em.picture }" >
+		</div>
+		<div class="col-sm-10">
+		<h4>${em.first_name } ${em.last_name }</h4>
+			<h5>${em.job_title }</h5>
+			<h5>${em.tel }</h5>
+			<h5>${em.email }</h5>
+		</div>
 	</div>
 	
-	<div class="row">	
-	<h3><span class="label label-success" id="accom">My accomodation</span></h3>
+	<div class="row title-row-style">
+		<h3><span class="label label-success" id="accom">My accomodation</span></h3>
 	</div>
-	<div class="row">
-	<div id="map" style="height: 25em;"></div>
+	
+	<div class="row row-style">
+		<div id="map" style="height: 25em;"></div>
 	</div>
 			<c:forEach items="${ta }" var="ele">
-			<div class="row">	
+			<div class="row row-style">	
 				<p><strong>Confirmation No : </strong>ACC${ele.id }</p>
 				<p><strong>Name :</strong> ${ele.venue_name } / ${ele.venue_name_loc}</p>
 				<p><strong>Address :</strong> ${ele.venue_address } / ${ele.venue_address_loc}</p>
@@ -159,10 +160,10 @@
 				    </tbody>
 				  </table>
 			</div>
-			<div class="row">
-				  <h4 style="color: #008FD4">Facilities</h4>
+			<div class="row row-style">
+				  <h4 style="color: #008FD4"><strong>Facilities</strong></h4>
 			</div>
-			<div class="row">	
+			<div class="row row-style">	
 			<c:forEach items="${tfac }" var="elee">
 			<c:set var="fac_var" value=" ${elee.id },"/>
 			<c:if test = "${fn:contains(ele.acc_fac, fac_var)}">
@@ -173,8 +174,8 @@
 			</c:forEach>
 			</div>
 			<div style="height: 1em"></div>
-			<div class="row">
-			<h4 style="color: RED">Policy</h4>
+			<div class="row row-style">
+			<h4 style="color: RED"><strong>Policy</strong></h4>
 			<ul>
 			<c:forEach items="${tpol }" var="elee">
 			<c:set var="pol_var" value=" ${elee.id },"/>
@@ -183,14 +184,14 @@
 			</c:if>
 			</c:forEach>
 			</ul>
-			<p>${ele.acc_desc }</p>
+			<p><strong>${ele.acc_desc }</strong></p>
 			</div>			 
 			</c:forEach>
 			
-	<div class="row">	
+	<div class="row title-row-style">	
 	<h3><span class="label label-success">My Travel</span></h3>
 	</div>
-	<div class="row">
+	<div class="row row-style">
 	<c:forEach items="${tis}" var="ele">
 	<h4><fmt:formatDate value='${ele.stmp }' pattern = 'yyyy-MM-dd' /> ${ele.desc } / ${ele.desc_local }</h4>
 				<table class="table table-bordered">
@@ -216,18 +217,18 @@
 	</c:forEach>
 	
 	</div>
-	<div class="row">	
+	<div class="row title-row-style">	
 	<h3><span class="label label-success">Other</span></h3>
 	<p>${to.note }</p>
 	</div>
-	<div class="row">	
+	<div class="row title-row-style">	
 	<h3><span class="label label-success">My Group</span></h3>
 	</div>
-	<div class="row">
-	<div class="col-sm-6">
+	<div class="row row-style">
+	<div style="padding-left:0px;" class="col-sm-6">
 	<h4>${ttw[0].tisTeamList[0].event_name }</h4>
 	</div>
-	<div class="col-sm-6">
+	<div style="padding-right:0px;" class="col-sm-6">
 	<select class="form-control group-selector" id="group-selector">
 	<option value="0">SELECT GROUP</option>
 	<c:forEach items="${ttw[0].tisTeamList }" var="ele" varStatus="stat">
@@ -236,7 +237,7 @@
 	</select>
 	</div>
 	</div>
-	<div class="row">
+	<div class="row row-style">
 	<c:forEach items="${ttw }" var="ele" varStatus="stat">
 	<table class="table table-bordered">
 	      <tr class="info">

@@ -121,6 +121,18 @@ video {
 	height:auto;
 }
 
+.row-style{
+	margin-right: 0px;
+	margin-left: 0px;
+	padding-bottom: 1.5em !important;
+}
+
+.title-row-style{
+	margin-right: 0px;
+	margin-left: 0px;
+	padding-bottom: 0.5em !important;
+}
+
 .box-style{
 	width: 35%;
 	background-color: #008fd4 !important;
