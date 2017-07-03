@@ -115,11 +115,8 @@
 	<!-- My Accommodation section starts -->
 	<div class="row title-row-style">
 		<h3><span class="label label-success" id="accom">My Accommodation</span></h3>
-	</div>
+	</div>	
 	
-	<div class="row row-style">
-		<div id="map" style="height: 25em;"></div>
-	</div>
 	<c:forEach items="${ta }" var="ele">
 	<div class="row row-style">	
 		<p><strong>Confirmation No : </strong>ACC${ele.id }</p>
@@ -163,8 +160,13 @@
 		    </tbody>
 		  </table>
 	</div>
+	
 	<div class="row row-style">
-		  <h4 style="color: #008FD4"><strong>Facilities</strong></h4>
+		<div id="map" style="height: 25em;"></div>
+	</div>
+	
+	<div class="row row-style">
+		  <h4 style="font-size: 1em; color: #008FD4"><strong>Facilities</strong></h4>
 	</div>
 	<div class="row row-style">	
 	<c:forEach items="${tfac }" var="elee">
@@ -178,7 +180,7 @@
 	</div>
 	<div style="height: 1em"></div>
 	<div class="row row-style">
-	<h4 style="color: RED"><strong>Policy</strong></h4>
+	<h4 style="color: RED; font-size: 1em;"><strong>Policy</strong></h4>
 	<ul>
 	<c:forEach items="${tpol }" var="elee">
 	<c:set var="pol_var" value=" ${elee.id },"/>
@@ -198,7 +200,7 @@
 	</div>	
 	<div class="row row-style">
 		<c:forEach items="${tis}" var="ele">
-			<h4><fmt:formatDate value='${ele.stmp }' pattern = 'yyyy-MM-dd' /> ${ele.desc } / ${ele.desc_local }</h4>
+			<h4 style="font-size: 1.2em;"><fmt:formatDate value='${ele.stmp }' pattern = 'yyyy-MM-dd' /> ${ele.desc } / ${ele.desc_local }</h4>
 					<table class="table table-bordered">
 					    <thead>
 					      <tr class="info">
