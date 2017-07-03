@@ -226,7 +226,7 @@
 			<td style ="width:2%" class="form-style info">Id</td>
 			<td style ="width:35%"class="form-style info">Description</td>
 			<td style ="width:35%"class="form-style info">Description (Local)</td>
-			<td style ="width:20%"class="form-style info">Date & Time</td>
+			<td style ="width:20%"class="form-style info">Date</td>
 			<td style ="width:8%" class="form-style info">Detail</td>
 		</tr>
 		<c:forEach items="${ti }" var="ele">
@@ -235,7 +235,7 @@
 			<td class="updateIti">${ele.desc }</td>
 			<td class="updateIti">${ele.desc_local }</td>
 			<td class="updateIti"><fmt:formatDate value='${ele.stmp }' pattern = 'yyyy-MM-dd HH:mm' /></td>
-			<td style="text-align: center; font-size:1.3em;"><button class="btn-style" onclick="location.href='itiForm?id=${ele.id}'">Edit</button></td>
+			<td style="text-align: center; font-size:1.3em;"><button class="btn-style" onclick="location.href='itiForm?id=${ele.id}'">Detail</button></td>
 		</tr>
 		</c:forEach>
 	

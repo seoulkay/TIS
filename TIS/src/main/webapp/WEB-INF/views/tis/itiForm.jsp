@@ -118,13 +118,13 @@
 			<td style="width:2%" class="form-style info">Id</td>
 			<td style="width:20%" class="form-style info">Description</td>
 			<td style="width:20%" class="form-style info">Description (Local)</td>
-			<td style="width:20%" class="form-style info">Date & Time</td>
+			<td style="width:20%" class="form-style info">Date</td>
 			<td style="width:15%" class="form-style info">Note</td>
 			<td style="width:15%" class="form-style info">Note (Local)</td>
 			<td style="width:8%" class="form-style info">Transportation</td>
 		</tr>
 		<c:forEach items="${tidl}" var="ele">
-		<tr class="updateIti">
+		<tr class="tr-style updateIti">
 			<td class="iti_id">${ele.id}</td>
 			<td>${ele.desc}</td>
 			<td>${ele.desc_local}</td>
@@ -154,7 +154,7 @@
 			<input type="text" name="note" placeholder="note" class="form-control">
 			<label>Note (Local)</label>
 			<input type="text" name="note_local" placeholder="note_local" class="form-control">
-			<label>Tranportation</label>
+			<label>Transportation</label>
 			<select name="trs_id" class="form-control">
 			<option value="0">Select one</option>
 			<c:forEach items="${temp }" var="ele">
@@ -187,7 +187,7 @@
 			<input type="text" id="iti_note" name="note" placeholder="note" class="form-control">
 			<label>Note (Local)</label>
 			<input type="text" id="iti_note_local" name="note_local" placeholder="note_local" class="form-control">
-			<label>Tranportation</label>
+			<label>Transportation</label>
 			<select id="iti_trs_id" name="trs_id" class="form-control">
 			<option value="0">Select one</option>
 			<c:forEach items="${temp }" var="ele">
