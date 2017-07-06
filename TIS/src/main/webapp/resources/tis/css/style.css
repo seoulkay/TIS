@@ -122,8 +122,8 @@ video {
 }
 
 .row-style{
-	margin-right: 0px;
-	margin-left: 0px;
+	margin-right: 0em !important;
+	margin-left: 0em !important;
 	padding-bottom: 1.2em !important;
 }
 

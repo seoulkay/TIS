@@ -241,7 +241,7 @@
 		<div style="padding-left:0px;" class="col-sm-6">
 			<h4>${ttw[0].tisTeamList[0].event_name }</h4>
 		</div>
-		<div style="padding-left: 0px; padding-right:0px;" class="col-sm-6">
+		<div style="padding-left: 0px; padding-right:0px; class="col-sm-6">
 			<select class="form-control group-selector" id="group-selector">
 			<option value="0">SELECT GROUP</option>
 			<c:forEach items="${ttw[0].tisTeamList }" var="ele" varStatus="stat">
@@ -260,7 +260,7 @@
 	      <tr style="display: none;" class="group_tr group_${elee.group_name }">
 	      	<td class="col-sm-2"><img class="img-responsive" alt="" style="max-height: 5em" src="https://www.ufo79.com/image/tisImage/${elee.picture }" ></td>
 	      	<td class="col-sm-5">${elee.first_name } ${elee.last_name }</td>
-	      	<td class="col-sm-5">${elee.support_tel }</td>
+	      	<td sclass="col-sm-5">${elee.support_tel }</td>
 	      </tr>
 	      </c:forEach>
 	  </table>
