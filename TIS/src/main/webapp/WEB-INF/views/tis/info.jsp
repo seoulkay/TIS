@@ -63,10 +63,10 @@
     <!-- Brand and toggle get grouped for better mobile display -->
 <!--     <div class="navbar-header" >  -->
 <!--       <a class="navbar-brand" href="#" style="padding-top: 2em;color: WHITE"> -->
-      	<h4 class="navbar-brand" style="color: WHITE; font-size: 1.5em; padding-top: 1.5em;">Trip Info System</h4>
-      	
-      	<button class="btn" style="margin-top:2em" onclick="signout()">sign out</button>
-      	<script>
+      	<!-- <h4 class="navbar-brand" style="color: WHITE; font-size: 1.5em; padding-top: 1.5em;">Trip Info System</h4> -->
+      	<img class="img-responsive" alt="Trip Info System" src="https://www.ufo79.com/image/tisImage/TIS_logo2.png" style="max-height:3.5em; max-width:50%; margin-top: 1.5em; margin-right: 1em; float:left;"">
+      	<!-- <button class="btn" style="margin-top: 2em" onclick="signout()">Sign Out</button> -->
+      	<!-- <script>
       	function signout(){
 	      	var c = confirm("Signing out?");
 	      	if(c == true){
@@ -75,9 +75,9 @@
 	      		//stays in the site
 	      	}
       	}
-      	</script>
+      	</script> -->
 <!--       </a> -->
-     <img class="img-responsive" alt="" src="${pageContext.request.contextPath}/resources/tis/image/Atos.svg" style="max-height: 2em; max-width:15%;margin-top: 2em;margin-right: 1em; float:right;"  >
+     <img class="img-responsive" alt="" src="${pageContext.request.contextPath}/resources/tis/image/Atos.svg" style="max-height: 2em; max-width:15%; margin-top: 2em; margin-right: 1em; float:right;"  >
     </div>
    
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -99,17 +99,44 @@
 <!-- 	</div> -->
 <div style="width: 100%; padding-left: 1em; padding-right:1em;" class="container">
 	<!-- My profile section starts -->
-	<div class="row row-style">	
-		<div class="col-sm-2">
-		 	<img class="img-responsive" alt="" style="min-height: 10em; max-height: 10em" src="https://www.ufo79.com/image/tisImage/${em.picture }" >
-		</div>
-		<div class="col-sm-10">
-			<h4>${em.first_name } ${em.last_name }</h4>
-			<h5>${em.job_title }</h5>
+	<div class="row row-style" style="display: block;">
+		<div class="avatar"><img src="https://www.ufo79.com/image/tisImage/${em.picture }" width="128" height="128"></div>
+		<h4 class="name">${em.first_name } ${em.last_name }</h4>
+		<h5 class="description">${em.job_title }</h5>
+		
+		<ul id="contact">
+			<li>
+				<a target="_blank" href="mailto:${em.email }" class="email"></a>
+			</li>
+			<li>
+				<a target="_blank" href="https://zen.myatos.net" class="bluekiwi"></a>
+			</li>
+		
+		</ul>	
+	</div>
+	
+	<%-- <hr>
+	
+	<div class="row row-style">			
+		<!-- <div class="col-sm-10"> -->
+			<img class="img-responsive" alt="" style="float: left; min-height: 5em; max-height: 5em; border-radius: 50%; -moz-border-radius: 50%; -khtml-border-radius: 50%; -webkit-border-radius: 50%;" src="https://www.ufo79.com/image/tisImage/${em.picture }" >
+			<h4 style="float: left; margin-left: 1em; margin-right: 1em;">${em.first_name } ${em.last_name }</h4>
+			<button class="btn" style="margin-left: 1em;" onclick="signout()">Sign Out</button>
+			 	<script>
+		      		function signout(){
+			      	var c = confirm("Signing out?");
+				      	if(c == true){
+				      		location.href = 'signout';
+				      	}else{
+				      		//stays in the site
+				      	}
+		      		}
+	      		</script>
+			<h5 style="clear: left; padding-top: 1em;">${em.job_title }</h5>
 			<h5>${em.tel }</h5>
 			<h5>${em.email }</h5>
-		</div>
-	</div>
+		<!-- </div> -->
+	</div> --%>
 	<!-- My profile section ends -->
 	<hr>
 	<!-- My Accommodation section starts -->
@@ -166,7 +193,7 @@
 	</div>
 	
 	<div class="row row-style">
-		  <h4 style="font-size: 1em; color: #008FD4"><strong>Facilities</strong></h4>
+		  <h4 style="padding-top: 1em; font-size: 1em; color: #008FD4"><strong>Facilities</strong></h4>
 	</div>
 	<div class="row row-style">	
 	<c:forEach items="${tfac }" var="elee">
@@ -241,7 +268,7 @@
 		<div style="padding-left:0px;" class="col-sm-6">
 			<h4>${ttw[0].tisTeamList[0].event_name }</h4>
 		</div>
-		<div style="padding-left: 0px; padding-right:0px; class="col-sm-6">
+		<div style="padding-left: 0px; padding-right:0px; padding-bottom: 1em; class="col-sm-6">
 			<select class="form-control group-selector" id="group-selector">
 			<option value="0">SELECT GROUP</option>
 			<c:forEach items="${ttw[0].tisTeamList }" var="ele" varStatus="stat">
@@ -258,9 +285,9 @@
 	      </tr>
 	      <c:forEach items="${ele.tisTeamList }" var="elee">
 	      <tr style="display: none;" class="group_tr group_${elee.group_name }">
-	      	<td class="col-sm-2"><img class="img-responsive" alt="" style="max-height: 5em" src="https://www.ufo79.com/image/tisImage/${elee.picture }" ></td>
-	      	<td class="col-sm-5">${elee.first_name } ${elee.last_name }</td>
-	      	<td sclass="col-sm-5">${elee.support_tel }</td>
+	      	<td style="width: 20%" class="col-sm-2"><img class="img-responsive" alt="" style="max-height: 5em" src="https://www.ufo79.com/image/tisImage/${elee.picture }" ></td>
+	      	<td style="width: 40%" class="col-sm-5">${elee.first_name } ${elee.last_name }</td>
+	      	<td style="width: 40%" sclass="col-sm-5">${elee.support_tel }</td>
 	      </tr>
 	      </c:forEach>
 	  </table>

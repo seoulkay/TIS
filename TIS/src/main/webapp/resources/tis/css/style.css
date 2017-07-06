@@ -137,6 +137,90 @@ hr {
     border-width: 1px;
 }
 
+.avatar {
+	position: relative;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    margin: 0 20px 0 0;
+    border: 4px solid #fff;
+    /* border-radius: 999999px; */
+    /* border-radius: 50%; */
+    box-shadow: 0 3px 0 rgba(0,0,0, 0.3), 0 6px 2px rgba(0,0,0, 0.1), 0 10px 5px rgba(0,0,0, 0.1), inset 0 0 0 10px #fff;
+}
+
+.avatar img{
+	float: left;
+	/* border-radius: 999999px; */
+	/* border-radius: 50%; */
+}
+
+h4.name {
+	margin: 0.5;
+    color: #000;
+    font-size: 2em;
+    line-height: 100%;	
+}
+
+h5.description{
+	margin: 0;
+	font-size: 1em;
+    color: #666;
+}
+
+ul#contact li:first-child {
+	margin-left: 0;
+}
+
+ul#contact li {
+	float: left;
+	margin: 10px;
+	list-style: none;
+}
+
+ul#contact li a.email{
+	background-image: url(../image/email.svg);	
+}
+
+ul#contact li a.bluekiwi{
+	background-image: url(../image/dribbble.svg);	
+}
+
+ul#contact li a.bluekiwi:hover {
+    background-color: #ea4c89;
+}
+
+ul#contact li a:hover {
+    background-color: #fff;
+    background-position: center center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    color: rgba(255,255,255, 0);
+}
+
+ul#contact li a{
+	display: block;
+    float: left;
+    padding: 30px;
+    margin-top: 2em;
+    border: 2px solid #666;
+    border-radius: 9999999px;
+    background-color: transparent;
+    background-position: center;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    color: #666;
+    text-align: center;
+    text-decoration: none;
+    text-indent: 0;
+    text-transform: uppercase;
+    font-family: 'Quattrocento', serif;
+    line-height: 100%;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transition: all 0.2s ease;	
+}
+
 .title-row-style{
 	margin-right: 0px;
 	margin-left: 0px;
