@@ -122,7 +122,7 @@
 		<p><strong>Confirmation No : </strong>ACC${ele.id }</p>
 		<p><strong>Name :</strong> ${ele.venue_name } / ${ele.venue_name_loc}</p>
 		<p><strong>Address :</strong> ${ele.venue_address } / ${ele.venue_address_loc}</p>
-		
+		<div style="display: none" class="venues">${ele.venue_id }</div>
 		<table class="table table-bordered">
 		    <thead>
 		      <tr class="info">
@@ -338,7 +338,7 @@ var icons = {
 */
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
-	    zoom: 10,
+	    zoom: 13,
 	    center: {lat: 37.752, lng: 128.891},
 	    zoomControl: true,
 	    mapTypeControl: false,
@@ -389,10 +389,21 @@ function drop() {
  * 마커 세팅
  */	
 function markerSet(){
+	var venues = $(".venues").text();
+	
 	$.post( "/TIS/get/venue")
        .done(function( data ) {
-         var go = JSON.parse(JSON.stringify(data));		         
+         var go = JSON.parse(JSON.stringify(data));		 
+         
+         var toc = {};
+         toc.lat = 37.752;
+         toc.lng = 128.891;
+         toc.content = '<h4>TOC</h4>';
+         toc.type = "c_venue";
+         neighborhoods.push(toc);
+         
          for(var i = 0; i < go.length; i++){
+        	 if(go[i].id == venues){
         	 var target = {};
         	 target.lat = parseFloat((Number(go[i].lat)));
         	 target.lng = parseFloat((Number(go[i].lng)));
@@ -406,8 +417,9 @@ function markerSet(){
         		 target.content = '<h4>'+go[i].venue_name+'</h4><br><h4>'+go[i].venue_name_loc+'</h4>';
         		 target.type = "n_venue";
         	 }
-        	 
 	         neighborhoods.push(target);
+	         map.setCenter({lat: target.lat, lng: target.lng});
+        	 }
          }
          drop();
     });
