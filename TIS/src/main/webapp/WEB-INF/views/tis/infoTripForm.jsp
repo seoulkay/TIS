@@ -234,7 +234,7 @@
 			<td class="updateIti iti_id">${ele.id }</td>
 			<td class="updateIti">${ele.desc }</td>
 			<td class="updateIti">${ele.desc_local }</td>
-			<td class="updateIti"><fmt:formatDate value='${ele.stmp }' pattern = 'yyyy-MM-dd HH:mm' /></td>
+			<td class="updateIti"><fmt:formatDate value='${ele.stmp }' pattern = 'yyyy-MM-dd' /></td>
 			<td style="text-align: center; font-size:1.3em;"><button class="btn-style" onclick="location.href='itiForm?id=${ele.id}'">Detail</button></td>
 		</tr>
 		</c:forEach>
@@ -253,7 +253,7 @@
 			<label>Description (Local)</label>
 			<input type="text" name="desc_local" placeholder="desc_local" class="form-control">
 			<label>Date & Time</label>
-			<input type="datetime-local" class="form-control" name="stmp" pattern = 'yyyy-MM-ddTHH:mm'>
+			<input type="date" class="form-control" name="stmp" pattern = 'yyyy-MM-dd'>
 			<input type="hidden" name="trip_id" value="${tripinfo.id }">
 			<input type="hidden" name="event_id" value="${tripinfo.event_id }">
 			<input type="hidden" name="emp_id" value="${tripinfo.emp_id }">
@@ -279,7 +279,7 @@
 			<label>Description (Local)</label>
 			<input type="text" name="desc_local" id="iti_desc_local" placeholder="desc_local" class="form-control">
 			<label>Date & Time</label>
-			<input type="datetime-local" class="form-control" name="stmp" id ="iti_stmp" pattern = 'yyyy-MM-dd HH:mm'>
+			<input type="date" class="form-control" name="stmp" id ="iti_stmp" pattern = 'yyyy-MM-dd'>
 			<input type="hidden" name="trip_id" id="iti_trip_id" value="${tripinfo.id }">
 			<input type="hidden" name="id" id="iti_id">
 			<input type="hidden" name="event_id" value="${tripinfo.event_id }">
