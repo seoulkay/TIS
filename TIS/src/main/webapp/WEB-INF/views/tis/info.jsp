@@ -58,8 +58,22 @@
 	<link rel="shortcut icon" href="https://www.ufo79.com/image/favicon.ico">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+<!-- Scrolling Navigation tab 구현해야하는 부분  -->
+<div class="container" style="width:100%; height: auto; background-color: #444;">
+	<button class="astext" onclick="signout();">Sign Out</button>
+		<script>
+      		function signout(){
+	      	var c = confirm("Signing out?");
+		      	if(c == true){
+		      		location.href = 'signout';
+		      	}else{
+		      		//stays in the site
+		      	}
+      		}
+   		</script>
+</div>
 <nav class="navbar navbar-default" style="height: 6em ; background-size: 2000px 7em; background-image: url('${pageContext.request.contextPath}/resources/tis/image/headerGeneric.png'); border-radius:0; border:0">
-  <div class="container-fluid">
+	<div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
 <!--     <div class="navbar-header" >  -->
 <!--       <a class="navbar-brand" href="#" style="padding-top: 2em;color: WHITE"> -->
@@ -102,8 +116,7 @@
 	<div class="row row-style" style="display: block;">
 		<div class="avatar"><img src="https://www.ufo79.com/image/tisImage/${em.picture }" width="128" height="128"></div>
 		<h4 class="name">${em.first_name } ${em.last_name }</h4>
-		<h5 class="description">${em.job_title }</h5>
-		
+		<h5 class="description">${em.job_title }</h5>		
 		<ul id="contact">
 			<li>
 				<a target="_blank" href="mailto:${em.email }" class="email"></a>
@@ -111,7 +124,9 @@
 			<li>
 				<a target="_blank" href="https://zen.myatos.net" class="bluekiwi"></a>
 			</li>
-		
+			<li>
+				<a target="_blank" href="https://goo.gl/photos/W86qKeqpdoJGaomY8" class="gallery"></a>
+			</li>		
 		</ul>	
 	</div>
 	
@@ -141,7 +156,7 @@
 	<hr>
 	<!-- My Accommodation section starts -->
 	<div class="row title-row-style">
-		<h3><span class="label label-success" id="accom">My Accommodation</span></h3>
+		<h4><span class="label label-success" id="accom">My Accommodation</span></h4>
 	</div>	
 	
 	<c:forEach items="${ta }" var="ele">
@@ -153,11 +168,11 @@
 		<table class="table table-bordered">
 		    <thead>
 		      <tr class="info">
-		        <th>Check-in</th>
-		        <th>Check-out</th>
-		        <th>Night(s)</th>
-		        <th>Room No.</th>
-		        <th>Note</th>
+		        <th style="width: 20%">Check-in</th>
+		        <th style="width: 20%">Check-out</th>
+		        <th style="width: 20%">Night(s)</th>
+		        <th style="width: 20%">Room No.</th>
+		        <th style="width: 20%">Note</th>
 		      </tr>
 		    </thead>
 		    <tbody>
@@ -223,18 +238,18 @@
 	<hr>
 	<!-- My Travel section starts -->		
 	<div class="row title-row-style">	
-		<h3><span class="label label-success">My Travel</span></h3>
+		<h4><span class="label label-success">My Travel</span></h4>
 	</div>	
 	<div class="row row-style">
 		<c:forEach items="${tis}" var="ele">
-			<h4 style="font-size: 1.2em;"><fmt:formatDate value='${ele.stmp }' pattern = 'yyyy-MM-dd' /> ${ele.desc } / ${ele.desc_local }</h4>
+			<h4 style="font-size: 1em;"><fmt:formatDate value='${ele.stmp }' pattern = 'yyyy-MM-dd' /> ${ele.desc } / ${ele.desc_local }</h4>
 					<table class="table table-bordered">
 					    <thead>
 					      <tr class="info">
-					        <th>Time</th>
-					        <th>Transportation</th>
-					        <th>Destination</th>
-					        <th>Note</th>
+					        <th style="width: 15%">Time</th>
+					        <th style="width: 25%">Transportation</th>
+					        <th style="width: 30%">Destination</th>
+					        <th style="width: 30%">Note</th>
 					      </tr>
 					    </thead>	
 		 			    <tbody>
@@ -255,18 +270,18 @@
 	<hr>
 	<!-- Other section starts -->	
 	<div class="row title-row-style">	
-		<h3><span class="label label-success">Other</span></h3>
+		<h4><span class="label label-success">Other</span></h4>
 		<p>${to.note }</p>
 	</div>
 	<!-- Other section ends -->	
 	<hr>
 	<!-- My Group section starts -->		
 	<div class="row title-row-style">	
-		<h3><span class="label label-success">My Group</span></h3>
+		<h4><span class="label label-success">My Group</span></h4>
 	</div>
 	<div class="row row-style">
 		<div style="padding-left:0px;" class="col-sm-6">
-			<h4>${ttw[0].tisTeamList[0].event_name }</h4>
+			<h5>${ttw[0].tisTeamList[0].event_name }</h5>
 		</div>
 		<div style="padding-left: 0px; padding-right:0px; padding-bottom: 1em; class="col-sm-6">
 			<select class="form-control group-selector" id="group-selector">
