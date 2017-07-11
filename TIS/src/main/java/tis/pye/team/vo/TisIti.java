@@ -13,6 +13,7 @@ public class TisIti {
 	private Date stmp;
 	private String desc;
 	private String desc_local;
+	private String iti_img;
 	
 	//조인 밸류들
 	private String first_name;
@@ -76,6 +77,12 @@ public class TisIti {
 	}
 	public void setItiDetail(List<TisItiDetail> itiDetail) {
 		this.itiDetail = itiDetail;
+	}
+	public String getIti_img() {
+		return iti_img;
+	}
+	public void setIti_img(String iti_img) {
+		this.iti_img = iti_img;
 	}
 	
 }

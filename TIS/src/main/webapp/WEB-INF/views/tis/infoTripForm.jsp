@@ -224,10 +224,11 @@
 <!-- 		<tr><td class="info">Schedule <button class="btn btn-success">+</button></td><td><input type="text" class="form-control"></td></tr> -->
 		<tr class="form-style info">			
 			<td style ="width:2%" class="form-style info">Id</td>
-			<td style ="width:35%"class="form-style info">Description</td>
-			<td style ="width:35%"class="form-style info">Description (Local)</td>
+			<td style ="width:30%"class="form-style info">Description</td>
+			<td style ="width:30%"class="form-style info">Description (Local)</td>
 			<td style ="width:20%"class="form-style info">Date</td>
 			<td style ="width:8%" class="form-style info">Detail</td>
+			<td style ="width:10%" class="form-style info">Image</td>
 		</tr>
 		<c:forEach items="${ti }" var="ele">
 		<tr class="tr-style">			
@@ -235,6 +236,7 @@
 			<td class="updateIti">${ele.desc }</td>
 			<td class="updateIti">${ele.desc_local }</td>
 			<td class="updateIti"><fmt:formatDate value='${ele.stmp }' pattern = 'yyyy-MM-dd' /></td>
+			<td class="updateIti">${ele.iti_img }</td>
 			<td style="text-align: center; font-size:1.3em;"><button class="btn-style" onclick="location.href='itiForm?id=${ele.id}'">Detail</button></td>
 		</tr>
 		</c:forEach>
@@ -247,7 +249,7 @@
 		Itinerary
 		</div>
 		<div class="label-style modal-body-style modal-body">
-		<form id="itiInsertForm" action="ItiForm" method="POST">
+		<form id="itiInsertForm" action="ItiForm" method="POST" enctype="multipart/form-data">
 			<label>Description</label>
 			<input type="text" name="desc" placeholder="desc" class="form-control">
 			<label>Description (Local)</label>
@@ -257,6 +259,8 @@
 			<input type="hidden" name="trip_id" value="${tripinfo.id }">
 			<input type="hidden" name="event_id" value="${tripinfo.event_id }">
 			<input type="hidden" name="emp_id" value="${tripinfo.emp_id }">
+			<label>Image</label>
+			<input type="file" name="iti_img_file" class="form-control" accept="image/*">
 		</form>
 		</div>
 		<div class="modal-footer">
@@ -273,7 +277,7 @@
 		TripCodes
 		</div>
 		<div class="label-style modal-body-style modal-body">
-		<form id="ItiUpdateForm" action="ItiUpdateForm" method="POST">
+		<form id="ItiUpdateForm" action="ItiUpdateForm" method="POST" enctype="multipart/form-data">
 			<label>Description</label>
 			<input type="text" name="desc" id="iti_desc" placeholder="desc" class="form-control">
 			<label>Description (Local)</label>
@@ -284,6 +288,9 @@
 			<input type="hidden" name="id" id="iti_id">
 			<input type="hidden" name="event_id" value="${tripinfo.event_id }">
 			<input type="hidden" name="emp_id" value="${tripinfo.emp_id }">
+			<label>Image</label>
+			<img class="img-responsive" id="iti_img">
+			<input type="file" name="iti_img_file" class="form-control" accept="image/*">
 		</form>
 		</div>
 		<div class="modal-footer">
@@ -323,11 +330,13 @@ $(".updateIti").click(function() {
 	var desc = id.next();
     var desc_local = desc.next();
     var stmp = desc_local.next();     
+    var img = stmp.next();     
 
     $('#iti_desc').val(desc.text());
     $('#iti_desc_local').val(desc_local.text());
     $('#iti_stmp').val(stmp.text().replace(" ", "T"));
     $('#iti_id').val(id.text());
+    $('#iti_img').attr('src', 'https://www.tis2018.ga/image/tisImage/'+img.text());
     
     $('#ItiUpdate').modal('show');
 });
