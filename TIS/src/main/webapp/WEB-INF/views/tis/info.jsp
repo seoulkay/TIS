@@ -55,7 +55,7 @@
 <%--     <noscript><link rel="stylesheet" href="${pageContext.request.contextPath}/resources/ulc/css/no-js.css"></noscript> --%>
     
     <!-- Favicons -->
-	<link rel="shortcut icon" href="https://www.ufo79.com/image/favicon.ico">
+	<link rel="shortcut icon" href="https://www.tis2018.ga/image/favicon.ico">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <!-- Scrolling Navigation tab 구현해야하는 부분  -->
@@ -243,6 +243,7 @@
 	<div class="row row-style">
 		<c:forEach items="${tis}" var="ele">
 			<h4 style="font-size: 1em;"><fmt:formatDate value='${ele.stmp }' pattern = 'yyyy-MM-dd' /> ${ele.desc } / ${ele.desc_local }</h4>
+			<img src="http://www.tis2018.ga/image/tisImage/${ele.iti_img }" class="img-responsive">
 					<table class="table table-bordered">
 					    <thead>
 					      <tr class="info">
