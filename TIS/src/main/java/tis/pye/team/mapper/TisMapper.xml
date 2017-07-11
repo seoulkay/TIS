@@ -462,13 +462,15 @@
 	`trip_id`,
 	`stmp`,
 	`desc`,
-	`desc_local`)
+	`desc_local`,
+	`iti_img`)
 	VALUES
 	(
 	#{trip_id},
 	#{stmp},
 	#{desc},
-	#{desc_local});
+	#{desc_local},
+	#{iti_img});
   	</insert>
   	<update id="updateIti" parameterType="TisIti">
   	UPDATE `tis`.`iti`
@@ -476,7 +478,10 @@
 	`trip_id` = #{trip_id},
 	`stmp` = #{stmp},
 	`desc` = #{desc},
-	`desc_local` = #{desc_local}
+	`desc_local` = #{desc_local},
+	<if test="iti_img != null and iti_img != ''">
+		`iti_img` = #{iti_img}
+	</if>
 	WHERE `id` = #{id};
   	</update>
   	<select id="existTisOther" parameterType="TisOther" resultType="Integer">

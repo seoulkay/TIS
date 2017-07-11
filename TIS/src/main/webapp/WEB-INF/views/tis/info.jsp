@@ -78,7 +78,7 @@
 <!--     <div class="navbar-header" >  -->
 <!--       <a class="navbar-brand" href="#" style="padding-top: 2em;color: WHITE"> -->
       	<!-- <h4 class="navbar-brand" style="color: WHITE; font-size: 1.5em; padding-top: 1.5em;">Trip Info System</h4> -->
-      	<img class="img-responsive" alt="Trip Info System" src="https://www.ufo79.com/image/tisImage/TIS_logo2.png" style="max-height:3.5em; max-width:50%; margin-top: 1.5em; margin-right: 1em; float:left;"">
+      	<img class="img-responsive" alt="Trip Info System" src="https://www.tis2018.ga/image/tisImage/TIS_logo2.png" style="max-height:3.5em; max-width:50%; margin-top: 1.5em; margin-right: 1em; float:left;"">
       	<!-- <button class="btn" style="margin-top: 2em" onclick="signout()">Sign Out</button> -->
       	<!-- <script>
       	function signout(){
@@ -114,7 +114,7 @@
 <div style="width: 100%; padding-left: 1em; padding-right:1em;" class="container">
 	<!-- My profile section starts -->
 	<div class="row row-style" style="display: block;">
-		<div class="avatar"><img src="https://www.ufo79.com/image/tisImage/${em.picture }" width="128" height="128"></div>
+		<div class="avatar"><img src="https://www.tis2018.ga/image/tisImage/${em.picture }" width="128" height="128"></div>
 		<h4 class="name">${em.first_name } ${em.last_name }</h4>
 		<h5 class="description">${em.job_title }</h5>		
 		<ul id="contact">
@@ -134,7 +134,7 @@
 	
 	<div class="row row-style">			
 		<!-- <div class="col-sm-10"> -->
-			<img class="img-responsive" alt="" style="float: left; min-height: 5em; max-height: 5em; border-radius: 50%; -moz-border-radius: 50%; -khtml-border-radius: 50%; -webkit-border-radius: 50%;" src="https://www.ufo79.com/image/tisImage/${em.picture }" >
+			<img class="img-responsive" alt="" style="float: left; min-height: 5em; max-height: 5em; border-radius: 50%; -moz-border-radius: 50%; -khtml-border-radius: 50%; -webkit-border-radius: 50%;" src="https://www.tis2018.ga/image/tisImage/${em.picture }" >
 			<h4 style="float: left; margin-left: 1em; margin-right: 1em;">${em.first_name } ${em.last_name }</h4>
 			<button class="btn" style="margin-left: 1em;" onclick="signout()">Sign Out</button>
 			 	<script>
@@ -300,7 +300,7 @@
 	      </tr>
 	      <c:forEach items="${ele.tisTeamList }" var="elee">
 	      <tr style="display: none;" class="group_tr group_${elee.group_name }">
-	      	<td style="width: 20%" class="col-sm-2"><img class="img-responsive" alt="" style="max-height: 5em" src="https://www.ufo79.com/image/tisImage/${elee.picture }" ></td>
+	      	<td style="width: 20%" class="col-sm-2"><img class="img-responsive" alt="" style="max-height: 5em" src="https://www.tis2018.ga/image/tisImage/${elee.picture }" ></td>
 	      	<td style="width: 40%" class="col-sm-5">${elee.first_name } ${elee.last_name }</td>
 	      	<td style="width: 40%" sclass="col-sm-5">${elee.support_tel }</td>
 	      </tr>
@@ -363,16 +363,16 @@ var neighborhoods = [];
 var markers = [];
 var map;
 
-var iconBase = 'https://www.ufo79.com/image/';
+var iconBase = 'https://www.tis2018.ga/image/tisImage/';
 var icons = {
   hotel:{
-	  icon: iconBase + 'NEW_icon_UFO_me.svg'
+	  icon: iconBase + 'hotel.png'
   },
   c_venue:{
-	  icon: iconBase + 'icon_pin_20px.svg'
+	  icon: iconBase + 'stadium.png'
   },
   n_venue:{
-	  icon: iconBase +'icon_pin_15px_off.svg'
+	  icon: iconBase +'office-block.png'
   }
 };
 /**
@@ -441,7 +441,7 @@ function markerSet(){
          toc.lat = 37.752;
          toc.lng = 128.891;
          toc.content = '<h4>TOC</h4>';
-         toc.type = "c_venue";
+         toc.type = "n_venue";
          neighborhoods.push(toc);
          
          for(var i = 0; i < go.length; i++){

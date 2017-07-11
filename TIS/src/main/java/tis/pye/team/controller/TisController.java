@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import tis.pye.team.dao.RestService;
 import tis.pye.team.dao.TisDao;
 import tis.pye.team.vo.TisAccom;
 import tis.pye.team.vo.TisAdmin;
@@ -44,6 +46,9 @@ import tis.pye.team.vo.TisVenue;
 public class TisController {
 	@Autowired
 	TisDao dao;
+	
+	@Autowired
+	RestService restService;
 		
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String tisLogin(){
@@ -340,14 +345,46 @@ public class TisController {
 	@RequestMapping(value = "/ItiForm", method = RequestMethod.POST)
 	public String ItiForm(@ModelAttribute("vo") TisIti vo,
 			@RequestParam("event_id")String event_id, 
-			@RequestParam("emp_id")String emp_id){		
+			@RequestParam("emp_id")String emp_id,
+			@RequestParam("iti_img_file")MultipartFile iti_img_file){
+		
+		try{
+			if(!iti_img_file.isEmpty()){
+				try{
+					String[] fileInfo = restService.writeFileToServer(iti_img_file);
+					vo.setIti_img(fileInfo[0]);
+					System.out.println("File uploaded");
+				}catch(Exception e){
+					System.out.println("Fail to upload a file." + e.getMessage());
+				}
+			}
+		}catch(Exception e){
+			System.out.println("Fail to upload a file." + e.getMessage());
+		}
+		
 		dao.insertIti(vo);
 		return "redirect:infoTripForm?event_id="+event_id+"&emp_id="+emp_id;
 	}
 	@RequestMapping(value = "/ItiUpdateForm", method = RequestMethod.POST)
 	public String ItiUpdateForm(@ModelAttribute("vo") TisIti vo, 
 			@RequestParam("event_id")String event_id, 
-			@RequestParam("emp_id")String emp_id){
+			@RequestParam("emp_id")String emp_id,
+			@RequestParam("iti_img_file")MultipartFile iti_img_file){
+
+			try{
+				if(!iti_img_file.isEmpty()){
+					try{
+						String[] fileInfo = restService.writeFileToServer(iti_img_file);
+						vo.setIti_img(fileInfo[0]);
+						System.out.println("File uploaded");
+					}catch(Exception e){
+						System.out.println("Fail to upload a file." + e.getMessage());
+					}
+				}
+			}catch(Exception e){
+				System.out.println("Fail to upload a file." + e.getMessage());
+			}
+			
 		dao.updateIti(vo);
 		return "redirect:infoTripForm?event_id="+event_id+"&emp_id="+emp_id;
 	}
@@ -537,7 +574,7 @@ public class TisController {
 		TisIti ti = dao.selectTisItiById(id);
 		List<TisItiDetail> tidl = dao.selectItiDetById(id);
 		List<TisTransportations> temp = dao.selectTrs();
-		
+		System.out.println("여기 온다.");
 		
 		modal.addAttribute("ti", ti);
 		modal.addAttribute("tidl", tidl);
