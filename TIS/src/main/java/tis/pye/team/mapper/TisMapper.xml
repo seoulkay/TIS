@@ -478,9 +478,9 @@
 	`trip_id` = #{trip_id},
 	`stmp` = #{stmp},
 	`desc` = #{desc},
-	`desc_local` = #{desc_local},
+	`desc_local` = #{desc_local}
 	<if test="iti_img != null and iti_img != ''">
-		`iti_img` = #{iti_img}
+		,`iti_img` = #{iti_img}
 	</if>
 	WHERE `id` = #{id};
   	</update>
