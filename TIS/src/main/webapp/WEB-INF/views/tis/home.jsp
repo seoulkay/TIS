@@ -68,7 +68,7 @@
                     <div class="header-txt">
                     	<img style=" margin: 0 auto" src="${pageContext.request.contextPath}/resources/tis/image/Atos.svg" alt="Logo" class="img-responsive">
 <!--                         <h1>Atos</h1> -->
-                        <p>Trip information system</p>
+                        <p>Travel information system</p>
                     </div>
                     <div class="well">
                     <form action="info" method="post">

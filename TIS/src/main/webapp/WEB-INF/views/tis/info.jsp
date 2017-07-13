@@ -78,7 +78,7 @@
 <!--     <div class="navbar-header" >  -->
 <!--       <a class="navbar-brand" href="#" style="padding-top: 2em;color: WHITE"> -->
       	<!-- <h4 class="navbar-brand" style="color: WHITE; font-size: 1.5em; padding-top: 1.5em;">Trip Info System</h4> -->
-      	<img class="img-responsive" alt="Trip Info System" src="https://www.tis2018.ga/image/tisImage/TIS_logo2.png" style="max-height:3.5em; max-width:50%; margin-top: 1.5em; margin-right: 1em; float:left;"">
+      	<img class="img-responsive" alt="Trip Info System" src="${pageContext.request.contextPath}/resources/tis/image/TIS_LOGO.png" style="max-height:3.5em; max-width: 50%; margin-top: 1.5em; margin-right: 1em; float:left;">
       	<!-- <button class="btn" style="margin-top: 2em" onclick="signout()">Sign Out</button> -->
       	<!-- <script>
       	function signout(){
@@ -120,13 +120,13 @@
 		<ul id="contact">
 			<li>
 				<a target="_blank" href="mailto:${em.email }" class="email"></a>
-			</li>
+			</li><!-- 
 			<li>
 				<a target="_blank" href="https://zen.myatos.net" class="bluekiwi"></a>
 			</li>
 			<li>
 				<a target="_blank" href="https://goo.gl/photos/W86qKeqpdoJGaomY8" class="gallery"></a>
-			</li>		
+			</li> -->		
 		</ul>	
 	</div>
 	
@@ -161,33 +161,31 @@
 	
 	<c:forEach items="${ta }" var="ele">
 	<div class="row row-style">	
-		<p><strong>Confirmation No : </strong>ACC${ele.id }</p>
-		<p><strong>Name :</strong> ${ele.venue_name } / ${ele.venue_name_loc}</p>
-		<p><strong>Address :</strong> ${ele.venue_address } / ${ele.venue_address_loc}</p>
+		<%-- <p><strong>Confirmation No : </strong>ACC${ele.id }</p> --%>
+		<p style="font-size: 1.3em; color: #008fd4;"><strong>${ele.venue_name }</strong></p>
+		<p><a href="https://www.google.co.kr/maps/@${ele.lat },${ele.lng },19z" target="_blank">${ele.venue_address }</a></p>
 		<div style="display: none" class="venues">${ele.venue_id }</div>
-		<table class="table table-bordered">
+		<table class="table table-bordered" style="border: #ffffff !important;">
 		    <thead>
-		      <tr class="info">
-		        <th style="width: 20%">Check-in</th>
-		        <th style="width: 20%">Check-out</th>
-		        <th style="width: 20%">Night(s)</th>
-		        <th style="width: 20%">Room No.</th>
-		        <th style="width: 20%">Note</th>
+		      <tr>
+		        <th style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left;">Check-in</th>
+		        <th style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left;">Check-out</th>
+		        <th style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left;">Night(s)</th>		        
 		      </tr>
 		    </thead>
 		    <tbody>
-		      <tr>
-		        <td>
+		      <tr> 
+		        <td style="border: #ffffff !important;">
 		        	<fmt:formatDate value='${ele.acc_begin }' pattern = 'yyyy-MM-dd'/>
 		        	<fmt:formatDate value='${ele.acc_begin }' pattern = 'MM' var="bm"/>
 		        	<fmt:formatDate value='${ele.acc_begin }' pattern = 'dd' var="bd"/>
 		        </td>
-		        <td>
+		        <td style="border: #ffffff !important;">
 		        	<fmt:formatDate value='${ele.acc_end }' pattern = 'yyyy-MM-dd'/>
 		        	<fmt:formatDate value='${ele.acc_end }' pattern = 'MM' var="em"/>
 		        	<fmt:formatDate value='${ele.acc_end }' pattern = 'dd' var="ed"/>
 		        </td>
-		        <td>
+		        <td style="border: #ffffff !important;">
 		        
 				<!-- 날짜 빼기 -->
 				<jsp:useBean id="daysFromNow" class="java.util.Date">
@@ -195,9 +193,19 @@
 				</jsp:useBean>	
 				<fmt:formatDate value='${daysFromNow}' pattern = 'dd'/>
 		        
-		        </td>
-		        <td>${ele.acc_room }</td>
-		        <td>${ele.acc_pin}</td>
+		        </td>		        
+		      </tr>
+		    </tbody>
+		  </table>
+		  <table class="table table-bordered" style="border: #ffffff !important;">
+		    <tbody>
+		      <tr>		     
+		      	<td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; width: 30%;">Room No:</th>
+		        <td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; color: #777; width: 70%;">${ele.acc_pin}</th>
+		      </tr>
+		      <tr>
+		      	<td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; width: 30%;">Note:</td>
+		        <td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; color: #777; width: 70%;">${ele.acc_room }</td>		      
 		      </tr>
 		    </tbody>
 		  </table>
@@ -208,7 +216,7 @@
 	</div>
 	
 	<div class="row row-style">
-		  <h4 style="padding-top: 1em; font-size: 1em; color: #008FD4"><strong>Facilities</strong></h4>
+		  <h4 style="padding-top: 1em; font-size: 1em;"><strong>Facilities & Services</strong></h4>
 	</div>
 	<div class="row row-style">	
 	<c:forEach items="${tfac }" var="elee">
@@ -222,16 +230,21 @@
 	</div>
 	<div style="height: 1em"></div>
 	<div class="row row-style">
-	<h4 style="color: RED; font-size: 1em;"><strong>Policy</strong></h4>
-	<ul>
-	<c:forEach items="${tpol }" var="elee">
-	<c:set var="pol_var" value=" ${elee.id },"/>
-	<c:if test = "${fn:contains(ele.acc_pol, pol_var)}">
-	<li>${elee.pol_title } / ${elee.pol_title_loc }</li>
-	</c:if>
-	</c:forEach>
-	</ul>
-	<p><strong>${ele.acc_desc }</strong></p>
+		<h4 style="font-size: 1em;"><strong>General</strong></h4>
+		<ul>
+		<c:forEach items="${tpol }" var="elee">
+		<c:set var="pol_var" value=" ${elee.id },"/>
+		<c:if test = "${fn:contains(ele.acc_pol, pol_var)}">
+		<li>${elee.pol_title }</li>
+		</c:if>
+		</c:forEach>
+		</ul>
+		<%-- <p><strong>${ele.acc_desc }</strong></p> --%>
+	</div>
+	<div style="height: 1em"></div>
+	<div class="row row-style">
+		<h4 style="font-size: 1em;"><strong>Show to Taxi driver</strong></h4>
+		<p><a href="">${ele.venue_address_loc }</a></p>
 	</div>			 
 	</c:forEach>
 	<!-- My Accommodation section ends -->	
@@ -247,7 +260,7 @@
 					    <thead>
 					      <tr class="info">
 					        <th style="width: 15%">Time</th>
-					        <th style="width: 25%">Transportation</th>
+					        <th style="width: 25%">Plan type</th>
 					        <th style="width: 30%">Destination</th>
 					        <th style="width: 30%">Note</th>
 					      </tr>
@@ -300,9 +313,10 @@
 	      </tr>
 	      <c:forEach items="${ele.tisTeamList }" var="elee">
 	      <tr style="display: none;" class="group_tr group_${elee.group_name }">
-	      	<td style="width: 20%" class="col-sm-2"><img class="img-responsive" alt="" style="max-height: 5em" src="https://www.tis2018.ga/image/tisImage/${elee.picture }" ></td>
-	      	<td style="width: 40%" class="col-sm-5">${elee.first_name } ${elee.last_name }</td>
-	      	<td style="width: 40%" sclass="col-sm-5">${elee.support_tel }</td>
+	      	<td style="width: 10%" class="col-sm-2"><img class="img-responsive" alt="" style="max-height: 5em" src="https://www.tis2018.ga/image/tisImage/${elee.picture }" ></td>
+	      	<td style="width: 30%" class="col-sm-5">${elee.first_name } ${elee.last_name }</td>
+	      	<td style="width: 30%" sclass="col-sm-5">${elee.email }</td>
+	      	<td style="width: 30%" sclass="col-sm-5">${elee.support_tel }</td>
 	      </tr>
 	      </c:forEach>
 	  </table>
@@ -490,7 +504,7 @@ markerSet();
 
 </script>
 <!--Start of Tawk.to Script-->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -500,6 +514,6 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
-</script>
+</script> -->
 
 </html>

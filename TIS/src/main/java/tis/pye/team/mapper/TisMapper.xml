@@ -46,6 +46,8 @@
 	,v.venue_address
 	,v.venue_address_loc
 	,v.venue_desc
+	,v.lat
+	,v.lng
 	FROM tis.accom a left join tis.venue v on a.venue_id = v.id 
 	where a.event_id = #{event_id} 
 	and a.employee_id = #{id};
@@ -64,6 +66,8 @@
 	,v.venue_pic
 	,v.venue_name
 	,v.venue_desc
+	,v.lat
+	,v.lng
 	FROM tis.accom a left join tis.venue v on a.venue_id = v.id 
 	where a.event_id = #{id} 
   	</select>

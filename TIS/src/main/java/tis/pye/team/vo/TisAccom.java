@@ -22,6 +22,8 @@ public class TisAccom {
 	private String venue_name_loc;
 	private String venue_address;
 	private String venue_address_loc;
+	private String lat;
+	private String lng;
 	
 	private String acc_fac;
 	private String[] acc_fac_list;
@@ -141,5 +143,18 @@ public class TisAccom {
 	public void setAcc_pol_list(String[] acc_pol_list) {
 		this.acc_pol_list = acc_pol_list;
 	}
+	public String getLat() {
+		return lat;
+	}
+	public void setLat(String lat) {
+		this.lat = lat;
+	}
+	public String getLng() {
+		return lng;
+	}
+	public void setLng(String lng) {
+		this.lng = lng;
+	}
+	
 	
 }
