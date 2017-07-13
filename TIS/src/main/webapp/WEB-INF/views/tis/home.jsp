@@ -49,7 +49,7 @@
     <noscript><link rel="stylesheet" href="${pageContext.request.contextPath}/resources/ulc/css/no-js.css"></noscript>
     
     <!-- Favicons -->
-	<link rel="shortcut icon" href="https://www.ufo79.com/image/favicon.ico">
+	<link rel="shortcut icon" href="https://www.tis2018.ga/image/favicon.ico">
 </head>
 <body>
     

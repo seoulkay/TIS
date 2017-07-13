@@ -53,7 +53,7 @@
 <%--     <noscript><link rel="stylesheet" href="${pageContext.request.contextPath}/resources/ulc/css/no-js.css"></noscript> --%>
     
     <!-- Favicons -->
-	<link rel="shortcut icon" href="https://www.ufo79.com/image/favicon.ico">
+	<link rel="shortcut icon" href="https://www.tis2018.ga/image/favicon.ico">
 </head>
 <body>    
 <nav class="navbar navbar-default" style="height: 6em ; background-size: 2000px 7em; background-image: url('${pageContext.request.contextPath}/resources/tis/image/headerGeneric.png');border-radius:0; border:0">
