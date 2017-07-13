@@ -244,7 +244,7 @@
 	<div style="height: 1em"></div>
 	<div class="row row-style">
 		<h4 style="font-size: 1em;"><strong>Show to Taxi driver</strong></h4>
-		<p>>${ele.venue_address_loc }</p>
+		<p>${ele.venue_address_loc }</p>
 	</div>			 
 	</c:forEach>
 	<!-- My Accommodation section ends -->	
@@ -256,7 +256,9 @@
 	<div class="row row-style">
 		<c:forEach items="${tis}" var="ele">
 			<h4 style="font-size: 1em;"><fmt:formatDate value='${ele.stmp }' pattern = 'yyyy-MM-dd' /> ${ele.desc } / ${ele.desc_local }</h4>
-			<img src="http://www.tis2018.ga/image/tisImage/${ele.iti_img }" class="img-responsive">
+			<c:if test = "${!empty ele.iti_img}">
+			<img style="max-height: 20em;" src="http://www.tis2018.ga/image/tisImage/${ele.iti_img }" class="img-responsive"><br>
+			</c:if>
 					<table class="table table-bordered">
 					    <thead>
 					      <tr class="info">
