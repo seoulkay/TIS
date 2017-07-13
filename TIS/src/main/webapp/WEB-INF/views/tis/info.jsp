@@ -244,7 +244,7 @@
 	<div style="height: 1em"></div>
 	<div class="row row-style">
 		<h4 style="font-size: 1em;"><strong>Show to Taxi driver</strong></h4>
-		<p><a href="">${ele.venue_address_loc }</a></p>
+		<p>>${ele.venue_address_loc }</p>
 	</div>			 
 	</c:forEach>
 	<!-- My Accommodation section ends -->	
