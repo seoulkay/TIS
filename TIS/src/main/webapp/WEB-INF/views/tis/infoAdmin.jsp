@@ -81,6 +81,7 @@
 		  <li role="presentation"><a href="infoTrip">Trips</a></li>
 		  <li role="presentation"><a href="infoShift">Shifts</a></li>
 		  <li role="presentation"><a href="infoTripcodes">Trip-codes</a></li>
+		  <li role="presentation"><a href="bookings">Bookings</a></li>
 		</ul>
 </div>
 <div style="height: 2em"></div>

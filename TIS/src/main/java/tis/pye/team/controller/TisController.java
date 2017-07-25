@@ -65,6 +65,11 @@ public class TisController {
 		return "tis/home";
 	}
 	
+	@RequestMapping(value = "/request", method = RequestMethod.GET)
+	public String tisRequest(){
+		return "tis/request";
+	}
+	
 	@RequestMapping(value = "/infoAdmin", method = RequestMethod.POST)
 	public String tisLoginadminAdmin(@ModelAttribute("vo") TisAdmin vo, Model model, HttpSession session){
 		try{
@@ -124,6 +129,22 @@ public class TisController {
 				
 				model.addAttribute("ttr", ttr);
 				return "tis/infoTrip";
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			return "tis/homeAdmin";
+		}
+		
+	}
+	
+	@RequestMapping(value = "/bookings", method = RequestMethod.GET)
+	public String bookings(Model model, HttpSession session){
+		try{
+			if(session.getAttribute("user_name").equals("")){
+				return "tis/homeAdmin";
+			}else{
+				
+				return "tis/bookings";
 			}
 		}catch(Exception e){
 			e.printStackTrace();

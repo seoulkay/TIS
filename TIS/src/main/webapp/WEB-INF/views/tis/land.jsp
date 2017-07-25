@@ -73,7 +73,7 @@
                     <div class="well">
                     <div class="row">	
                     	<div class="col-sm-4" style="text-align: center">
-                    		<a href="#" >
+                    		<a href="request" >
                     		<strong>Booking</strong>
                     		<img style=" margin: 0 auto" src="${pageContext.request.contextPath}/resources/tis/image/hotel.svg" alt="hotelLogo" class="img-responsive">
                     		</a>
