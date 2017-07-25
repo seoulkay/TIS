@@ -66,7 +66,7 @@
       	<h4 class="navbar-brand" style="color: WHITE; font-size: 1.5em; padding-top: 1.5em;">Trip Info System <Strong>ADMIN</Strong> ${sessionScope.user_name}</h4>
 <!--       </a> -->
 
-     <img class="img-responsive" alt="" src="${pageContext.request.contextPath}/resources/tis/image/Atos.svg" style="max-height: 2em; max-width:15%;margin-top: 2em;margin-right: 1em; float:right;"  >
+     <img class="img-responsive" alt="" src="https://www.tis2018.ga/image/tisImage/Atos.svg" style="max-height: 2em; max-width:15%;margin-top: 2em;margin-right: 1em; float:right;"  >
     </div>
    
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -227,8 +227,8 @@
 			<td style ="width:30%"class="form-style info">Description</td>
 			<td style ="width:30%"class="form-style info">Description (Local)</td>
 			<td style ="width:20%"class="form-style info">Date</td>
-			<td style ="width:8%" class="form-style info">Detail</td>
-			<td style ="width:10%" class="form-style info">Image</td>
+			<td style ="width:8%" class="form-style info">Image</td>
+			<td style ="width:10%" class="form-style info">Detail</td>
 		</tr>
 		<c:forEach items="${ti }" var="ele">
 		<tr class="tr-style">			
@@ -289,7 +289,7 @@
 			<input type="hidden" name="event_id" value="${tripinfo.event_id }">
 			<input type="hidden" name="emp_id" value="${tripinfo.emp_id }">
 			<label>Image</label>
-			<img class="img-responsive" id="iti_img">
+			<img src="${pageContext.request.contextPath}/resources/tis/image/empty.png" class="img-responsive" id="iti_img"><br>
 			<input type="file" name="iti_img_file" class="form-control" accept="image/*">
 		</form>
 		</div>
@@ -336,7 +336,10 @@ $(".updateIti").click(function() {
     $('#iti_desc_local').val(desc_local.text());
     $('#iti_stmp').val(stmp.text().replace(" ", "T"));
     $('#iti_id').val(id.text());
-    $('#iti_img').attr('src', 'https://www.tis2018.ga/image/tisImage/'+img.text());
+    if(img.text()){
+    	$('#iti_img').attr('src', 'https://www.tis2018.ga/image/tisImage/'+img.text());	
+    }
+    
     
     $('#ItiUpdate').modal('show');
 });
