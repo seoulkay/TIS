@@ -52,12 +52,17 @@ public class TisController {
 		
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String tisLogin(){
-		return "tis/home";
+		return "tis/land";
 	}
 	
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String tisLoginadmin(){
 		return "tis/homeAdmin";
+	}
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String tisLoginhome(){
+		return "tis/home";
 	}
 	
 	@RequestMapping(value = "/infoAdmin", method = RequestMethod.POST)
