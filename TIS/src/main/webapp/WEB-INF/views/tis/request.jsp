@@ -57,6 +57,12 @@
     <!-- Favicons -->
 	<link rel="shortcut icon" href="https://www.tis2018.ga/image/favicon.ico">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<!-- 특별한 드랍 다운을 위해 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+	<!-- 특별한 드랍 다운 끝 -->
+
 </head>
 <!-- Scrolling Navigation tab 구현해야하는 부분  -->
 <!-- <div class="container" style="width:100%; height: auto; background-color: #444;"> -->
@@ -113,19 +119,17 @@
 <!-- 	</div> -->
 <div style="width: 100%; padding-left: 1em; padding-right:1em;" class="container">
 		<h3>Booking Request</h3>
-		<h4>Request ID : {request}</h4>
+		
 		<h5>Traveler</h5>
-		<form name="requestForm">
+		<form name="requestForm" action="requestFormAction" method="POST">
 		<div class="row form-group">
 			<div class="col-sm-2">
 				<label>Title <span style="color: RED">*</span></label>
 			</div>
 			<div class="col-sm-10">
-				<select class="form-control" style="width:auto;">
-				<option value="0">Select one</option>
-		<%-- 		<c:forEach items="${temp }" var="ele"> --%>
-					<option value="title">title</option>
-		<%-- 		</c:forEach> --%>
+				<select class="selectpicker" name="req_title" required="required">
+					<option value="Mr.">Mr.</option>
+					<option value="Ms.">Ms.</option>
 				</select>
 			</div>
 		</div>
@@ -134,7 +138,7 @@
 				<label>First Name <span style="color: RED">*</span></label>
 			</div>
 			<div class="col-sm-10">
-				<input type="text" class="form-control">
+				<input type="text" class="form-control" name="first_name" required="required">
 			</div>
 		</div>
 		<div class="row form-group form-group-sm">
@@ -142,7 +146,7 @@
 				<label>Last Name <span style="color: RED">*</span></label>
 			</div>
 			<div class="col-sm-10">
-				<input type="text" class="form-control">
+				<input type="text" class="form-control" name="last_name" required="required">
 			</div>
 		</div>
 		<div class="row form-group form-group-sm">
@@ -150,8 +154,7 @@
 				<label>Email Address <span style="color: RED">*</span></label>
 			</div>
 			<div class="col-sm-10">
-				<input type="text" class="form-control">
-				<span class="help-block">e.g. janet.kim@atos.net</span>
+				<input type="email" class="form-control" placeholder="e.g. janet.kim@atos.net" required="required" name="email">
 			</div>
 		</div>
 		<div class="row form-group">
@@ -159,24 +162,22 @@
 				<label>Travel purpose <span style="color: RED">*</span></label>
 			</div>
 			<div class="col-sm-10">
-				<select class="form-control" style="width:auto;">
-				<option value="0">Select one</option>
-		<%-- 		<c:forEach items="${temp }" var="ele"> --%>
-					<option value="title">title</option>
-		<%-- 		</c:forEach> --%>
+				<select class="selectpicker" required="required" name="req_purpose">
+					<c:forEach items="${te }" var="ele">
+						<option value="${ele.id }">${ele.event_name }</option>
+					</c:forEach>
 				</select>
 			</div>
 		</div>
 		<div class="row form-group">
 			<div class="col-sm-2">
-				<label>Travel Venue <span style="color: RED">*</span></label>
+				<label>Travel Venue</label>
 			</div>
 			<div class="col-sm-10">
-				<select class="form-control" style="width:auto;">
-				<option value="0">Select one</option>
-		<%-- 		<c:forEach items="${temp }" var="ele"> --%>
-					<option value="title">title</option>
-		<%-- 		</c:forEach> --%>
+				<select class="selectpicker" multiple name="req_venue">
+				<c:forEach items="${tv }" var="ele">
+					<option value="${ele.id }">${ele.venue_name }</option>
+				</c:forEach>
 				</select>
 			</div>
 		</div>
@@ -185,11 +186,10 @@
 				<label>Local Contact <span style="color: RED">*</span></label>
 			</div>
 			<div class="col-sm-10">
-				<select class="form-control" style="width:auto;">
-				<option value="0">Select one</option>
-		<%-- 		<c:forEach items="${temp }" var="ele"> --%>
-					<option value="title">title</option>
-		<%-- 		</c:forEach> --%>
+				<select class="selectpicker" required="required" name="req_contact">
+				<c:forEach items="${temp }" var="ele">
+					<option value="${ele.id }">${ele.first_name } ${ele.last_name }</option>
+				</c:forEach>
 				</select>
 			</div>
 		</div>
@@ -200,15 +200,21 @@
 				<label>Arrive Date <span style="color: RED">*</span></label>
 			</div>
 			<div class="col-sm-10">
-				<input type="datetime-local" class="form-control" id="iti_stmp" name="stmp" pattern = 'yyyy-MM-ddTHH:mm' style="width:auto;">
+				<input type="datetime-local" class="form-control" name="arrive_stmp" pattern = 'yyyy-MM-ddTHH:mm' style="width:auto;" required="required">
 			</div>
 		</div>
 		<div class="row form-group form-group-sm">
 			<div class="col-sm-2">
 				<label>Flight No</label>
 			</div>
-			<div class="col-sm-10">
-				<input type="text" class="form-control">
+			<div class="col-sm-3">
+			<select class="selectpicker" data-live-search="true" name="arrive_flight">
+				<option value="KE">KE - Korean Airline</option>
+				<option value="JE">JE - Japanese Airline</option>
+			</select>
+			</div>
+			<div class="col-sm-7">
+				<input type="text" class="form-control" name="arrive_flight_name">
 			</div>
 		</div>
 		<h5>Leave from Incheon Airport</h5>
@@ -217,22 +223,28 @@
 				<label>Leave Date <span style="color: RED">*</span></label>
 			</div>
 			<div class="col-sm-10">
-				<input type="datetime-local" class="form-control" id="iti_stmp" name="stmp" pattern = 'yyyy-MM-ddTHH:mm' style="width:auto;">
+				<input type="datetime-local" class="form-control" name="leave_stmp" pattern = 'yyyy-MM-ddTHH:mm' style="width:auto;" required="required">
 			</div>
 		</div>
 		<div class="row form-group form-group-sm">
 			<div class="col-sm-2">
 				<label>Flight No</label>
 			</div>
-			<div class="col-sm-10">
-				<input type="text" class="form-control">
+			<div class="col-sm-3">
+			<select class="selectpicker" data-live-search="true" name="leave_flight">
+				<option value="KE">KE - Korean Airline</option>
+				<option value="JE">JE - Japanese Airline</option>
+			</select>
+			</div>
+			<div class="col-sm-7">
+				<input type="text" class="form-control" name="leave_flight_name">
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-6">
-				<h4>You need accommodation for %number% days</h4>
-			</div>
-			<div class="col-sm-6">
+<!-- 			<div class="col-sm-6"> -->
+<!-- 				<h4>You need accommodation for %number% days</h4> -->
+<!-- 			</div> -->
+			<div class="col-sm-12">
 				<input type="submit" value="Submit">
 			</div>
 		</div>

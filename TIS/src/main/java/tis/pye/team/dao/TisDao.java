@@ -18,6 +18,7 @@ import tis.pye.team.vo.TisIti;
 import tis.pye.team.vo.TisItiDetail;
 import tis.pye.team.vo.TisOther;
 import tis.pye.team.vo.TisPolicies;
+import tis.pye.team.vo.TisRequest;
 import tis.pye.team.vo.TisShift;
 import tis.pye.team.vo.TisSupports;
 import tis.pye.team.vo.TisTeam;
@@ -271,6 +272,13 @@ public class TisDao extends SqlSessionDaoSupport{
 		return wrap;
 	}
 	
+	public int insertTisRequest(TisRequest vo){
+		return getSqlSession().insert("TisMapper.insertTisRequest", vo);
+	}
+	
+	public List<TisRequest> selectTisRequest(){
+		return getSqlSession().selectList("TisMapper.selectTisRequest");
+	}
 }
 
 

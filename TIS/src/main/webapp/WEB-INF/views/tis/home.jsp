@@ -76,6 +76,10 @@
                     	<input type="password" class="form-control" placeholder="TIS password" name="pass"><br>
                     	<input type="submit" value="Login" style="background-color: #3498db; border-color: #2980b9">
                     </form>
+                    <br>
+                    <c:if test="${not empty err }">
+                    	<div class="alert alert-danger" role="alert">${err }</div>
+                    </c:if>
                     </div>
                     <div class="header-btn">
                     </div>

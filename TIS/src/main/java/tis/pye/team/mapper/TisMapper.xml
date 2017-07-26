@@ -613,4 +613,48 @@
 	left join tis.supports sp on s.supports_id = sp.id 
 	where s.event_id = #{param}
   	</select>
+  	
+  	<insert id="insertTisRequest" parameterType="TisRequest">
+  	INSERT INTO `tis`.`request`
+	(`id`,
+	`req_title`,
+	`first_name`,
+	`last_name`,
+	`email`,
+	`req_purpose`,
+	`req_venue`,
+	`req_contact`,
+	`arrive_stmp`,
+	`arrive_flight`,
+	`arrive_flight_name`,
+	`leave_stmp`,
+	`leave_flight`,
+	`leave_flight_name`,
+	`stmp`,
+	`mod_stmp`,
+	`mod_by`,
+	`req_status`)
+	VALUES
+	(#{id},
+	#{req_title},
+	#{first_name},
+	#{last_name},
+	#{email},
+	#{req_purpose},
+	#{req_venue},
+	#{req_contact},
+	#{arrive_stmp},
+	#{arrive_flight},
+	#{arrive_flight_name},
+	#{leave_stmp},
+	#{leave_flight},
+	#{leave_flight_name},
+	now(),
+	now(),
+	#{mod_by},
+	'Requested');
+  	</insert>
+  	<select id="selectTisRequest" resultType="TisRequest">
+  	SELECT * FROM `tis`.`request`
+  	</select>
 </mapper>

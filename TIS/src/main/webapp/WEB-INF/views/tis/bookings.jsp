@@ -75,11 +75,11 @@
 <div class="container">
 <div class="row">
 		<ul class="nav nav-tabs nav-justified">
-		  <li role="presentation"><a href="infoAdmin">Profiles</a></li>
-		  <li role="presentation"><a href="infoTrip">Trips</a></li>
-		  <li role="presentation"><a href="infoShift">Shifts</a></li>
-		  <li role="presentation"><a href="infoTripcodes">Trip-codes</a></li>
-		  <li role="presentation"  class="active"><a href="bookings">Bookings</a></li>
+		 	  <li role="presentation" class="active"><a href="bookings">Bookings</a></li>
+			  <li role="presentation"><a href="infoTrip">Trips</a></li>
+			  <li role="presentation"><a href="infoAdmin">Profiles</a></li>
+			  <li role="presentation"><a href="infoShift">Shifts</a></li>
+			  <li role="presentation"><a href="infoTripcodes">Trip-codes</a></li>
 		</ul>
 </div>
 <div style="height: 2em"></div>
@@ -100,139 +100,32 @@
 	      </tr>
 	    </thead>
 	    <tbody>
-<%-- 	    <c:forEach items="${tsup }" var="ele"> --%>
+	    <c:forEach items="${req }" var="ele">
 	    	<tr class="tr-style" id="SupUpdate_${ele.id }">
 		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.id}</td>
-		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')" tisvalue="${ele.event_id }">${ele.event_name}</td>
-		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.support_title}</td>
-		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.support_tel}</td>
-	          	<td style="text-align: center; font-size:1.3em;"><span class="label label-success" onclick="openAssignSupForm(${ele.event_id}, ${ele.id}, 3)">Confirm</span></td>
-	          	<td style="text-align: center; font-size:1.3em;"><span class="label label-success" onclick="openAssignSupForm(${ele.event_id}, ${ele.id}, 3)">Trip</span></td>
+		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.req_status}</td>
+		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.first_name} ${ele.last_name }</td>
+		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.req_purpose}</td>
+	          	<td style="text-align: center; font-size:1.3em;">
+	          	<c:choose>
+	          		<c:when test="${ele.req_status eq 'Confirmed' }"><button class="btn btn-sm btn-success" >Cancel</button></c:when>
+	          		<c:otherwise><button class="btn btn-sm btn-success" >Confirm</button></c:otherwise>
+	          	</c:choose>
+	          	</td>
+	          	<td style="text-align: center; font-size:1.3em;">
+	          	<c:choose>
+	          		<c:when test="${ele.req_status eq 'Confirmed' }"><button class="btn btn-sm btn-success">Trip</button></c:when>
+	          		<c:otherwise><button class="btn btn-sm btn-success" disabled="disabled">Trip</button></c:otherwise>
+	          	</c:choose>
+	          		
+	          	</td>
 	      	</tr>
-<%-- 	    </c:forEach> --%>
+	    </c:forEach>
 	    </tbody>
 	  </table>
 	</div>
-	<div class="modal" id="Supports" role="dialog">
-		<div class="modal-dialog">
-		<div class="modal-content-style modal-content">
-		<div class="modal-header-style modal-header">
-		Supports
-		</div>
-		<div class="label-style modal-body-style modal-body">
-		<form id="SupForm" action="SupForm" method="POST">
-			<label>Event Name</label>
-			<select name="event_id" class="form-control">
-			<c:forEach items="${te }" var="ele">
-				<option value="${ele.id}">${ele.event_name }</option>
-			</c:forEach>
-			</select>
-			<label>Support Title</label>
-			<input type="text" name="support_title" placeholder="support_title" class="form-control">
-			<label>Support Telephone</label>
-			<input type="text" name="support_tel" placeholder="support_tel" class="form-control">
-		</form>
-		</div>
-		<div class="modal-footer">
-	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('SupForm')">Submit</button>
-	  	</div>
-		</div>
-		</div>
-	</div>
-	<div class="modal" id="SupUpdate" role="dialog">
-		<div class="modal-dialog">
-		<div class="modal-content-style modal-content">
-		<div class="modal-header-style modal-header">
-		Supports
-		</div>
-		<div class="label-style modal-body-style modal-body">
-		<form id="SupUpdateForm" action="SupUpdateForm" method="POST">
-			<label>Event Name</label>
-			<select id="SupUpdate_event_id" name="event_id" class="form-control">
-			<c:forEach items="${te }" var="ele">
-				<option value="${ele.id}">${ele.event_name }</option>
-			</c:forEach>
-			</select>
-			<label>Support Title</label>
-			<input type="text" id="SupUpdate_support_title" name="support_title" placeholder="support_title" class="form-control">
-			<label>Support Telephone</label>
-			<input type="text" id="SupUpdate_support_tel" name="support_tel" placeholder="support_tel" class="form-control">
-		  	<input type="hidden" name="id" id="SupUpdate_id">
-		</form>
-		</div>
-		<div class="modal-footer">
-	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('SupUpdateForm')">Submit</button>
-	  	</div>
-		</div>
-		</div>
-	</div>
-	<div class="modal" id="SupportsAss" role="dialog">
-		<div class="modal-dialog">
-		<div class="modal-content-style modal-content">
-		<div class="modal-header-style modal-header">
-		Supports Assign
-		</div>
-		<form:form method="post" action="SupAssForm" modelAttribute="TisShifteList" id="SupAssForm">
-		<div class="label-style modal-body-style2 modal-body">				
-			<c:forTokens items = "A,B,C" delims = "," var = "name" varStatus="status">
-			<label style="padding-right:10px;">${name }</label>
-			<select name="shifts[${status.index}].emp_id" id="${name}emp_id">
-			<option value="0">None</option>
-			<c:forEach items="${temp }" var="ele">
-				<option value="${ele.id}">${ele.first_name } ${ele.last_name }</option>
-			</c:forEach>
-			</select>
-			<input type="hidden" name="shifts[${status.index}].event_id" id="${status.index}event_id"><br/>
-			<input type="hidden" name="shifts[${status.index}].supports_id" id="${status.index}supports_id"><br/>
-			<input type="hidden" name="shifts[${status.index}].group_name" value="${name }">
-			</c:forTokens>		
-		</div>
-		<div class="modal-footer">
-<!-- 	    <button type="button" class="btn" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('SupForm')">Submit</button> -->
-	    <input type="submit" value="Save" />
-	    </div>
-	    </form:form>
-		</div>
-		</div>
-	</div>
-	<script>
-	function openUpdateSupForm(para, id){
-		$("#"+para+"_id").val($("#"+para+"_"+id+" td:nth-child(1)").text());
-		$("#"+para+"_event_id").val($("#"+para+"_"+id+" td:nth-child(2)").attr('tisvalue'));
-		$("#"+para+"_support_title").val($("#"+para+"_"+id+" td:nth-child(3)").text());
-		$("#"+para+"_support_tel").val($("#"+para+"_"+id+" td:nth-child(4)").text());
-		$('#'+para).modal('show');
-	}
+
 	
-	function openAssignSupForm(par1, par2, length){
-		for(i = 0 ; i < length ; i++){
-		$("#"+i+"event_id").val(par1);
-		$("#"+i+"supports_id").val(par2);
-		$("#"+i+"emp_id").val("0");
-		}
-		
-		  var url = '/TIS/getShift/'+par2;
-		  $.ajax({
-		      url: url,
-		      method: "POST",
-		      dataType: 'json',
-		      processData: false,
-		      contentType: false,
-		      success: function(result){
-		    	  for(var ele in result){
-		    		  if(result[ele].event_id == par1){
-		    			  $("#"+result[ele].group_name+"emp_id").val(result[ele].emp_id);
-		    		  }
-		    	  }
-		      },
-		      error: function(er){
-		    	  console.log("err. : "+er);
-		      }
-		  });
-		
-		$('#SupportsAss').modal('show');
-	}
-	</script>
 </div>
 <script>
 function openForm(para){
