@@ -289,7 +289,7 @@
 			<input type="hidden" name="event_id" value="${tripinfo.event_id }">
 			<input type="hidden" name="emp_id" value="${tripinfo.emp_id }">
 			<label>Image</label>
-			<img src="${pageContext.request.contextPath}/resources/tis/image/empty.png" class="img-responsive" id="iti_img"><br>
+			<img src="${pageContext.request.contextPath}/resources/tis/image/dot.png" class="img-responsive" id="iti_img"><br>
 			<input type="file" name="iti_img_file" class="form-control" accept="image/*">
 		</form>
 		</div>

@@ -194,7 +194,7 @@ function openUpdateForm(para, id){
 	        <th style="width: 15%;">Name</th>
 	        <th style="width: 15%;">Name (Local)</th>
 	        <th style="width: 25%;">Address</th>
-	        <th style="width: 25%;">Address (Local)</th>
+	        <th style="width: 25%;">Local Address (Taxi)</th>
 	        <th style="width: 5%;">Latitude</th>
 	        <th style="width: 5%;">Longitude</th>
 	        <th style="width: 5%;">Type</th>
@@ -225,21 +225,21 @@ function openUpdateForm(para, id){
 		</div>
 		<div class="label-style modal-body-style modal-body">
 		<form id="LocationsForm" action="LocationsForm" method="POST">
-			<label>Venue Picture</label>
+			<label>Picture</label>
 			<input type="text" name="venue_pic" placeholder="venue_pic" class="form-control">
-			<label>Venue Name</label>
+			<label>Name</label>
 			<input type="text" name="venue_name" placeholder="venue_name" class="form-control">
-			<label>Venue Local Name</label>
+			<label>Local Name</label>
 			<input type="text" name="venue_name_loc" placeholder="venue_name_loc" class="form-control">
-			<label>Venue Address</label>
+			<label>Address</label>
 			<input type="text" name="venue_address" placeholder="venue_address" class="form-control">
-			<label>Venue Local Address</label>
+			<label>Local Address (Taxi)</label>
 			<input type="text" name="venue_address_loc" placeholder="venue_address_loc" class="form-control">
 			<label>Latitude</label>
 			<input type="text" name="lat" placeholder="lat" class="form-control">
 			<label>Longitude</label>
 			<input type="text" name="lng" placeholder="lng" class="form-control">
-			<label>Venue Type</label>
+			<label>Type</label>
 			<input type="text" name="venue_type" placeholder="venue_type" class="form-control">
 		</form>
 		</div>
@@ -257,21 +257,21 @@ function openUpdateForm(para, id){
 		</div>
 		<div class="label-style modal-body-style modal-body">
 		<form id="LocationsUpdateForm" action="LocationsUpdateForm" method="POST">
-			<label>Venue Picture</label>
+			<label>Picture</label>
 			<input type="text" id="LocationsUpdate_venue_pic" name="venue_pic" placeholder="venue_pic" class="form-control">
-			<label>Venue Name</label>
+			<label>Name</label>
 			<input type="text" id="LocationsUpdate_venue_name" name="venue_name" placeholder="venue_name" class="form-control">
-			<label>Venue Name (Local)</label>
+			<label>Local Name</label>
 			<input type="text" id="LocationsUpdate_venue_name_loc" name="venue_name_loc" placeholder="venue_name_loc" class="form-control">
-			<label>Venue Address</label>
+			<label>Address</label>
 			<input type="text" id="LocationsUpdate_venue_address" name="venue_address" placeholder="venue_address" class="form-control">
-			<label>Venue Address (Local)</label>
+			<label>Local Address (Taxi)</label>
 			<input type="text" id="LocationsUpdate_venue_address_loc" name="venue_address_loc" placeholder="venue_address_loc" class="form-control">
 			<label>Latitude</label>
 			<input type="text" id="LocationsUpdate_lat" name="lat" placeholder="lat" class="form-control">
 			<label>Longitude</label>
 			<input type="text" id="LocationsUpdate_lng" name="lng" placeholder="lng" class="form-control">
-			<label>Venue Type</label>
+			<label>Type</label>
 			<input type="text" id="LocationsUpdate_venue_type" name="venue_type" placeholder="venue_type" class="form-control">
 		  	<input type="hidden" name="id" id="LocationsUpdate_id">
 		</form>
