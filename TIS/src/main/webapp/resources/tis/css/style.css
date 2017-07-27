@@ -482,7 +482,7 @@ input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focu
 
 .btn-custom, input[type="button"], input[type="submit"], input[type="reset"], button {
 	font-family:Roboto, Arial, sans-serif;
-	color:#FFF !important;
+/* 	color:#FFF !important; 여기서 해결하면 안되요!*/
 	font-size:16px;
 	line-height:50px;
 	text-align:left;

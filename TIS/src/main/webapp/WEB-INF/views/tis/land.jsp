@@ -71,15 +71,26 @@
                         <p>Travel information system</p>
                     </div>
                     <div class="well">
-                    <form action="info" method="post">
-                    	<input type="text" class="form-control" placeholder="firstname.lastname" name="id"><br>
-                    	<input type="password" class="form-control" placeholder="TIS password" name="pass"><br>
-                    	<input type="submit" value="Login" style="background-color: #3498db; border-color: #2980b9">
-                    </form>
-                    <br>
-                    <c:if test="${not empty err }">
-                    	<div class="alert alert-danger" role="alert">${err }</div>
-                    </c:if>
+                    <div class="row">	
+                    	<div class="col-sm-4" style="text-align: center">
+                    		<a href="request" >
+                    		<strong>Booking</strong>
+                    		<img style=" margin: 0 auto" src="${pageContext.request.contextPath}/resources/tis/image/hotel.svg" alt="hotelLogo" class="img-responsive">
+                    		</a>
+                    	</div>
+						<div class="col-sm-4" style="text-align: center">
+							<a href="home">
+							<strong>Travel</strong>
+							<img style=" margin: 0 auto" src="${pageContext.request.contextPath}/resources/tis/image/map.svg" alt="mapLogo" class="img-responsive">
+							</a>
+						</div>
+						<div class="col-sm-4" style="text-align: center">
+							<a href="admin">
+							<strong>Admin</strong>
+							<img style=" margin: 0 auto" src="${pageContext.request.contextPath}/resources/tis/image/admin.svg" alt="adminLogo" class="img-responsive">
+							</a>
+						</div>
+                    </div>
                     </div>
                     <div class="header-btn">
                     </div>

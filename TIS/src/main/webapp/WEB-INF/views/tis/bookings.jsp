@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
-
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]><html class="ie ie6" lang="en"><![endif]-->
 <!--[if IE 7]><html class="ie ie7" lang="en"><![endif]-->
@@ -63,7 +63,6 @@
 <!--       <a class="navbar-brand" href="#" style="padding-top: 2em;color: WHITE"> -->
       	<h4 class="navbar-brand" style="color: WHITE; font-size: 1.5em; padding-top: 1.5em;">Trip Info System <Strong>ADMIN</Strong> ${sessionScope.user_name}</h4>
 <!--       </a> -->
-		
      <img class="img-responsive" alt="" src="${pageContext.request.contextPath}/resources/tis/image/Atos.svg" style="max-height: 2em; max-width:15%;margin-top: 2em;margin-right: 1em; float:right;"  >
     </div>
    
@@ -71,129 +70,62 @@
 <!--     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
 <!--     </div>/.navbar-collapse -->
 <!--   </div> -->
-
 </nav>	
-		
+
 <div class="container">
 <div class="row">
 		<ul class="nav nav-tabs nav-justified">
-		      <li role="presentation"><a href="bookings">Bookings</a></li>
+		 	  <li role="presentation" class="active"><a href="bookings">Bookings</a></li>
 			  <li role="presentation"><a href="infoTrip">Trips</a></li>
-			  <li role="presentation" class="active"><a href="infoAdmin">Profiles</a></li>
+			  <li role="presentation"><a href="infoAdmin">Profiles</a></li>
 			  <li role="presentation"><a href="infoShift">Shifts</a></li>
 			  <li role="presentation"><a href="infoTripcodes">Trip-codes</a></li>
 		</ul>
 </div>
 <div style="height: 2em"></div>
-<div class="row">	
-	<h3>Profiles</h3>
-	<h4>Profiles <button class="btn-style" onclick="openForm('Profiles')">Add new</button></h4>
+	<div class="row">	
+	<h3>Booking requests</h3>	
+<!-- 	<h4>Supports <button class="btn-style" onclick="openForm('Supports')">Add new</button></h4> -->
 	</div>
 	<div class="row">	
 	<table class="table table-bordered">
 	    <thead>
 	      <tr class="info">
-	        <th>Id</th>
-	        <th>First Name</th>
-	        <th>Last Name</th>
-	        <th>Picture</th>
-	        <th>Job title</th>
-	        <th>Telephone</th>
-	        <th>Email</th>
-	        <th>Password</th>
+	        <th style="width:10%">Id</th>
+	        <th style="width:10%">Status</th>
+	        <th style="width:40%">Name</th>
+	        <th style="width:20%">Travel purpose</th>
+	        <th style="width:10%">Confirm</th>
+	        <th style="width:10%">Trips</th>
 	      </tr>
 	    </thead>
 	    <tbody>
-	    <c:forEach items="${temp }" var="ele">
-	    	<tr class="tr-style" onclick="openUpdateProForm('ProUpdate', '${ele.id }')" id="ProUpdate_${ele.id }">
-	        <td>${ele.id}</td>
-	        <td>${ele.first_name}</td>
-	        <td>${ele.last_name}</td>
-	        <td>${ele.picture}</td>
-	        <td>${ele.job_title}</td>
-	        <td>${ele.tel}</td>
-	        <td>${ele.email}</td>
-	        <td>${ele.pin}</td>
+	    <c:forEach items="${req }" var="ele">
+	    	<tr class="tr-style" id="SupUpdate_${ele.id }">
+		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.id}</td>
+		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.req_status}</td>
+		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.first_name} ${ele.last_name }</td>
+		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.req_purpose}</td>
+	          	<td style="text-align: center; font-size:1.3em;">
+	          	<c:choose>
+	          		<c:when test="${ele.req_status eq 'Confirmed' }"><button class="btn btn-sm btn-success" >Cancel</button></c:when>
+	          		<c:otherwise><button class="btn btn-sm btn-success" >Confirm</button></c:otherwise>
+	          	</c:choose>
+	          	</td>
+	          	<td style="text-align: center; font-size:1.3em;">
+	          	<c:choose>
+	          		<c:when test="${ele.req_status eq 'Confirmed' }"><button class="btn btn-sm btn-success">Trip</button></c:when>
+	          		<c:otherwise><button class="btn btn-sm btn-success" disabled="disabled">Trip</button></c:otherwise>
+	          	</c:choose>
+	          		
+	          	</td>
 	      	</tr>
 	    </c:forEach>
 	    </tbody>
 	  </table>
 	</div>
-	<div class="modal" id="Profiles" role="dialog">
-		<div class="modal-dialog">
-		<div class="modal-content-style modal-content">
-		<div class="modal-header-style modal-header">
-		Profiles
-		</div>
-		<div class="label-style modal-body-style modal-body">
-		<form id="ProForm" action="ProForm" method="POST">
-			<label>First Name</label>
-			<input type="text" name="first_name" placeholder="first_name" class="form-control">
-			<label>Last Name</label>
-			<input type="text" name="last_name" placeholder="last_name" class="form-control">
-			<label>Picture</label>
-			<input type="text" name="picture" placeholder="picture" class="form-control">
-			<label>Job Title</label>
-			<input type="text" name="job_title" placeholder="job_title" class="form-control">
-			<label>Telephone</label>
-			<input type="text" name="tel" placeholder="tel" class="form-control">
-			<label>Email</label>
-			<input type="text" name="email" placeholder="email" class="form-control">
-			<label>Password</label>
-			<input type="text" name="pin" placeholder="pin" class="form-control">
-		</form>
-		</div>
-		<div class="modal-footer">
-	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('ProForm')">Submit</button>
-	  	</div>
-		</div>
-		</div>
-	</div>
-	<div class="modal" id="ProUpdate" role="dialog">
-		<div class="modal-dialog">
-		<div class="modal-content-style modal-content">
-		<div class="modal-header-style modal-header">
-		Profiles
-		</div>
-		<div class="label-style modal-body-style modal-body">
-		<form id="ProUpdateForm" action="ProUpdateForm" method="POST">
-		<label>First Name</label>
-			<input type="text" id="ProUpdate_first_name" name="first_name" placeholder="first_name" class="form-control">
-			<label>Last Name</label>
-			<input type="text" id="ProUpdate_last_name" name="last_name" placeholder="last_name" class="form-control">
-			<label>Picture</label>
-			<input type="text" id="ProUpdate_picture" name="picture" placeholder="picture" class="form-control">
-			<label>Job Title</label>
-			<input type="text" id="ProUpdate_job_title" name="job_title" placeholder="job_title" class="form-control">
-			<label>Telephone</label>
-			<input type="text" id="ProUpdate_tel" name="tel" placeholder="tel" class="form-control">
-			<label>Email</label>
-			<input type="text" id="ProUpdate_email" name="email" placeholder="email" class="form-control">
-			<label>Password</label>
-			<input type="text" id="ProUpdate_pin" name="pin" placeholder="pin" class="form-control">
-		  	<input type="hidden" name="id" id="ProUpdate_id">
-		</form>
-		</div>
-		<div class="modal-footer">
-	    <button type="button" class="modal-btn-style" data-backdrop="static" data-keyboard="false" data-dismiss="modal" onclick="submitForm('ProUpdateForm')">Submit</button>
-	  	</div>
-		</div>
-		</div>
-	</div>
 
-<script>
-function openUpdateProForm(para, id){
-	$("#"+para+"_id").val($("#"+para+"_"+id+" td:nth-child(1)").text());
-	$("#"+para+"_first_name").val($("#"+para+"_"+id+" td:nth-child(2)").text());
-	$("#"+para+"_last_name").val($("#"+para+"_"+id+" td:nth-child(3)").text());
-	$("#"+para+"_picture").val($("#"+para+"_"+id+" td:nth-child(4)").text());
-	$("#"+para+"_job_title").val($("#"+para+"_"+id+" td:nth-child(5)").text());
-	$("#"+para+"_tel").val($("#"+para+"_"+id+" td:nth-child(6)").text());
-	$("#"+para+"_email").val($("#"+para+"_"+id+" td:nth-child(7)").text());
-	$("#"+para+"_pin").val($("#"+para+"_"+id+" td:nth-child(8)").text());
-	$('#'+para).modal('show');
-}
-</script>
+	
 </div>
 <script>
 function openForm(para){

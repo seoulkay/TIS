@@ -25,6 +25,7 @@
 		<typeAlias type="tis.pye.team.vo.TisItiDetail" alias="TisItiDetail"/>
 		<typeAlias type="tis.pye.team.vo.TisOther" alias="TisOther"/>
 		<typeAlias type="tis.pye.team.vo.TisTeam" alias="TisTeam"/>
+		<typeAlias type="tis.pye.team.vo.TisRequest" alias="TisRequest"/>
 	</typeAliases>
 	
 	<mappers>
