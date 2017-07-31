@@ -92,7 +92,7 @@
 	<div class="row row-style">	
 		<%-- <p><strong>Confirmation No : </strong>ACC${ele.id }</p> --%>
 		<p style="font-size: 1.3em; color: #008fd4;"><strong>${ele.venue_name }</strong></p>
-		<p><a href="https://www.google.co.kr/maps/@${ele.lat },${ele.lng },19z" target="_blank">${ele.venue_address }</a></p>
+		<p><a href="https://www.google.co.kr/maps?z=19&q=${ele.lat }+${ele.lng }&||=${ele.lat }+${ele.lng }" target="_blank">${ele.venue_address }</a></p>
 		<div style="display: none" class="venues">${ele.venue_id }</div>
 		<table class="table table-bordered" style="border: #ffffff !important;">
 		    <thead>
