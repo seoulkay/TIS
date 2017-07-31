@@ -106,3 +106,13 @@ $(document).ready(function() {
     
 
 });
+
+
+function signout(){
+var c = confirm("Signing out?");
+if(c == true){
+	location.href = '/TIS/signout';
+}else{
+	//stays in the site
+}
+}

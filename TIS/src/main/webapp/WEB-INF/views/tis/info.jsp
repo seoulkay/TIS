@@ -52,65 +52,18 @@
     	<link rel="stylesheet" href="css/ie-older.css">
     <![endif]-->
     
-<%--     <noscript><link rel="stylesheet" href="${pageContext.request.contextPath}/resources/ulc/css/no-js.css"></noscript> --%>
     
     <!-- Favicons -->
 	<link rel="shortcut icon" href="https://www.tis2018.ga/image/favicon.ico">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<!-- Scrolling Navigation tab 구현해야하는 부분  -->
-<div class="container" style="width:100%; height: auto; background-color: #444;">
-	<button class="astext" onclick="signout();">Sign Out</button>
-		<script>
-      		function signout(){
-	      	var c = confirm("Signing out?");
-		      	if(c == true){
-		      		location.href = 'signout';
-		      	}else{
-		      		//stays in the site
-		      	}
-      		}
-   		</script>
-</div>
-<nav class="navbar navbar-default" style="height: 6em ; background-size: 2000px 7em; background-image: url('${pageContext.request.contextPath}/resources/tis/image/headerGeneric.png'); border-radius:0; border:0">
-	<div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-<!--     <div class="navbar-header" >  -->
-<!--       <a class="navbar-brand" href="#" style="padding-top: 2em;color: WHITE"> -->
-      	<!-- <h4 class="navbar-brand" style="color: WHITE; font-size: 1.5em; padding-top: 1.5em;">Trip Info System</h4> -->
-      	<img class="img-responsive" alt="Trip Info System" src="${pageContext.request.contextPath}/resources/tis/image/TIS_LOGO.png" style="max-height:3.5em; max-width: 50%; margin-top: 1.5em; margin-right: 1em; float:left;">
-      	<!-- <button class="btn" style="margin-top: 2em" onclick="signout()">Sign Out</button> -->
-      	<!-- <script>
-      	function signout(){
-	      	var c = confirm("Signing out?");
-	      	if(c == true){
-	      		location.href = 'signout';
-	      	}else{
-	      		//stays in the site
-	      	}
-      	}
-      	</script> -->
-<!--       </a> -->
-     <img class="img-responsive" alt="" src="${pageContext.request.contextPath}/resources/tis/image/Atos.svg" style="max-height: 2em; max-width:15%; margin-top: 2em; margin-right: 1em; float:right;"  >
-    </div>
-   
-    <!-- Collect the nav links, forms, and other content for toggling -->
-<!--     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
-<!--     </div>/.navbar-collapse -->
-<!--   </div> -->
-</nav>
-<!-- 아몰랑 탭 스크롤 나중에 찾자 -->
-<!-- 	<div class="page-nav-space-holder"> -->
-<!-- 		<div id="page-nav-wrapper" class="page-nav-wrapper text-center"> -->
-<!-- 			<div class="container"> -->
-<!-- 				<ul id="page-nav" class="nav page-nav list-inline"> -->
-<!-- 					<li ><a href="#accom">1</a></li> -->
-<!-- 					<li class="active"><a href="#accom">2</a></li> -->
-<!-- 					<li ><a href="#accom">3</a></li> -->
-<!-- 				</ul> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
+<body>
+<!--     navbar -->
+    <jsp:include page="common/navbar.jsp" flush="false">
+		<jsp:param name="param" value="value1" />
+	</jsp:include>
+
+
 <div style="width: 100%; padding-left: 1em; padding-right:1em;" class="container">
 	<!-- My profile section starts -->
 	<div class="row row-style" style="display: block;">
@@ -130,30 +83,6 @@
 		</ul>	
 	</div>
 	
-	<%-- <hr>
-	
-	<div class="row row-style">			
-		<!-- <div class="col-sm-10"> -->
-			<img class="img-responsive" alt="" style="float: left; min-height: 5em; max-height: 5em; border-radius: 50%; -moz-border-radius: 50%; -khtml-border-radius: 50%; -webkit-border-radius: 50%;" src="https://www.tis2018.ga/image/tisImage/${em.picture }" >
-			<h4 style="float: left; margin-left: 1em; margin-right: 1em;">${em.first_name } ${em.last_name }</h4>
-			<button class="btn" style="margin-left: 1em;" onclick="signout()">Sign Out</button>
-			 	<script>
-		      		function signout(){
-			      	var c = confirm("Signing out?");
-				      	if(c == true){
-				      		location.href = 'signout';
-				      	}else{
-				      		//stays in the site
-				      	}
-		      		}
-	      		</script>
-			<h5 style="clear: left; padding-top: 1em;">${em.job_title }</h5>
-			<h5>${em.tel }</h5>
-			<h5>${em.email }</h5>
-		<!-- </div> -->
-	</div> --%>
-	<!-- My profile section ends -->
-	<hr>
 	<!-- My Accommodation section starts -->
 	<div class="row title-row-style">
 		<h4><span class="label label-success" id="accom">My Accommodation</span></h4>
@@ -290,90 +219,16 @@
 		<p>${to.note }</p>
 	</div>
 	<!-- Other section ends -->	
-	<hr>
-	<!-- My Group section starts -->		
-	<div class="row title-row-style">	
-		<h4><span class="label label-success">My Group</span></h4>
-	</div>
-	<div class="row row-style">
-		<div style="padding-left:0px;" class="col-sm-6">
-			<h5>${ttw[0].tisTeamList[0].event_name }</h5>
-		</div>
-		<div style="padding-left: 0px; padding-right:0px; padding-bottom: 1em; class="col-sm-6">
-			<select class="form-control group-selector" id="group-selector">
-			<option value="0">SELECT GROUP</option>
-			<c:forEach items="${ttw[0].tisTeamList }" var="ele" varStatus="stat">
-					<option value="${ele.group_name }">${ele.group_name }</option>
-			</c:forEach>
-			</select>
-		</div>
-	</div>
-	<div class="row row-style">
-	<c:forEach items="${ttw }" var="ele" varStatus="stat">
-	<table class="table table-bordered">
-	      <tr class="info">
-	        <th colspan="4">${ele.tisTeamList[0].support_title }</th>
-	      </tr>
-	      <c:forEach items="${ele.tisTeamList }" var="elee">
-	      <tr style="display: none;" class="group_tr group_${elee.group_name }">
-	      	<td style="width: 10%" class="col-sm-2"><img class="img-responsive" alt="" style="max-height: 5em" src="https://www.tis2018.ga/image/tisImage/${elee.picture }" ></td>
-	      	<td style="width: 30%" class="col-sm-5">${elee.first_name } ${elee.last_name }</td>
-	      	<td style="width: 30%" sclass="col-sm-5">${elee.email }</td>
-	      	<td style="width: 30%" sclass="col-sm-5">${elee.support_tel }</td>
-	      </tr>
-	      </c:forEach>
-	  </table>
-	  </c:forEach>
-	</div>
-	<!-- My Group section ends -->	
+	
+
+    
+    
+    <!-- ******FOOTER****** -->
+	<jsp:include page="common/footer.jsp" flush="false">
+		<jsp:param name="param" value="value1" />
+	</jsp:include><!--//footer-->
+	
 </div>
-<script>
-$( ".group-selector" ).change(function() {
-	  $(".group_tr").hide();
-	  $(".group_"+$("#group-selector").val()).show();
-	});
-</script>
-
-    
-    <!-- #footer -->
-    <footer id="footer">
-        
-        <!-- .container -->
-        <div class="container">
-            
-            <div class="footer-links">
-<!--             	<a href="https://www.facebook.com/UFO79-727262880784383/" class="link-icon" title="Facebook"><i class="ion ion-social-facebook"></i></a> -->
-<!--                 <a href="http://www.twitter.com/share?=url=www.ufo79.com/PIX/que/" class="link-icon" title="Twitter"><i class="ion ion-social-twitter"></i></a> -->
-<!--                 <a href="http://plus.google.com/share?url=www.ufo79.com/PIX/que/" class="link-icon" title="Google Plus"><i class="ion ion-social-googleplus"></i></a> -->
-<!--                 <a href="#" class="link-icon" title="Dribbble"><i class="ion ion-social-dribbble"></i></a> -->
-<!--                 <a href="#" class="link-icon" title="Instagram"><i class="ion ion-social-instagram"></i></a> -->
-                <a href="#" class="scrollup"><i class="ion ion-ios-arrow-up"></i></a>
-            </div>
-            <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-            <div class="footer-copyright">
-            	<p>&copy; <a href="http://affapress.com" target="_blank">Atos Pyeongchang team</a> All Rights Reserved.</p>
-            </div>
-            
-		</div>
-        <!-- .container end -->
-        
-    </footer>
-    <!-- #footer end -->
-    
-    <!--[if lt IE 8]>
-    	<div class="browser-notice">
-            <div class="container">
-            	<div class="text">
-                    <h1>Internet Explorer Out To Date</h1>
-                    <p>Please update your Internet Explorer browser with a newer version (Internet Explorer 8 above) now!</p>
-                    <span>You can download it <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank">here....</a></span>
-                </div>
-            </div>
-        </div>
-	<![endif]-->
-    
-
-   <div id="fb-root"></div> 
 </body>
 <script>
 var neighborhoods = [];
@@ -489,13 +344,7 @@ markerSet();
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN9VDOjhzw7kPKEbFw7LEVoVreCXiz87E&callback=initMap" async defer></script>
 
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1074619385980281";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

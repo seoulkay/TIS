@@ -1,18 +1,22 @@
 package tis.pye.team.controller;
 
-import java.text.SimpleDateFormat;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.Properties;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.logging.Logger;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,8 +24,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
+import tis.pye.team.dao.ApplicationMailer;
 import tis.pye.team.dao.RestService;
 import tis.pye.team.dao.TisDao;
 import tis.pye.team.vo.TisAccom;
@@ -35,6 +39,7 @@ import tis.pye.team.vo.TisIti;
 import tis.pye.team.vo.TisItiDetail;
 import tis.pye.team.vo.TisOther;
 import tis.pye.team.vo.TisPolicies;
+import tis.pye.team.vo.TisRequest;
 import tis.pye.team.vo.TisShift;
 import tis.pye.team.vo.TisShiftList;
 import tis.pye.team.vo.TisSupports;
@@ -49,6 +54,7 @@ public class TisController {
 	
 	@Autowired
 	RestService restService;
+	
 		
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String tisLogin(){
@@ -60,15 +66,130 @@ public class TisController {
 		return "tis/homeAdmin";
 	}
 	
+	@RequestMapping(value = "/about/team", method = RequestMethod.GET)
+	public String tisaboutteam(Model model){
+		
+		TisEvent te = dao.selectActiveEvent();
+		
+		model.addAttribute("ttw", dao.selectTisTeamByEvent(te.getId()));
+		
+		return "tis/about/team";
+	}
+	
+	@RequestMapping(value = "/about/emer", method = RequestMethod.GET)
+	public String tisaboutemer(){
+		return "tis/about/emer";
+	}
+	
+	@RequestMapping(value = "/about/faq", method = RequestMethod.GET)
+	public String tisaboutfaq(){
+		return "tis/about/faq";
+	}
+	
+	@RequestMapping(value = "/game/host", method = RequestMethod.GET)
+	public String tisgamehost(){
+		return "tis/game/host";
+	}
+	
+	@RequestMapping(value = "/game/oly", method = RequestMethod.GET)
+	public String tisgameoly(){
+		return "tis/game/oly";
+	}
+	
+	@RequestMapping(value = "/game/par", method = RequestMethod.GET)
+	public String tisgamepar(){
+		return "tis/game/par";
+	}
+	
+	@RequestMapping(value = "/game/venue", method = RequestMethod.GET)
+	public String tisgamevenue(){
+		return "tis/game/venue";
+	}
+	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String tisLoginhome(){
+	public String tishome(){
 		return "tis/home";
 	}
 	
+	
 	@RequestMapping(value = "/request", method = RequestMethod.GET)
-	public String tisRequest(){
+	public String tisRequest(Model model){
+		List<TisEvent> te = dao.selectAllEvent();
+		List<TisVenue> tv = dao.selectAllVenue();
+		
+		//only c_venue and n_venue
+		List<TisVenue> tempTv = new ArrayList<TisVenue>();
+		for(TisVenue ele : tv){
+			if(ele.getVenue_type().equals("c_venue") || ele.getVenue_type().equals("n_venue")){
+				tempTv.add(ele);
+			}
+		}
+		
+		List<TisEmployee> temp = dao.selectEmployee();
+		
+		model.addAttribute("tv", tempTv);
+		model.addAttribute("te", te);
+		model.addAttribute("temp", temp);
 		return "tis/request";
 	}
+	
+	@RequestMapping(value = "/requestFormAction", method = RequestMethod.POST)
+	public String tisRequestFormAction(Model model, @ModelAttribute("vo")TisRequest vo){
+		dao.insertTisRequest(vo);
+		
+		//이메일용 이벤트 네임 구하기
+		TisEvent te = new TisEvent();
+		te.setId(vo.getReq_purpose());
+		te = dao.selectEventById(te);
+		vo.setEvent_name(te.getEvent_name());
+		
+		//이메일용 로컬콘텍 네임 구하기
+		TisEmployee tem = new TisEmployee();
+		tem.setId(vo.getReq_contact());
+		tem = dao.selectEmployeeByAtosIdOnly(tem);
+		vo.setLocal_contact(tem.getFirst_name()+" "+tem.getLast_name());
+		
+		//이메일용 베뉴이름 구하기
+		List<TisVenue> venueList = dao.selectAllVenue();
+		String venueName = "";
+		
+		try{
+		String[] venueIds = vo.getReq_venue().split(",");
+		
+		for(String ele : venueIds){
+			for(TisVenue elee : venueList){
+				if(Integer.parseInt(ele) == elee.getId()){
+					venueName = venueName + " " + elee.getVenue_name();
+				}
+			}
+		}
+		vo.setVenue_name(venueName);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		sendTisRequestEmail(vo);
+		
+		return "tis/land";
+	}
+	
+	public void sendTisRequestEmail(TisRequest vo){
+		final TisRequest msg  = vo;
+		ExecutorService emailExecutor = Executors.newSingleThreadExecutor();
+		        emailExecutor.execute(new Runnable() {
+		            @Override
+		            public void run() {
+		                try {
+		                	ApplicationMailer am = new ApplicationMailer();
+		            		am.sendGmail(msg);
+		                } catch (Exception e) {
+		                   e.printStackTrace();
+		                }
+		            }
+		        });
+		        emailExecutor.shutdown();
+	}
+	
 	
 	@RequestMapping(value = "/infoAdmin", method = RequestMethod.POST)
 	public String tisLoginadminAdmin(@ModelAttribute("vo") TisAdmin vo, Model model, HttpSession session){
@@ -143,7 +264,9 @@ public class TisController {
 			if(session.getAttribute("user_name").equals("")){
 				return "tis/homeAdmin";
 			}else{
+				List<TisRequest> req = dao.selectTisRequest();
 				
+				model.addAttribute("req", req);
 				return "tis/bookings";
 			}
 		}catch(Exception e){
@@ -431,12 +554,17 @@ public class TisController {
 	}
 	
 	@RequestMapping(value = "/signout", method = RequestMethod.GET)
-	public String signout(){
+	public String signout(HttpSession session){
+		session.invalidate();
 		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/info", method = RequestMethod.POST)
-	public String tisInfo(@RequestParam("id")String id, @RequestParam("pass")String pass, Model model){
+	public String tisInfo(@RequestParam("id")String id, @RequestParam("pass")String pass, Model model, HttpSession session){
+		
+		session.setAttribute("uid", id);
+		session.setAttribute("upw", pass);
+		
 		
 		//유저 알아내기 부분.
 		TisEvent te = dao.selectActiveEvent();
@@ -452,6 +580,9 @@ public class TisController {
 			
 		}
 		
+		
+		try{
+			
 		TisEmployee em = dao.selectEmployeeByAtosName(cr);
 		TisTrip tt = new TisTrip();
 		
@@ -463,7 +594,7 @@ public class TisController {
 		
 		
 		
-//		try{
+		
 		if(em.getPin().equals(pass)){
 			
 			List<TisAccom> ta = dao.selectAccomByAtosId(em);
@@ -506,13 +637,108 @@ public class TisController {
 			return "tis/info";
 		}else{
 			System.out.println("Wrong Password");
+			model.addAttribute("err", "Wrong password or user name.");
 			return "tis/home";
 		}
-//		}catch(Exception e){
-//			System.out.println("여기 1");
-//			return "tis/home";
-//		}
+		}catch(Exception e){
+			e.printStackTrace();
+			model.addAttribute("err", "Wrong password or user name!");
+			return "tis/home";
+		}
 	}
+	
+	
+	@RequestMapping(value = "/info", method = RequestMethod.GET)
+	public String tisInfo(Model model, HttpSession session){
+		
+		try{
+			
+			String id = "";
+			String pass = "";
+			
+			id = session.getAttribute("uid").toString();
+			pass = session.getAttribute("upw").toString();
+			
+			//유저 알아내기 부분.
+			TisEvent te = dao.selectActiveEvent();
+			TisEmployee cr = new TisEmployee();
+			
+			String[] name = id.split("\\.");
+			
+			try{
+			cr.setEvent_id(te.getId());
+			cr.setFirst_name(name[0]);
+			cr.setLast_name(name[1]);
+			}catch(Exception e){
+				
+			}
+			
+			
+		TisEmployee em = dao.selectEmployeeByAtosName(cr);
+		TisTrip tt = new TisTrip();
+		
+		em.setEvent_id(te.getId());
+		
+		tt.setEmp_id(em.getId());
+		tt.setEvent_id(em.getEvent_id());
+		tt = dao.selectTripByParam(tt);
+		
+		
+		
+		
+		if(em.getPin().equals(pass)){
+			
+			List<TisAccom> ta = dao.selectAccomByAtosId(em);
+			//tf 안쓸꺼다.
+			List<TisFlight> tf = dao.selectFlightByAtosId(em);
+			List<TisVenue> tv = dao.selectVenueByAtosId(em);
+			List<TisFacilities> tfac = dao.selectFac();
+			List<TisPolicies> tpol = dao.selectPol();
+			
+			try{
+			List<TisIti> tis = dao.selectItiByTrip(tt.getId());
+			for(TisIti ele : tis){
+				List<TisItiDetail> detTemp = new ArrayList<TisItiDetail>();
+				detTemp = dao.selectItiDetById(ele.getId());
+				ele.setItiDetail(detTemp);
+			}
+			model.addAttribute("tis", tis);
+			}catch(Exception e){
+			 System.out.println("No Itinery");	
+			}
+			
+			TisOther to = new TisOther();
+			to.setEmp_id(em.getId());
+			to.setEvent_id(em.getEvent_id());
+			to = dao.selectTisOtherByEventEmp(to);
+			
+			model.addAttribute("em", em);
+			model.addAttribute("ta", ta);
+			model.addAttribute("tf", tf);
+			model.addAttribute("tv", tv);
+			model.addAttribute("te", te);
+			model.addAttribute("te", te);
+			model.addAttribute("tfac", tfac);
+			model.addAttribute("tpol", tpol);
+			model.addAttribute("to", to);
+
+			model.addAttribute("ttw", dao.selectTisTeamByEvent(te.getId()));
+			
+			
+			return "tis/info";
+		}else{
+			System.out.println("Wrong Password");
+			model.addAttribute("err", "Wrong password or user name.");
+			return "tis/home";
+		}
+		}catch(Exception e){
+			e.printStackTrace();
+			model.addAttribute("err", "Wrong password or user name!");
+			return "tis/home";
+		}
+	}
+	
+	
 	
 	@RequestMapping(value = "getEmp/{id}", method = RequestMethod.POST)
 	public @ResponseBody TisEmployee getEmp(@PathVariable("id")int id){
