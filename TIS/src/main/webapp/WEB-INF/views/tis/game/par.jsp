@@ -58,12 +58,14 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<div style="height: 30em; background-image: url('https://www.ufo79.com/image/201704231711260864.jpg'); background-size:cover">
+<div style="height: 30em; background-image: url('https://www.ufo79.com/image/201704190443580874.jpg'); background-size:cover">
 	<!--     navbar -->
     <jsp:include page="../common/navbar.jsp" flush="false">
 		<jsp:param name="param" value="value1" />
 	</jsp:include>
-	<span style="margin: 0 auto; text-align: center;"><h1>Paralympics</h1></span>
+	<div style="height: 3em"></div>
+	<span style="margin: 0 auto; text-align: center;"><h1 class="title">Paraympic Winter Games PyeongChang2018</h1></span>
+	<span style="margin: 0 auto; text-align: center;"><h1 class="title">2018.03.09 - 2018.03.18</h1></span>
 	
 </div>
 
@@ -71,9 +73,10 @@
 		<div id="page-nav-wrapper" class="page-nav-wrapper text-center">
 			<div class="container">
 				<ul id="page-nav" class="nav page-nav list-inline" >
-					<li  style="margin: 0%"><a href="#anchor1">anchor1</a></li>
-					<li  style="margin: 0%"><a href="#anchor2">anchor2</a></li>
-					<li  style="margin: 0%"><a href="#anchor3">anchor3</a></li>
+					<li  style="margin: 0%"><a href="#anchor1">Paralympic</a></li>
+					<li  style="margin: 0%"><a href="#anchor2">Emblem</a></li>
+					<li  style="margin: 0%"><a href="#anchor3">Slogans</a></li>
+					<li  style="margin: 0%"><a href="#anchor3">Mascots</a></li>
 				</ul>
 				<!--//page-nav-->
 			</div>
@@ -83,56 +86,80 @@
 	<!--//page-nav-space-holder-->
 	
 	
-<div style="width: 100%; padding-left: 1em; padding-right:1em;" class="container">
-
-
+<div style="width: 100%; padding-top: 15px; padding-bottom: 15px;" class="container">
 <section id="anchor1">
-<div class="row title-row-style">	
-	<h4><span class="label label-success">anchor1</span></h4>
-</div>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
+	<div id="feature-block-1" class="feature-block feature-block-1">
+		<div class="row title-row-style">
+			<div class="feature-content col-md-6 col-sm-6 col-xs-12">
+				<h4 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">PyeongChang 2018 Paralympic Winter Games</span></h4>
+				<div class="feature-desc"><p>in PyeongChang, Gangwon Province, the Republic of Korea.</p><p>PyeongChang was selected as the host city of the 2018 Paralympic Winter Games after receiving a majority vote at the 123rd IOC Session held on 7 July, 2011 after three consecutive bids. The Paralympic Winter Games will be held in Korea for the first time in 30 years after the Seoul Paralympic Games in 1988. PyeongChang will be the stage for the Opening and Closing Ceremonies and most snow sports. Alpine skiing events will take place in Jeongseon, and all ice sports will be competed in the coastal city of Gangneung.
+</p></div>
+			</div>
+			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
+			<img class="img-responsive" src="https://www.ufo79.com/image/201707260445290413.jpg">
+			</div>
+		</div>
+	</div>
 </section>
+
 <section id="anchor2">
-<div class="row title-row-style">	
-	<h4><span class="label label-success">anchor2</span></h4>
-</div>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
+	<div id="feature-block-2" class="feature-block feature-block-1">
+		<div class="row title-row-style">
+			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
+				<img class="img-responsive" src="https://www.ufo79.com/image/201708030743270639.JPG">
+			</div>
+			<div class="feature-content col-md-6 col-sm-6 col-xs-12">
+				<h4 class="feature-title"><span style="background-color: #00a27c" class="label label-success">Emblem</span></h4>
+				<div class="feature-desc">
+					<p>The emblem symbolises a world open to everyone. It combines the image of ice and snow, winter sports stars (athletes), and people from all over the world, coming together in PyeongChang where heaven meets earth.</p>
+					<p>The emblem depicts a world where people with and without impairment, athletes, spectators, and people of the planet gather together in friendship.</p></div>
+			</div>			
+		</div>
+	</div>
 </section>
+
 <section id="anchor3">
-<div class="row title-row-style">	
-	<h4><span class="label label-success">anchor3</span></h4>
+	<div id="feature-block-3" class="feature-block feature-block-1">
+		<div class="row title-row-style">
+			<div class="feature-content col-md-6 col-sm-6 col-xs-12">
+				<h4 class="feature-title"><span style="background-color: #feb131" class="label label-success">Slogans</span></h4>
+				<div class="feature-desc"><p>Passion. Connected. refers to a world in which everyone is connected with shared passion for winter sports, a world open to any generation anywhere, anytime, to open new horizons in the continued growth of winter sports.</p>
+				<p><strong>'Passion'</strong> means a very strong feeling, affection and something one is fond of. PyeongChang is a place of global festivals that inspires each other and symbolises a place where Koreans share their warm affection. It also expresses the Olympic spirit and the warm heartedness of Koreans.</p>
+				<p><strong>'Connected'</strong> means to link, join, combine, bridge, and understand. PyeongChang is a place where all generations can participate and inspire each other anytime and anywhere through Korea’s innovative technology and cultural convergence, and it means opening a new horizon for a new beginning, a harmonized world and the Olympic Winter Games.</p>
+</p></div>
+			</div>
+			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
+			<img class="img-responsive" src="https://www.ufo79.com/image/201708030723310807.JPG">
+			</div>
+		</div>
+	</div>
+</section>
 </div>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
+<div style="width: 100%; background-color:#A9D7E6; padding-top: 15px; padding-bottom:15px;" class="container">
+<section id="anchor4">
+	<div id="feature-block-4" class="feature-block feature-block-1">
+		<div class="row title-row-style">
+			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
+				<h4 class="feature-title"><span style="background-color: #16adde" class="label label-success">Mascots</span></h4>
+			</div>
+		</div>
+		<div class="row title-row-style" style="background-color:#A9D7E6;">
+			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
+				<div class="figure-holder" align="center" style="box-shadow: -10px 10px 10px 1px #666666;">
+					<img class="img-responsive" src="https://www.ufo79.com/image/201708030739210496.jpg">
+				</div>
+			</div>
+			<div class="feature-content col-md-6 col-sm-6 col-xs-12">				
+				<div class="feature-desc">
+					<div style="background-color: #16adde; padding: 0.5em; color: WHITE; border-color: #16adde;box-shadow: -10px 10px 10px 1px #666666;">
+						<p>The Asiatic black bear or “ban-dal-ga-seum-gom” (the bear with a half-moon mark on the chest) symbolises strong willpower and courage in the Korean folklore. This bear now has been selected as a friendly mascot for the Paralympic Games in 2018. “Banda” is derived from “ban-dal,” the Korean word for the half-moon. “Bi” stands for celebration of the Games.</p>
+						<p><strong>Characteristics of the Paralympic mascot</strong></p>
+						<p>Bandabi, the mascot of the PyeongChang 2018 Paralympic Winter Games took its motif from the Asiatic black bear. Bandabi has strong willpower and courage. It is a warm-hearted friend who takes the lead for equality and harmony and encourages athletes to push themselves beyond their limits. We will look forward to Bandabi's amazing activities.</p>
+					</div>
+				</div>
+			</div>			
+		</div>
+	</div>
 </section>
 </div>
        <!-- ******FOOTER****** -->

@@ -19,9 +19,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/TIS/info">Travel</a></li>
+        <li><a class="li-style" href="/TIS/info">Travel</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PYC2018 <span class="caret"></span></a>
+          <a class="li-style" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PYC2018 <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/TIS/about/team">Team</a></li>
             <li><a href="/TIS/about/emer">Emergency Contact</a></li>
@@ -29,7 +29,7 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
+          <a class="li-style" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/TIS/game/host">Host city</a></li>
             <li><a href="/TIS/game/oly">Olympics</a></li>
@@ -37,7 +37,7 @@
             <li><a href="/TIS/game/venue">Venue</a></li>
           </ul>
         </li>
-        <li><a href="javascript:signout()">Sign out</a></li>
+        <li><a class="li-style" href="javascript:signout()">Sign out</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

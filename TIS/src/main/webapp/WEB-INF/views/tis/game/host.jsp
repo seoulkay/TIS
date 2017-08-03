@@ -58,22 +58,22 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<div style="height: 30em; background-image: url('https://www.ufo79.com/image/201704231711260864.jpg'); background-size:cover">
+<div style="height: 30em; background-image: url('https://www.ufo79.com/image/201704190822210400.jpg'); background-size:cover">
 	<!--     navbar -->
     <jsp:include page="../common/navbar.jsp" flush="false">
 		<jsp:param name="param" value="value1" />
 	</jsp:include>
-	<span style="margin: 0 auto; text-align: center;"><h1>Host city</h1></span>
-	
+	<div style="height: 3em"></div>
+	<span style="margin: 0 auto; text-align: center;"><h1 class="title">Pyeongchang 2018 Host cities</h1></span>
 </div>
 
 	<div class="page-nav-space-holder">
 		<div id="page-nav-wrapper" class="page-nav-wrapper text-center">
 			<div class="container">
 				<ul id="page-nav" class="nav page-nav list-inline" >
-					<li  style="margin: 0%"><a href="#anchor1">anchor1</a></li>
-					<li  style="margin: 0%"><a href="#anchor2">anchor2</a></li>
-					<li  style="margin: 0%"><a href="#anchor3">anchor3</a></li>
+					<li  style="margin: 0%"><a href="#anchor1">PyeongChang</a></li>
+					<li  style="margin: 0%"><a href="#anchor2">Gangneung</a></li>
+					<li  style="margin: 0%"><a href="#anchor3">Jeongseon</a></li>
 				</ul>
 				<!--//page-nav-->
 			</div>
@@ -83,56 +83,48 @@
 	<!--//page-nav-space-holder-->
 	
 	
-<div style="width: 100%; padding-left: 1em; padding-right:1em;" class="container">
-
-
+<div style="width: 100%; padding-top: 15px; padding-bottom: 15px;" class="container">
 <section id="anchor1">
-<div class="row title-row-style">	
-	<h4><span class="label label-success">anchor1</span></h4>
-</div>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
+	<div id="feature-block-1" class="feature-block feature-block-1">
+		<div class="row title-row-style">
+			<div class="feature-content col-md-6 col-sm-6 col-xs-12">
+				<h4 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">PyeongChang</span></h4>
+				<div class="feature-desc"><p>Pyeongchang is a county in Gangwon province of South Korea located in the Taebaek Mountains region. It is home to several Buddhist temples, including Woljeongsa. It is approximately 180 km (110 mi) east of Seoul, the capital of South Korea. Pyeongchang will host the 2018 Winter Olympics and the 2018 Winter Paralympics.</p></div>
+			</div>
+			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
+			<img class="img-responsive" src="https://www.ufo79.com/image/201708030751290348.jpg">
+			</div>
+		</div>
+	</div>
 </section>
+
 <section id="anchor2">
-<div class="row title-row-style">	
-	<h4><span class="label label-success">anchor2</span></h4>
-</div>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
+	<div id="feature-block-2" class="feature-block feature-block-1">
+		<div class="row title-row-style">
+			<div class="feature-content col-md-6 col-sm-6 col-xs-12">
+				<h4 class="feature-title"><span style="background-color: #00a27c" class="label label-success">Gangneung</span></h4>
+				<div class="feature-desc"><p>Gangneung is a city in Gangwon-do, on the east coast of South Korea. It has a population of 229,869 (as of 2006). Gangneung is the economic centre of the Yeongdong region of Gangwon Province. Gangneung has many tourist attractions, such as Jeongdongjin, a very popular area for watching the sun rise, and Gyeongpo Beach. There is a ROK airbase south of downtown Gangneung which formerly doubled as a civil airport.</p></div>
+			</div>
+			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
+				<img class="img-responsive" src="https://www.ufo79.com/image/201708030751290352.jpg">
+			</div>			
+		</div>
+	</div>
 </section>
+
 <section id="anchor3">
-<div class="row title-row-style">	
-	<h4><span class="label label-success">anchor3</span></h4>
-</div>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
+	<div id="feature-block-3" class="feature-block feature-block-1">
+		<div class="row title-row-style">
+			<div class="feature-content col-md-6 col-sm-6 col-xs-12">
+				<h4 class="feature-title"><span style="background-color: #feb131" class="label label-success">Jeongseon</span></h4>
+				<div class="feature-desc"><p>Jeongseon (Jeongseon-gun) is a county in Gangwon Province, South Korea, is well known for its five-day market, a bonanza of fresh fish, produce, herbs, homemade kimchi, cloth, performances and street food stalls. For a peek into the Jeongseon of the past, visit Arari Village, a recreation of a rural community that features traditional homes, handicrafts and a working waterwheel. It is famous as the hometown of "Jeongseon Arirang," a traditional Korean folksong.</p>
+</p></div>
+			</div>
+			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
+			<img class="img-responsive" src="https://www.ufo79.com/image/201708030751290353.jpg">
+			</div>
+		</div>
+	</div>
 </section>
 </div>
        <!-- ******FOOTER****** -->

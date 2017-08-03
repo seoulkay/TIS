@@ -269,6 +269,33 @@ ul#contact li a{
 	vertical-align: middle !important;
 }
 
+li a.li-style{
+	color: #ffffff !important;
+}
+
+h1.title{
+	color: #ffffff;
+	font-size: 25px;
+    font-weight: 600;
+    text-shadow: 2px 2px 30px #000000;
+}
+
+.feature-blocks .feature-block:first-child{
+	padding-top: 0;
+}
+.feature-blocks .feature-block{
+	padding-bottom: 0;
+}
+.feature-blocks .feature-title{
+	color: #35373c;
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+.feature-blocks .feature-desc{
+	padding-right: 0;
+	font-size:14px;
+}
+
 .btn-style{
 	background-color: #5cb85c;
 	color: #ffffff;

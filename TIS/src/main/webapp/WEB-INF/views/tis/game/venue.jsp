@@ -58,12 +58,13 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<div style="height: 30em; background-image: url('https://www.ufo79.com/image/201704231711260864.jpg'); background-size:cover">
+<div style="height: 30em; background-image: url('https://www.tis2018.ga/image/tisImage/pockeys.jpg'); background-size:cover">
 	<!--     navbar -->
     <jsp:include page="../common/navbar.jsp" flush="false">
 		<jsp:param name="param" value="value1" />
 	</jsp:include>
-<span style="margin: 0 auto; text-align: center;"><h1>Venue</h1></span>
+	<div style="height: 3em"></div>
+	<span style="margin: 0 auto; text-align: center;"><h1 class="title">Pyeongchang 2018 Venues</h1></span>
 
 </div>
 
@@ -71,9 +72,8 @@
 		<div id="page-nav-wrapper" class="page-nav-wrapper text-center">
 			<div class="container">
 				<ul id="page-nav" class="nav page-nav list-inline" >
-					<li  style="margin: 0%"><a href="#anchor1">anchor1</a></li>
-					<li  style="margin: 0%"><a href="#anchor2">anchor2</a></li>
-					<li  style="margin: 0%"><a href="#anchor3">anchor3</a></li>
+					<li  style="margin: 0%"><a href="#anchor1">Mountain</a></li>
+					<li  style="margin: 0%"><a href="#anchor2">Coastal</a></li>
 				</ul>
 				<!--//page-nav-->
 			</div>
@@ -83,56 +83,109 @@
 	<!--//page-nav-space-holder-->
 	
 	
-<div style="width: 100%; padding-left: 1em; padding-right:1em;" class="container">
-
-
+<div style="width: 100%; padding-top: 15px; padding-bottom: 15px;" class="container">
 <section id="anchor1">
-<div class="row title-row-style">	
-	<h4><span class="label label-success">anchor1</span></h4>
-</div>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-anchor1<br>
-</section>
-<section id="anchor2">
-<div class="row title-row-style">	
-	<h4><span class="label label-success">anchor2</span></h4>
-</div>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-anchor2<br>
-</section>
-<section id="anchor3">
-<div class="row title-row-style">	
-	<h4><span class="label label-success">anchor3</span></h4>
-</div>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
-anchor3<br>
+	<div id="feature-block-1" class="feature-block feature-block-1">
+		<div class="row title-row-style">
+			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
+				<h4 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">Venues</span></h4>
+			</div>
+		</div>		
+		<div class="row title-row-style">
+			<div class="feature-content col-md-6 col-sm-6 col-xs-12">
+				<div class="feature-desc">
+					<p>All competition venues of PyeongChang 2018 Olympic Winter Games are located within 30 minutes’ driving distance from the PyeongChang Olympic Stadium.</p>
+					<img class="img-responsive" src="https://www.ufo79.com/image/201708030838000080.JPG">
+				</div>
+			</div>
+			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
+				<style type="text/css">
+				.tg  {border-collapse:collapse;border-spacing:0;}
+				.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;}
+				.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;}
+				.tg .tg-7uzy{vertical-align:top}
+				.tg .tg-s6z2{text-align:center}
+				.tg .tg-sh4c{text-align:center;vertical-align:top}
+				.tg .tg-baqh{text-align:center;vertical-align:top}
+				.tg .tg-2qjy{background-color:#16adde;color:#ffffff;text-align:center}
+				.tg .tg-h0x1{text-align:center}
+				.tg .tg-yw4l{vertical-align:top}
+				</style>
+				<table class="tg">
+				  <tr>
+				    <th class="tg-2qjy">Venue Code</th>
+				    <th class="tg-2qjy">Venue Name in English</th>
+				    <th class="tg-2qjy">Venue Name in Korean</th>
+				  </tr>
+				  <tr>
+				    <td class="tg-h0x1">  ASJ  </td>
+				    <td class="tg-6wtj">  Alpensia Ski Jumping Centre  </td>
+				    <td class="tg-6wtj">  알펜시아 스키점프 경기장  </td>
+				  </tr>
+				  <tr>
+				    <td class="tg-s6z2">  ACC  </td>
+				    <td class="tg-031e">  Alpensia Cross-Country Centre  </td>
+				    <td class="tg-031e">  알펜시아 크로스컨트리 센터  </td>
+				  </tr>
+				  <tr>
+				    <td class="tg-sh4c">  ABT  </td>
+				    <td class="tg-7uzy">  Alpensia Biathlon Centre  </td>
+				    <td class="tg-7uzy">  알펜시아 바이애슬론 센터  </td>
+				  </tr>
+				  <tr>
+				    <td class="tg-baqh">  ASL  </td>
+				    <td class="tg-yw4l">  Alpensia Sliding Centre  </td>
+				    <td class="tg-yw4l">  알펜시아 슬라이딩 센터  </td>
+				  </tr>
+				  <tr>
+				    <td class="tg-sh4c">  YAL  </td>
+				    <td class="tg-7uzy">  Yongpyong Alpine Centre  </td>
+				    <td class="tg-7uzy">  용평 알파인 센터  </td>
+				  </tr>
+				  <tr>
+				    <td class="tg-baqh">  JAL  </td>
+				    <td class="tg-yw4l">  Jeongseon Alpine Centre  </td>
+				    <td class="tg-yw4l">  정선 알파인 센터  </td>
+				  </tr>
+				  <tr>
+				    <td class="tg-sh4c">  BKP  </td>
+				    <td class="tg-7uzy">  Bokwang Park South (P)  </td>
+				    <td class="tg-7uzy">  보광 피닉스 파크  </td>
+				  </tr>
+				  <tr>
+				    <td class="tg-baqh">  BKC  </td>
+				    <td class="tg-yw4l">  Bokwang Park North (C)  </td>
+				    <td class="tg-yw4l">  보광 피닉스 파크  </td>
+				  </tr>
+				  <tr>
+				    <td class="tg-sh4c">  GHC  </td>
+				    <td class="tg-7uzy">  Gangneung Hockey Centre  </td>
+				    <td class="tg-7uzy">  강릉 하키 센터  </td>
+				  </tr>
+				  <tr>
+				    <td class="tg-baqh">  GOV  </td>
+				    <td class="tg-yw4l">  Gangneung Oval  </td>
+				    <td class="tg-yw4l">  강릉 스피드 스케이팅 경기장  </td>
+				  </tr>
+				  <tr>
+				    <td class="tg-sh4c">  GIA  </td>
+				    <td class="tg-7uzy">  Gangneung Ice Arena  </td>
+				    <td class="tg-7uzy">  강릉 아이스 아레나  </td>
+				  </tr>
+				  <tr>
+				    <td class="tg-baqh">  GCC  </td>
+				    <td class="tg-yw4l">  Gangneung Curling Centre  </td>
+				    <td class="tg-yw4l">  강릉 컬링 센터  </td>
+				  </tr>
+				  <tr>
+				    <td class="tg-sh4c">  KHC  </td>
+				    <td class="tg-7uzy">  Kwandong Hockey Centre  </td>
+				    <td class="tg-7uzy">  관동 하키 센터  </td>
+				  </tr>
+				</table>
+			</div>
+		</div>
+	</div>
 </section>
 </div>
        <!-- ******FOOTER****** -->
