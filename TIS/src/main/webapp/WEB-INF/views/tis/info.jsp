@@ -219,8 +219,7 @@
 		<p>${to.note }</p>
 	</div>
 	<!-- Other section ends -->	
-	
-
+</div>
     
     
     <!-- ******FOOTER****** -->
@@ -228,7 +227,7 @@
 		<jsp:param name="param" value="value1" />
 	</jsp:include><!--//footer-->
 	
-</div>
+
 </body>
 <script>
 var neighborhoods = [];
