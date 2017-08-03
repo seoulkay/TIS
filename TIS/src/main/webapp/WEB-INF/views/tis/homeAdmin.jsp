@@ -92,46 +92,10 @@
     </header>
     <!-- #header end -->
     <!-- #features2 -->
-    
-    <!-- #footer -->
-    <footer id="footer">
-        
-        <!-- .container -->
-        <div class="container">
-            
-            <div class="footer-links">
-<!--             	<a href="https://www.facebook.com/UFO79-727262880784383/" class="link-icon" title="Facebook"><i class="ion ion-social-facebook"></i></a> -->
-<!--                 <a href="http://www.twitter.com/share?=url=www.ufo79.com/PIX/que/" class="link-icon" title="Twitter"><i class="ion ion-social-twitter"></i></a> -->
-<!--                 <a href="http://plus.google.com/share?url=www.ufo79.com/PIX/que/" class="link-icon" title="Google Plus"><i class="ion ion-social-googleplus"></i></a> -->
-<!--                 <a href="#" class="link-icon" title="Dribbble"><i class="ion ion-social-dribbble"></i></a> -->
-<!--                 <a href="#" class="link-icon" title="Instagram"><i class="ion ion-social-instagram"></i></a> -->
-                <a href="#" class="scrollup"><i class="ion ion-ios-arrow-up"></i></a>
-            </div>
-            
-            <div class="footer-copyright">
-            	<p>&copy; <a href="http://affapress.com" target="_blank">Atos Pyeongchang team</a> All Rights Reserved.</p>
-            </div>
-            
-		</div>
-        <!-- .container end -->
-        
-    </footer>
-    <!-- #footer end -->
-    
-    <!--[if lt IE 8]>
-    	<div class="browser-notice">
-            <div class="container">
-            	<div class="text">
-                    <h1>Internet Explorer Out To Date</h1>
-                    <p>Please update your Internet Explorer browser with a newer version (Internet Explorer 8 above) now!</p>
-                    <span>You can download it <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank">here....</a></span>
-                </div>
-            </div>
-        </div>
-	<![endif]-->
-    
-
-   <div id="fb-root"></div> 
+        <!-- ******FOOTER****** -->
+	<jsp:include page="common/footer.jsp" flush="false">
+		<jsp:param name="param" value="value1" />
+	</jsp:include><!--//footer-->
 </body>
 
 <script>(function(d, s, id) {

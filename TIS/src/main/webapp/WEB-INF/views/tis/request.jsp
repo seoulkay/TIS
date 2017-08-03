@@ -200,7 +200,7 @@
 				<label>Arrive Date <span style="color: RED">*</span></label>
 			</div>
 			<div class="col-sm-10">
-				<input type="datetime-local" class="form-control" name="arrive_stmp" pattern = 'yyyy-MM-ddTHH:mm' style="width:auto;" required="required">
+				<input type="datetime-local" class="form-control" name="arrive_stmp"  id="arrive_stmp" pattern = 'yyyy-MM-ddTHH:mm' style="width:auto;" required="required">
 			</div>
 		</div>
 		<div class="row form-group form-group-sm">
@@ -223,7 +223,7 @@
 				<label>Leave Date <span style="color: RED">*</span></label>
 			</div>
 			<div class="col-sm-10">
-				<input type="datetime-local" class="form-control" name="leave_stmp" pattern = 'yyyy-MM-ddTHH:mm' style="width:auto;" required="required">
+				<input type="datetime-local" class="form-control" name="leave_stmp" id="leave_stmp" pattern = 'yyyy-MM-ddTHH:mm' style="width:auto;" required="required">
 			</div>
 		</div>
 		<div class="row form-group form-group-sm">
@@ -250,159 +250,11 @@
 		</div>
 		</form>	
 </div>
-    <!-- #footer -->
-    <footer id="footer">
-        
-        <!-- .container -->
-        <div class="container">
-            
-            <div class="footer-links">
-<!--             	<a href="https://www.facebook.com/UFO79-727262880784383/" class="link-icon" title="Facebook"><i class="ion ion-social-facebook"></i></a> -->
-<!--                 <a href="http://www.twitter.com/share?=url=www.ufo79.com/PIX/que/" class="link-icon" title="Twitter"><i class="ion ion-social-twitter"></i></a> -->
-<!--                 <a href="http://plus.google.com/share?url=www.ufo79.com/PIX/que/" class="link-icon" title="Google Plus"><i class="ion ion-social-googleplus"></i></a> -->
-<!--                 <a href="#" class="link-icon" title="Dribbble"><i class="ion ion-social-dribbble"></i></a> -->
-<!--                 <a href="#" class="link-icon" title="Instagram"><i class="ion ion-social-instagram"></i></a> -->
-                <a href="#" class="scrollup"><i class="ion ion-ios-arrow-up"></i></a>
-            </div>
-            <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-            <div class="footer-copyright">
-            	<p>&copy; <a href="http://affapress.com" target="_blank">Atos Pyeongchang team</a> All Rights Reserved.</p>
-            </div>
-            
-		</div>
-        <!-- .container end -->
-        
-    </footer>
-    <!-- #footer end -->
-    
-    <!--[if lt IE 8]>
-    	<div class="browser-notice">
-            <div class="container">
-            	<div class="text">
-                    <h1>Internet Explorer Out To Date</h1>
-                    <p>Please update your Internet Explorer browser with a newer version (Internet Explorer 8 above) now!</p>
-                    <span>You can download it <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank">here....</a></span>
-                </div>
-            </div>
-        </div>
-	<![endif]-->
-    
-
-   <div id="fb-root"></div> 
+        <!-- ******FOOTER****** -->
+	<jsp:include page="common/footer.jsp" flush="false">
+		<jsp:param name="param" value="value1" />
+	</jsp:include><!--//footer-->
 </body>
-<script>
-var neighborhoods = [];
-var markers = [];
-var map;
-
-var iconBase = 'https://www.tis2018.ga/image/tisImage/';
-var icons = {
-  hotel:{
-	  icon: iconBase + 'hotel.png'
-  },
-  c_venue:{
-	  icon: iconBase + 'stadium.png'
-  },
-  n_venue:{
-	  icon: iconBase +'office-block.png'
-  }
-};
-/**
- * 
-*/
-function initMap() {
-	map = new google.maps.Map(document.getElementById('map'), {
-	    zoom: 13,
-	    center: {lat: 37.752, lng: 128.891},
-	    zoomControl: true,
-	    mapTypeControl: false,
-	    scaleControl: true,
-	    streetViewControl: false,
-	    rotateControl: false,
-	    fullscreenControl: true
-	  });
-}
-/**
- * 
-*/
-function addMarkerWithTimeout(position, timeout) {
-  window.setTimeout(function() {
-  	var infowindow = new google.maps.InfoWindow({
-	    content: position.content
-	  });
-  
-  	var pos = {
-          lat: position.lat,
-          lng: position.lng
-        };
-  
- 	var marker = new google.maps.Marker({
-      position: pos,
-      map: map,
-      animation: google.maps.Animation.DROP,
-      icon: icons[position.type].icon
-      
- 	});
- 	marker.addListener('click', function() {
-	    infowindow.open(map, marker);
-  	});
-    markers.push(marker);
-	}, timeout);
-}
-/**
- * 
-*/	
-function drop() {
-  for (var i = 0; i < neighborhoods.length; i++) {
-    addMarkerWithTimeout(neighborhoods[i], i * 50);
-  }
-  //window.setTimeout(function() {refreshBtn();}, (neighborhoods.length+1)*50);
-}
-
-/**
- * 마커 세팅
- */	
-function markerSet(){
-	var venues = $(".venues").text();
-	
-	$.post( "/TIS/get/venue")
-       .done(function( data ) {
-         var go = JSON.parse(JSON.stringify(data));		 
-         
-         var toc = {};
-         toc.lat = 37.752;
-         toc.lng = 128.891;
-         toc.content = '<h4>TOC</h4>';
-         toc.type = "n_venue";
-         neighborhoods.push(toc);
-         
-         for(var i = 0; i < go.length; i++){
-        	 if(go[i].id == venues){
-        	 var target = {};
-        	 target.lat = parseFloat((Number(go[i].lat)));
-        	 target.lng = parseFloat((Number(go[i].lng)));
-        	 if(go[i].venue_type  == 'hotel'){
-        		 target.content = '<h4>'+go[i].venue_name+'</h4><br><h4>'+go[i].venue_name_loc+'</h4>';
-        		 target.type = "hotel";
-        	 }else if(go[i].venue_type  == 'c_venue'){
-        		 target.content = '<h4>'+go[i].venue_name+'</h4><br><h4>'+go[i].venue_name_loc+'</h4>';
-        		 target.type = "c_venue";
-        	 }else if(go[i].venue_type  == 'n_venue'){
-        		 target.content = '<h4>'+go[i].venue_name+'</h4><br><h4>'+go[i].venue_name_loc+'</h4>';
-        		 target.type = "n_venue";
-        	 }
-	         neighborhoods.push(target);
-	         map.setCenter({lat: target.lat, lng: target.lng});
-        	 }
-         }
-         drop();
-    });
-}
-
-markerSet();
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN9VDOjhzw7kPKEbFw7LEVoVreCXiz87E&callback=initMap" async defer></script>
 
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -433,5 +285,11 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script> -->
+<script>
+var currentdate = new Date(); 
+var now = currentdate.getFullYear() + "-" + ('0' + (currentdate.getMonth()+1)).slice(-2) + "-" + ('0' + currentdate.getDate()).slice(-2) + "T" + ('0'+currentdate.getHours()).slice(-2)  + ":" + ('0'+currentdate.getMinutes()).slice(-2);
+document.getElementById('arrive_stmp').value = now;
+document.getElementById('leave_stmp').value = now;
+</script>
 
 </html>
