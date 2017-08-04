@@ -72,8 +72,9 @@
 		<div id="page-nav-wrapper" class="page-nav-wrapper text-center">
 			<div class="container">
 				<ul id="page-nav" class="nav page-nav list-inline" >
-					<li  style="margin: 0%"><a href="#anchor1">Mountain</a></li>
-					<li  style="margin: 0%"><a href="#anchor2">Coastal</a></li>
+					<li  style="margin: 0%"><a href="#anchor1">Venues</a></li>
+					<li  style="margin: 0%"><a href="#anchor2">Mountain</a></li>
+					<li  style="margin: 0%"><a href="#anchor3">Coastal</a></li>
 				</ul>
 				<!--//page-nav-->
 			</div>
@@ -84,109 +85,452 @@
 	
 	
 <div style="width: 100%; padding-top: 15px; padding-bottom: 15px;" class="container">
-<section id="anchor1">
-	<div id="feature-block-1" class="feature-block feature-block-1">
-		<div class="row title-row-style">
-			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
-				<h4 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">Venues</span></h4>
-			</div>
-		</div>		
-		<div class="row title-row-style">
-			<div class="feature-content col-md-6 col-sm-6 col-xs-12">
-				<div class="feature-desc">
-					<p>All competition venues of PyeongChang 2018 Olympic Winter Games are located within 30 minutes’ driving distance from the PyeongChang Olympic Stadium.</p>
-					<img class="img-responsive" src="https://www.ufo79.com/image/201708030838000080.JPG">
+	<!-- Section 1 -->
+	<section id="anchor1">
+		<div id="feature-block-3" class="feature-block feature-block-1">
+			<div class="row title-row-style">
+				<div class="feature-content col-md-6 col-sm-6 col-xs-12">
+					<h4 class="feature-title"><span style="background-color: #feb131" class="label label-success">Pyeongchang 2018 venues</span></h4>
+					<div class="feature-desc">
+						<p>All competition venues of PyeongChang 2018 Olympic Winter Games are located within 30 minutes’ driving distance from the PyeongChang Olympic Stadium.</p>
+						<p>The compactness of the venues of the 2018 Winter Olympics and Paralympics in Pyeongchang has been one of the winning arguments of the bid. The Games are gathered around two main venues, the mountain resort of Alpensia for the outdoor sports (Nordic and alpine skiing, bobsled...) and the coastal city of Gangneung for the indoor sports (figure skating, hockey, curling...). In addition there are two mountain stand alone venues. The Games will have a total of 13 competition venues – six of which will be new. The speed skating rink construction having started in October 2014, all of the new venues are now under construction.</p>					
+					</div>
+				</div>
+				<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
+				<img class="img-responsive" src="https://www.ufo79.com/image/201708040857480891.JPG">
 				</div>
 			</div>
-			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
-				<style type="text/css">
-				.tg  {border-collapse:collapse;border-spacing:0;}
-				.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;}
-				.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;}
-				.tg .tg-7uzy{vertical-align:top}
-				.tg .tg-s6z2{text-align:center}
-				.tg .tg-sh4c{text-align:center;vertical-align:top}
-				.tg .tg-baqh{text-align:center;vertical-align:top}
-				.tg .tg-2qjy{background-color:#16adde;color:#ffffff;text-align:center}
-				.tg .tg-h0x1{text-align:center}
-				.tg .tg-yw4l{vertical-align:top}
-				</style>
-				<table class="tg">
-				  <tr>
-				    <th class="tg-2qjy">Venue Code</th>
-				    <th class="tg-2qjy">Venue Name in English</th>
-				    <th class="tg-2qjy">Venue Name in Korean</th>
-				  </tr>
-				  <tr>
-				    <td class="tg-h0x1">  ASJ  </td>
-				    <td class="tg-6wtj">  Alpensia Ski Jumping Centre  </td>
-				    <td class="tg-6wtj">  알펜시아 스키점프 경기장  </td>
-				  </tr>
-				  <tr>
-				    <td class="tg-s6z2">  ACC  </td>
-				    <td class="tg-031e">  Alpensia Cross-Country Centre  </td>
-				    <td class="tg-031e">  알펜시아 크로스컨트리 센터  </td>
-				  </tr>
-				  <tr>
-				    <td class="tg-sh4c">  ABT  </td>
-				    <td class="tg-7uzy">  Alpensia Biathlon Centre  </td>
-				    <td class="tg-7uzy">  알펜시아 바이애슬론 센터  </td>
-				  </tr>
-				  <tr>
-				    <td class="tg-baqh">  ASL  </td>
-				    <td class="tg-yw4l">  Alpensia Sliding Centre  </td>
-				    <td class="tg-yw4l">  알펜시아 슬라이딩 센터  </td>
-				  </tr>
-				  <tr>
-				    <td class="tg-sh4c">  YAL  </td>
-				    <td class="tg-7uzy">  Yongpyong Alpine Centre  </td>
-				    <td class="tg-7uzy">  용평 알파인 센터  </td>
-				  </tr>
-				  <tr>
-				    <td class="tg-baqh">  JAL  </td>
-				    <td class="tg-yw4l">  Jeongseon Alpine Centre  </td>
-				    <td class="tg-yw4l">  정선 알파인 센터  </td>
-				  </tr>
-				  <tr>
-				    <td class="tg-sh4c">  BKP  </td>
-				    <td class="tg-7uzy">  Bokwang Park South (P)  </td>
-				    <td class="tg-7uzy">  보광 피닉스 파크  </td>
-				  </tr>
-				  <tr>
-				    <td class="tg-baqh">  BKC  </td>
-				    <td class="tg-yw4l">  Bokwang Park North (C)  </td>
-				    <td class="tg-yw4l">  보광 피닉스 파크  </td>
-				  </tr>
-				  <tr>
-				    <td class="tg-sh4c">  GHC  </td>
-				    <td class="tg-7uzy">  Gangneung Hockey Centre  </td>
-				    <td class="tg-7uzy">  강릉 하키 센터  </td>
-				  </tr>
-				  <tr>
-				    <td class="tg-baqh">  GOV  </td>
-				    <td class="tg-yw4l">  Gangneung Oval  </td>
-				    <td class="tg-yw4l">  강릉 스피드 스케이팅 경기장  </td>
-				  </tr>
-				  <tr>
-				    <td class="tg-sh4c">  GIA  </td>
-				    <td class="tg-7uzy">  Gangneung Ice Arena  </td>
-				    <td class="tg-7uzy">  강릉 아이스 아레나  </td>
-				  </tr>
-				  <tr>
-				    <td class="tg-baqh">  GCC  </td>
-				    <td class="tg-yw4l">  Gangneung Curling Centre  </td>
-				    <td class="tg-yw4l">  강릉 컬링 센터  </td>
-				  </tr>
-				  <tr>
-				    <td class="tg-sh4c">  KHC  </td>
-				    <td class="tg-7uzy">  Kwandong Hockey Centre  </td>
-				    <td class="tg-7uzy">  관동 하키 센터  </td>
-				  </tr>
-				</table>
+		</div>
+	</section>
+	<!-- Section 2 -->
+	<section id="anchor2">
+		<div id="feature-block-1" class="feature-block feature-block-1">
+			<div class="row title-row-style">
+				<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
+					<h4 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">Mountain Clusters</span></h4>
+				</div>
+			</div>		
+			<div class="row title-row-style">			
+				<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
+					<style type="text/css">
+					.tg  {border-collapse:collapse;border-spacing:0;}
+					.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;}
+					.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;}
+					.tg .tg-7uzy{vertical-align:top}
+					.tg .tg-s6z2{text-align:center}
+					.tg .tg-sh4c{text-align:center;vertical-align:top}
+					.tg .tg-baqh{text-align:center;vertical-align:top}
+					.tg .tg-2qjy{background-color:#16adde;color:#ffffff;text-align:center}
+					.tg .tg-h0x1{text-align:center}
+					.tg .tg-yw4l{vertical-align:top}
+					</style>
+					<table class="tg">
+					  <tr>
+					    <th class="tg-2qjy">Venue Code</th>
+					    <th class="tg-2qjy">Venue Name in English</th>
+					    <th class="tg-2qjy">Venue Name in Korean</th>
+					  </tr>
+					  <tr class="tr-style" data-toggle="modal" data-target="#venue1">
+					    <td class="tg-h0x1">ASJ</td>
+					    <td class="tg-6wtj">Alpensia Ski Jumping Centre</td>
+					    <td class="tg-6wtj">알펜시아 스키점프 경기장 </td>
+					  </tr>
+					  <tr class="tr-style" data-toggle="modal" data-target="#venue2">
+					    <td class="tg-s6z2">ACC</td>
+					    <td class="tg-031e">Alpensia Cross-Country Centre</td>
+					    <td class="tg-031e">알펜시아 크로스컨트리 센터  </td>
+					  </tr>
+					  <tr class="tr-style" data-toggle="modal" data-target="#venue3">
+					    <td class="tg-sh4c">ABT</td>
+					    <td class="tg-7uzy">Alpensia Biathlon Centre</td>
+					    <td class="tg-7uzy">알펜시아 바이애슬론 센터</td>
+					  </tr>
+					  <tr class="tr-style" data-toggle="modal" data-target="#venue4">
+					    <td class="tg-baqh">ASL</td>
+					    <td class="tg-yw4l">Alpensia Sliding Centre</td>
+					    <td class="tg-yw4l">알펜시아 슬라이딩 센터</td>
+					  </tr>
+					  <tr class="tr-style" data-toggle="modal" data-target="#venue5">
+					    <td class="tg-sh4c">YAL</td>
+					    <td class="tg-7uzy">Yongpyong Alpine Centre</td>
+					    <td class="tg-7uzy">용평 알파인 센터</td>
+					  </tr>
+					  <tr class="tr-style" data-toggle="modal" data-target="#venue6">
+					    <td class="tg-baqh">JAL</td>
+					    <td class="tg-yw4l">Jeongseon Alpine Centre</td>
+					    <td class="tg-yw4l">정선 알파인 센터</td>
+					  </tr>
+					  <tr class="tr-style" data-toggle="modal" data-target="#venue7">
+					    <td class="tg-sh4c">BSP</td>
+					    <td class="tg-7uzy">Bokwang Snow Park</td>
+					    <td class="tg-7uzy">보광 피닉스 파크 </td>
+					  </tr>
+					</table>
+				</div>
+				<div class="feature-content col-md-6 col-sm-6 col-xs-12">
+					<div class="feature-desc"><!-- MAP 들어갈 자리 -->				
+					</div>
+				</div>
 			</div>
 		</div>
+	</section>
+	<!-- Section 3 -->
+	<section id="anchor3">
+		<div id="feature-block-1" class="feature-block feature-block-1">
+			<div class="row title-row-style">
+				<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
+					<h4 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">Coastal Clusters</span></h4>
+				</div>
+			</div>		
+			<div class="row title-row-style">			
+				<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
+					<table class="tg">
+					  <tr>
+					    <th class="tg-2qjy">Venue Code</th>
+					    <th class="tg-2qjy">Venue Name in English</th>
+					    <th class="tg-2qjy">Venue Name in Korean</th>
+					  </tr>				  
+					  <tr class="tr-style" data-toggle="modal" data-target="#venue8">
+					    <td class="tg-sh4c">GHC</td>
+					    <td class="tg-7uzy">Gangneung Hockey Centre</td>
+					    <td class="tg-7uzy">강릉 하키 센터</td>
+					  </tr>
+					  <tr class="tr-style" data-toggle="modal" data-target="#venue9">
+					    <td class="tg-baqh">GOV</td>
+					    <td class="tg-yw4l">Gangneung Oval</td>
+					    <td class="tg-yw4l">강릉 스피드 스케이팅 경기장</td>
+					  </tr>
+					  <tr class="tr-style" data-toggle="modal" data-target="#venue10">
+					    <td class="tg-sh4c">GIA</td>
+					    <td class="tg-7uzy">Gangneung Ice Arena</td>
+					    <td class="tg-7uzy">강릉 아이스 아레나</td>
+					  </tr>
+					  <tr class="tr-style" data-toggle="modal" data-target="#venue11">
+					    <td class="tg-baqh">GCC</td>
+					    <td class="tg-yw4l">Gangneung Curling Centre</td>
+					    <td class="tg-yw4l">강릉 컬링 센터</td>
+					  </tr>
+					  <tr class="tr-style" data-toggle="modal" data-target="#venue12">
+					    <td class="tg-sh4c">KHC</td>
+					    <td class="tg-7uzy">Kwandong Hockey Centre</td>
+					    <td class="tg-7uzy">관동 하키 센터</td>
+					  </tr>
+					</table>
+				</div>
+				<div class="feature-content col-md-6 col-sm-6 col-xs-12">
+					<div class="feature-desc"><!-- MAP 들어갈 자리 -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Modal 1-->
+	<div id="venue1" class="modal fade" role="dialog">
+	  <div class="modal-dialog">		
+	    <!-- Modal content-->
+	    <div class="modal-content-style modal-content">
+	      <div class="modal-header-style modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        Alpensia Ski Jumping Centre / 알펜시아 스키점프 경기장
+	      </div>
+      	  <div class="modal-body-style modal-body">
+	        <!-- venue image -->
+        	<img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/PV/PV_ASJ.png">
+        	<!-- Sport -->
+	        <h5 style="color:#008fd4;">Disciplines</h5>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Ski Jumping</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Ski-Jumping.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Nordic Combined</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Nordic-Combined.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Snowboard(Big Air)</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Snowboard_Big-Air.png"></div>
+		        </div>
+      		</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>		
+	  </div>
 	</div>
-</section>
+	<!-- Modal 2-->
+	<div id="venue2" class="modal fade" role="dialog">
+	  <div class="modal-dialog">		
+	    <!-- Modal content-->
+	    <div class="modal-content-style modal-content">
+	      <div class="modal-header-style modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        Alpensia Cross-Country Centre / 알펜시아 크로스컨트리 센터
+	      </div>
+	      <div class="modal-body-style modal-body">
+	        <!-- venue image -->
+        	<img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/PV/PV_ACC.png">
+        	<!-- Sport -->
+	        <h5 style="color:#008fd4;">Disciplines</h5>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Cross-Country Skiing</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Cross-Country-Skiing.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Nordic Combined</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Nordic-Combined.png"></div>
+		        </div>
+      		</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>		
+	  </div>
+	</div>
+	<!-- Modal 3-->
+	<div id="venue3" class="modal fade" role="dialog">
+	  <div class="modal-dialog">		
+	    <!-- Modal content-->
+	    <div class="modal-content-style modal-content">
+	      <div class="modal-header-style modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        	Alpensia Biathlon Centre / 알펜시아 바이애슬론 센터
+	      </div>
+	      <div class="modal-body-style modal-body">
+	        <!-- venue image -->
+        	<img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/PV/PV_ABT.png">
+        	<!-- Sport -->
+	        <h5 style="color:#008fd4;">Disciplines</h5>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Biathlon</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Biathlon.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Para Biathlon</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Para-Biathlon.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Para Cross-Country Skiing</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Para-Cross-Country-Skiing.png"></div>
+		        </div>
+      		</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>		
+	  </div>
+	</div>
+	<!-- Modal 4-->
+	<div id="venue4" class="modal fade" role="dialog">
+	  <div class="modal-dialog">		
+	    <!-- Modal content-->
+	    <div class="modal-content-style modal-content">
+	      <div class="modal-header-style modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        	Alpensia Sliding Centre / 알펜시아 슬라이딩 센터
+	      </div>
+	      <div class="modal-body-style modal-body">
+	        <!-- venue image -->
+        	<img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/PV/PV_ASL.png">
+        	<!-- Sport -->
+	        <h5 style="color:#008fd4;">Disciplines</h5>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Luge</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Luge.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Bobsleigh</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Bobsleigh.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Skeleton</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Skeleton.png"></div>
+		        </div>
+      		</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>		
+	  </div>
+	</div>
+	<!-- Modal 5-->
+	<div id="venue5" class="modal fade" role="dialog">
+	  <div class="modal-dialog">		
+	    <!-- Modal content-->
+	    <div class="modal-content-style modal-content">
+	      <div class="modal-header-style modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        Yongpyong Alpine Centre / 용평 알파인 센터
+	      </div>
+	      <div class="modal-body-style modal-body">
+	        <!-- venue image -->
+        	<img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/PV/PV_YAL.png">
+        	<!-- Sport -->
+	        <h5 style="color:#008fd4;">Disciplines</h5>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Alpine Skiing</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Alpine-Skiing(Speed).png"></div>			        
+		        </div>
+      		</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>		
+	  </div>
+	</div>
+	<!-- Modal 6-->
+	<div id="venue6" class="modal fade" role="dialog">
+	  <div class="modal-dialog">		
+	    <!-- Modal content-->
+	    <div class="modal-content-style modal-content">
+	      <div class="modal-header-style modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        Jeongseon Alpine Centre / 정선 알파인 센터
+	      </div>
+	      <div class="modal-body-style modal-body">
+	        <!-- venue image -->
+        	<img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/PV/PV_JAL.png">
+        	<!-- Sport -->
+	        <h5 style="color:#008fd4;">Disciplines</h5>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Alpine Skiing</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Alpine-Skiing(Speed).png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Para Alpine Skiing</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Para-Alpine-Skiing.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Para Snowboard</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Para-Snowboard.png"></div>
+		        </div>
+      		</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>		
+	  </div>
+	</div>
+	<!-- Modal 7-->
+	<div id="venue7" class="modal fade" role="dialog">
+	  <div class="modal-dialog">		
+	    <!-- Modal content-->
+	    <div class="modal-content-style modal-content">
+	      <div class="modal-header-style modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        	Bokwang Snow Park / 보광 피닉스 파크
+	      </div>
+	      <div class="modal-body-style modal-body">
+	        <!-- venue image -->
+        	<img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/PV/PV_BKPC.png">
+        	<!-- Sport -->
+	        <h5 style="color:#008fd4;">Disciplines</h5>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Snowboard (Cross)</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Snowboard_Big-Air.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Snowboard (Half Pipe)</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Snowboard_Big-Air.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Snowboard (Slalom)</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Snowboard_Big-Air.png"></div>
+		        </div>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Snowboard (Slopestyle)</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Snowboard_Big-Air.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Freestyle Skiing</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Freestyle-Skiing_Aerials.png"></div>
+		        </div>
+      		</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>		
+	  </div>
+	</div>
+	<!-- Modal 8-->
+	<div id="venue8" class="modal fade" role="dialog">
+	  <div class="modal-dialog">		
+	    <!-- Modal content-->
+	    <div class="modal-content-style modal-content">
+	      <div class="modal-header-style modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        	Gangneung Hockey Centre / 강릉 하키 센터
+	      </div>
+	      <div class="modal-body-style modal-body">
+	        <!-- venue image -->
+        	<img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/PV/PV_GHC.png">
+        	<!-- Sport -->
+	        <h5 style="color:#008fd4;">Disciplines</h5>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Ice Hockey</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Ice-Hockey.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Para Ice Hockey</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Para-Ice Hockey.png"></div>
+		        </div>
+      		</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>		
+	  </div>
+	</div>
+	<!-- Modal 9-->
+	<div id="venue9" class="modal fade" role="dialog">
+	  <div class="modal-dialog">		
+	    <!-- Modal content-->
+	    <div class="modal-content-style modal-content">
+	      <div class="modal-header-style modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        	Gangneung Oval / 강릉 스피드 스케이팅 경기장
+	      </div>
+	      <div class="modal-body-style modal-body">
+	        <!-- venue image -->
+        	<img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/PV/PV_GOV.png">
+        	<!-- Sport -->
+	        <h5 style="color:#008fd4;">Disciplines</h5>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Speed Skating</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Speed-Skating.png"></div>
+		        </div>
+      		</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>		
+	  </div>
+	</div>
+	<!-- Modal 10-->
+	<div id="venue10" class="modal fade" role="dialog">
+	  <div class="modal-dialog">		
+	    <!-- Modal content-->
+	    <div class="modal-content-style modal-content">
+	      <div class="modal-header-style modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        	Gangneung Ice Arena / 강릉 아이스 아레나
+	      </div>
+	      <div class="modal-body-style modal-body">
+	        <!-- venue image -->
+        	<img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/PV/PV_GIA.png">
+        	<!-- Sport -->
+	        <h5 style="color:#008fd4;">Disciplines</h5>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Figure Skating</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Figure-Skating.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Short Track Speed Skating</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Short-Track_Speed-Skating.png"></div>
+		        </div>
+      		</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>		
+	  </div>
+	</div>
+	<!-- Modal 11-->
+	<div id="venue11" class="modal fade" role="dialog">
+	  <div class="modal-dialog">		
+	    <!-- Modal content-->
+	    <div class="modal-content-style modal-content">
+	      <div class="modal-header-style modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        	Gangneung Curling Centre / 강릉 컬링 센터
+	      </div>
+	      <div class="modal-body-style modal-body">
+	        <!-- venue image -->
+        	<img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/PV/PV_GCC.png">
+        	<!-- Sport -->
+	        <h5 style="color:#008fd4;">Disciplines</h5>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Curling</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Curling.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Wheelchair Curling</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Wheelchair_Curling.png"></div>
+		        </div>
+      		</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>		
+	  </div>
+	</div>
+	<!-- Modal 12-->
+	<div id="venue12" class="modal fade" role="dialog">
+	  <div class="modal-dialog">		
+	    <!-- Modal content-->
+	    <div class="modal-content-style modal-content">
+	      <div class="modal-header-style modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        	Kwandong Hockey Centre / 관동 하키 센터
+	      </div>
+	      <div class="modal-body-style modal-body">
+	        <!-- venue image -->
+        	<img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/PV/PV_KHC.png">
+        	<!-- Sport -->
+	        <h5 style="color:#008fd4;">Disciplines</h5>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Ice Hockey</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Ice-Hockey.png"></div>
+		        </div>
+      		</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>		
+	  </div>
+	</div>
 </div>
        <!-- ******FOOTER****** -->
 	<jsp:include page="../common/footer.jsp" flush="false">

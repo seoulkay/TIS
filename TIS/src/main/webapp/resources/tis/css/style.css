@@ -296,6 +296,11 @@ h1.title{
 	font-size:14px;
 }
 
+.feature-desc2{
+	padding-right: 0;
+	font-size:12px;
+}
+
 .btn-style{
 	background-color: #5cb85c;
 	color: #ffffff;
@@ -420,6 +425,7 @@ th{
 	background-color:#c5ff49;
 	text-decoration:none;
 }
+
 
 td{
 	color: #000000;
