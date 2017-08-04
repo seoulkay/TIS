@@ -23,18 +23,18 @@
         <li class="dropdown">
           <a class="li-style" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PYC2018 <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/TIS/about/team">Team</a></li>
-            <li><a href="/TIS/about/emer">Emergency Contact</a></li>
-            <li><a href="/TIS/about/faq">FAQ</a></li>
+            <li><a style="color: #000000;" href="/TIS/about/team">Team</a></li>
+            <li><a style="color: #000000;" href="/TIS/about/emer">Emergency Contact</a></li>
+            <li><a style="color: #000000;" href="/TIS/about/faq">FAQ</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a class="li-style" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/TIS/game/host">Host city</a></li>
-            <li><a href="/TIS/game/oly">Olympics</a></li>
-            <li><a href="/TIS/game/par">Paralympics</a></li>
-            <li><a href="/TIS/game/venue">Venue</a></li>
+            <li><a style="color: #000000;" href="/TIS/game/host">Host city</a></li>
+            <li><a style="color: #000000;" href="/TIS/game/oly">Olympics</a></li>
+            <li><a style="color: #000000;" href="/TIS/game/par">Paralympics</a></li>
+            <li><a style="color: #000000;" href="/TIS/game/venue">Venue</a></li>
           </ul>
         </li>
         <li><a class="li-style" href="javascript:signout()">Sign out</a></li>

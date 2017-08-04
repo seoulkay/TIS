@@ -58,7 +58,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<div style="height: 30em; background-image: url('https://www.ufo79.com/image/201704190443580874.jpg'); background-size:cover">
+<div style="height: 30em; background-image: url('https://www.ufo79.com/image/201708040032210402.jpg'); background-size:cover">
 	<!--     navbar -->
     <jsp:include page="../common/navbar.jsp" flush="false">
 		<jsp:param name="param" value="value1" />
@@ -106,13 +106,15 @@
 	<div id="feature-block-2" class="feature-block feature-block-1">
 		<div class="row title-row-style">
 			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
-				<img class="img-responsive" src="https://www.ufo79.com/image/201708030743270639.JPG">
+				<img class="img-responsive" src="https://www.ufo79.com/image/201708030723310807.JPG">
 			</div>
 			<div class="feature-content col-md-6 col-sm-6 col-xs-12">
-				<h4 class="feature-title"><span style="background-color: #00a27c" class="label label-success">Emblem</span></h4>
+				<h4 class="feature-title"><span style="background-color: #00a27c" class="label label-success">Slogans</span></h4>
 				<div class="feature-desc">
-					<p>The emblem symbolises a world open to everyone. It combines the image of ice and snow, winter sports stars (athletes), and people from all over the world, coming together in PyeongChang where heaven meets earth.</p>
-					<p>The emblem depicts a world where people with and without impairment, athletes, spectators, and people of the planet gather together in friendship.</p></div>
+					<p>Passion. Connected. refers to a world in which everyone is connected with shared passion for winter sports, a world open to any generation anywhere, anytime, to open new horizons in the continued growth of winter sports.</p>
+					<p><strong>'Passion'</strong> means a very strong feeling, affection and something one is fond of. PyeongChang is a place of global festivals that inspires each other and symbolises a place where Koreans share their warm affection. It also expresses the Olympic spirit and the warm heartedness of Koreans.</p>
+					<p><strong>'Connected'</strong> means to link, join, combine, bridge, and understand. PyeongChang is a place where all generations can participate and inspire each other anytime and anywhere through Korea’s innovative technology and cultural convergence, and it means opening a new horizon for a new beginning, a harmonized world and the Olympic Winter Games.</p>
+				</div>
 			</div>			
 		</div>
 	</div>
@@ -122,14 +124,14 @@
 	<div id="feature-block-3" class="feature-block feature-block-1">
 		<div class="row title-row-style">
 			<div class="feature-content col-md-6 col-sm-6 col-xs-12">
-				<h4 class="feature-title"><span style="background-color: #feb131" class="label label-success">Slogans</span></h4>
-				<div class="feature-desc"><p>Passion. Connected. refers to a world in which everyone is connected with shared passion for winter sports, a world open to any generation anywhere, anytime, to open new horizons in the continued growth of winter sports.</p>
-				<p><strong>'Passion'</strong> means a very strong feeling, affection and something one is fond of. PyeongChang is a place of global festivals that inspires each other and symbolises a place where Koreans share their warm affection. It also expresses the Olympic spirit and the warm heartedness of Koreans.</p>
-				<p><strong>'Connected'</strong> means to link, join, combine, bridge, and understand. PyeongChang is a place where all generations can participate and inspire each other anytime and anywhere through Korea’s innovative technology and cultural convergence, and it means opening a new horizon for a new beginning, a harmonized world and the Olympic Winter Games.</p>
-</p></div>
+				<h4 class="feature-title"><span style="background-color: #feb131" class="label label-success">Emblem</span></h4>
+				<div class="feature-desc">
+					<p>The emblem symbolises a world open to everyone. It combines the image of ice and snow, winter sports stars (athletes), and people from all over the world, coming together in PyeongChang where heaven meets earth.</p>
+					<p>The emblem depicts a world where people with and without impairment, athletes, spectators, and people of the planet gather together in friendship.</p>					
+				</div>
 			</div>
 			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
-			<img class="img-responsive" src="https://www.ufo79.com/image/201708030723310807.JPG">
+			<img class="img-responsive" src="https://www.ufo79.com/image/201708030743270639.JPG">
 			</div>
 		</div>
 	</div>
@@ -145,9 +147,7 @@
 		</div>
 		<div class="row title-row-style" style="background-color:#A9D7E6;">
 			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
-				<div class="figure-holder" align="center" style="box-shadow: -10px 10px 10px 1px #666666;">
-					<img class="img-responsive" src="https://www.ufo79.com/image/201708030739210496.jpg">
-				</div>
+				<img class="img-responsive" src="https://www.ufo79.com/image/201708040023430404.jpg" style="box-shadow: -10px 10px 10px 1px #666666;">
 			</div>
 			<div class="feature-content col-md-6 col-sm-6 col-xs-12">				
 				<div class="feature-desc">

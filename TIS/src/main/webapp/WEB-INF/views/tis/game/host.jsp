@@ -58,7 +58,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<div style="height: 30em; background-image: url('https://www.ufo79.com/image/201704190822210400.jpg'); background-size:cover">
+<div style="height: 30em; background-image: url('https://www.ufo79.com/image/201708040020170937.jpg'); background-size:cover">
 	<!--     navbar -->
     <jsp:include page="../common/navbar.jsp" flush="false">
 		<jsp:param name="param" value="value1" />
@@ -92,7 +92,7 @@
 				<div class="feature-desc"><p>Pyeongchang is a county in Gangwon province of South Korea located in the Taebaek Mountains region. It is home to several Buddhist temples, including Woljeongsa. It is approximately 180 km (110 mi) east of Seoul, the capital of South Korea. Pyeongchang will host the 2018 Winter Olympics and the 2018 Winter Paralympics.</p></div>
 			</div>
 			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
-			<img class="img-responsive" src="https://www.ufo79.com/image/201708030751290348.jpg">
+			<img class="img-responsive" src="https://www.ufo79.com/image/201708040020170925.jpg">
 			</div>
 		</div>
 	</div>
@@ -106,7 +106,7 @@
 				<div class="feature-desc"><p>Gangneung is a city in Gangwon-do, on the east coast of South Korea. It has a population of 229,869 (as of 2006). Gangneung is the economic centre of the Yeongdong region of Gangwon Province. Gangneung has many tourist attractions, such as Jeongdongjin, a very popular area for watching the sun rise, and Gyeongpo Beach. There is a ROK airbase south of downtown Gangneung which formerly doubled as a civil airport.</p></div>
 			</div>
 			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
-				<img class="img-responsive" src="https://www.ufo79.com/image/201708030751290352.jpg">
+				<img class="img-responsive" src="https://www.ufo79.com/image/201708040021470994.jpg">
 			</div>			
 		</div>
 	</div>
@@ -121,7 +121,7 @@
 </p></div>
 			</div>
 			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
-			<img class="img-responsive" src="https://www.ufo79.com/image/201708030751290353.jpg">
+			<img class="img-responsive" src="https://www.ufo79.com/image/201708040020170935.jpg">
 			</div>
 		</div>
 	</div>
