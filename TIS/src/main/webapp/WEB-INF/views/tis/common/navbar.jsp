@@ -35,6 +35,7 @@
             <li><a style="color: #000000;" href="/TIS/game/oly">Olympics</a></li>
             <li><a style="color: #000000;" href="/TIS/game/par">Paralympics</a></li>
             <li><a style="color: #000000;" href="/TIS/game/venue">Venue</a></li>
+            <li><a style="color: #000000;" href="/TIS/game/attraction">Attraction</a></li>
           </ul>
         </li>
         <li><a class="li-style" href="javascript:signout()">Sign out</a></li>

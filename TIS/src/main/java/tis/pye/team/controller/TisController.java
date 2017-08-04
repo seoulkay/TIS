@@ -106,6 +106,11 @@ public class TisController {
 		return "tis/game/venue";
 	}
 	
+	@RequestMapping(value = "/game/attraction", method = RequestMethod.GET)
+	public String tisgamatt(){
+		return "tis/game/attraction";
+	}
+	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String tishome(){
 		return "tis/home";
@@ -148,6 +153,7 @@ public class TisController {
 		tem.setId(vo.getReq_contact());
 		tem = dao.selectEmployeeByAtosIdOnly(tem);
 		vo.setLocal_contact(tem.getFirst_name()+" "+tem.getLast_name());
+		vo.setLocal_contact_email(tem.getEmail());
 		
 		//이메일용 베뉴이름 구하기
 		List<TisVenue> venueList = dao.selectAllVenue();

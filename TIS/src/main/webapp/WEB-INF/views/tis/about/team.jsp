@@ -90,10 +90,10 @@
 	      </tr>
 	      <c:forEach items="${ele.tisTeamList }" var="elee">
 	      <tr style="display: none;" class="group_tr group_${elee.group_name }">
-	      	<td style="width: 10%" class="col-sm-2"><img class="img-responsive" alt="" style="max-height: 5em" src="https://www.tis2018.ga/image/tisImage/${elee.picture }" ></td>
-	      	<td style="width: 30%" class="col-sm-5">${elee.first_name } ${elee.last_name }</td>
-	      	<td style="width: 30%" sclass="col-sm-5">${elee.email }</td>
-	      	<td style="width: 30%" sclass="col-sm-5">${elee.support_tel }</td>
+	      	<td class="col-sm-2"><img class="img-responsive" alt="" style="max-height: 5em" src="https://www.tis2018.ga/image/tisImage/${elee.picture }" ></td>
+	      	<td class="col-sm-5">${elee.first_name } ${elee.last_name }</td>
+	      	<td class="col-sm-5">${elee.email }</td>
+	      	<td class="col-sm-5">${elee.support_tel }</td>
 	      </tr>
 	      </c:forEach>
 	  </table>

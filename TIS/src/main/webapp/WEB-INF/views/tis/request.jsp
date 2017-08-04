@@ -121,7 +121,7 @@
 		<h3>Booking Request</h3>
 		
 		<h5>Traveler</h5>
-		<form name="requestForm" action="requestFormAction" method="POST">
+		<form name="requestForm" action="requestFormAction" method="POST" onsubmit="return alert('Your request has been submitted.');">
 		<div class="row form-group">
 			<div class="col-sm-2">
 				<label>Title <span style="color: RED">*</span></label>

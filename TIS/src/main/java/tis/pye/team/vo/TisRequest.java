@@ -31,6 +31,7 @@ public class TisRequest {
 	private String event_name;
 	private String local_contact;
 	private String venue_name;
+	private String local_contact_email;
 	
 	public int getId() {
 		return id;
@@ -157,6 +158,12 @@ public class TisRequest {
 	}
 	public void setVenue_name(String venue_name) {
 		this.venue_name = venue_name;
+	}
+	public String getLocal_contact_email() {
+		return local_contact_email;
+	}
+	public void setLocal_contact_email(String local_contact_email) {
+		this.local_contact_email = local_contact_email;
 	}
 	
 	

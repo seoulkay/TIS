@@ -88,16 +88,18 @@ public class ApplicationMailer {
 					+ "<tr><td><strong>Date & Time</strong></td><td>"+vo.getLeave_stmp()+"</td></tr>"
 					+ "<tr><td><strong>Flight No</strong></td><td>"+vo.getLeave_flight()+" "+vo.getLeave_flight_name()+"</td></tr>"
 					+ "</table>";
-			
-			
+
+			String ccString = "dl-kr-pyc-admin@atos.net";
+			//실제 사용할때 코멘트 지우기
+			//ccString = ccString + ", " +vo.getLocal_contact_email();
+					
+			InternetAddress[] myCcList = InternetAddress.parse(ccString);
 			
 			Message message = new MimeMessage(session);
-//			message.setFrom(new InternetAddress("from@no-spam.com"));
-			message.setRecipients(Message.RecipientType.TO,
-					InternetAddress.parse(vo.getEmail()));
+			message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(vo.getEmail()));
+			message.setRecipients(Message.RecipientType.CC,myCcList);
 			message.setSubject("Booking request");
 			message.setContent(msg, "text/html; charset=utf-8");
-//			message.setText();
 			Transport.send(message);
 
 			System.out.println("Done");
