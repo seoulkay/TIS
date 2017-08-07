@@ -2,21 +2,19 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!-- #footer -->
-    <footer id="footer">
-        
-        <!-- .container -->
-        <div class="container">
-            
-            <div class="footer-links">
+    <footer id="footer">        
+        <!-- container -->
+        <div class="container">            
+            <!-- <div class="footer-links">
                 <a dsb  href="#" class="scrollup"><i class="ion ion-ios-arrow-up"></i></a>
-            </div>
+            </div> -->
             <div class="footer-copyright">
             	<p>&copy; Atos Pyeongchang team</p>
             	<p><a href="/TIS/license" target="_blank">About</a></p>
             </div>
             
 		</div>
-        <!-- .container end -->
+        <!-- container end -->
         
     </footer>
     <!-- #footer end -->

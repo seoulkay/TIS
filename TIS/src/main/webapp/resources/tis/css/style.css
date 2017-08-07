@@ -203,8 +203,8 @@ ul#contact li a.email{
 	background-image: url(../image/ic_mail_black_24px.svg);	
 }
 
-ul#contact li a.bluekiwi{
-	background-image: url(../image/ic_format_bold_black_24px.svg);	
+ul#contact li a.download{
+	background-image: url(../image/ic_attachment_black_24px.svg);	
 }
 
 ul#contact li a.gallery{
@@ -1451,7 +1451,7 @@ button.close:hover {
 	text-align:center;
 	font-weight:400;
 	background-color:#1a1a1a;
-	padding:50px 0px;
+	padding:30px 0px;
 }
 	#footer a {
 		color:#a9a9a9;
@@ -1476,7 +1476,7 @@ button.close:hover {
 		}
 	#footer .footer-links {
 		line-height:0px;
-		margin-bottom:30px;
+		margin-bottom:1em;
 	}
 		#footer .footer-links .link-icon {
 			font-size:30px;

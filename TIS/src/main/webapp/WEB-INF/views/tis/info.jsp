@@ -71,15 +71,14 @@
 		<h4 class="name">${em.first_name } ${em.last_name }</h4>
 		<h5 class="description">${em.job_title }</h5>		
 		<ul id="contact">
+			<!-- 이메일 -->
 			<li>
 				<a target="_blank" href="mailto:${em.email }" class="email"></a>
-			</li><!-- 
-			<li>
-				<a target="_blank" href="https://zen.myatos.net" class="bluekiwi"></a>
 			</li>
+			<!-- 첨부화일 -->
 			<li>
-				<a target="_blank" href="https://goo.gl/photos/W86qKeqpdoJGaomY8" class="gallery"></a>
-			</li> -->		
+				<a target="_blank" href="" class="download"></a>
+			</li>		
 		</ul>	
 	</div>
 	
@@ -139,11 +138,7 @@
 		    </tbody>
 		  </table>
 	</div>
-	
-	<div class="row row-style">
-		<div id="map" style="height: 25em;"></div>
-	</div>
-	
+	<!-- Facilities & Services -->
 	<div class="row row-style">
 		  <h4 style="padding-top: 1em; font-size: 1em;"><strong>Facilities & Services</strong></h4>
 	</div>
@@ -158,6 +153,7 @@
 	</c:forEach>
 	</div>
 	<div style="height: 1em"></div>
+	<!-- General -->
 	<div class="row row-style">
 		<h4 style="font-size: 1em;"><strong>General</strong></h4>
 		<ul>
@@ -171,10 +167,15 @@
 		<%-- <p><strong>${ele.acc_desc }</strong></p> --%>
 	</div>
 	<div style="height: 1em"></div>
+	<!-- Show to Taxi driver -->
 	<div class="row row-style">
 		<h4 style="font-size: 1em;"><strong>Show to Taxi driver</strong></h4>
 		<p>${ele.venue_address_loc }</p>
-	</div>			 
+	</div>
+	<!-- Map -->	
+	<div class="row row-style">
+		<div id="map" style="height: 25em;"></div>
+	</div>				 
 	</c:forEach>
 	<!-- My Accommodation section ends -->	
 	<hr>
