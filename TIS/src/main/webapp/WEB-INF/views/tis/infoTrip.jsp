@@ -130,7 +130,7 @@
 			Name
 			</td>
 			<td>
-			<select id="employee_id_sel" name="emp_id" class="form-control">
+			<select id="employee_id_sel" name="emp_id" id="emp_id" class="form-control">
 			<option value="0">Select one</option>
 			<c:forEach items="${temp }" var="ele">
 				<option value="${ele.id}">${ele.first_name } ${ele.last_name }</option>
@@ -152,7 +152,7 @@
 			Event
 			</td>
 			<td>
-			<select id="event_id_sel" name="event_id" class="form-control">
+			<select id="event_id_sel" name="event_id" id="event_id" class="form-control">
 			<option value="0">Select one</option>
 			<c:forEach items="${te }" var="ele">
 				<option value="${ele.id}">${ele.event_name}</option>
@@ -244,6 +244,11 @@ function submitForm(para){
 		<jsp:param name="param" value="value1" />
 	</jsp:include><!--//footer-->
 </body>
+
+${js }
+
+
+
 
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

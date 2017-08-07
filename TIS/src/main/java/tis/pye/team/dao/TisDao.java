@@ -295,6 +295,10 @@ public class TisDao extends SqlSessionDaoSupport{
 	public int insertTisRequestLog(TisRequest vo){
 		return getSqlSession().insert("TisMapper.insertTisRequestLog", vo);
 	}
+	
+	public int selectEmployeeByEmail(String vo){
+		return getSqlSession().selectOne("TisMapper.selectEmployeeByEmail", vo);
+	}
 }
 
 

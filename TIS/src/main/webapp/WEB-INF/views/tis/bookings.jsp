@@ -146,7 +146,7 @@
       </div>
       <div class="modal-body">
 	
-	<form name="requestForm" id="requestForm" action="#" method="POST" onsubmit="return alert('Your request has been submitted.');">
+	<form name="requestForm" id="requestForm" action="requestUpdate" method="POST" onsubmit="return alert('Your request has been submitted.');">
 		<div class="row form-group">
 			<div class="col-sm-2">
 				<label>Title <span style="color: RED">*</span></label>
@@ -481,11 +481,16 @@
 <!-- 			<div class="col-sm-6"> -->
 <!-- 				<h4>You need accommodation for %number% days</h4> -->
 <!-- 			</div> -->
+
+
 			<div class="col-sm-6" style="padding-bottom: 1em; padding-top: 1em;">
 				<input type="submit" value="Submit">
-				<input type="reset" value="Reset">
+
 			</div>
 		</div>
+		
+		<input type="hidden" name="id">
+		<input type="hidden" name="req_status">
 		</form>
 		
 		</div>
@@ -514,7 +519,7 @@ function toTripForm(event, email){
 	location.href = "toTripForm/?event="+event+"&email="+email;
 }
 
-//TODO 나중에 하자 왜인지 모르겠다.
+
 function setFormValue(id){
 	$('#requestForm')[0].reset();
 	$.post( "/TIS/bookings/getRequest/"+id)
@@ -523,16 +528,32 @@ function setFormValue(id){
       $("input[name=first_name]").val(go.first_name);
       $("input[name=last_name]").val(go.last_name);
       $("input[name=email]").val(go.email);
-//      $("input[name=req_title] select").val(go.req_title);
-//       $("input[name=req_purpose] select").val(go.req_purpose);
-//       $("input[name=req_venue]").val(go.req_venue);
-console.log(go.req_contact);
-       //$("input[name=req_contact]").val('3');
-    	//document.getElementById('req_contact').value='3';
-     // req_contact.value = 3;
+      
+      $("select[name=req_title]").val(go.req_title);
+      $("select[name=req_purpose]").val(go.req_purpose);
+      $("select[name=req_contact]").val(go.req_contact);
+      
+    
+      $.each(go.req_venue.split(","), function(i,e){
+    	    $("select[name=req_venue] option[value='" + e + "']").prop("selected", true);
+    	});
+      
+      
+      $("select[name=leave_flight]").val(go.leave_flight);
+      $("select[name=arrive_flight]").val(go.arrive_flight);
+      $("input[name=leave_flight_name]").val(go.leave_flight_name);
+      $("input[name=arrive_flight_name]").val(go.arrive_flight_name);
+      $("input[name=leave_stmp]").val(go.leave_stmp_str);
+      $("input[name=arrive_stmp]").val(go.arrive_stmp_str);
+      $("input[name=id]").val(go.id);
+      $("input[name=req_status]").val(go.req_status);
+      
+      $('.selectpicker').selectpicker('refresh');
     });
 }
-//$("#req_contact").val(3);
+
+
+
 </script>
         <!-- ******FOOTER****** -->
 	<jsp:include page="common/footer.jsp" flush="false">
