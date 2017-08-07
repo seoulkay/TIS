@@ -279,6 +279,22 @@ public class TisDao extends SqlSessionDaoSupport{
 	public List<TisRequest> selectTisRequest(){
 		return getSqlSession().selectList("TisMapper.selectTisRequest");
 	}
+	
+	public int updateTisRequestStatus(TisRequest vo){
+		return getSqlSession().update("TisMapper.updateTisRequestStatus", vo);
+	}
+	
+	public int updateTisRequest(TisRequest vo){
+		return getSqlSession().update("TisMapper.updateTisRequest", vo);
+	}
+
+	public TisRequest selectTisRequestById(TisRequest vo){
+		return getSqlSession().selectOne("TisMapper.selectTisRequestById", vo);
+	}
+	
+	public int insertTisRequestLog(TisRequest vo){
+		return getSqlSession().insert("TisMapper.insertTisRequestLog", vo);
+	}
 }
 
 

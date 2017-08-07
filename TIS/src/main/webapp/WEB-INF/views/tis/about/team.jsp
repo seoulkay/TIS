@@ -84,16 +84,16 @@
 	</div>
 	<div class="row row-style">
 	<c:forEach items="${ttw }" var="ele" varStatus="stat">
-	<table class="table table-bordered">
+	<table class="table table-bordered" style="table-layout: fixed">
 	      <tr class="info">
 	        <th colspan="4">${ele.tisTeamList[0].support_title }</th>
 	      </tr>
 	      <c:forEach items="${ele.tisTeamList }" var="elee">
 	      <tr style="display: none;" class="group_tr group_${elee.group_name }">
-	      	<td class="col-sm-2"><img class="img-responsive" alt="" style="max-height: 5em" src="https://www.tis2018.ga/image/tisImage/${elee.picture }" ></td>
-	      	<td class="col-sm-5">${elee.first_name } ${elee.last_name }</td>
-	      	<td class="col-sm-5">${elee.email }</td>
-	      	<td class="col-sm-5">${elee.support_tel }</td>
+	      	<td><img alt="" src="https://www.tis2018.ga/image/tisImage/${elee.picture }" ></td>
+	      	<td style="word-wrap:break-word">${elee.first_name } ${elee.last_name }</td>
+	      	<td style="word-wrap:break-word"><a href="mailto:${elee.email }">${elee.email }</a></td>
+	      	<td >${elee.support_tel }</td>
 	      </tr>
 	      </c:forEach>
 	  </table>

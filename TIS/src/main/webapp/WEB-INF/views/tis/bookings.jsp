@@ -37,6 +37,12 @@
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/tis/css/style.css">
     
+    	<!-- 특별한 드랍 다운을 위해 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+	<!-- 특별한 드랍 다운 끝 -->
+    
+    
  
     <!--<link rel="stylesheet" href="css/colors/pink/color.css">-->
     <!--<link rel="stylesheet" href="css/colors/yellow/color.css">-->
@@ -102,19 +108,21 @@
 	    <tbody>
 	    <c:forEach items="${req }" var="ele">
 	    	<tr class="tr-style" id="SupUpdate_${ele.id }">
-		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.id}</td>
-		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.req_status}</td>
+		        <td>
+		        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" onclick="setFormValue('${ele.id}')">Modify&nbsp;${ele.id}</button>
+		        </td>
+		        <td>${ele.req_status}</td>
 		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.first_name} ${ele.last_name }</td>
 		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.req_purpose}</td>
 	          	<td style="text-align: center; font-size:1.3em;">
 	          	<c:choose>
-	          		<c:when test="${ele.req_status eq 'Confirmed' }"><button class="btn btn-sm btn-success" >Cancel</button></c:when>
-	          		<c:otherwise><button class="btn btn-sm btn-success" >Confirm</button></c:otherwise>
+	          		<c:when test="${ele.req_status eq 'Confirmed' }"><button class="btn btn-sm btn-success" onclick="changeStatus('${ele.id}')">Cancel</button></c:when>
+	          		<c:otherwise><button class="btn btn-sm btn-success" onclick="changeStatus('${ele.id}')">Confirm</button></c:otherwise>
 	          	</c:choose>
 	          	</td>
 	          	<td style="text-align: center; font-size:1.3em;">
 	          	<c:choose>
-	          		<c:when test="${ele.req_status eq 'Confirmed' }"><button class="btn btn-sm btn-success">Trip</button></c:when>
+	          		<c:when test="${ele.req_status eq 'Confirmed' }"><button class="btn btn-sm btn-success" onclick="toTripForm('${ele.req_purpose}','${ele.email}')">Trip</button></c:when>
 	          		<c:otherwise><button class="btn btn-sm btn-success" disabled="disabled">Trip</button></c:otherwise>
 	          	</c:choose>
 	          		
@@ -125,7 +133,370 @@
 	  </table>
 	</div>
 
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
 	
+	<form name="requestForm" id="requestForm" action="#" method="POST" onsubmit="return alert('Your request has been submitted.');">
+		<div class="row form-group">
+			<div class="col-sm-2">
+				<label>Title <span style="color: RED">*</span></label>
+			</div>
+			<div class="col-sm-10">
+				<select class="selectpicker" name="req_title" required="required">
+					<option value="Mr.">Mr.</option>
+					<option value="Ms.">Ms.</option>
+				</select>
+			</div>
+		</div>
+		<div class="row form-group form-group-sm">
+			<div class="col-sm-2">
+				<label>First Name <span style="color: RED">*</span></label>
+			</div>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" name="first_name" required="required">
+			</div>
+		</div>
+		<div class="row form-group form-group-sm">
+			<div class="col-sm-2">
+				<label>Last Name <span style="color: RED">*</span></label>
+			</div>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" name="last_name" required="required">
+			</div>
+		</div>
+		<div class="row form-group form-group-sm">
+			<div class="col-sm-2">
+				<label>Email Address <span style="color: RED">*</span></label>
+			</div>
+			<div class="col-sm-10">
+				<input type="email" class="form-control" placeholder="e.g. janet.kim@atos.net" required="required" name="email">
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-sm-2">
+				<label>Travel purpose <span style="color: RED">*</span></label>
+			</div>
+			<div class="col-sm-10">
+				<select class="selectpicker" required="required" name="req_purpose">
+					<c:forEach items="${te }" var="ele">
+						<option value="${ele.id }">${ele.event_name }</option>
+					</c:forEach>
+				</select>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-sm-2">
+				<label>Travel Venue</label>
+			</div>
+			<div class="col-sm-10">
+				<select class="selectpicker" multiple name="req_venue">
+				<c:forEach items="${tv }" var="ele">
+					<option value="${ele.id }">${ele.venue_name }</option>
+				</c:forEach>
+				</select>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-sm-2">
+				<label>Local Contact <span style="color: RED">*</span></label>
+			</div>
+			<div class="col-sm-10">
+				<select class="selectpicker" required="required" name="req_contact" id="req_contact">
+				<c:forEach items="${temp }" var="ele">
+					<option value="${ele.id }">${ele.first_name } ${ele.last_name }</option>
+				</c:forEach>
+				</select>
+			</div>
+		</div>
+		
+		<h5>Arrive to Incheon Airport</h5>
+		<div class="row form-group form-group-sm">
+			<div class="col-sm-2">
+				<label>Arrive Date <span style="color: RED">*</span></label>
+			</div>
+			<div class="col-sm-10">
+				<input type="datetime-local" class="form-control" name="arrive_stmp"  id="arrive_stmp" pattern = 'yyyy-MM-ddTHH:mm' style="width:auto;" required="required">
+			</div>
+		</div>
+		<div class="row form-group form-group-sm">
+			<div class="col-sm-2">
+				<label>Flight No</label>
+			</div>
+			<div class="col-sm-5">
+			<select class="selectpicker" data-live-search="true" name="arrive_flight">
+				<option value="KE">KE - Korean Air</option>
+				<option value="JP">JP - Adria Airways</option>
+				<option value="A3">A3 - Aegean Airlines</option>
+				<option value="RE">RE - Aer Arann</option>
+				<option value="EI">EI - Aer Lingus</option>
+				<option value="SU">SU - Aeroflot Russian Airlines</option>
+				<option value="AR">AR - Aerolineas Argentinas</option>
+				<option value="AM">AM - Aeromexico</option>
+				<option value="AH">AH - Air Algerie</option>
+				<option value="KC">KC - Air Astana</option>
+				<option value="AB">AB - Air Berlin</option>
+				<option value="AC">AC - Air Canada</option>
+				<option value="CA">CA - Air China</option>
+				<option value="UX">UX - Air Europa</option>
+				<option value="AF">AF - Air France</option>
+				<option value="AI">AI - Air India</option>
+				<option value="KM">KM - Air Malta</option>
+				<option value="SW">SW - Air Namibia</option>
+				<option value="NZ">NZ - Air New Zealand</option>
+				<option value="HM">HM - Air Seychelles</option>
+				<option value="VT">VT - Air Tahiti</option>
+				<option value="UM">UM - Air Zimbabwe</option>
+				<option value="AS">AS - Alaska Airlines</option>
+				<option value="AZ">AZ - Alitalia</option>
+				<option value="NH">NH - All Nippon Airways</option>
+				<option value="AA">AA - American Airlines</option>
+				<option value="W3">W3 - Arik Air</option>
+				<option value="OZ">OZ - Asiana Airlines</option>
+				<option value="RC">RC - Atlantic Airways</option>
+				<option value="GR">GR - Aurigny</option>
+				<option value="OS">OS - Austrian Airlines</option>
+				<option value="AV">AV - Avianca</option>
+				<option value="J2">J2 - Azerbaijan Hava Yollary</option>
+				<option value="PG">PG - Bangkok Airways</option>
+				<option value="KF">KF - Blue1</option>
+				<option value="BA">BA - British Airways</option>
+				<option value="SN">SN - Brussels Airlines</option>
+				<option value="FB">FB - Bulgaria Air</option>
+				<option value="CX">CX - Cathay Pacific</option>
+				<option value="OK">OK - Czech Airlines</option>
+				<option value="CI">CI - China Airlines</option>
+				<option value="MU">MU - China Eastern Airlines</option>
+				<option value="CZ">CZ - China Southern Airlines</option>
+				<option value="OU">OU - Croatia Airlines</option>
+				<option value="CY">CY - Cyprus Airways</option>
+				<option value="DL">DL - Delta Air Lines</option>
+				<option value="T3">T3 - Eastern Airways</option>
+				<option value="MS">MS - Egyptair</option>
+				<option value="LY">LY - El Al Israel Airlines</option>
+				<option value="EK">EK - Emirates</option>
+				<option value="OV">OV - Estonian Air</option>
+				<option value="ET">ET - Ethiopian Airlines</option>
+				<option value="EY">EY - Etihad Airways</option>
+				<option value="BR">BR - Eva Air</option>
+				<option value="AY">AY - Finnair</option>
+				<option value="BE">BE - Flybe</option>
+				<option value="GA">GA - Garuda Indonesia</option>
+				<option value="GF">GF - Gulf Air</option>
+				<option value="HR">HR - HAHN Air</option>
+				<option value="HX">HX - Hong Kong Airlines</option>
+				<option value="IB">IB - Iberia</option>
+				<option value="FI">FI - Icelandair</option>
+				<option value="JL">JL - Japan Airlines</option>
+				<option value="9W">9W - Jet Airways</option>
+				<option value="KQ">KQ - Kenya Airways</option>
+				<option value="KL">KL - KLM Royal Dutch Airlines</option>				
+				<option value="KU">KU - Kuwait Airways</option>
+				<option value="LA">LA - LAN Colombia</option>
+				<option value="LO">LO - LOT - Polish Airlines</option>
+				<option value="LH">LH - Lufthansa</option>
+				<option value="LG">LG - Luxair</option>
+				<option value="MH">MH - Malaysia Airlines</option>
+				<option value="ME">ME - Middle East Airlines</option>
+				<option value="IG">IG - Meridiana</option>
+				<option value="MX">MX - Mexicana</option>
+				<option value="ZB">ZB - Monarch Airlines</option>
+				<option value="NW">NW - Northwest Airlines</option>
+				<option value="DY">DY - Norwegian Air Shuttle</option>
+				<option value="OA">OA - Olympic Air</option>
+				<option value="WY">WY - Oman Air</option>
+				<option value="FV">FV - Rossiya-Russia Airlines</option>
+				<option value="QF">QF - Qantas Airways</option>
+				<option value="QR">QR - Qatar Airways</option>
+				<option value="AT">AT - Royal Air Maroc</option>
+				<option value="BI">BI - Royal Brunei Airlines</option>
+				<option value="RJ">RJ - Royal Jordanian</option>
+				<option value="S7">S7 - Siberia Airlines</option>
+				<option value="SV">SV - Saudi Arabian Airlines</option>
+				<option value="SK">SK - Scandinavian Airlines System (SAS)</option>
+				<option value="SQ">SQ - Singapore Airlines</option>
+				<option value="SA">SA - South African Airways</option>
+				<option value="JK">JK - Spanair</option>
+				<option value="UL">UL - SriLankan Airlines</option>
+				<option value="LX">LX - SWISS International Air Lines</option>
+				<option value="JJ">JJ - TAM Airlines</option>
+				<option value="TP">TP - TAP Portugal</option>
+				<option value="RO">RO - Tarom</option>
+				<option value="TG">TG - Thai Airways International</option>
+				<option value="UN">UN - Transaero Airlines</option>
+				<option value="TU">TU - Tunisair</option>
+				<option value="TK">TK - Turkish Airlines</option>
+				<option value="PS">PS - Ukraine International Airlines</option>
+				<option value="UA">UA - United Airlines</option>
+				<option value="US">US - US Airways</option>
+				<option value="HY">HY - Uzbekistan Airways</option>
+				<option value="VN">VN - Vietnam Airlines</option>
+				<option value="VS">VS - Virgin Atlantic Airways</option>
+				<option value="VG">VG - VLM Airlines (Cityjet)</option>
+			</select>
+			</div>
+			<div class="col-sm-5">
+				<input type="text" class="form-control" name="arrive_flight_name">
+			</div>
+		</div>
+		<h5>Leave from Incheon Airport</h5>
+		<div class="row form-group form-group-sm">
+			<div class="col-sm-2">
+				<label>Leave Date <span style="color: RED">*</span></label>
+			</div>
+			<div class="col-sm-10">
+				<input type="datetime-local" class="form-control" name="leave_stmp" id="leave_stmp" pattern = 'yyyy-MM-ddTHH:mm' style="width:auto;" required="required">
+			</div>
+		</div>
+		<div class="row form-group form-group-sm">
+			<div class="col-sm-2">
+				<label>Flight No</label>
+			</div>
+			<div class="col-sm-5">
+			<select class="selectpicker" data-live-search="true" name="leave_flight">
+				<option value="KE">KE - Korean Air</option>
+				<option value="JP">JP - Adria Airways</option>
+				<option value="A3">A3 - Aegean Airlines</option>
+				<option value="RE">RE - Aer Arann</option>
+				<option value="EI">EI - Aer Lingus</option>
+				<option value="SU">SU - Aeroflot Russian Airlines</option>
+				<option value="AR">AR - Aerolineas Argentinas</option>
+				<option value="AM">AM - Aeromexico</option>
+				<option value="AH">AH - Air Algerie</option>
+				<option value="KC">KC - Air Astana</option>
+				<option value="AB">AB - Air Berlin</option>
+				<option value="AC">AC - Air Canada</option>
+				<option value="CA">CA - Air China</option>
+				<option value="UX">UX - Air Europa</option>
+				<option value="AF">AF - Air France</option>
+				<option value="AI">AI - Air India</option>
+				<option value="KM">KM - Air Malta</option>
+				<option value="SW">SW - Air Namibia</option>
+				<option value="NZ">NZ - Air New Zealand</option>
+				<option value="HM">HM - Air Seychelles</option>
+				<option value="VT">VT - Air Tahiti</option>
+				<option value="UM">UM - Air Zimbabwe</option>
+				<option value="AS">AS - Alaska Airlines</option>
+				<option value="AZ">AZ - Alitalia</option>
+				<option value="NH">NH - All Nippon Airways</option>
+				<option value="AA">AA - American Airlines</option>
+				<option value="W3">W3 - Arik Air</option>
+				<option value="OZ">OZ - Asiana Airlines</option>
+				<option value="RC">RC - Atlantic Airways</option>
+				<option value="GR">GR - Aurigny</option>
+				<option value="OS">OS - Austrian Airlines</option>
+				<option value="AV">AV - Avianca</option>
+				<option value="J2">J2 - Azerbaijan Hava Yollary</option>
+				<option value="PG">PG - Bangkok Airways</option>
+				<option value="KF">KF - Blue1</option>
+				<option value="BA">BA - British Airways</option>
+				<option value="SN">SN - Brussels Airlines</option>
+				<option value="FB">FB - Bulgaria Air</option>
+				<option value="CX">CX - Cathay Pacific</option>
+				<option value="OK">OK - Czech Airlines</option>
+				<option value="CI">CI - China Airlines</option>
+				<option value="MU">MU - China Eastern Airlines</option>
+				<option value="CZ">CZ - China Southern Airlines</option>
+				<option value="OU">OU - Croatia Airlines</option>
+				<option value="CY">CY - Cyprus Airways</option>
+				<option value="DL">DL - Delta Air Lines</option>
+				<option value="T3">T3 - Eastern Airways</option>
+				<option value="MS">MS - Egyptair</option>
+				<option value="LY">LY - El Al Israel Airlines</option>
+				<option value="EK">EK - Emirates</option>
+				<option value="OV">OV - Estonian Air</option>
+				<option value="ET">ET - Ethiopian Airlines</option>
+				<option value="EY">EY - Etihad Airways</option>
+				<option value="BR">BR - Eva Air</option>
+				<option value="AY">AY - Finnair</option>
+				<option value="BE">BE - Flybe</option>
+				<option value="GA">GA - Garuda Indonesia</option>
+				<option value="GF">GF - Gulf Air</option>
+				<option value="HR">HR - HAHN Air</option>
+				<option value="HX">HX - Hong Kong Airlines</option>
+				<option value="IB">IB - Iberia</option>
+				<option value="FI">FI - Icelandair</option>
+				<option value="JL">JL - Japan Airlines</option>
+				<option value="9W">9W - Jet Airways</option>
+				<option value="KQ">KQ - Kenya Airways</option>
+				<option value="KL">KL - KLM Royal Dutch Airlines</option>
+				<option value="KU">KU - Kuwait Airways</option>
+				<option value="LA">LA - LAN Colombia</option>
+				<option value="LO">LO - LOT - Polish Airlines</option>
+				<option value="LH">LH - Lufthansa</option>
+				<option value="LG">LG - Luxair</option>
+				<option value="MH">MH - Malaysia Airlines</option>
+				<option value="ME">ME - Middle East Airlines</option>
+				<option value="IG">IG - Meridiana</option>
+				<option value="MX">MX - Mexicana</option>
+				<option value="ZB">ZB - Monarch Airlines</option>
+				<option value="NW">NW - Northwest Airlines</option>
+				<option value="DY">DY - Norwegian Air Shuttle</option>
+				<option value="OA">OA - Olympic Air</option>
+				<option value="WY">WY - Oman Air</option>
+				<option value="FV">FV - Rossiya-Russia Airlines</option>
+				<option value="QF">QF - Qantas Airways</option>
+				<option value="QR">QR - Qatar Airways</option>
+				<option value="AT">AT - Royal Air Maroc</option>
+				<option value="BI">BI - Royal Brunei Airlines</option>
+				<option value="RJ">RJ - Royal Jordanian</option>
+				<option value="S7">S7 - Siberia Airlines</option>
+				<option value="SV">SV - Saudi Arabian Airlines</option>
+				<option value="SK">SK - Scandinavian Airlines System (SAS)</option>
+				<option value="SQ">SQ - Singapore Airlines</option>
+				<option value="SA">SA - South African Airways</option>
+				<option value="JK">JK - Spanair</option>
+				<option value="UL">UL - SriLankan Airlines</option>
+				<option value="LX">LX - SWISS International Air Lines</option>
+				<option value="JJ">JJ - TAM Airlines</option>
+				<option value="TP">TP - TAP Portugal</option>
+				<option value="RO">RO - Tarom</option>
+				<option value="TG">TG - Thai Airways International</option>
+				<option value="UN">UN - Transaero Airlines</option>
+				<option value="TU">TU - Tunisair</option>
+				<option value="TK">TK - Turkish Airlines</option>
+				<option value="PS">PS - Ukraine International Airlines</option>
+				<option value="UA">UA - United Airlines</option>
+				<option value="US">US - US Airways</option>
+				<option value="HY">HY - Uzbekistan Airways</option>
+				<option value="VN">VN - Vietnam Airlines</option>
+				<option value="VS">VS - Virgin Atlantic Airways</option>
+				<option value="VG">VG - VLM Airlines (Cityjet)</option>
+			</select>
+			</div>
+			<div class="col-sm-5">
+				<input type="text" class="form-control" name="leave_flight_name">
+			</div>
+		</div>
+		<div class="row">
+<!-- 			<div class="col-sm-6"> -->
+<!-- 				<h4>You need accommodation for %number% days</h4> -->
+<!-- 			</div> -->
+			<div class="col-sm-6" style="padding-bottom: 1em; padding-top: 1em;">
+				<input type="submit" value="Submit">
+				<input type="reset" value="Reset">
+			</div>
+		</div>
+		</form>
+		
+		</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 </div>
 <script>
 function openForm(para){
@@ -134,6 +505,34 @@ function openForm(para){
 function submitForm(para){
 	$('#'+para).submit();
 }
+function changeStatus(para){
+	console.log(para);
+	location.href = "changeStatus/"+para;
+}
+
+function toTripForm(event, email){
+	location.href = "toTripForm/?event="+event+"&email="+email;
+}
+
+//TODO 나중에 하자 왜인지 모르겠다.
+function setFormValue(id){
+	$('#requestForm')[0].reset();
+	$.post( "/TIS/bookings/getRequest/"+id)
+    .done(function( data ) {
+      var go = JSON.parse(JSON.stringify(data));		
+      $("input[name=first_name]").val(go.first_name);
+      $("input[name=last_name]").val(go.last_name);
+      $("input[name=email]").val(go.email);
+//      $("input[name=req_title] select").val(go.req_title);
+//       $("input[name=req_purpose] select").val(go.req_purpose);
+//       $("input[name=req_venue]").val(go.req_venue);
+console.log(go.req_contact);
+       //$("input[name=req_contact]").val('3');
+    	//document.getElementById('req_contact').value='3';
+     // req_contact.value = 3;
+    });
+}
+//$("#req_contact").val(3);
 </script>
         <!-- ******FOOTER****** -->
 	<jsp:include page="common/footer.jsp" flush="false">

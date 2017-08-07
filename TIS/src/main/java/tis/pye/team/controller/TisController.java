@@ -1,20 +1,14 @@
 package tis.pye.team.controller;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.logging.Logger;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -271,7 +265,22 @@ public class TisController {
 				return "tis/homeAdmin";
 			}else{
 				List<TisRequest> req = dao.selectTisRequest();
+				List<TisEvent> te = dao.selectAllEvent();
+				List<TisVenue> tv = dao.selectAllVenue();
 				
+				//only c_venue and n_venue
+				List<TisVenue> tempTv = new ArrayList<TisVenue>();
+				for(TisVenue ele : tv){
+					if(ele.getVenue_type().equals("c_venue") || ele.getVenue_type().equals("n_venue")){
+						tempTv.add(ele);
+					}
+				}
+				
+				List<TisEmployee> temp = dao.selectEmployee();
+				
+				model.addAttribute("tv", tempTv);
+				model.addAttribute("te", te);
+				model.addAttribute("temp", temp);
 				model.addAttribute("req", req);
 				return "tis/bookings";
 			}
@@ -845,4 +854,64 @@ public class TisController {
 		List<TisVenue> ufoGo = dao.selectAllVenue(); 
 		return ufoGo;
 	}
+	
+	@RequestMapping(value = "bookings/getRequest/{id}", method = RequestMethod.POST)
+	public @ResponseBody TisRequest getRequest(@PathVariable("id")int id){
+		TisRequest vo = new TisRequest();
+		vo.setId(id);
+		return dao.selectTisRequestById(vo);
+	}
+	
+	@RequestMapping(value = "changeStatus/{id}", method = RequestMethod.GET)
+	public String bookingsChangeStatus(Model model, HttpSession session, @PathVariable("id")int id){
+		try{
+			if(session.getAttribute("user_name").equals("")){
+				return "tis/homeAdmin";
+			}else{
+				System.out.println(session.getAttribute("user_name").toString());
+				String modby = session.getAttribute("user_name").toString();
+				
+				TisRequest tisr = new TisRequest();
+				tisr.setId(id);
+				tisr = dao.selectTisRequestById(tisr);
+				
+				if(tisr.getReq_status().equals("Requested")){
+					tisr.setReq_status("Confirmed");
+				}else if(tisr.getReq_status().equals("Confirmed")){
+					tisr.setReq_status("Cancelled");
+				}else if(tisr.getReq_status().equals("Cancelled")){
+					tisr.setReq_status("Confirmed");
+				}
+				
+				tisr.setMod_by(modby);
+				tisr.setId_log(tisr.getId());
+				
+				dao.updateTisRequestStatus(tisr);
+				dao.insertTisRequestLog(tisr);
+				
+				return "redirect:/bookings";
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			return "tis/homeAdmin";
+		}
+	}
+	
+	@RequestMapping(value = "toTripForm", method = RequestMethod.GET)
+	public String toTripForm(Model model, HttpSession session, @RequestParam("event")int event, @RequestParam("email")String email){
+		try{
+			if(session.getAttribute("user_name").equals("")){
+				return "tis/homeAdmin";
+			}else{
+			
+				
+				return "redirect:/bookings";
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			return "tis/homeAdmin";
+		}
+	}
+	
+	
 }

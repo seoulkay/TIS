@@ -657,4 +657,81 @@
   	<select id="selectTisRequest" resultType="TisRequest">
   	SELECT * FROM `tis`.`request`
   	</select>
+  	
+  	<update id="updateTisRequestStatus" parameterType="TisRequest">
+	  	UPDATE tis.request 
+	  	SET 
+	  	req_status = #{req_status} 
+	  	,mod_stmp = now()
+	  	,mod_by = #{mod_by}
+	  	WHERE id = #{id};
+  	</update>
+  	
+  	<update id="updateTisRequest" parameterType="TisRequest">
+  	UPDATE `tis`.`request`
+	SET
+	`req_title` = #{req_title},
+	`first_name` = #{first_name},
+	`last_name` = #{last_name},
+	`email` = #{email},
+	`req_purpose` = #{req_purpose},
+	`req_venue` = #{req_venue},
+	`req_contact` = #{req_contact},
+	`arrive_stmp` = #{arrive_stmp},
+	`arrive_flight` = #{arrive_flight},
+	`arrive_flight_name` = #{arrive_flight_name},
+	`leave_stmp` = #{leave_stmp},
+	`leave_flight` = #{leave_flight},
+	`leave_flight_name` = #{leave_flight_name},
+	`mod_stmp` = now(),
+	`mod_by` = #{mod_by},
+	`req_status` = #{req_status}
+	WHERE `id` = #{id};	
+  	</update>
+  	
+  	<select id="selectTisRequestById" parameterType="TisRequest" resultType="TisRequest">
+  	SELECT * FROM `tis`.`request` WHERE id = #{id}
+  	</select>
+  	
+  	
+  	<insert id="insertTisRequestLog" parameterType="TisRequest">
+  	INSERT INTO `tis`.`request_log`
+	(`id_log`,
+	`req_title`,
+	`first_name`,
+	`last_name`,
+	`email`,
+	`req_purpose`,
+	`req_venue`,
+	`req_contact`,
+	`arrive_stmp`,
+	`arrive_flight`,
+	`arrive_flight_name`,
+	`leave_stmp`,
+	`leave_flight`,
+	`leave_flight_name`,
+	`stmp`,
+	`mod_stmp`,
+	`mod_by`,
+	`req_status`)
+	VALUES
+	(#{id_log},
+	#{req_title},
+	#{first_name},
+	#{last_name},
+	#{email},
+	#{req_purpose},
+	#{req_venue},
+	#{req_contact},
+	#{arrive_stmp},
+	#{arrive_flight},
+	#{arrive_flight_name},
+	#{leave_stmp},
+	#{leave_flight},
+	#{leave_flight_name},
+	now(),
+	#{mod_stmp},
+	#{mod_by},
+	'Requested');
+  	</insert>
 </mapper>

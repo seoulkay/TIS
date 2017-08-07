@@ -33,6 +33,9 @@ public class TisRequest {
 	private String venue_name;
 	private String local_contact_email;
 	
+	//로그용
+	private int id_log;
+	
 	public int getId() {
 		return id;
 	}
@@ -164,6 +167,12 @@ public class TisRequest {
 	}
 	public void setLocal_contact_email(String local_contact_email) {
 		this.local_contact_email = local_contact_email;
+	}
+	public int getId_log() {
+		return id_log;
+	}
+	public void setId_log(int id_log) {
+		this.id_log = id_log;
 	}
 	
 	
