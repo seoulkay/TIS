@@ -118,8 +118,6 @@
 <!-- 		</div> -->
 <!-- 	</div> -->
 <div style="width: 100%; padding-left: 1em; padding-right:1em;" class="container">
-		<h3>Booking Request</h3>
-		
 		<h5>Traveler</h5>
 		<form name="requestForm" action="requestFormAction" method="POST" onsubmit="return alert('Your request has been submitted.');">
 		<div class="row form-group">

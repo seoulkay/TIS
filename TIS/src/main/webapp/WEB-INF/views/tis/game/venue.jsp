@@ -113,57 +113,60 @@
 			<div class="row title-row-style">			
 				<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
 					<style type="text/css">
-					.tg  {border-collapse:collapse;border-spacing:0;}
-					.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;}
-					.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;}
-					.tg .tg-7uzy{vertical-align:top}
-					.tg .tg-s6z2{text-align:center}
-					.tg .tg-sh4c{text-align:center;vertical-align:top}
-					.tg .tg-baqh{text-align:center;vertical-align:top}
+					.tg  {border-collapse:collapse;border-spacing:0;width:100%;}
+					.tg td{font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;}
+					.tg th{font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;}
+					.tg .tg-6wtj{vertical-align:middle;text-align:center;}					
 					.tg .tg-2qjy{background-color:#16adde;color:#ffffff;text-align:center}
-					.tg .tg-h0x1{text-align:center}
-					.tg .tg-yw4l{vertical-align:top}
 					</style>
 					<table class="tg">
 					  <tr>
-					    <th class="tg-2qjy">Venue Code</th>
-					    <th class="tg-2qjy">Venue Name in English</th>
-					    <th class="tg-2qjy">Venue Name in Korean</th>
+					    <th class="tg-2qjy">Venue</th>
+					    <th class="tg-2qjy">Venue Name (Eng)</th>
+					    <th class="tg-2qjy">Venue Name (Kor)</th>
+					    <th class="tg-2qjy">Detail</th>
 					  </tr>
-					  <tr class="tr-style" data-toggle="modal" data-target="#venue1">
-					    <td class="tg-h0x1">ASJ</td>
+					  <tr class="tr-style">
+					    <td class="tg-6wtj">ASJ</td>
 					    <td class="tg-6wtj">Alpensia Ski Jumping Centre</td>
 					    <td class="tg-6wtj">알펜시아 스키점프 경기장 </td>
+					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue1"></td>
 					  </tr>
-					  <tr class="tr-style" data-toggle="modal" data-target="#venue2">
-					    <td class="tg-s6z2">ACC</td>
-					    <td class="tg-031e">Alpensia Cross-Country Centre</td>
-					    <td class="tg-031e">알펜시아 크로스컨트리 센터  </td>
+					  <tr class="tr-style">
+					    <td class="tg-6wtj">ACC</td>
+					    <td class="tg-6wtj">Alpensia Cross-Country Centre</td>
+					    <td class="tg-6wtj">알펜시아 크로스컨트리 센터  </td>
+					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue2"></td>
 					  </tr>
-					  <tr class="tr-style" data-toggle="modal" data-target="#venue3">
-					    <td class="tg-sh4c">ABT</td>
-					    <td class="tg-7uzy">Alpensia Biathlon Centre</td>
-					    <td class="tg-7uzy">알펜시아 바이애슬론 센터</td>
+					  <tr class="tr-style">
+					    <td class="tg-6wtj">ABT</td>
+					    <td class="tg-6wtj">Alpensia Biathlon Centre</td>
+					    <td class="tg-6wtj">알펜시아 바이애슬론 센터</td>
+					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue3"></td>
 					  </tr>
-					  <tr class="tr-style" data-toggle="modal" data-target="#venue4">
-					    <td class="tg-baqh">ASL</td>
-					    <td class="tg-yw4l">Alpensia Sliding Centre</td>
-					    <td class="tg-yw4l">알펜시아 슬라이딩 센터</td>
+					  <tr class="tr-style">
+					    <td class="tg-6wtj">ASL</td>
+					    <td class="tg-6wtj">Alpensia Sliding Centre</td>
+					    <td class="tg-6wtj">알펜시아 슬라이딩 센터</td>
+					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue4"></td>
 					  </tr>
-					  <tr class="tr-style" data-toggle="modal" data-target="#venue5">
-					    <td class="tg-sh4c">YAL</td>
-					    <td class="tg-7uzy">Yongpyong Alpine Centre</td>
-					    <td class="tg-7uzy">용평 알파인 센터</td>
+					  <tr class="tr-style">
+					    <td class="tg-6wtj">YAL</td>
+					    <td class="tg-6wtj">Yongpyong Alpine Centre</td>
+					    <td class="tg-6wtj">용평 알파인 센터</td>
+					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue5"></td>
 					  </tr>
-					  <tr class="tr-style" data-toggle="modal" data-target="#venue6">
-					    <td class="tg-baqh">JAL</td>
-					    <td class="tg-yw4l">Jeongseon Alpine Centre</td>
-					    <td class="tg-yw4l">정선 알파인 센터</td>
+					  <tr class="tr-style">
+					    <td class="tg-6wtj">JAL</td>
+					    <td class="tg-6wtj">Jeongseon Alpine Centre</td>
+					    <td class="tg-6wtj">정선 알파인 센터</td>
+					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue6"></td>
 					  </tr>
-					  <tr class="tr-style" data-toggle="modal" data-target="#venue7">
-					    <td class="tg-sh4c">BSP</td>
-					    <td class="tg-7uzy">Bokwang Snow Park</td>
-					    <td class="tg-7uzy">보광 피닉스 파크 </td>
+					  <tr class="tr-style">
+					    <td class="tg-6wtj">BSP</td>
+					    <td class="tg-6wtj">Bokwang Snow Park</td>
+					    <td class="tg-6wtj">보광 피닉스 파크 </td>
+					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue7"></td>
 					  </tr>
 					</table>
 				</div>
@@ -186,34 +189,40 @@
 				<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
 					<table class="tg">
 					  <tr>
-					    <th class="tg-2qjy">Venue Code</th>
-					    <th class="tg-2qjy">Venue Name in English</th>
-					    <th class="tg-2qjy">Venue Name in Korean</th>
+					    <th class="tg-2qjy">Venue</th>
+					    <th class="tg-2qjy">Venue Name (Eng)</th>
+					    <th class="tg-2qjy">Venue Name (Kor)</th>
+					    <th class="tg-2qjy">Detail</th>
 					  </tr>				  
 					  <tr class="tr-style" data-toggle="modal" data-target="#venue8">
-					    <td class="tg-sh4c">GHC</td>
-					    <td class="tg-7uzy">Gangneung Hockey Centre</td>
-					    <td class="tg-7uzy">강릉 하키 센터</td>
+					    <td class="tg-6wtj">GHC</td>
+					    <td class="tg-6wtj">Gangneung Hockey Centre</td>
+					    <td class="tg-6wtj">강릉 하키 센터</td>
+					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue8"></td>
 					  </tr>
 					  <tr class="tr-style" data-toggle="modal" data-target="#venue9">
-					    <td class="tg-baqh">GOV</td>
-					    <td class="tg-yw4l">Gangneung Oval</td>
-					    <td class="tg-yw4l">강릉 스피드 스케이팅 경기장</td>
+					    <td class="tg-6wtj">GOV</td>
+					    <td class="tg-6wtj">Gangneung Oval</td>
+					    <td class="tg-6wtj">강릉 스피드 스케이팅 경기장</td>
+					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue9"></td>
 					  </tr>
 					  <tr class="tr-style" data-toggle="modal" data-target="#venue10">
-					    <td class="tg-sh4c">GIA</td>
-					    <td class="tg-7uzy">Gangneung Ice Arena</td>
-					    <td class="tg-7uzy">강릉 아이스 아레나</td>
+					    <td class="tg-6wtj">GIA</td>
+					    <td class="tg-6wtj">Gangneung Ice Arena</td>
+					    <td class="tg-6wtj">강릉 아이스 아레나</td>
+					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue10"></td>
 					  </tr>
 					  <tr class="tr-style" data-toggle="modal" data-target="#venue11">
-					    <td class="tg-baqh">GCC</td>
-					    <td class="tg-yw4l">Gangneung Curling Centre</td>
-					    <td class="tg-yw4l">강릉 컬링 센터</td>
+					    <td class="tg-6wtj">GCC</td>
+					    <td class="tg-6wtj">Gangneung Curling Centre</td>
+					    <td class="tg-6wtj">강릉 컬링 센터</td>
+					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue11"></td>
 					  </tr>
 					  <tr class="tr-style" data-toggle="modal" data-target="#venue12">
-					    <td class="tg-sh4c">KHC</td>
-					    <td class="tg-7uzy">Kwandong Hockey Centre</td>
-					    <td class="tg-7uzy">관동 하키 센터</td>
+					    <td class="tg-6wtj">KHC</td>
+					    <td class="tg-6wtj">Kwandong Hockey Centre</td>
+					    <td class="tg-6wtj">관동 하키 센터</td>
+					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue12"></td>
 					  </tr>
 					</table>
 				</div>
@@ -240,9 +249,14 @@
         	<!-- Sport -->
 	        <h5 style="color:#008fd4;">Disciplines</h5>
 		        <div class="row title-row-style">
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Ski Jumping</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Ski-Jumping.png"></div>
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Nordic Combined</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Nordic-Combined.png"></div>
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Snowboard(Big Air)</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Snowboard_Big-Air.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Ski Jumping</div></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Nordic Combined</div></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Snowboard(Big Air)</div></div>
+		        </div>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Ski-Jumping.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Nordic-Combined.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Snowboard_Big-Air.png"></div>
 		        </div>
       		</div>
 	      <div class="modal-footer">
@@ -266,8 +280,12 @@
         	<!-- Sport -->
 	        <h5 style="color:#008fd4;">Disciplines</h5>
 		        <div class="row title-row-style">
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Cross-Country Skiing</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Cross-Country-Skiing.png"></div>
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Nordic Combined</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Nordic-Combined.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Cross-Country Skiing</div></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Nordic Combined</div></div>
+		        </div>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Cross-Country-Skiing.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Nordic-Combined.png"></div>
 		        </div>
       		</div>
 	      <div class="modal-footer">
@@ -291,9 +309,14 @@
         	<!-- Sport -->
 	        <h5 style="color:#008fd4;">Disciplines</h5>
 		        <div class="row title-row-style">
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Biathlon</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Biathlon.png"></div>
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Para Biathlon</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Para-Biathlon.png"></div>
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Para Cross-Country Skiing</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Para-Cross-Country-Skiing.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Biathlon</div></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Para Biathlon</div></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Para Cross-Country Skiing</div></div>
+		        </div>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Biathlon.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Para-Biathlon.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Para-Cross-Country-Skiing.png"></div>
 		        </div>
       		</div>
 	      <div class="modal-footer">
@@ -317,9 +340,14 @@
         	<!-- Sport -->
 	        <h5 style="color:#008fd4;">Disciplines</h5>
 		        <div class="row title-row-style">
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Luge</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Luge.png"></div>
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Bobsleigh</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Bobsleigh.png"></div>
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Skeleton</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Skeleton.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Luge</div></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Bobsleigh</div></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Skeleton</div></div>
+		        </div>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Luge.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Bobsleigh.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Skeleton.png"></div>
 		        </div>
       		</div>
 	      <div class="modal-footer">
@@ -343,7 +371,10 @@
         	<!-- Sport -->
 	        <h5 style="color:#008fd4;">Disciplines</h5>
 		        <div class="row title-row-style">
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Alpine Skiing</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Alpine-Skiing(Speed).png"></div>			        
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Alpine Skiing</div></div>			        
+		        </div>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Alpine-Skiing(Speed).png"></div>			        
 		        </div>
       		</div>
 	      <div class="modal-footer">
@@ -367,9 +398,14 @@
         	<!-- Sport -->
 	        <h5 style="color:#008fd4;">Disciplines</h5>
 		        <div class="row title-row-style">
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Alpine Skiing</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Alpine-Skiing(Speed).png"></div>
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Para Alpine Skiing</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Para-Alpine-Skiing.png"></div>
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Para Snowboard</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Para-Snowboard.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Alpine Skiing</div></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Para Alpine Skiing</div></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Para Snowboard</div></div>
+		        </div>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Alpine-Skiing(Speed).png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Para-Alpine-Skiing.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Para-Snowboard.png"></div>
 		        </div>
       		</div>
 	      <div class="modal-footer">
@@ -393,13 +429,22 @@
         	<!-- Sport -->
 	        <h5 style="color:#008fd4;">Disciplines</h5>
 		        <div class="row title-row-style">
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Snowboard (Cross)</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Snowboard_Big-Air.png"></div>
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Snowboard (Half Pipe)</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Snowboard_Big-Air.png"></div>
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Snowboard (Slalom)</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Snowboard_Big-Air.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Snowboard (Cross)</div></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Snowboard (Half Pipe)</div></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Snowboard (Slalom)</div></div>
 		        </div>
 		        <div class="row title-row-style">
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Snowboard (Slopestyle)</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Snowboard_Big-Air.png"></div>
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Freestyle Skiing</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Freestyle-Skiing_Aerials.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Snowboard_Big-Air.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Snowboard_Big-Air.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Snowboard_Big-Air.png"></div>			        
+		        </div>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Snowboard (Slopestyle)</div></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Freestyle Skiing</div></div>
+		        </div>
+		        <div class="row title-row-style">			        
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Snowboard_Big-Air.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Freestyle-Skiing_Aerials.png"></div>
 		        </div>
       		</div>
 	      <div class="modal-footer">
@@ -423,8 +468,12 @@
         	<!-- Sport -->
 	        <h5 style="color:#008fd4;">Disciplines</h5>
 		        <div class="row title-row-style">
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Ice Hockey</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Ice-Hockey.png"></div>
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Para Ice Hockey</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Para-Ice Hockey.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Ice Hockey</div></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Para Ice Hockey</div></div>
+		        </div>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Ice-Hockey.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Para-Ice Hockey.png"></div>
 		        </div>
       		</div>
 	      <div class="modal-footer">
@@ -448,7 +497,10 @@
         	<!-- Sport -->
 	        <h5 style="color:#008fd4;">Disciplines</h5>
 		        <div class="row title-row-style">
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Speed Skating</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Speed-Skating.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Speed Skating</div></div>
+		        </div>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Speed-Skating.png"></div>
 		        </div>
       		</div>
 	      <div class="modal-footer">
@@ -472,8 +524,12 @@
         	<!-- Sport -->
 	        <h5 style="color:#008fd4;">Disciplines</h5>
 		        <div class="row title-row-style">
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Figure Skating</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Figure-Skating.png"></div>
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Short Track Speed Skating</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Short-Track_Speed-Skating.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Figure Skating</div></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Short Track Speed Skating</div></div>
+		        </div>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Figure-Skating.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Short-Track_Speed-Skating.png"></div>
 		        </div>
       		</div>
 	      <div class="modal-footer">
@@ -497,8 +553,12 @@
         	<!-- Sport -->
 	        <h5 style="color:#008fd4;">Disciplines</h5>
 		        <div class="row title-row-style">
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Curling</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Curling.png"></div>
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Wheelchair Curling</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Wheelchair_Curling.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Curling</div></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Wheelchair Curling</div></div>
+		        </div>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Curling.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Paralympic/PyeongChang2018_Paralympic_Pictogram_Wheelchair_Curling.png"></div>
 		        </div>
       		</div>
 	      <div class="modal-footer">
@@ -522,7 +582,10 @@
         	<!-- Sport -->
 	        <h5 style="color:#008fd4;">Disciplines</h5>
 		        <div class="row title-row-style">
-			        <div class="col-md-4 col-sm-4 col-xs-12"><div class="feature-desc2">Ice Hockey</div><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Ice-Hockey.png"></div>
+			        <div class="col-md-4 col-sm-4 col-xs-4"><div class="feature-desc2">Ice Hockey</div></div>
+		        </div>
+		        <div class="row title-row-style">
+			        <div class="col-md-4 col-sm-4 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Ice-Hockey.png"></div>
 		        </div>
       		</div>
 	      <div class="modal-footer">
