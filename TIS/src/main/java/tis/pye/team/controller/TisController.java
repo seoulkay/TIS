@@ -1,11 +1,14 @@
 package tis.pye.team.controller;
 
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import tis.pye.team.dao.ApplicationMailer;
 import tis.pye.team.dao.RestService;
@@ -135,6 +139,7 @@ public class TisController {
 	@RequestMapping(value = "/requestFormAction", method = RequestMethod.POST)
 	public String tisRequestFormAction(Model model, @ModelAttribute("vo")TisRequest vo){
 		dao.insertTisRequest(vo);
+		dao.insertTisRequestLog(vo);
 		
 		//이메일용 이벤트 네임 구하기
 		TisEvent te = new TisEvent();
@@ -216,11 +221,12 @@ public class TisController {
 				model.addAttribute("temp", temp);
 				return "tis/infoAdmin";
 			}else{
-				return "tis/homeAdmin";
+				//비번 틀렸어요. 
+				return "redirect:/admin";
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			return "tis/homeAdmin";
+			return "redirect:/admin";
 		}
 	}
 	
@@ -228,7 +234,7 @@ public class TisController {
 	public String tisinfoTrip(Model model, HttpSession session){
 		try{
 			if(session.getAttribute("user_name").equals("")){
-				return "tis/homeAdmin";
+				return "redirect:/admin";
 			}else{
 				List<TisEvent> te = dao.selectAllEvent();
 				List<TisVenue> tv = dao.selectAllVenue();
@@ -253,7 +259,7 @@ public class TisController {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			return "tis/homeAdmin";
+			return "redirect:/admin";
 		}
 		
 	}
@@ -262,7 +268,7 @@ public class TisController {
 	public String bookings(Model model, HttpSession session){
 		try{
 			if(session.getAttribute("user_name").equals("")){
-				return "tis/homeAdmin";
+				return "redirect:/admin";
 			}else{
 				List<TisRequest> req = dao.selectTisRequest();
 				List<TisEvent> te = dao.selectAllEvent();
@@ -286,7 +292,7 @@ public class TisController {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			return "tis/homeAdmin";
+			return "redirect:/admin";
 		}
 		
 	}
@@ -296,7 +302,7 @@ public class TisController {
 			 @RequestParam("emp_id")int emp_id){
 		try{
 			if(session.getAttribute("user_name").equals("")){
-				return "tis/homeAdmin";
+				return "redirect:/admin";
 			}else{
 				List<TisEvent> te = dao.selectAllEvent();
 				List<TisVenue> tv = dao.selectAllVenue();
@@ -349,7 +355,7 @@ public class TisController {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			return "tis/homeAdmin";
+			return "redirect:/admin";
 		}
 		
 	}
@@ -358,7 +364,7 @@ public class TisController {
 	public String infoShift(Model model, HttpSession session){
 		try{
 			if(session.getAttribute("user_name").equals("")){
-				return "tis/homeAdmin";
+				return "redirect:/admin";
 			}else{
 				List<TisEvent> te = dao.selectAllEvent();
 				List<TisVenue> tv = dao.selectAllVenue();
@@ -379,7 +385,7 @@ public class TisController {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			return "tis/homeAdmin";
+			return "redirect:/admin";
 		}
 		
 	}
@@ -388,7 +394,7 @@ public class TisController {
 	public String infoTripcodes(Model model, HttpSession session){
 		try{
 			if(session.getAttribute("user_name").equals("")){
-				return "tis/homeAdmin";
+				return "redirect:/admin";
 			}else{
 				List<TisEvent> te = dao.selectAllEvent();
 				List<TisVenue> tv = dao.selectAllVenue();
@@ -407,7 +413,7 @@ public class TisController {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			return "tis/homeAdmin";
+			return "redirect:/admin";
 		}
 		
 	}
@@ -416,7 +422,7 @@ public class TisController {
 	public String tisLoginadminAdminGet(Model model, HttpSession session){
 		try{
 			if(session.getAttribute("user_name").equals("")){
-				return "tis/homeAdmin";
+				return "redirect:/admin";
 			}else{
 
 				List<TisEmployee> temp = dao.selectEmployee();
@@ -426,7 +432,7 @@ public class TisController {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			return "tis/homeAdmin";
+			return "redirect:/admin";
 		}
 		
 	}
@@ -851,7 +857,8 @@ public class TisController {
 	
 	@RequestMapping(value = "get/venue", method = {RequestMethod.GET, RequestMethod.POST})
 	public @ResponseBody List<TisVenue> getVenue(){
-		List<TisVenue> ufoGo = dao.selectAllVenue(); 
+		List<TisVenue> ufoGo = dao.selectAllVenue();
+	
 		return ufoGo;
 	}
 	
@@ -859,14 +866,21 @@ public class TisController {
 	public @ResponseBody TisRequest getRequest(@PathVariable("id")int id){
 		TisRequest vo = new TisRequest();
 		vo.setId(id);
-		return dao.selectTisRequestById(vo);
+		vo = dao.selectTisRequestById(vo);
+		
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+
+		vo.setArrive_stmp_str(df.format(vo.getArrive_stmp()));
+		vo.setLeave_stmp_str(df.format(vo.getLeave_stmp()));
+		
+		return vo;
 	}
 	
 	@RequestMapping(value = "changeStatus/{id}", method = RequestMethod.GET)
 	public String bookingsChangeStatus(Model model, HttpSession session, @PathVariable("id")int id){
 		try{
 			if(session.getAttribute("user_name").equals("")){
-				return "tis/homeAdmin";
+				return "redirect:/admin";
 			}else{
 				System.out.println(session.getAttribute("user_name").toString());
 				String modby = session.getAttribute("user_name").toString();
@@ -893,25 +907,65 @@ public class TisController {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			return "tis/homeAdmin";
+			return "redirect:/admin";
 		}
 	}
 	
 	@RequestMapping(value = "toTripForm", method = RequestMethod.GET)
-	public String toTripForm(Model model, HttpSession session, @RequestParam("event")int event, @RequestParam("email")String email){
+	public String toTripForm(Model model, HttpSession session, @RequestParam("event")int event, @RequestParam("email")String email, RedirectAttributes redir){
 		try{
 			if(session.getAttribute("user_name").equals("")){
-				return "tis/homeAdmin";
+				return "redirect:/admin";
 			}else{
-			
+					System.out.println(event+email);
+					int emp = 0;
+
+					try{
+					emp = dao.selectEmployeeByEmail(email);
+					
+					TisTrip tripinfo = new TisTrip();
+					tripinfo.setEmp_id(emp);
+					tripinfo.setEvent_id(event);
+					tripinfo = dao.selectTripByParam(tripinfo);
+					
+					System.out.println(tripinfo.getEmp_id()+tripinfo.getId());
+					
+					}catch(NullPointerException e){
+						
+						String js = "<script>$('select[name=emp_id]').val("+emp+");$('select[name=event_id]').val("+event+");$('#AddTripForm').modal('show');</script>";
+						
+						redir.addFlashAttribute("js",js);
+					
+						return "redirect:/infoTrip";
+					}
+					
+					
 				
+				return "redirect:/infoTripForm?event_id="+event+"&emp_id="+emp;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			return "redirect:/admin";
+		}
+	}
+	
+	@RequestMapping(value = "requestUpdate", method = RequestMethod.POST)
+	public String requestUpdate(Model model, @ModelAttribute("vo") TisRequest vo, HttpSession session){
+		try{
+			if(session.getAttribute("user_name").equals("")){
+				return "redirect:/admin";
+			}else{
+					vo.setMod_by(session.getAttribute("user_name").toString());
+					dao.updateTisRequest(vo);
+					vo.setId_log(vo.getId());
+					dao.insertTisRequestLog(vo);
 				return "redirect:/bookings";
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			return "tis/homeAdmin";
+			return "redirect:/admin";
 		}
 	}
-	
+	//dao.insertTisRequestLog(tisr);
 	
 }

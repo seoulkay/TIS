@@ -655,7 +655,7 @@
 	'Requested');
   	</insert>
   	<select id="selectTisRequest" resultType="TisRequest">
-  	SELECT * FROM `tis`.`request`
+  	SELECT * FROM `tis`.`request` ORDER BY id desc
   	</select>
   	
   	<update id="updateTisRequestStatus" parameterType="TisRequest">
@@ -734,4 +734,9 @@
 	#{mod_by},
 	'Requested');
   	</insert>
+  	
+  	<select id="selectEmployeeByEmail" parameterType="String" resultType="Integer">
+  	select id from `tis`.`employee` where email = #{param}
+  	</select>
+  	
 </mapper>

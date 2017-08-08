@@ -36,6 +36,11 @@ public class TisRequest {
 	//로그용
 	private int id_log;
 	
+	
+	//폼용
+	private String leave_stmp_str;
+	private String arrive_stmp_str;
+	
 	public int getId() {
 		return id;
 	}
@@ -173,6 +178,18 @@ public class TisRequest {
 	}
 	public void setId_log(int id_log) {
 		this.id_log = id_log;
+	}
+	public String getLeave_stmp_str() {
+		return leave_stmp_str;
+	}
+	public void setLeave_stmp_str(String leave_stmp_str) {
+		this.leave_stmp_str = leave_stmp_str;
+	}
+	public String getArrive_stmp_str() {
+		return arrive_stmp_str;
+	}
+	public void setArrive_stmp_str(String arrive_stmp_str) {
+		this.arrive_stmp_str = arrive_stmp_str;
 	}
 	
 	
