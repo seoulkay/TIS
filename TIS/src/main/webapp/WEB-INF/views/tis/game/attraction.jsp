@@ -88,66 +88,92 @@
 			<div class="row title-row-style">
 				<!-- 1 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #ed45a4" class="label label-success">Gyeongpo Beach</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal1" src="https://www.tis2018.ga/image/tisImage/PA/1_Gyeongpo Beach.png">
+					<div class="con" data-toggle="modal" data-target="#myModal1" >
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/1_Gyeongpo Beach.png">
+						<div class="middle">
+							<div class="text-effect1">Gyeongpo Beach</div>
+						</div>					
 					</div>
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #ed45a4" class="label label-success">Jeongdongjin Beach</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal2" src="https://www.tis2018.ga/image/tisImage/PA/2_Jeongdongjin Beach.png">
+					<div class="con" data-toggle="modal" data-target="#myModal2">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/2_Jeongdongjin Beach.png">
+						<div class="middle">
+							<div class="text-effect1">Jeongdongjin Beach</div>
+						</div>					
 					</div>
 				</div>
-		 		<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #ed45a4" class="label label-success">Ojukheon</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal3" src="https://www.tis2018.ga/image/tisImage/PA/3_Ojukheon.png">
+				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
+					<div class="con" data-toggle="modal" data-target="#myModal3">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/3_Ojukheon.png">
+						<div class="middle">
+							<div class="text-effect1">Ojukheon</div>
+						</div>					
 					</div>
 				</div>
+			</div>
+			<div class="row title-row-style">				
 				<!-- 2 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #ed45a4" class="label label-success">Gyeongpodae Pavilion</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal4" src="https://www.tis2018.ga/image/tisImage/PA/4_Gyeongpodae.png">
+					<div class="con" data-toggle="modal" data-target="#myModal4">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/4_Gyeongpodae.png">
+						<div class="middle">
+							<div class="text-effect1">Gyeongpodae Pavilion</div>
+						</div>					
 					</div>
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:0.8em; background-color: #ed45a4" class="label label-success">Charmsori Gramophone & Edison Science Museum</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal5" src="https://www.tis2018.ga/image/tisImage/PA/5_Charmsori.png">
+					<div class="con" data-toggle="modal" data-target="#myModal5">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/5_Charmsori.png">
+						<div class="middle">
+							<div class="text-effect1">Charmsori Gramophone & Edison Science Museum</div>
+						</div>					
 					</div>
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #ed45a4" class="label label-success">Gangneung Seongyojang</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal6" src="https://www.tis2018.ga/image/tisImage/PA/6_Seongyojang.png">
+					<div class="con" data-toggle="modal" data-target="#myModal6">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/6_Seongyojang.png">
+						<div class="middle">
+							<div class="text-effect1">Gangneung Seongyojang</div>
+						</div>					
 					</div>
 				</div>
+			</div>
+			<div class="row title-row-style">
 				<!-- 3 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #ed45a4" class="label label-success">Jumunjin Port</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal7" src="https://www.tis2018.ga/image/tisImage/PA/7_Jumunjin.png">
+					<div class="con" data-toggle="modal" data-target="#myModal7">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/7_Jumunjin.png">
+						<div class="middle">
+							<div class="text-effect1">Jumunjin Port</div>
+						</div>					
 					</div>
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #ed45a4" class="label label-success">Haslla Art World</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal8" src="https://www.tis2018.ga/image/tisImage/PA/8_Haslla Art.png">
+					<div class="con" data-toggle="modal" data-target="#myModal8">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/8_Haslla Art.png">
+						<div class="middle">
+							<div class="text-effect1">Haslla Art World</div>
+						</div>					
 					</div>
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #ed45a4" class="label label-success">Gangneung Unification Park</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal9" src="https://www.tis2018.ga/image/tisImage/PA/9_Unification Park.png">
+					<div class="con" data-toggle="modal" data-target="#myModal9">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/9_Unification Park.png">
+						<div class="middle">
+							<div class="text-effect1">Gangneung Unification Park</div>
+						</div>					
 					</div>
 				</div>
+			</div>
+			<div class="row title-row-style">
 				<!-- 4 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #ed45a4" class="label label-success">Chodang Dubu Village</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal10" src="https://www.tis2018.ga/image/tisImage/PA/10_Chodang.png">
+					<div class="con" data-toggle="modal" data-target="#myModal10">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/10_Chodang.png">
+						<div class="middle">
+							<div class="text-effect1">Chodang Dubu Village</div>
+						</div>					
 					</div>
 				</div>				
 			</div>			
@@ -158,68 +184,94 @@
 			<div class="row title-row-style">
 				<!-- 11 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #00a27c" class="label label-success">Woljeongsa Temple</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal11" src="https://www.tis2018.ga/image/tisImage/PA/11_Woljeongsa.png">
+					<div class="con" data-toggle="modal" data-target="#myModal11">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/11_Woljeongsa.png">
+						<div class="middle">
+							<div class="text-effect2">Woljeongsa Temple</div>
+						</div>					
 					</div>
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #00a27c" class="label label-success">Daegwallryeong Samyang Ranch</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal12" src="https://www.tis2018.ga/image/tisImage/PA/12_DGR Samyang.png">
+					<div class="con" data-toggle="modal" data-target="#myModal12">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/12_DGR Samyang.png">
+						<div class="middle">
+							<div class="text-effect2">Daegwallryeong Samyang Ranch</div>
+						</div>					
 					</div>
 				</div>
-		 		<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #00a27c" class="label label-success">Daegwallryeong Sheep Ranch</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal13" src="https://www.tis2018.ga/image/tisImage/PA/13_DGR Sheep.png">
+				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
+					<div class="con" data-toggle="modal" data-target="#myModal13">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/13_DGR Sheep.png">
+						<div class="middle">
+							<div class="text-effect2">Daegwallryeong Sheep Ranch</div>
+						</div>					
 					</div>
 				</div>
+			</div>
+			<div class="row title-row-style">				
 				<!-- 12 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #00a27c" class="label label-success">Odaesan National Park</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal14" src="https://www.tis2018.ga/image/tisImage/PA/14_Odaesan.png">
+					<div class="con" data-toggle="modal" data-target="#myModal14">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/14_Odaesan.png">
+						<div class="middle">
+							<div class="text-effect2">Odaesan National Park</div>
+						</div>					
 					</div>
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:0.9em; background-color: #00a27c" class="label label-success">Herb Nara</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal15" src="https://www.tis2018.ga/image/tisImage/PA/15_HerbNara.png">
+					<div class="con" data-toggle="modal" data-target="#myModal15">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/15_HerbNara.png">
+						<div class="middle">
+							<div class="text-effect2">Herb Nara</div>
+						</div>					
 					</div>
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #00a27c" class="label label-success">Kensington Flora Garden</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal16" src="https://www.tis2018.ga/image/tisImage/PA/16_Kensington.png">
+					<div class="con" data-toggle="modal" data-target="#myModal16">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/16_Kensington.png">
+						<div class="middle">
+							<div class="text-effect2">Kensington Flora Garden</div>
+						</div>					
 					</div>
 				</div>
+			</div>
+			<div class="row title-row-style">
 				<!-- 13 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #00a27c" class="label label-success">Lee Hyo Seok Literature Forest</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal17" src="https://www.tis2018.ga/image/tisImage/PA/17_HyoSeok.png">
+					<div class="con" data-toggle="modal" data-target="#myModal17">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/17_HyoSeok.png">
+						<div class="middle">
+							<div class="text-effect2">Lee Hyo Seok Literature Forest</div>
+						</div>					
 					</div>
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #00a27c" class="label label-success">Daegwallyeong Sky Ranch</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal18" src="https://www.tis2018.ga/image/tisImage/PA/18_DGR Sky.png">
+					<div class="con" data-toggle="modal" data-target="#myModal18">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/18_DGR Sky.png">
+						<div class="middle">
+							<div class="text-effect2">Daegwallyeong Sky Ranch</div>
+						</div>					
 					</div>
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #00a27c" class="label label-success">Jeonggangwon</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal19" src="https://www.tis2018.ga/image/tisImage/PA/19_Jeonggangwon.png">
+					<div class="con" data-toggle="modal" data-target="#myModal19">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/19_Jeonggangwon.png">
+						<div class="middle">
+							<div class="text-effect2">Jeonggangwon</div>
+						</div>					
 					</div>
 				</div>
+			</div>
+			<div class="row title-row-style">
 				<!-- 14 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
-					<div class="feature-title">
-						<span style="font-size:1em; background-color: #00a27c" class="label label-success">Pyeongchang Olympic Market</span>
-						<img class="img-responsive" data-toggle="modal" data-target="#myModal20" src="https://www.tis2018.ga/image/tisImage/PA/20_OlympicMarket.png">
+					<div class="con" data-toggle="modal" data-target="#myModal20">
+						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/20_OlympicMarket.png">
+						<div class="middle">
+							<div class="text-effect2">Pyeongchang Olympic Market</div>
+						</div>					
 					</div>
-				</div>				
+				</div>			
 			</div>			
 		</div>		
 	</section>
