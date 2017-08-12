@@ -87,6 +87,11 @@
 		</ul>
 </div>
 <div style="height: 2em"></div>
+<!-- 	<div class="row"> -->
+<!-- 	Select images: <input type="file" name="img" multiple> -->
+<!-- 	</div> -->
+	
+	
 	<div class="row">	
 	<h3>Trips form</h3>
 	<h4>Profile</h4>
@@ -310,6 +315,8 @@
 	<table class="table table-bordered" id="event_tbl">
 		<tr><td class="form-style info">Note</td></tr>
 		<tr><td><textarea id="otherNote" name="note" >${to.note }</textarea></td></tr>
+		<tr><td class="form-style info">FILE NAMES</td></tr>
+		<tr><td><input type="text" name="file_attach" class="form-control" value="${to.file_attach }">	</td></tr>
 	</table>
 	<input type="hidden" name="event_id" value="${tripinfo.event_id }">
 	<input type="hidden" name="emp_id" value="${tripinfo.emp_id }">

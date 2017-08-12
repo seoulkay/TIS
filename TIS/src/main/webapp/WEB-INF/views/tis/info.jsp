@@ -76,9 +76,14 @@
 				<a target="_blank" href="mailto:${em.email }" class="email"></a>
 			</li>
 			<!-- 첨부화일 -->
+			<c:set var="dataParts" value="${fn:split(to.file_attach, ',')}" />
+			<c:forEach var="ele" items="${dataParts}">
 			<li>
-				<a target="_blank" href="" class="download"></a>
-			</li>		
+				<a class="download" href="https://www.tis2018.ga/image/tisImage/attach/${em.first_name }.${em.last_name }/${fn:trim(ele)}" download>
+					${fn:trim(ele)}
+				</a>
+			</li>
+			</c:forEach>
 		</ul>	
 	</div>
 	

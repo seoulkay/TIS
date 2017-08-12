@@ -501,18 +501,21 @@
   	event_id
   	,emp_id
   	,note
+  	,file_attach
   	)
   	VALUES
   	(
   	#{event_id}
   	,#{emp_id}
   	,#{note}
+  	,#{file_attach}
   	)
   	</insert>
   	<update id="updateTisOther" parameterType="TisOther">
   	UPDATE tis.other
   	SET
   	note = #{note}
+  	,file_attach = #{file_attach}
   	WHERE
   	event_id = #{event_id}
   	AND 

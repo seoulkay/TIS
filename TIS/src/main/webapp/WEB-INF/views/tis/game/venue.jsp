@@ -171,7 +171,8 @@
 					</table>
 				</div>
 				<div class="feature-content col-md-6 col-sm-6 col-xs-12">
-					<div class="feature-desc"><!-- MAP 들어갈 자리 -->				
+					<div class="feature-desc">
+					<div id="map" style="height: 20em"></div>	
 					</div>
 				</div>
 			</div>
@@ -227,7 +228,8 @@
 					</table>
 				</div>
 				<div class="feature-content col-md-6 col-sm-6 col-xs-12">
-					<div class="feature-desc"><!-- MAP 들어갈 자리 -->
+					<div class="feature-desc">
+					<div id="map2" style="height: 20em"></div>
 					</div>
 				</div>
 			</div>
@@ -595,6 +597,7 @@
 	  </div>
 	</div>
 </div>
+
        <!-- ******FOOTER****** -->
 	<jsp:include page="../common/footer.jsp" flush="false">
 		<jsp:param name="param" value="value1" />
@@ -602,4 +605,250 @@
  
  
 </body>
+<script>
+var neighborhoods = [];
+var neighborhoods2 = [];
+var markers = [];
+var markers2 = [];
+var map;
+var map2;
+
+var iconBase = 'https://www.tis2018.ga/image/tisImage/';
+var icons = {
+  hotel:{
+	  icon: iconBase + 'hotel.png'
+  },
+  c_venue:{
+	  icon: iconBase + 'stadium.png'
+  },
+  n_venue:{
+	  icon: iconBase +'office-block.png'
+  }
+};
+/**
+ * 
+*/
+function initMap() {
+	map = new google.maps.Map(document.getElementById('map'), {
+	    zoom: 8,
+	    center: {lat: 37.752, lng: 128.891},
+	    zoomControl: true,
+	    mapTypeControl: false,
+	    scaleControl: true,
+	    streetViewControl: false,
+	    rotateControl: false,
+	    fullscreenControl: true
+	  });
+	
+	map2 = new google.maps.Map(document.getElementById('map2'), {
+	    zoom: 12,
+	    center: {lat: 37.752, lng: 128.891},
+	    zoomControl: true,
+	    mapTypeControl: false,
+	    scaleControl: true,
+	    streetViewControl: false,
+	    rotateControl: false,
+	    fullscreenControl: true
+	  });
+}
+
+/**
+ * 
+*/
+function addMarkerWithTimeout(position, timeout) {
+  window.setTimeout(function() {
+  	var infowindow = new google.maps.InfoWindow({
+	    content: position.content
+	  });
+  
+  	var pos = {
+          lat: position.lat,
+          lng: position.lng
+        };
+  	
+  	//타입이 없는 마커일 경우 스트링을 받아서 아이콘으로 사용
+  	var strIcon;
+  	if(position.type){
+		strIcon = icons[position.type].icon;
+	  }else{
+		strIcon = position.icon;
+	  }
+  	
+  	
+ 	var marker = new google.maps.Marker({
+      position: pos,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      icon: strIcon
+    	  
+ 	});
+ 	marker.addListener('click', function() {
+	    infowindow.open(map, marker);
+  	});
+    markers.push(marker);
+	}, timeout);
+}
+/**
+ * 
+*/	
+function drop() {
+  for (var i = 0; i < neighborhoods.length; i++) {
+    addMarkerWithTimeout(neighborhoods[i], i * 50);
+  }
+  //window.setTimeout(function() {refreshBtn();}, (neighborhoods.length+1)*50);
+}
+
+/**
+ * 마커 세팅
+ */	
+function markerSet(){
+	var venues = $(".venues").text();
+	
+	$.post( "/TIS/get/venue")
+       .done(function( data ) {
+         var go = JSON.parse(JSON.stringify(data));		 
+         
+         var toc = {};
+         toc.lat = 37.752;
+         toc.lng = 128.891;
+         toc.content = '<h4>TOC</h4>';
+         toc.type = "n_venue";
+         neighborhoods.push(toc);
+         
+         for(var i = 0; i < go.length; i++){
+        	 if(go[i].id == venues){
+        	 var target = {};
+        	 target.lat = parseFloat((Number(go[i].lat)));
+        	 target.lng = parseFloat((Number(go[i].lng)));
+	        	 if(go[i].venue_type  == 'hotel'){
+	        		 target.content = '<h4>'+go[i].venue_name+'</h4><br><h4>'+go[i].venue_name_loc+'</h4>';
+	        		 target.type = "hotel";
+	        	 }else if(go[i].venue_type  == 'c_venue'){
+	        		 target.content = '<h4>'+go[i].venue_name+'</h4><br><h4>'+go[i].venue_name_loc+'</h4>';
+	        		 target.type = "c_venue";
+	        	 }else if(go[i].venue_type  == 'n_venue'){
+	        		 target.content = '<h4>'+go[i].venue_name+'</h4><br><h4>'+go[i].venue_name_loc+'</h4>';
+	        		 target.type = "n_venue";
+        	 	}
+
+	         neighborhoods.push(target);
+	         map.setCenter({lat: target.lat, lng: target.lng});
+			//경기장은 무조건 보여줌
+        	 }else if(go[i].venue_type  == 'c_venue' && go[i].cluster_id == 'm'){
+        		 var target = {};
+            	 target.lat = parseFloat((Number(go[i].lat)));
+            	 target.lng = parseFloat((Number(go[i].lng)));
+        		 target.content = '<h4>'+go[i].venue_name+'</h4><br><h4>'+go[i].venue_name_loc+'</h4>';
+        		 target.icon = iconBase + go[i].venue_pic;
+        		 neighborhoods.push(target);
+        	 }
+         }
+         drop();
+    });
+}
+
+markerSet();
+
+
+
+
+/**
+ * 
+*/
+function addMarkerWithTimeout2(position, timeout) {
+  window.setTimeout(function() {
+  	var infowindow = new google.maps.InfoWindow({
+	    content: position.content
+	  });
+  
+  	var pos = {
+          lat: position.lat,
+          lng: position.lng
+        };
+  	
+  	//타입이 없는 마커일 경우 스트링을 받아서 아이콘으로 사용
+  	var strIcon;
+  	if(position.type){
+		strIcon = icons[position.type].icon;
+	  }else{
+		strIcon = position.icon;
+	  }
+  	
+  	
+ 	var marker = new google.maps.Marker({
+      position: pos,
+      map: map2,
+      animation: google.maps.Animation.DROP,
+      icon: strIcon
+    	  
+ 	});
+ 	marker.addListener('click', function() {
+	    infowindow.open(map2, marker);
+  	});
+    markers2.push(marker);
+	}, timeout);
+}
+/**
+ * 
+*/	
+function drop2() {
+  for (var i = 0; i < neighborhoods2.length; i++) {
+    addMarkerWithTimeout2(neighborhoods2[i], i * 50);
+  }
+  //window.setTimeout(function() {refreshBtn();}, (neighborhoods.length+1)*50);
+}
+
+/**
+ * 마커 세팅
+ */	
+function markerSet2(){
+	var venues = $(".venues").text();
+	
+	$.post( "/TIS/get/venue")
+       .done(function( data ) {
+         var go = JSON.parse(JSON.stringify(data));		 
+         
+         var toc = {};
+         toc.lat = 37.752;
+         toc.lng = 128.891;
+         toc.content = '<h4>TOC</h4>';
+         toc.type = "n_venue";
+         neighborhoods2.push(toc);
+         
+         for(var i = 0; i < go.length; i++){
+        	 if(go[i].id == venues){
+        	 var target = {};
+        	 target.lat = parseFloat((Number(go[i].lat)));
+        	 target.lng = parseFloat((Number(go[i].lng)));
+	        	 if(go[i].venue_type  == 'hotel'){
+	        		 target.content = '<h4>'+go[i].venue_name+'</h4><br><h4>'+go[i].venue_name_loc+'</h4>';
+	        		 target.type = "hotel";
+	        	 }else if(go[i].venue_type  == 'c_venue'){
+	        		 target.content = '<h4>'+go[i].venue_name+'</h4><br><h4>'+go[i].venue_name_loc+'</h4>';
+	        		 target.type = "c_venue";
+	        	 }else if(go[i].venue_type  == 'n_venue'){
+	        		 target.content = '<h4>'+go[i].venue_name+'</h4><br><h4>'+go[i].venue_name_loc+'</h4>';
+	        		 target.type = "n_venue";
+        	 	}
+
+	         neighborhoods2.push(target);
+	         map2.setCenter({lat: target.lat, lng: target.lng});
+			//경기장은 무조건 보여줌
+        	 }else if(go[i].venue_type  == 'c_venue' && go[i].cluster_id == 'c'){
+        		 var target = {};
+            	 target.lat = parseFloat((Number(go[i].lat)));
+            	 target.lng = parseFloat((Number(go[i].lng)));
+        		 target.content = '<h4>'+go[i].venue_name+'</h4><br><h4>'+go[i].venue_name_loc+'</h4>';
+        		 target.icon = iconBase + go[i].venue_pic;
+        		 neighborhoods2.push(target);
+        	 }
+         }
+         drop2();
+    });
+}
+
+markerSet2();
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN9VDOjhzw7kPKEbFw7LEVoVreCXiz87E&callback=initMap" async defer></script>
+
 </html>
