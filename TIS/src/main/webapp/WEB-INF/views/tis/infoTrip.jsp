@@ -57,15 +57,10 @@
 </head>
 <body>    
 <nav class="navbar navbar-default" style="height: 6em ; background-size: 2000px 7em; background-image: url('${pageContext.request.contextPath}/resources/tis/image/headerGeneric.png');border-radius:0; border:0">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-<!--     <div class="navbar-header" >  -->
-<!--       <a class="navbar-brand" href="#" style="padding-top: 2em;color: WHITE"> -->
-      	<h4 class="navbar-brand" style="color: WHITE; font-size: 1.5em; padding-top: 1.5em;">Trip Info System <Strong>ADMIN</Strong> ${sessionScope.user_name}</h4>
-<!--       </a> -->
-
-     <img class="img-responsive" alt="" src="${pageContext.request.contextPath}/resources/tis/image/Atos.svg" style="max-height: 2em; max-width:15%;margin-top: 2em;margin-right: 1em; float:right;"  >
-    </div>
+  <div class="container-fluid on-the-fly-behavior2">
+    	<h4 class="navbar-brand" style="color: WHITE; font-size: 1.5em; padding-top: 1.5em;">Trip Info System <Strong>ADMIN</Strong> ${sessionScope.user_name}</h4>
+     	<img class="img-responsive" alt="" src="${pageContext.request.contextPath}/resources/tis/image/Atos.svg" style="max-height: 2em; max-width:15%;margin-top: 2em;margin-right: 1em; float:right;"  >
+   </div>
    
     <!-- Collect the nav links, forms, and other content for toggling -->
 <!--     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
@@ -74,7 +69,7 @@
 
 </nav>	
 
-<div class="container">
+<div class="container on-the-fly-behavior">
 <div class="row">
 		<ul class="nav nav-tabs nav-justified">
 			<li role="presentation"><a href="bookings">Bookings</a></li>
@@ -85,8 +80,7 @@
 		</ul>
 </div>
 <div style="height: 2em"></div>
-	<div class="row">	
-	<h3>Trips</h3>
+	<div class="row">
 	<h4>Trips 
 	<button class="btn-style" onclick="openForm('AddTripForm')">Add new</button>
 <!-- 	<a href="infoTripForm"><span class="label label-success">Add new</span></a> -->

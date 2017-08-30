@@ -57,7 +57,7 @@
 </head>
 <body>    
 <nav class="navbar navbar-default" style="height: 6em ; background-size: 2000px 7em; background-image: url('${pageContext.request.contextPath}/resources/tis/image/headerGeneric.png');border-radius:0; border:0">
-  <div class="container-fluid">
+  <div class="container-fluid on-the-fly-behavior2">
     <!-- Brand and toggle get grouped for better mobile display -->
 <!--     <div class="navbar-header" >  -->
 <!--       <a class="navbar-brand" href="#" style="padding-top: 2em;color: WHITE"> -->
@@ -72,7 +72,7 @@
 <!--   </div> -->
 </nav>	
 
-<div class="container">
+<div class="container on-the-fly-behavior">
 <div class="row">
 		<ul class="nav nav-tabs nav-justified">
 		      <li role="presentation"><a href="bookings">Bookings</a></li>
@@ -83,8 +83,7 @@
 		</ul>
 </div>
 <div style="height: 2em"></div>
-	<div class="row">	
-	<h3>Shifts</h3>	
+	<div class="row">
 	<h4>Supports <button class="btn-style" onclick="openForm('Supports')">Add new</button></h4>
 	</div>
 	<div class="row">	

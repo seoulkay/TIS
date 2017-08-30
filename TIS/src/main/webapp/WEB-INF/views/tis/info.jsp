@@ -64,7 +64,7 @@
 	</jsp:include>
 
 
-<div style="width: 100%; padding-left: 1em; padding-right:1em;" class="container">
+<div class="container on-the-fly-behavior">
 	<!-- My profile section starts -->
 	<div class="row row-style" style="display: block;">
 		<div class="avatar"><img src="https://www.tis2018.ga/image/tisImage/${em.picture }" width="128" height="128"></div>
@@ -93,40 +93,35 @@
 		<p style="font-size: 1.3em; color: #008fd4;"><strong>${ele.venue_name }</strong></p>
 		<p><a href="https://www.google.co.kr/maps?z=19&q=${ele.lat }+${ele.lng }&||=${ele.lat }+${ele.lng }" target="_blank">${ele.venue_address }</a></p>
 		<div style="display: none" class="venues">${ele.venue_id }</div>
-		<table class="table table-bordered" style="border: #ffffff !important;">
-		    <thead>
-		      <tr>
-		        <th style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left;">Check-in</th>
-		        <th style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left;">Check-out</th>
-		        <th style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left;">Night(s)</th>		        
-		      </tr>
-		    </thead>
+		
+		  <table class="table table-bordered" style="border: #ffffff !important;">
 		    <tbody>
-		      <tr> 
-		        <td style="border: #ffffff !important;">
+		      <tr>		     
+		      	<td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; width: 30%;">Check-in:</td>
+		        <td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; color: #777; width: 70%;">
 		        	<fmt:formatDate value='${ele.acc_begin }' pattern = 'yyyy-MM-dd'/>
 		        	<fmt:formatDate value='${ele.acc_begin }' pattern = 'MM' var="bm"/>
 		        	<fmt:formatDate value='${ele.acc_begin }' pattern = 'dd' var="bd"/>
-		        </td>
-		        <td style="border: #ffffff !important;">
+	        	</td>		        
+		      </tr>
+		      <tr>		     
+		      	<td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; width: 30%;">Check-out:</td>
+		        <td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; color: #777; width: 70%;">
 		        	<fmt:formatDate value='${ele.acc_end }' pattern = 'yyyy-MM-dd'/>
 		        	<fmt:formatDate value='${ele.acc_end }' pattern = 'MM' var="em"/>
 		        	<fmt:formatDate value='${ele.acc_end }' pattern = 'dd' var="ed"/>
-		        </td>
-		        <td style="border: #ffffff !important;">
-		        
-				<!-- 날짜 빼기 -->
-				<jsp:useBean id="daysFromNow" class="java.util.Date">
-				<c:set target="${daysFromNow}" property="time" value="${ele.acc_end.time - ele.acc_begin.time}" />
-				</jsp:useBean>	
-				<fmt:formatDate value='${daysFromNow}' pattern = 'dd'/>
-		        
-		        </td>		        
+	        	</td>		        
 		      </tr>
-		    </tbody>
-		  </table>
-		  <table class="table table-bordered" style="border: #ffffff !important;">
-		    <tbody>
+		      <tr>
+		      	<td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; width: 30%;">Night(s):</td>
+		        <td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; color: #777; width: 70%;">
+					<!-- 날짜 빼기 -->
+					<jsp:useBean id="daysFromNow" class="java.util.Date">
+					<c:set target="${daysFromNow}" property="time" value="${ele.acc_end.time - ele.acc_begin.time}" />
+					</jsp:useBean>	
+					<fmt:formatDate value='${daysFromNow}' pattern = 'dd'/>
+				</td>		      
+		      </tr>		  
 		      <tr>		     
 		      	<td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; width: 30%;">Room No:</th>
 		        <td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; color: #777; width: 70%;">${ele.acc_room }</th>
@@ -146,7 +141,7 @@
 	<c:forEach items="${tfac }" var="elee">
 	<c:set var="fac_var" value=" ${elee.id },"/>
 	<c:if test = "${fn:contains(ele.acc_fac, fac_var)}">
-	<div class="col-sm-3">
+	<div class="col-sm-4">
 	<p style="color: #5CB85C"><i class="material-icons">${elee.fac_icon }&nbsp&nbsp&nbsp</i><span style="size: 0.3em; vertical-align: top">${elee.fac_title } / ${elee.fac_title_loc }</span></p>
 	</div>
 	</c:if>
@@ -201,7 +196,7 @@
 		 			    <tbody>
 			<c:forEach items="${ele.itiDetail }" var="elee">
 						  <tr>
-					        <td><fmt:formatDate value='${elee.stmp }' pattern = 'HH:mm' /></td>
+					        <td><fmt:formatDate value='${elee.stmp }' pattern = 'yyyy-MM-dd HH:mm' /></td>
 					        <td><i class="material-icons">${elee.trs_icon }&nbsp&nbsp&nbsp</i><span style="size: 0.3em; vertical-align: top">${elee.trs_title } / ${elee.trs_title_loc }</span></td>
 					        <td>${elee.desc } / ${elee.desc_local }</td>
 					        <td>${elee.note } / ${elee.note_local }</td>

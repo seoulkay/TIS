@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <nav class="navbar navbar-default" style= "background-image: url('${pageContext.request.contextPath}/resources/tis/image/headerGeneric.png'); background-size:cover">
-  <div class="container-fluid">
+  <div class="container-fluid on-the-fly-behavior2">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">

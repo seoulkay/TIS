@@ -63,7 +63,7 @@
 </head>
 <body>    
 <nav class="navbar navbar-default" style="height: 6em ; background-size: 2000px 7em; background-image: url('${pageContext.request.contextPath}/resources/tis/image/headerGeneric.png');border-radius:0; border:0">
-  <div class="container-fluid">
+  <div class="container-fluid on-the-fly-behavior2">
     <!-- Brand and toggle get grouped for better mobile display -->
 <!--     <div class="navbar-header" >  -->
 <!--       <a class="navbar-brand" href="#" style="padding-top: 2em;color: WHITE"> -->
@@ -78,7 +78,7 @@
 <!--   </div> -->
 </nav>	
 
-<div class="container">
+<div class="container on-the-fly-behavior">
 <div class="row">
 		<ul class="nav nav-tabs nav-justified">
 		 	  <li role="presentation" class="active"><a href="bookings">Bookings</a></li>
@@ -107,10 +107,8 @@
 	    </thead>
 	    <tbody>
 	    <c:forEach items="${req }" var="ele">
-	    	<tr class="tr-style" id="SupUpdate_${ele.id }">
-		        <td>
-		        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" onclick="setFormValue('${ele.id}')">Modify&nbsp;${ele.id}</button>
-		        </td>
+	    	<tr class="tr-style" id="SupUpdate_${ele.id }" data-toggle="modal" data-target="#myModal" onclick="setFormValue('${ele.id}')">
+		        <td>${ele.id}</td>
 		        <td>${ele.req_status}</td>
 		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.first_name} ${ele.last_name }</td>
 		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.req_purpose}</td>
@@ -137,21 +135,21 @@
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
-
     <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
+    <div class="modal-content-style modal-content">
+      <div class="modal-header-style modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        Booking request
       </div>
-      <div class="modal-body">
+      <div class="label-style modal-body-style modal-body">
 	
 	<form name="requestForm" id="requestForm" action="requestUpdate" method="POST" onsubmit="return alert('Your request has been submitted.');">
 		<div class="row form-group">
-			<div class="col-sm-2">
+			<div style="height:1em;"></div>
+			<div class="col-sm-4">
 				<label>Title <span style="color: RED">*</span></label>
 			</div>
-			<div class="col-sm-10">
+			<div class="col-sm-8">
 				<select class="selectpicker" name="req_title" required="required">
 					<option value="Mr.">Mr.</option>
 					<option value="Ms.">Ms.</option>
@@ -159,34 +157,34 @@
 			</div>
 		</div>
 		<div class="row form-group form-group-sm">
-			<div class="col-sm-2">
+			<div class="col-sm-4">
 				<label>First Name <span style="color: RED">*</span></label>
 			</div>
-			<div class="col-sm-10">
+			<div class="col-sm-8">
 				<input type="text" class="form-control" name="first_name" required="required">
 			</div>
 		</div>
 		<div class="row form-group form-group-sm">
-			<div class="col-sm-2">
+			<div class="col-sm-4">
 				<label>Last Name <span style="color: RED">*</span></label>
 			</div>
-			<div class="col-sm-10">
+			<div class="col-sm-8">
 				<input type="text" class="form-control" name="last_name" required="required">
 			</div>
 		</div>
 		<div class="row form-group form-group-sm">
-			<div class="col-sm-2">
+			<div class="col-sm-4">
 				<label>Email Address <span style="color: RED">*</span></label>
 			</div>
-			<div class="col-sm-10">
+			<div class="col-sm-8">
 				<input type="email" class="form-control" placeholder="e.g. janet.kim@atos.net" required="required" name="email">
 			</div>
 		</div>
 		<div class="row form-group">
-			<div class="col-sm-2">
+			<div class="col-sm-4">
 				<label>Travel purpose <span style="color: RED">*</span></label>
 			</div>
-			<div class="col-sm-10">
+			<div class="col-sm-8">
 				<select class="selectpicker" required="required" name="req_purpose">
 					<c:forEach items="${te }" var="ele">
 						<option value="${ele.id }">${ele.event_name }</option>
@@ -195,10 +193,10 @@
 			</div>
 		</div>
 		<div class="row form-group">
-			<div class="col-sm-2">
+			<div class="col-sm-4">
 				<label>Travel Venue</label>
 			</div>
-			<div class="col-sm-10">
+			<div class="col-sm-8">
 				<select class="selectpicker" multiple name="req_venue">
 				<c:forEach items="${tv }" var="ele">
 					<option value="${ele.id }">${ele.venue_name }</option>
@@ -207,10 +205,10 @@
 			</div>
 		</div>
 		<div class="row form-group">
-			<div class="col-sm-2">
+			<div class="col-sm-4">
 				<label>Local Contact <span style="color: RED">*</span></label>
 			</div>
-			<div class="col-sm-10">
+			<div class="col-sm-8">
 				<select class="selectpicker" required="required" name="req_contact" id="req_contact">
 				<c:forEach items="${temp }" var="ele">
 					<option value="${ele.id }">${ele.first_name } ${ele.last_name }</option>
@@ -218,18 +216,18 @@
 				</select>
 			</div>
 		</div>
-		
-		<h5>Arrive to Incheon Airport</h5>
+		<div style="height:1em;"></div>
+		<h5 style="color:#0081C8">Arrive to Incheon Airport</h5>
 		<div class="row form-group form-group-sm">
-			<div class="col-sm-2">
+			<div class="col-sm-4">
 				<label>Arrive Date <span style="color: RED">*</span></label>
 			</div>
-			<div class="col-sm-10">
+			<div class="col-sm-8">
 				<input type="datetime-local" class="form-control" name="arrive_stmp"  id="arrive_stmp" pattern = 'yyyy-MM-ddTHH:mm' style="width:auto;" required="required">
 			</div>
 		</div>
 		<div class="row form-group form-group-sm">
-			<div class="col-sm-2">
+			<div class="col-sm-4">
 				<label>Flight No</label>
 			</div>
 			<div class="col-sm-5">
@@ -344,21 +342,22 @@
 				<option value="VG">VG - VLM Airlines (Cityjet)</option>
 			</select>
 			</div>
-			<div class="col-sm-5">
+			<div class="col-sm-3">
 				<input type="text" class="form-control" name="arrive_flight_name">
 			</div>
 		</div>
-		<h5>Leave from Incheon Airport</h5>
+		<div style="height:1em;"></div>
+		<h5 style="color:#0081C8">Leave from Incheon Airport</h5>
 		<div class="row form-group form-group-sm">
-			<div class="col-sm-2">
+			<div class="col-sm-4">
 				<label>Leave Date <span style="color: RED">*</span></label>
 			</div>
-			<div class="col-sm-10">
+			<div class="col-sm-8">
 				<input type="datetime-local" class="form-control" name="leave_stmp" id="leave_stmp" pattern = 'yyyy-MM-ddTHH:mm' style="width:auto;" required="required">
 			</div>
 		</div>
 		<div class="row form-group form-group-sm">
-			<div class="col-sm-2">
+			<div class="col-sm-4">
 				<label>Flight No</label>
 			</div>
 			<div class="col-sm-5">
@@ -473,7 +472,7 @@
 				<option value="VG">VG - VLM Airlines (Cityjet)</option>
 			</select>
 			</div>
-			<div class="col-sm-5">
+			<div class="col-sm-3">
 				<input type="text" class="form-control" name="leave_flight_name">
 			</div>
 		</div>
@@ -494,9 +493,6 @@
 		</form>
 		
 		</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
     </div>
 
   </div>

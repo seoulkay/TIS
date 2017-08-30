@@ -2309,6 +2309,43 @@ button.close:hover {
 	
 }
 
+/* 미디어 테스트 */
+.on-the-fly-behavior {
+    width: 100%;
+    padding-left: 1em;
+    padding-right:1em; 
+}
+@media (min-width: 768px) {
+    .on-the-fly-behavior {
+        width: 100%;
+    	padding-left: 10em;
+    	padding-right:10em;
+    }
+}
+
+.on-the-fly-behavior2 {
+    width: 100%;
+    padding-left: 1em;
+    padding-right:1em; 
+}
+@media (min-width: 768px) {
+    .on-the-fly-behavior2 {
+        width: 100%;
+    	padding-left: 10em;
+    	padding-right:10em;
+    	font-size: 0.75em;
+    }
+}
+@media (min-width: 900px) {
+    .on-the-fly-behavior2 {
+        width: 100%;
+    	padding-left: 10em;
+    	padding-right:10em;
+    	font-size: 1em;
+    }
+}
+
+
 @media (max-width: 540px) {
 	
 	.img-padding-xs { padding:0px 12%; }
