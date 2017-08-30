@@ -31,6 +31,10 @@
 	<logger name="org.springframework.web">
 		<level value="debug" />
 	</logger>
+	
+	<logger name="tis.pye.team.mapper.TisMapper">
+		<level value="debug" />
+	</logger>
 
 	<!-- Root Logger -->
 	<root>
