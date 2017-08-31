@@ -14,6 +14,7 @@ public class TisIti {
 	private String desc;
 	private String desc_local;
 	private String iti_img;
+	private String is_del;
 	
 	//조인 밸류들
 	private String first_name;
@@ -83,6 +84,12 @@ public class TisIti {
 	}
 	public void setIti_img(String iti_img) {
 		this.iti_img = iti_img;
+	}
+	public String getIs_del() {
+		return is_del;
+	}
+	public void setIs_del(String is_del) {
+		this.is_del = is_del;
 	}
 	
 }

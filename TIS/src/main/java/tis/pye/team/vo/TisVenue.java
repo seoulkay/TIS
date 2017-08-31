@@ -12,6 +12,7 @@ public class TisVenue {
 	private String venue_desc;
 	private String lat;
 	private String lng;
+	private String cluster_id;
 	public int getId() {
 		return id;
 	}
@@ -77,6 +78,12 @@ public class TisVenue {
 	}
 	public void setVenue_address_loc(String venue_address_loc) {
 		this.venue_address_loc = venue_address_loc;
+	}
+	public String getCluster_id() {
+		return cluster_id;
+	}
+	public void setCluster_id(String cluster_id) {
+		this.cluster_id = cluster_id;
 	}
 	
 }
