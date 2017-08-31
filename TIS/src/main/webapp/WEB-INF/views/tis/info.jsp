@@ -76,7 +76,7 @@
 				<a target="_blank" href="mailto:${em.email }" class="email"></a>
 			</li>
 			<!-- 첨부화일 -->
-			<c:if test="${to.file_attach }">
+			<c:if test="${!empty to.file_attach }">
 				<c:set var="dataParts" value="${fn:split(to.file_attach, ',')}" />
 				<c:forEach var="ele" items="${dataParts}">
 				<li>
