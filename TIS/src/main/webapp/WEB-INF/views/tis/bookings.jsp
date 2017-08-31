@@ -529,9 +529,13 @@ function setFormValue(id){
       $("select[name=req_purpose]").val(go.req_purpose);
       $("select[name=req_contact]").val(go.req_contact);
     
+      try{
       $.each(go.req_venue.split(","), function(i,e){
     	    $("select[name=req_venue] option[value='" + e + "']").prop("selected", true);
     	});
+      } catch(err){
+    	  console.log(err.message);
+      }
       
       $("select[name=leave_flight]").val(go.leave_flight);
       $("select[name=arrive_flight]").val(go.arrive_flight);
@@ -541,7 +545,7 @@ function setFormValue(id){
       $("input[name=arrive_stmp]").val(go.arrive_stmp_str);
       $("input[name=id]").val(go.id);
       $("input[name=req_status]").val(go.req_status);
-      
+     	 console.log(go.req_status);
       $('.selectpicker').selectpicker('refresh');
     });
 }
