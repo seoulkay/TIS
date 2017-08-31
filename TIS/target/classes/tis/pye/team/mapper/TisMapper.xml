@@ -458,7 +458,7 @@
   	and event_id = #{event_id}
   	</update>
   	<select id="selectItiByTrip" parameterType="Integer" resultType="TisIti">
-  	SELECT * FROM tis.iti WHERE trip_id = #{param}
+  	SELECT * FROM tis.iti WHERE trip_id = #{param} and is_del = 0
   	</select>
   	<insert id="insertIti" parameterType="TisIti">
 	INSERT INTO `tis`.`iti`
@@ -467,14 +467,17 @@
 	`stmp`,
 	`desc`,
 	`desc_local`,
-	`iti_img`)
+	`iti_img`,
+	`is_del`
+	)
 	VALUES
 	(
 	#{trip_id},
 	#{stmp},
 	#{desc},
 	#{desc_local},
-	#{iti_img});
+	#{iti_img},
+	0);
   	</insert>
   	<update id="updateIti" parameterType="TisIti">
   	UPDATE `tis`.`iti`
@@ -486,6 +489,7 @@
 	<if test="iti_img != null and iti_img != ''">
 		,`iti_img` = #{iti_img}
 	</if>
+	,is_del = #{is_del}
 	WHERE `id` = #{id};
   	</update>
   	<select id="existTisOther" parameterType="TisOther" resultType="Integer">
@@ -540,7 +544,7 @@
 	left join tis.trip t on t.id = i.trip_id
 	left join tis.employee e on e.id = t.emp_id
 	left join tis.`event` ev on ev.id = t.event_id
-	WHERE i.id = #{param}
+	WHERE i.id = #{param} and i.is_del = 0
   	</select>
   	
   	<insert id="insertItiDet" parameterType="TisItiDetail">

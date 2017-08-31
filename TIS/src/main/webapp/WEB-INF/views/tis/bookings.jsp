@@ -106,12 +106,13 @@
 	      </tr>
 	    </thead>
 	    <tbody>
+<%-- 	    onclick="openUpdateSupForm('SupUpdate', '${ele.id }')" data-toggle="modal" data-target="#myModal"  --%>
 	    <c:forEach items="${req }" var="ele">
-	    	<tr class="tr-style" id="SupUpdate_${ele.id }" data-toggle="modal" data-target="#myModal" onclick="setFormValue('${ele.id}')">
-		        <td>${ele.id}</td>
-		        <td>${ele.req_status}</td>
-		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.first_name} ${ele.last_name }</td>
-		        <td onclick="openUpdateSupForm('SupUpdate', '${ele.id }')">${ele.req_purpose}</td>
+	    	<tr class="tr-style" id="SupUpdate_${ele.id }" >
+		        <td onclick="setFormValue('${ele.id}')" data-toggle="modal" data-target="#myModal">${ele.id}</td>
+		        <td onclick="setFormValue('${ele.id}')" data-toggle="modal" data-target="#myModal">${ele.req_status}</td>
+		        <td onclick="setFormValue('${ele.id}')" data-toggle="modal" data-target="#myModal">${ele.first_name} ${ele.last_name }</td>
+		        <td onclick="setFormValue('${ele.id}')" data-toggle="modal" data-target="#myModal">${ele.req_purpose}</td>
 	          	<td style="text-align: center; font-size:1.3em;">
 	          	<c:choose>
 	          		<c:when test="${ele.req_status eq 'Confirmed' }"><button class="btn btn-sm btn-success" onclick="changeStatus('${ele.id}')">Cancel</button></c:when>
@@ -123,7 +124,6 @@
 	          		<c:when test="${ele.req_status eq 'Confirmed' }"><button class="btn btn-sm btn-success" onclick="toTripForm('${ele.req_purpose}','${ele.email}')">Trip</button></c:when>
 	          		<c:otherwise><button class="btn btn-sm btn-success" disabled="disabled">Trip</button></c:otherwise>
 	          	</c:choose>
-	          		
 	          	</td>
 	      	</tr>
 	    </c:forEach>
