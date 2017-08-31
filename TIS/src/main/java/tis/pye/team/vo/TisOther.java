@@ -5,6 +5,7 @@ public class TisOther {
 	private int event_id;
 	private int emp_id;
 	private String note;
+	private String file_attach;
 	public int getId() {
 		return id;
 	}
@@ -28,6 +29,12 @@ public class TisOther {
 	}
 	public void setNote(String note) {
 		this.note = note;
+	}
+	public String getFile_attach() {
+		return file_attach;
+	}
+	public void setFile_attach(String file_attach) {
+		this.file_attach = file_attach;
 	}
 	
 	

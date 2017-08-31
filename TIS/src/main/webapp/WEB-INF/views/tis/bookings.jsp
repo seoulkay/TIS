@@ -528,12 +528,10 @@ function setFormValue(id){
       $("select[name=req_title]").val(go.req_title);
       $("select[name=req_purpose]").val(go.req_purpose);
       $("select[name=req_contact]").val(go.req_contact);
-      
     
       $.each(go.req_venue.split(","), function(i,e){
     	    $("select[name=req_venue] option[value='" + e + "']").prop("selected", true);
     	});
-      
       
       $("select[name=leave_flight]").val(go.leave_flight);
       $("select[name=arrive_flight]").val(go.arrive_flight);
