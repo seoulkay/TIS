@@ -59,7 +59,7 @@
 </head>
 <body>    
 <nav class="navbar navbar-default" style="height: 6em ; background-size: 2000px 7em; background-image: url('${pageContext.request.contextPath}/resources/tis/image/headerGeneric.png');border-radius:0; border:0">
-  <div class="container-fluid">
+  <div class="container-fluid on-the-fly-behavior4">
     <!-- Brand and toggle get grouped for better mobile display -->
 <!--     <div class="navbar-header" >  -->
 <!--       <a class="navbar-brand" href="#" style="padding-top: 2em;color: WHITE"> -->
@@ -76,7 +76,7 @@
 
 </nav>	
 
-<div class="container">
+<div class="container on-the-fly-behavior3">
 <div class="row">
 		<ul class="nav nav-tabs nav-justified">
 		      <li role="presentation"><a href="bookings">Bookings</a></li>

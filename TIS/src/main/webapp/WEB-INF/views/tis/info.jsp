@@ -64,7 +64,7 @@
 	</jsp:include>
 
 
-<div style="width: 100%; padding-left: 1em; padding-right:1em;" class="container">
+<div class="container on-the-fly-behavior">
 	<!-- My profile section starts -->
 	<div class="row row-style" style="display: block;">
 		<div class="avatar"><img src="https://www.tis2018.ga/image/tisImage/${em.picture }" width="128" height="128"></div>

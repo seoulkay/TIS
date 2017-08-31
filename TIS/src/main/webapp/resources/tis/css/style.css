@@ -2323,6 +2323,19 @@ button.close:hover {
     }
 }
 
+.on-the-fly-behavior3 {
+    width: 100%;
+    padding-left: 1em;
+    padding-right:1em; 
+}
+@media (min-width: 768px) {
+    .on-the-fly-behavior3 {
+        width: 100%;
+    	padding-left: 9em;
+    	padding-right:9em;
+    }
+}
+
 .on-the-fly-behavior2 {
     width: 100%;
     padding-left: 1em;
@@ -2341,6 +2354,28 @@ button.close:hover {
         width: 100%;
     	padding-left: 10em;
     	padding-right:10em;
+    	font-size: 1em;
+    }
+}
+
+.on-the-fly-behavior4 {
+    width: 100%;
+    padding-left: 1em;
+    padding-right:1em; 
+}
+@media (min-width: 768px) {
+    .on-the-fly-behavior4 {
+        width: 100%;
+    	padding-left: 9em;
+    	padding-right:9em;
+    	font-size: 0.75em;
+    }
+}
+@media (min-width: 900px) {
+    .on-the-fly-behavior4 {
+        width: 100%;
+    	padding-left: 9em;
+    	padding-right:9em;
     	font-size: 1em;
     }
 }
