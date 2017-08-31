@@ -516,7 +516,8 @@
   	<update id="updateTisOther" parameterType="TisOther">
   	UPDATE tis.other
   	SET
-  	note = #{note}
+  	note = #{note},
+  	file_attach = #{file_attach}
   	WHERE
   	event_id = #{event_id}
   	AND 
