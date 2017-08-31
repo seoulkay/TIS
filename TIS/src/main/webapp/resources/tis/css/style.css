@@ -250,7 +250,7 @@ ul#contact li a.email{
 }
 
 ul#contact li a.download{
-	background-image: url(../image/ic_attachment_black_24px.svg);	
+	background-image: url(../image/ic_attachment_black_24px.svg);
 }
 
 ul#contact li a.gallery{
@@ -264,6 +264,15 @@ ul#contact li a.bluekiwi:hover {
 ul#contact li a:hover {
     background-color: #fff;
     background-position: center center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    color: rgba(255,255,255, 0);
+}
+
+ul#contact li a.download:hover {
+    background-color: #fff;
+    background-position: center center;
+    background-image: url(../image/ic_attachment_black_24px.svg);
     background-size: 70%;
     background-repeat: no-repeat;
     color: rgba(255,255,255, 0);
@@ -317,6 +326,18 @@ ul#contact li a{
 
 li a.li-style{
 	color: #ffffff !important;
+}
+
+li a.li-style:hover{
+	color: #666666 !important;
+}
+
+.hover-item {
+	color: #000000;
+}
+
+.hover-item:hover {
+	color: #008FD4;
 }
 
 h1.title{

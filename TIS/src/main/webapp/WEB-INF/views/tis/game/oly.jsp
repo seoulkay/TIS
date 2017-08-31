@@ -86,7 +86,7 @@
 	<!--//page-nav-space-holder-->
 	
 	
-<div style="width: 100%; padding-top: 15px; padding-bottom: 15px;" class="container">
+<div class="container on-the-fly-behavior">
 <section id="anchor1">
 	<div id="feature-block-1" class="feature-block feature-block-1">
 		<div class="row title-row-style">
@@ -136,7 +136,7 @@ and people from the global Olympic Village, all coming together in PyeongChang w
 </div>
 <div style="width: 100%; background-color:#A9D7E6; padding-top: 15px; padding-bottom:15px;" class="container">
 <section id="anchor4">
-	<div id="feature-block-4" class="feature-block feature-block-1">
+	<div id="feature-block-4" class="feature-block feature-block-1 on-the-fly-behavior">
 		<div class="row title-row-style">
 			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
 				<h4 class="feature-title"><span style="background-color: #16adde" class="label label-success">Mascots</span></h4>

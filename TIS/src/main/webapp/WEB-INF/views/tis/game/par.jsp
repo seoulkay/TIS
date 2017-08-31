@@ -74,9 +74,9 @@
 			<div class="container">
 				<ul id="page-nav" class="nav page-nav list-inline" >
 					<li  style="margin: 0%"><a href="#anchor1">Paralympic</a></li>
-					<li  style="margin: 0%"><a href="#anchor2">Emblem</a></li>
-					<li  style="margin: 0%"><a href="#anchor3">Slogans</a></li>
-					<li  style="margin: 0%"><a href="#anchor3">Mascots</a></li>
+					<li  style="margin: 0%"><a href="#anchor2">Slogans</a></li>
+					<li  style="margin: 0%"><a href="#anchor3">Emblem</a></li>
+					<li  style="margin: 0%"><a href="#anchor4">Mascots</a></li>
 				</ul>
 				<!--//page-nav-->
 			</div>
@@ -86,7 +86,7 @@
 	<!--//page-nav-space-holder-->
 	
 	
-<div style="width: 100%; padding-top: 15px; padding-bottom: 15px;" class="container">
+<div class="container on-the-fly-behavior">
 <section id="anchor1">
 	<div id="feature-block-1" class="feature-block feature-block-1">
 		<div class="row title-row-style">
@@ -139,7 +139,7 @@
 </div>
 <div style="width: 100%; background-color:#A9D7E6; padding-top: 15px; padding-bottom:15px;" class="container">
 <section id="anchor4">
-	<div id="feature-block-4" class="feature-block feature-block-1">
+	<div id="feature-block-4" class="feature-block feature-block-1 on-the-fly-behavior">
 		<div class="row title-row-style">
 			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
 				<h4 class="feature-title"><span style="background-color: #16adde" class="label label-success">Mascots</span></h4>

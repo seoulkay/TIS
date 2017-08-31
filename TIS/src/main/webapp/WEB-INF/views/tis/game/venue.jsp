@@ -84,7 +84,7 @@
 	<!--//page-nav-space-holder-->
 	
 	
-<div style="width: 100%; padding-top: 15px; padding-bottom: 15px;" class="container">
+<div class="container on-the-fly-behavior">
 	<!-- Section 1 -->
 	<section id="anchor1">
 		<div id="feature-block-3" class="feature-block feature-block-1">
@@ -127,45 +127,45 @@
 					    <th class="tg-2qjy">Detail</th>
 					  </tr>
 					  <tr class="tr-style">
-					    <td class="tg-6wtj">ASJ</td>
-					    <td class="tg-6wtj">Alpensia Ski Jumping Centre</td>
-					    <td class="tg-6wtj">알펜시아 스키점프 경기장 </td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue1">ASJ</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue1">Alpensia Ski Jumping Centre</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue1">알펜시아 스키점프 경기장 </td>
 					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue1"></td>
 					  </tr>
 					  <tr class="tr-style">
-					    <td class="tg-6wtj">ACC</td>
-					    <td class="tg-6wtj">Alpensia Cross-Country Centre</td>
-					    <td class="tg-6wtj">알펜시아 크로스컨트리 센터  </td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue2">ACC</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue2">Alpensia Cross-Country Centre</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue2">알펜시아 크로스컨트리 센터  </td>
 					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue2"></td>
 					  </tr>
 					  <tr class="tr-style">
-					    <td class="tg-6wtj">ABT</td>
-					    <td class="tg-6wtj">Alpensia Biathlon Centre</td>
-					    <td class="tg-6wtj">알펜시아 바이애슬론 센터</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue3">ABT</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue3">Alpensia Biathlon Centre</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue3">알펜시아 바이애슬론 센터</td>
 					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue3"></td>
 					  </tr>
 					  <tr class="tr-style">
-					    <td class="tg-6wtj">ASL</td>
-					    <td class="tg-6wtj">Alpensia Sliding Centre</td>
-					    <td class="tg-6wtj">알펜시아 슬라이딩 센터</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue4">ASL</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue4">Alpensia Sliding Centre</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue4">알펜시아 슬라이딩 센터</td>
 					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue4"></td>
 					  </tr>
 					  <tr class="tr-style">
-					    <td class="tg-6wtj">YAL</td>
-					    <td class="tg-6wtj">Yongpyong Alpine Centre</td>
-					    <td class="tg-6wtj">용평 알파인 센터</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue5">YAL</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue5">Yongpyong Alpine Centre</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue5">용평 알파인 센터</td>
 					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue5"></td>
 					  </tr>
 					  <tr class="tr-style">
-					    <td class="tg-6wtj">JAL</td>
-					    <td class="tg-6wtj">Jeongseon Alpine Centre</td>
-					    <td class="tg-6wtj">정선 알파인 센터</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue6">JAL</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue6">Jeongseon Alpine Centre</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue6">정선 알파인 센터</td>
 					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue6"></td>
 					  </tr>
 					  <tr class="tr-style">
-					    <td class="tg-6wtj">BSP</td>
-					    <td class="tg-6wtj">Bokwang Snow Park</td>
-					    <td class="tg-6wtj">보광 피닉스 파크 </td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue7">BSP</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue7">Bokwang Snow Park</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue7">보광 피닉스 파크 </td>
 					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue7"></td>
 					  </tr>
 					</table>
@@ -195,33 +195,33 @@
 					    <th class="tg-2qjy">Detail</th>
 					  </tr>				  
 					  <tr class="tr-style">
-					    <td class="tg-6wtj">GHC</td>
-					    <td class="tg-6wtj">Gangneung Hockey Centre</td>
-					    <td class="tg-6wtj">강릉 하키 센터</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue8">GHC</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue8">Gangneung Hockey Centre</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue8">강릉 하키 센터</td>
 					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue8"></td>
 					  </tr>
 					  <tr class="tr-style">
-					    <td class="tg-6wtj">GOV</td>
-					    <td class="tg-6wtj">Gangneung Oval</td>
-					    <td class="tg-6wtj">강릉 스피드 스케이팅 경기장</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue9">GOV</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue9">Gangneung Oval</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue9">강릉 스피드 스케이팅 경기장</td>
 					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue9"></td>
 					  </tr>
 					  <tr class="tr-style">
-					    <td class="tg-6wtj">GIA</td>
-					    <td class="tg-6wtj">Gangneung Ice Arena</td>
-					    <td class="tg-6wtj">강릉 아이스 아레나</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue10">GIA</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue10">Gangneung Ice Arena</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue10">강릉 아이스 아레나</td>
 					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue10"></td>
 					  </tr>
 					  <tr class="tr-style">
-					    <td class="tg-6wtj">GCC</td>
-					    <td class="tg-6wtj">Gangneung Curling Centre</td>
-					    <td class="tg-6wtj">강릉 컬링 센터</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue11">GCC</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue11">Gangneung Curling Centre</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue11">강릉 컬링 센터</td>
 					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue11"></td>
 					  </tr>
 					  <tr class="tr-style">
-					    <td class="tg-6wtj">KHC</td>
-					    <td class="tg-6wtj">Kwandong Hockey Centre</td>
-					    <td class="tg-6wtj">관동 하키 센터</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue12">KHC</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue12">Kwandong Hockey Centre</td>
+					    <td class="tg-6wtj" data-toggle="modal" data-target="#venue12">관동 하키 센터</td>
 					    <td class="tg-6wtj"><img src="${pageContext.request.contextPath}/resources/tis/image/ic_info_outline_black_24px.svg" data-toggle="modal" data-target="#venue12"></td>
 					  </tr>
 					</table>

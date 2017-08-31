@@ -63,7 +63,7 @@
 		<jsp:param name="param" value="value1" />
 	</jsp:include>
 	
-<div style="width: 100%; padding-left: 1em; padding-right:1em;" class="container">
+<div class="container on-the-fly-behavior">
 <div class="row title-row-style">	
 		<h4><span class="label label-success">Emergency contact</span></h4>
 	</div>

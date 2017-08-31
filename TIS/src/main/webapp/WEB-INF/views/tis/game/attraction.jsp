@@ -82,7 +82,7 @@
 	<!--//page-nav-space-holder-->
 	
 	
-<div style="width: 100%; padding-top: 15px; padding-bottom: 15px;" class="container">
+<div class="container on-the-fly-behavior">
 	<section id="anchor1">
 		<div id="feature-block-1" class="feature-block feature-block-1">
 			<div class="row title-row-style">

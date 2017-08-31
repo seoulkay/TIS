@@ -63,7 +63,7 @@
             <div class="header-overlay"  style="background-color: #008FD4">
                 
                 <!-- .container -->
-                <div class="container" >
+                <div class="container on-the-fly-behavior">
                     
                     <div class="header-txt">
                     	<img style=" margin: 0 auto" src="${pageContext.request.contextPath}/resources/tis/image/Atos.svg" alt="Logo" class="img-responsive">
@@ -73,20 +73,20 @@
                     <div class="well">
                     <div class="row">	
                     	<div class="col-sm-4" style="text-align: center">
-                    		<a href="request" >
-                    		<strong>Booking</strong>
+                    		<a href="request">
+                    		<strong class="hover-item">Booking</strong>
                     		<img style=" margin: 0 auto" src="${pageContext.request.contextPath}/resources/tis/image/hotel.svg" alt="hotelLogo" class="img-responsive">
                     		</a>
                     	</div>
 						<div class="col-sm-4" style="text-align: center">
 							<a href="home">
-							<strong>Travel</strong>
+							<strong class="hover-item">Travel</strong>
 							<img style=" margin: 0 auto" src="${pageContext.request.contextPath}/resources/tis/image/map.svg" alt="mapLogo" class="img-responsive">
 							</a>
 						</div>
 						<div class="col-sm-4" style="text-align: center">
 							<a href="admin">
-							<strong>Admin</strong>
+							<strong class="hover-item">Admin</strong>
 							<img style=" margin: 0 auto" src="${pageContext.request.contextPath}/resources/tis/image/admin.svg" alt="adminLogo" class="img-responsive">
 							</a>
 						</div>

@@ -62,10 +62,8 @@
     <jsp:include page="../common/navbar.jsp" flush="false">
 		<jsp:param name="param" value="value1" />
 	</jsp:include>
-	
-<div style="width: 100%; padding-left: 1em; padding-right:1em;" class="container">
-        <!-- .container -->
-        <div class="container">
+
+        <div class="container on-the-fly-behavior">
             	<div class="row title-row-style">	
 		<h4><span class="label label-success">My Group</span></h4>
 	</div>
@@ -107,7 +105,7 @@ $( ".group-selector" ).change(function() {
 	  $(".group_"+$("#group-selector").val()).show();
 	});
 </script>
-</div>
+
         <!-- ******FOOTER****** -->
 	<jsp:include page="../common/footer.jsp" flush="false">
 		<jsp:param name="param" value="value1" />
