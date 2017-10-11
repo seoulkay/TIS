@@ -127,14 +127,15 @@
 					<fmt:formatDate value='${daysFromNow}' pattern = 'dd'/>
 		        </td>
 		      </tr>
-		      <tr>
-		      	<td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; width: 30%;">Note:</td>
-		        <td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; color: #777; width: 70%;">${ele.acc_pin}</td>		      
-		      </tr>
 		      <tr>		     
 		      	<td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; width: 30%;">Room No:</td>
 		        <td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; color: #777; width: 70%;">${ele.acc_room }</td>
 		      </tr>
+		      <tr>
+		      	<td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; width: 30%;">Note:</td>
+		        <td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; color: #777; width: 70%;">${ele.acc_pin}</td>		      
+		      </tr>
+		      
 		    </tbody>
 		  </table>
 	</div>
@@ -202,7 +203,7 @@
 			<c:forEach items="${ele.itiDetail }" var="elee">
 						  <tr>
 					        <td><fmt:formatDate value='${elee.stmp }' pattern = 'yyyy-MM-dd HH:mm' /></td>
-					        <td><i class="material-icons">${elee.trs_icon }&nbsp&nbsp&nbsp</i><span style="size: 0.3em; vertical-align: top">${elee.trs_title } / ${elee.trs_title_loc }</span></td>
+					        <td><i class="material-icons">${elee.trs_icon }&nbsp</i><span style="size: 0.3em; vertical-align: top">${elee.trs_title }</span></td>
 					        <td>${elee.desc } / ${elee.desc_local }</td>
 					        <td>${elee.note } / ${elee.note_local }</td>
 					      </tr>

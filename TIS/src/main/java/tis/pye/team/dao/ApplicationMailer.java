@@ -87,6 +87,9 @@ public class ApplicationMailer {
 					+ "<table>"
 					+ "<tr><td><strong>Date & Time</strong></td><td>"+vo.getLeave_stmp()+"</td></tr>"
 					+ "<tr><td><strong>Flight No</strong></td><td>"+vo.getLeave_flight()+" "+vo.getLeave_flight_name()+"</td></tr>"
+					+ "</table>"
+					+ "<table>"
+					+ "<tr>This is an automatically generated email, please do not reply.</tr>"
 					+ "</table>";
 
 			String ccString = "dl-kr-pyc-admin@atos.net";
