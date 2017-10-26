@@ -454,10 +454,10 @@
 <!-- 			<div class="col-sm-6"> -->
 <!-- 				<h4>You need accommodation for %number% days</h4> -->
 <!-- 			</div> -->
-			<div class="col-sm-6" style="padding-bottom: 1em; padding-top: 1em;">
-				<input type="submit" value="Submit">
-				<input type="reset" value="Reset">
-			</div>
+<!-- 			<div class="col-sm-6" style="padding-bottom: 1em; padding-top: 1em;"> -->
+<!-- 				<input type="submit" value="Submit"> -->
+<!-- 				<input type="reset" value="Reset"> -->
+<!-- 			</div> -->
 		</div>
 		</form>	
 </div>

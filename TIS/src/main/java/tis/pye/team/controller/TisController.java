@@ -141,39 +141,45 @@ public class TisController {
 		dao.insertTisRequest(vo);
 		dao.insertTisRequestLog(vo);
 		
-		//이메일용 이벤트 네임 구하기
-		TisEvent te = new TisEvent();
-		te.setId(vo.getReq_purpose());
-		te = dao.selectEventById(te);
-		vo.setEvent_name(te.getEvent_name());
-		
-		//이메일용 로컬콘텍 네임 구하기
-		TisEmployee tem = new TisEmployee();
-		tem.setId(vo.getReq_contact());
-		tem = dao.selectEmployeeByAtosIdOnly(tem);
-		vo.setLocal_contact(tem.getFirst_name()+" "+tem.getLast_name());
-		vo.setLocal_contact_email(tem.getEmail());
-		
-		//이메일용 베뉴이름 구하기
-		List<TisVenue> venueList = dao.selectAllVenue();
-		String venueName = "";
-		
-		try{
-		String[] venueIds = vo.getReq_venue().split(",");
-		
-		for(String ele : venueIds){
-			for(TisVenue elee : venueList){
-				if(Integer.parseInt(ele) == elee.getId()){
-					venueName = venueName + " " + elee.getVenue_name();
-				}
-			}
-		}
-		vo.setVenue_name(venueName);
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-		
-		sendTisRequestEmail(vo);
+		/**
+		 * 공격 당해서 이메일 뺀다.
+		 */
+//			//이메일용 이벤트 네임 구하기
+//			TisEvent te = new TisEvent();
+//			te.setId(vo.getReq_purpose());
+//			te = dao.selectEventById(te);
+//			vo.setEvent_name(te.getEvent_name());
+//			
+//			//이메일용 로컬콘텍 네임 구하기
+//			TisEmployee tem = new TisEmployee();
+//			tem.setId(vo.getReq_contact());
+//			tem = dao.selectEmployeeByAtosIdOnly(tem);
+//			vo.setLocal_contact(tem.getFirst_name()+" "+tem.getLast_name());
+//			vo.setLocal_contact_email(tem.getEmail());
+//			
+//			//이메일용 베뉴이름 구하기
+//			List<TisVenue> venueList = dao.selectAllVenue();
+//			String venueName = "";
+//			
+//			try{
+//			String[] venueIds = vo.getReq_venue().split(",");
+//			
+//			for(String ele : venueIds){
+//				for(TisVenue elee : venueList){
+//					if(Integer.parseInt(ele) == elee.getId()){
+//						venueName = venueName + " " + elee.getVenue_name();
+//					}
+//				}
+//			}
+//			vo.setVenue_name(venueName);
+//			}catch(Exception e){
+//				e.printStackTrace();
+//			}
+//			
+//			sendTisRequestEmail(vo);
+		/**
+		 * 공격 당해서 이메일 뺀다. 2017년 10월 26일
+		 */
 		
 		return "tis/land";
 	}
