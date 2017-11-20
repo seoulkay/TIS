@@ -58,7 +58,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<div style="height: 30em; background-image: url('https://www.ufo79.com/image/201708070448400695.JPG'); background-size:cover">
+<div style="height: 30em; background-image: url('https://www.tis2018.ga/image/tisImage/ol-min.png'); background-size:cover">
 	<!--     navbar -->
     <jsp:include page="../common/navbar.jsp" flush="false">
 		<jsp:param name="param" value="value1" />

@@ -89,11 +89,11 @@
 	<h4>Profiles <button class="btn-style" onclick="openForm('Profiles')">Add new</button></h4>
 	</div>
 	<div class="row">	
-	<table class="table table-bordered">
+	<table class="table table-bordered" id="myTable">
 	    <thead>
 	      <tr class="info">
-	        <th>Id</th>
-	        <th>First Name</th>
+	        <!-- <th onclick="sortTable(0)">Id</th> -->
+	        <th onclick="sortTable(0)">First Name</th>
 	        <th>Last Name</th>
 	        <th>Picture</th>
 	        <th>Job title</th>
@@ -105,7 +105,7 @@
 	    <tbody>
 	    <c:forEach items="${temp }" var="ele">
 	    	<tr class="tr-style" onclick="openUpdateProForm('ProUpdate', '${ele.id }')" id="ProUpdate_${ele.id }">
-	        <td>${ele.id}</td>
+	        <%-- <td>${ele.id}</td> --%>
 	        <td>${ele.first_name}</td>
 	        <td>${ele.last_name}</td>
 	        <td>${ele.picture}</td>
@@ -182,7 +182,7 @@
 
 <script>
 function openUpdateProForm(para, id){
-	$("#"+para+"_id").val($("#"+para+"_"+id+" td:nth-child(1)").text());
+	/* $("#"+para+"_id").val($("#"+para+"_"+id+" td:nth-child(1)").text()); */
 	$("#"+para+"_first_name").val($("#"+para+"_"+id+" td:nth-child(2)").text());
 	$("#"+para+"_last_name").val($("#"+para+"_"+id+" td:nth-child(3)").text());
 	$("#"+para+"_picture").val($("#"+para+"_"+id+" td:nth-child(4)").text());
@@ -225,6 +225,61 @@ function submitForm(para){
 
   ga('create', 'UA-96309968-1', 'auto');
   ga('send', 'pageview');
-
+</script>
+<script>
+function sortTable(n) {
+	  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+	  table = document.getElementById("myTable");
+	  switching = true;
+	  //Set the sorting direction to ascending:
+	  dir = "asc"; 
+	  /*Make a loop that will continue until
+	  no switching has been done:*/
+	  while (switching) {
+	    //start by saying: no switching is done:
+	    switching = false;
+	    rows = table.getElementsByTagName("TR");
+	    /*Loop through all table rows (except the
+	    first, which contains table headers):*/
+	    for (i = 1; i < (rows.length - 1); i++) {
+	      //start by saying there should be no switching:
+	      shouldSwitch = false;
+	      /*Get the two elements you want to compare,
+	      one from current row and one from the next:*/
+	      x = rows[i].getElementsByTagName("TD")[n];
+	      y = rows[i + 1].getElementsByTagName("TD")[n];
+	      /*check if the two rows should switch place,
+	      based on the direction, asc or desc:*/
+	      if (dir == "asc") {
+	        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+	          //if so, mark as a switch and break the loop:
+	          shouldSwitch= true;
+	          break;
+	        }
+	      } else if (dir == "desc") {
+	        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+	          //if so, mark as a switch and break the loop:
+	          shouldSwitch= true;
+	          break;
+	        }
+	      }
+	    }
+	    if (shouldSwitch) {
+	      /*If a switch has been marked, make the switch
+	      and mark that a switch has been done:*/
+	      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+	      switching = true;
+	      //Each time a switch is done, increase this count by 1:
+	      switchcount ++;      
+	    } else {
+	      /*If no switching has been done AND the direction is "asc",
+	      set the direction to "desc" and run the while loop again.*/
+	      if (switchcount == 0 && dir == "asc") {
+	        dir = "desc";
+	        switching = true;
+	      }
+	    }
+	  }
+	}
 </script>
 </html>

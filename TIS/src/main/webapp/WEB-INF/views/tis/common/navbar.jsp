@@ -19,12 +19,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
       <ul class="nav navbar-nav navbar-right">
-        <li><a class="li-style" href="/TIS/info">Travel</a></li>
+        <li><a class="li-style" href="/TIS/info">My Travel</a></li>
         <li class="dropdown">
           <a class="li-style" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PYC2018 <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a style="color: #000000;" href="/TIS/about/team">Team</a></li>
-            <li><a style="color: #000000;" href="/TIS/about/emer">Emergency Contact</a></li>
+            <li><a style="color: #000000;" href="/TIS/about/emer">Health and Safety</a></li>
             <li><a style="color: #000000;" href="/TIS/about/faq">FAQ</a></li>
           </ul>
         </li>
@@ -41,7 +41,7 @@
           <a class="li-style" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Discoveries <span class="caret"></span></a>
           <ul class="dropdown-menu">            
             <li><a style="color: #000000;" href="/TIS/game/attraction">Attractions</a></li>
-            <li><a style="color: #000000;" href="/TIS/game/attraction">Restaurants</a></li>
+            <li><a style="color: #000000;" href="/TIS/game/restaurant">Mango Plate</a></li>
           </ul>
         </li>
         <li><a class="li-style" href="javascript:signout()">Sign out</a></li>

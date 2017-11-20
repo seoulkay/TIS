@@ -58,7 +58,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<div style="height: 30em; background-image: url('https://www.tis2018.ga/image/tisImage/pockeys.jpg'); background-size:cover">
+<div style="height: 30em; background-image: url('https://www.ufo79.com/image/201708070448400695.JPG'); background-size:cover">
 	<!--     navbar -->
     <jsp:include page="../common/navbar.jsp" flush="false">
 		<jsp:param name="param" value="value1" />
@@ -89,6 +89,7 @@
 				<!-- 1 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal1" >
+						<h5 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">Gyeongpo Beach</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/1_Gyeongpo Beach.png">
 						<div class="middle">
 							<div class="text-effect1">Gyeongpo Beach</div>
@@ -97,6 +98,7 @@
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal2">
+						<h5 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">Jeongdongjin Beach</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/2_Jeongdongjin Beach.png">
 						<div class="middle">
 							<div class="text-effect1">Jeongdongjin Beach</div>
@@ -105,6 +107,7 @@
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal3">
+						<h5 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">Ojukheon</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/3_Ojukheon.png">
 						<div class="middle">
 							<div class="text-effect1">Ojukheon</div>
@@ -116,6 +119,7 @@
 				<!-- 2 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal4">
+						<h5 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">Gyeongpodae</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/4_Gyeongpodae.png">
 						<div class="middle">
 							<div class="text-effect1">Gyeongpodae Pavilion</div>
@@ -124,6 +128,7 @@
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal5">
+						<h5 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">Charmosri Museum</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/5_Charmsori.png">
 						<div class="middle">
 							<div class="text-effect1">Charmsori Gramophone & Edison Science Museum</div>
@@ -132,6 +137,7 @@
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal6">
+						<h5 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">Seongyojang</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/6_Seongyojang.png">
 						<div class="middle">
 							<div class="text-effect1">Gangneung Seongyojang</div>
@@ -143,6 +149,7 @@
 				<!-- 3 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal7">
+						<h5 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">Jumunjin Port</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/7_Jumunjin.png">
 						<div class="middle">
 							<div class="text-effect1">Jumunjin Port</div>
@@ -151,6 +158,7 @@
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal8">
+						<h5 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">Haslla Art World</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/8_Haslla Art.png">
 						<div class="middle">
 							<div class="text-effect1">Haslla Art World</div>
@@ -159,6 +167,7 @@
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal9">
+						<h5 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">Gangneung Unification Park</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/9_Unification Park.png">
 						<div class="middle">
 							<div class="text-effect1">Gangneung Unification Park</div>
@@ -170,6 +179,7 @@
 				<!-- 4 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal10">
+						<h5 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">Chodang Dubu Village</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/10_Chodang.png">
 						<div class="middle">
 							<div class="text-effect1">Chodang Dubu Village</div>
@@ -185,6 +195,7 @@
 				<!-- 11 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal11">
+						<h5 class="feature-title"><span style="background-color: #00a27c" class="label label-success">Woljeongsa Temple</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/11_Woljeongsa.png">
 						<div class="middle">
 							<div class="text-effect2">Woljeongsa Temple</div>
@@ -193,6 +204,7 @@
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal12">
+						<h5 class="feature-title"><span style="background-color: #00a27c" class="label label-success">Daegwallryeong Samyang Ranch</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/12_DGR Samyang.png">
 						<div class="middle">
 							<div class="text-effect2">Daegwallryeong Samyang Ranch</div>
@@ -201,6 +213,7 @@
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal13">
+						<h5 class="feature-title"><span style="background-color: #00a27c" class="label label-success">Daegwallryeong Sheep Ranch</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/13_DGR Sheep.png">
 						<div class="middle">
 							<div class="text-effect2">Daegwallryeong Sheep Ranch</div>
@@ -212,6 +225,7 @@
 				<!-- 12 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal14">
+						<h5 class="feature-title"><span style="background-color: #00a27c" class="label label-success">Odaesan National Mountain</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/14_Odaesan.png">
 						<div class="middle">
 							<div class="text-effect2">Odaesan National Park</div>
@@ -220,6 +234,7 @@
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal15">
+						<h5 class="feature-title"><span style="background-color: #00a27c" class="label label-success">Herb Nara</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/15_HerbNara.png">
 						<div class="middle">
 							<div class="text-effect2">Herb Nara</div>
@@ -228,6 +243,7 @@
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal16">
+						<h5 class="feature-title"><span style="background-color: #00a27c" class="label label-success">Kensington Flora Garden</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/16_Kensington.png">
 						<div class="middle">
 							<div class="text-effect2">Kensington Flora Garden</div>
@@ -239,6 +255,7 @@
 				<!-- 13 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal17">
+						<h5 class="feature-title"><span style="background-color: #00a27c" class="label label-success">Lee Hyo Seok Literature Forest</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/17_HyoSeok.png">
 						<div class="middle">
 							<div class="text-effect2">Lee Hyo Seok Literature Forest</div>
@@ -247,6 +264,7 @@
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal18">
+						<h5 class="feature-title"><span style="background-color: #00a27c" class="label label-success">Daegwallyeong Sky Ranch</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/18_DGR Sky.png">
 						<div class="middle">
 							<div class="text-effect2">Daegwallyeong Sky Ranch</div>
@@ -255,6 +273,7 @@
 				</div>
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal19">
+						<h5 class="feature-title"><span style="background-color: #00a27c" class="label label-success">Jeonggangwon</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/19_Jeonggangwon.png">
 						<div class="middle">
 							<div class="text-effect2">Jeonggangwon</div>
@@ -266,6 +285,7 @@
 				<!-- 14 -->
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con" data-toggle="modal" data-target="#myModal20">
+						<h5 class="feature-title"><span style="background-color: #00a27c" class="label label-success">Pyeongchang Olympic Market</span></h5>
 						<img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/20_OlympicMarket.png">
 						<div class="middle">
 							<div class="text-effect2">Pyeongchang Olympic Market</div>

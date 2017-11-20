@@ -64,10 +64,18 @@
 	</jsp:include>
 	
 <div class="container on-the-fly-behavior">
-<div class="row title-row-style">	
-		<h4><span class="label label-success">Emergency contact</span></h4>
+	<div class="row title-row-style">	
+		<img src="http://www.tis2018.ga/image/tisImage/H1.png" class="img-responsive"><br>
+		<img src="http://www.tis2018.ga/image/tisImage/H2.png" class="img-responsive"><br>
+		<img src="http://www.tis2018.ga/image/tisImage/H3.png" class="img-responsive"><br>
+		<img src="http://www.tis2018.ga/image/tisImage/H4.png" class="img-responsive"><br>
+		<img src="http://www.tis2018.ga/image/tisImage/H5.png" class="img-responsive"><br>
+		<img src="http://www.tis2018.ga/image/tisImage/H6.png" class="img-responsive"><br>
+		<img src="http://www.tis2018.ga/image/tisImage/H7.png" class="img-responsive"><br>
+		<img src="http://www.tis2018.ga/image/tisImage/H8.png" class="img-responsive"><br>
+		<img src="http://www.tis2018.ga/image/tisImage/H9.png" class="img-responsive"><br>
+		<img src="http://www.tis2018.ga/image/tisImage/H10.png" class="img-responsive"><br>	
 	</div>
-emer
 </div>
     <!-- ******FOOTER****** -->
 	<jsp:include page="../common/footer.jsp" flush="false">

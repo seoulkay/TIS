@@ -56,7 +56,7 @@ public class TisController {
 		
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String tisLogin(){
-		return "tis/land";
+		return "tis/home";
 	}
 	
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
@@ -107,6 +107,11 @@ public class TisController {
 	@RequestMapping(value = "/game/attraction", method = RequestMethod.GET)
 	public String tisgamatt(){
 		return "tis/game/attraction";
+	}
+	
+	@RequestMapping(value = "/game/restaurant", method = RequestMethod.GET)
+	public String tisgamres(){
+		return "tis/game/restaurant";
 	}
 	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
