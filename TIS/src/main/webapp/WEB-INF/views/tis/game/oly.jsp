@@ -64,7 +64,7 @@
 		<jsp:param name="param" value="value1" />
 	</jsp:include>
 	<div style="height: 3em"></div>
-	<span style="margin: 0 auto; text-align: center;"><h1 class="title">PyeongChang2018 Olympic Winter Games</h1></span>
+	<span style="margin: 0 auto; text-align: center;"><h1 class="title">PyeongChang 2018 Olympic Winter Games</h1></span>
 	<span style="margin: 0 auto; text-align: center;"><h1 class="title">2018.02.09 - 2018.02.25</h1></span>
 	
 </div>
@@ -91,7 +91,7 @@
 	<div id="feature-block-1" class="feature-block feature-block-1">
 		<div class="row title-row-style">
 			<div class="feature-content col-md-6 col-sm-6 col-xs-12">
-				<h4 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">PyeongChang Olympic Winter Games</span></h4>
+				<h4 class="feature-title"><span style="background-color: #ed45a4" class="label label-success">Olympic Winter Games</span></h4>
 				<div class="feature-desc"><p>The XXIII Olympic Winter Games will be held for 17 days from 9 to 25 February 2018 in PyeongChang, Gangwon Province, the Republic of Korea. PyeongChang was selected as the host city of the 2018 Olympic Winter Games after receiving a majority vote at the 123rd IOC Session held on 6 July 2011 after three consecutive bids. The Olympic Winter Games will be held in Korea for the first time in 30 years after the Seoul Olympic Games in 1988. PyeongChang will be the stage for the Opening and Closing Ceremonies and most snow sports. Alpine speed events will take place in Jeongseon, and all ice sports will be competed in the coastal city of Gangneung.</p></div>
 			</div>
 			<div class="feature-figure col-md-6 col-sm-6 col-xs-12">
