@@ -92,8 +92,8 @@
 	<table class="table table-bordered" id="myTable">
 	    <thead>
 	      <tr class="info">
-	        <!-- <th onclick="sortTable(0)">Id</th> -->
-	        <th onclick="sortTable(0)">First Name</th>
+	        <th onclick="sortTable(0)">Id</th>
+	        <th>First Name</th>
 	        <th>Last Name</th>
 	        <th>Picture</th>
 	        <th>Job title</th>
@@ -105,14 +105,14 @@
 	    <tbody>
 	    <c:forEach items="${temp }" var="ele">
 	    	<tr class="tr-style" onclick="openUpdateProForm('ProUpdate', '${ele.id }')" id="ProUpdate_${ele.id }">
-	        <%-- <td>${ele.id}</td> --%>
-	        <td>${ele.first_name}</td>
-	        <td>${ele.last_name}</td>
-	        <td>${ele.picture}</td>
-	        <td>${ele.job_title}</td>
-	        <td>${ele.tel}</td>
-	        <td>${ele.email}</td>
-	        <td>${ele.pin}</td>
+		        <td>${ele.id}</td>
+		        <td>${ele.first_name}</td>
+		        <td>${ele.last_name}</td>
+		        <td>${ele.picture}</td>
+		        <td>${ele.job_title}</td>
+		        <td>${ele.tel}</td>
+		        <td>${ele.email}</td>
+		        <td>${ele.pin}</td>
 	      	</tr>
 	    </c:forEach>
 	    </tbody>
@@ -156,7 +156,7 @@
 		</div>
 		<div class="label-style modal-body-style modal-body">
 		<form id="ProUpdateForm" action="ProUpdateForm" method="POST">
-		<label>First Name</label>
+			<label>First Name</label>
 			<input type="text" id="ProUpdate_first_name" name="first_name" placeholder="first_name" class="form-control">
 			<label>Last Name</label>
 			<input type="text" id="ProUpdate_last_name" name="last_name" placeholder="last_name" class="form-control">

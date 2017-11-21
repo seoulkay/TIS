@@ -11,7 +11,7 @@
         <span style="background-color: #fff" class="icon-bar"></span>
         <span style="background-color: #fff" class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/TIS/info">
       	<img class="img-responsive" alt="" src="${pageContext.request.contextPath}/resources/tis/image/Atos.svg" style="max-height: 100%" >
       </a>
     </div>
@@ -41,7 +41,7 @@
           <a class="li-style" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Discoveries <span class="caret"></span></a>
           <ul class="dropdown-menu">            
             <li><a style="color: #000000;" href="/TIS/game/attraction">Attractions</a></li>
-            <li><a style="color: #000000;" href="/TIS/game/restaurant">Mango Plate</a></li>
+            <li><a style="color: #000000;" href="/TIS/game/restaurant">Restaurants</a></li>
           </ul>
         </li>
         <li><a class="li-style" href="javascript:signout()">Sign out</a></li>
