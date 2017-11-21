@@ -58,7 +58,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<div style="height: 30em; background-image: url('https://www.tis2018.ga/image/tisImage/pockeys.jpg'); background-size:cover">
+<div style="height: 30em; background-image: url('https://www.tis2018.ga/image/tisImage/pockeys-min.jpg'); background-size:cover">
 	<!--     navbar -->
     <jsp:include page="../common/navbar.jsp" flush="false">
 		<jsp:param name="param" value="value1" />
@@ -348,8 +348,8 @@
 		        </div>
 		        <div class="row title-row-style">
 			        <div class="col-md-3 col-sm-3 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Luge.png"></div>
-			        <div class="col-md-3 col-sm-3 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Bobsleigh.png"></div>
-			        <div class="col-md-3 col-sm-3 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Skeleton.png"></div>
+			        <div class="col-md-3 col-sm-3 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Bobsleigh1.png"></div>
+			        <div class="col-md-3 col-sm-3 col-xs-4"><img style="padding-top:1em; padding-bottom:1em;" class="img-responsive" src="https://www.tis2018.ga/image/tisImage/Olympic/PyeongChang2018_Olympic_Pictogram_Skeleton1.png"></div>
 		        </div>
       		</div>
 	      <div class="modal-footer">
