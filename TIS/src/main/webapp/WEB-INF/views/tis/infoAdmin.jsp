@@ -92,7 +92,7 @@
 	<table class="table table-bordered" id="myTable">
 	    <thead>
 	      <tr class="info">
-	        <th onclick="sortTable(0)">Id</th>
+	        <th>Id</th>
 	        <th>First Name</th>
 	        <th>Last Name</th>
 	        <th>Picture</th>
@@ -182,7 +182,7 @@
 
 <script>
 function openUpdateProForm(para, id){
-	/* $("#"+para+"_id").val($("#"+para+"_"+id+" td:nth-child(1)").text()); */
+	$("#"+para+"_id").val($("#"+para+"_"+id+" td:nth-child(1)").text());
 	$("#"+para+"_first_name").val($("#"+para+"_"+id+" td:nth-child(2)").text());
 	$("#"+para+"_last_name").val($("#"+para+"_"+id+" td:nth-child(3)").text());
 	$("#"+para+"_picture").val($("#"+para+"_"+id+" td:nth-child(4)").text());
