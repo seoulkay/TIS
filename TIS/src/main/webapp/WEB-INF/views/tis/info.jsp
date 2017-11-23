@@ -96,8 +96,10 @@
 	<c:forEach items="${ta }" var="ele">
 	<div class="row row-style">	
 		<%-- <p><strong>Confirmation No : </strong>ACC${ele.id }</p> --%>
+		<div class="col-md-6 col-sm-6 col-xs-12">
 		<p style="font-size: 1.3em; color: #008fd4;"><strong>${ele.venue_name }</strong></p>
 		<p><a href="https://www.google.co.kr/maps?z=19&q=${ele.lat }+${ele.lng }&||=${ele.lat }+${ele.lng }" target="_blank">${ele.venue_address }</a></p>
+		<p>${ele.venue_address_loc }</p>
 		<div style="display: none" class="venues">${ele.venue_id }</div>		
 		  <table class="table table-bordered" style="border: #ffffff !important;">
 		    <tbody>
@@ -132,12 +134,17 @@
 		        <td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; color: #777; width: 70%;">${ele.acc_room }</td>
 		      </tr>
 		      <tr>
-		      	<td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; width: 30%;">Note:</td>
+		      	<td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; width: 30%;">Door PIN:</td>
 		        <td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; color: #777; width: 70%;">${ele.acc_pin}</td>		      
 		      </tr>
 		      
 		    </tbody>
 		  </table>
+		  </div>
+		  <!-- Map -->
+		  <div class="col-md-6 col-sm-6 col-xs-12">
+		  	<div id="map" style="height: 20em;"></div>		  
+		  </div>
 	</div>
 	<!-- Facilities & Services -->
 	<div class="row row-style">
@@ -167,22 +174,22 @@
 		</ul>
 		<%-- <p><strong>${ele.acc_desc }</strong></p> --%>
 	</div>
-	<div style="height: 1em"></div>
-	<!-- Show to Taxi driver -->
+	<!-- <div style="height: 1em"></div> -->
+	<%-- <!-- Show to Taxi driver -->
 	<div class="row row-style">
 		<h4 style="font-size: 1em;"><strong>Show to Taxi driver</strong></h4>
 		<p>${ele.venue_address_loc }</p>
-	</div>
-	<!-- Map -->	
+	</div> --%>
+	<%-- <!-- Map -->	
 	<div class="row row-style">
 		<div id="map" style="height: 25em;"></div>
-	</div>				 
+	</div>	 --%>			 
 	</c:forEach>
 	<!-- My Accommodation section ends -->	
 	<hr>
 	<!-- My Travel section starts -->		
 	<div class="row title-row-style">	
-		<h4><span class="label label-success">My Travel</span></h4>
+		<h4><span class="label label-success">Directions</span></h4>
 	</div>	
 	<div class="row row-style">
 		<c:forEach items="${tis}" var="ele">
