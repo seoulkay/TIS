@@ -148,7 +148,7 @@
 	</div>
 	<!-- Facilities & Services -->
 	<div class="row row-style">
-		  <h4 style="padding-top: 1em; font-size: 1em;"><strong>Facilities & Services</strong></h4>
+		  <h4 style="padding-top: 1em; font-size: 1em;"><strong>Facilities</strong></h4>
 	</div>
 	<div class="row row-style">	
 	<c:forEach items="${tfac }" var="elee">
@@ -163,7 +163,7 @@
 	<div style="height: 1em"></div>
 	<!-- General -->
 	<div class="row row-style">
-		<h4 style="font-size: 1em;"><strong>General</strong></h4>
+		<h4 style="font-size: 1em;"><strong>Rule and Regulation</strong></h4>
 		<ul>
 		<c:forEach items="${tpol }" var="elee">
 		<c:set var="pol_var" value=" ${elee.id },"/>
@@ -188,7 +188,7 @@
 	<!-- My Accommodation section ends -->	
 	<hr>
 	<!-- My Travel section starts -->		
-	<div class="row title-row-style">	
+	<%-- <div class="row title-row-style">	
 		<h4><span class="label label-success">Directions</span></h4>
 	</div>	
 	<div class="row row-style">
@@ -221,10 +221,10 @@
 	
 	</div>
 	<!-- My Travel section ends -->	
-	<hr>
+	<hr> --%>
 	<!-- Other section starts -->	
 	<div class="row title-row-style">	
-		<h4><span class="label label-success">Other</span></h4>
+		<h4><span class="label label-success">Directions</span></h4>
 		<p>${to.note }</p>
 	</div>
 	<!-- Other section ends -->	
