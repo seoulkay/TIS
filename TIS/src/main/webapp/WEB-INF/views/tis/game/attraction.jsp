@@ -58,30 +58,6 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<div style="height: 30em; background-image: url('https://www.ufo79.com/image/201708070448400695.JPG'); background-size:cover">
-	<!--     navbar -->
-    <jsp:include page="../common/navbar.jsp" flush="false">
-		<jsp:param name="param" value="value1" />
-	</jsp:include>
-	<div style="height: 3em"></div>
-	<span style="margin: 0 auto; text-align: center;"><h1 class="title">Attractions</h1></span>
-</div>
-
-	<div class="page-nav-space-holder">
-		<div id="page-nav-wrapper" class="page-nav-wrapper text-center">
-			<div class="container">
-				<ul id="page-nav" class="nav page-nav list-inline" >
-					<li  style="margin: 0%"><a href="#anchor1">Gangneung</a></li>
-					<li  style="margin: 0%"><a href="#anchor2">PyeongChang</a></li>
-				</ul>
-				<!--//page-nav-->
-			</div>
-		</div>
-		<!--//page-nav-wrapper-->
-	</div>
-	<!--//page-nav-space-holder-->
-	
-	
 <div class="container on-the-fly-behavior">
 	<section id="anchor1">
 		<div id="feature-block-1" class="feature-block feature-block-1">

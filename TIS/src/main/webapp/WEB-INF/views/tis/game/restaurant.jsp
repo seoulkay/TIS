@@ -58,28 +58,6 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<div style="height: 30em; background-image: url('https://www.tis2018.ga/image/tisImage/r3-min.jpg'); background-size:cover">
-	<!--     navbar -->
-    <jsp:include page="../common/navbar.jsp" flush="false">
-		<jsp:param name="param" value="value1" />
-	</jsp:include>
-	<div style="height: 3em"></div>
-	<span style="margin: 0 auto; text-align: center;"><h1 class="title">Restaurants</h1></span>
-</div>
-
-	<div class="page-nav-space-holder">
-		<div id="page-nav-wrapper" class="page-nav-wrapper text-center">
-			<div class="container">
-				<ul id="page-nav" class="nav page-nav list-inline" >
-					<li  style="margin: 0%"><a href="#anchor1">Restaurants</a></li>					
-				</ul>
-				<!--//page-nav-->
-			</div>
-		</div>
-		<!--//page-nav-wrapper-->
-	</div>
-	<!--//page-nav-space-holder-->
-	
 	
 <div class="container on-the-fly-behavior">
 	<section id="anchor1">
@@ -107,7 +85,7 @@
 				<div class="feature-content col-md-4 col-sm-4 col-xs-12" style="padding-top: 1em; padding-bottom: 1em;">
 					<div class="con">
 						<h5 class="feature-title"><span style="background-color: #feb131" class="label label-success">Jinbu</span></h5>
-						<a href="http://www.mangoplate.com/en/search/%EC%A7%84%EB%B6%80%EB%A9%B4" target="_blank"><img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/3_Ojukheon.png">
+						<a href="http://www.mangoplate.com/en/search/%EC%A7%84%EB%B6%80%EB%A6%AC" target="_blank"><img class="img-responsive img-effect2" src="https://www.tis2018.ga/image/tisImage/PA/3_Ojukheon.png">
 						<div class="middle">
 							<div class="text-effect1" style="background-color: #feb131">Jinbu</div>
 						</div></a>					

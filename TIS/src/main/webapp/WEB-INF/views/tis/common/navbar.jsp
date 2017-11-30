@@ -23,7 +23,7 @@
         <li class="dropdown">
           <a class="li-style" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PYC2018 <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a style="color: #000000;" href="/TIS/about/team">Team</a></li>
+            <!-- <li><a style="color: #000000;" href="/TIS/about/team">Team</a></li> -->
             <li><a style="color: #000000;" href="/TIS/about/emer">Health and Safety</a></li>
             <li><a style="color: #000000;" href="/TIS/about/faq">FAQ</a></li>
           </ul>
