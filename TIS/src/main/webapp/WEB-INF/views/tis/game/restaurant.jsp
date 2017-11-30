@@ -58,6 +58,10 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+<!--     navbar -->
+    <jsp:include page="../common/navbar.jsp" flush="false">
+		<jsp:param name="param" value="value1" />
+	</jsp:include>
 	
 <div class="container on-the-fly-behavior">
 	<section id="anchor1">
