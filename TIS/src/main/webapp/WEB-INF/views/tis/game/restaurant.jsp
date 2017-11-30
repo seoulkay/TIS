@@ -58,11 +58,12 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<!--     navbar -->
+<div>
+	<!--     navbar -->
     <jsp:include page="../common/navbar.jsp" flush="false">
 		<jsp:param name="param" value="value1" />
 	</jsp:include>
-	
+</div>
 <div class="container on-the-fly-behavior">
 	<section id="anchor1">
 		<div id="feature-block-1" class="feature-block feature-block-1">
