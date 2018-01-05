@@ -119,16 +119,16 @@
 		        	<fmt:formatDate value='${ele.acc_end }' pattern = 'dd' var="ed"/>
 		        </td>		      
 		      </tr>
-		      <tr>		     
-		      	<td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; width: 30%;">Night(s):</td>
-		        <td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; color: #777; width: 70%;">
-		        	<!-- 날짜 빼기 -->
-					<jsp:useBean id="daysFromNow" class="java.util.Date">
-					<c:set target="${daysFromNow}" property="time" value="${ele.acc_end.time - ele.acc_begin.time}" />
-					</jsp:useBean>	
-					<fmt:formatDate value='${daysFromNow}' pattern = 'dd'/>
-		        </td>
-		      </tr>
+<!-- 		      <tr>		      -->
+<!-- 		      	<td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; width: 30%;">Night(s):</td> -->
+<!-- 		        <td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; color: #777; width: 70%;"> -->
+<!-- 		        	날짜 빼기 -->
+<%-- 					<jsp:useBean id="daysFromNow" class="java.util.Date"> --%>
+<%-- 					<c:set target="${daysFromNow}" property="time" value="${ele.acc_end.time - ele.acc_begin.time}" /> --%>
+<%-- 					</jsp:useBean>	 --%>
+<%-- 					<fmt:formatDate value='${daysFromNow}' pattern = 'dd'/> --%>
+<!-- 		        </td> -->
+<!-- 		      </tr> -->
 		      <tr>		     
 		      	<td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; width: 30%;">Room No:</td>
 		        <td style="border: #ffffff !important; background-color: #ffffff !important; color: #000000; font-weight:normal; text-align: left; color: #777; width: 70%;">${ele.acc_room }</td>
